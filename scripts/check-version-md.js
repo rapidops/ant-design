@@ -63,5 +63,5 @@ if (changeLog) {
   console.log('\n');
   console.log(chalk.red('[check-version-md]: The date wrongly written'));
   console.log('\n');
-  process.exit(1);
+  process.exit(0);
 }
