@@ -25,6 +25,7 @@ const publishOptions = {
     verbose: true,
   },
 };
+
 const TYPE_MAJOR = 0;
 const TYPE_MINOR = 1;
 const TYPE_PATCH = 2;
