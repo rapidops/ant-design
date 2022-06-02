@@ -1,0 +1,21 @@
+// collapse CSS in table
+
+.ant-collapse {
+  background: transparent;
+  border: none;
+
+  .ant-collapse-item {
+    border-color: @dg700;
+
+    &.ant-collapse-item-active {
+      border-color: transparent;
+    }
+    + .ant-collapse-item {
+      margin-top: 24px;
+    }
+  }
+}
+
+.ant-collapse-header {
+  font-weight: 600;
+}
