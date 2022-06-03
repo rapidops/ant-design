@@ -275,3 +275,73 @@ div.ant-typography {
   border: 1px dashed @dg700;
   border-radius: 4px;
 }
+
+// Password strength
+
+.strength {
+  text-align: right;
+  > div {
+    justify-content: flex-end;
+  }
+  &.weak {
+    > div {
+      .strength-length {
+        &:first-child {
+          background: @r500;
+        }
+      }
+    }
+    .strength-word {
+      color: @r500;
+    }
+  }
+  &.fair {
+    > div {
+      .strength-length {
+        &:first-child,
+        &:nth-child(2) {
+          background: @y500;
+        }
+      }
+    }
+    .strength-word {
+      color: @y500;
+    }
+  }
+  &.good {
+    > div {
+      .strength-length {
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3) {
+          background: @g500;
+        }
+      }
+    }
+    .strength-word {
+      color: @g500;
+    }
+  }
+  &.strong {
+    > div {
+      .strength-length {
+        background: @g500;
+      }
+    }
+    .strength-word {
+      color: @g500;
+    }
+  }
+}
+.strength-length {
+  width: 40px;
+  height: 4px;
+  margin: 8px 0 8px 8px;
+  background: #e5e7eb;
+  border-radius: 37px;
+}
+.strength-word {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
