@@ -419,6 +419,13 @@ p {
   > div {
     width: 25%;
     padding: 0 8px;
+    @media screen and (max-width: 1365px) {
+      width: 33.333%;
+      margin-bottom: 16px;
+    }
+    @media screen and (max-width: 1279px) {
+      width: 50%;
+    }
   }
   div.ant-typography {
     margin: 0;
@@ -457,5 +464,8 @@ p {
     .ant-avatar-string {
       font-size: 12px;
     }
+  }
+  .ant-avatar-group .ant-avatar:not(:first-child) {
+    margin-left: -4px;
   }
 }
