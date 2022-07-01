@@ -412,7 +412,7 @@ p {
   height: 100%;
 }
 
-// Workspace CSS
+// Workspace CSS start
 
 .four-column-card {
   max-width: 0 -8px;
@@ -470,6 +470,8 @@ p {
   }
 }
 
+// media manager CSS start
+
 .media-grid-layout {
   display: flex;
   flex-wrap: wrap;
@@ -498,7 +500,7 @@ p {
       line-height: 14px;
       span {
         padding: 4px 8px;
-        color: #6b7280;
+        color: @dg500;
         background: #f3f4f6;
         border-radius: 4px;
       }
@@ -510,5 +512,28 @@ p {
   padding: 12px 0;
   + .modal-upload-image {
     border-top: 1px solid #e5e7eb;
+  }
+}
+
+.media-view-button {
+  .ant-btn.ant-btn-icon-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    background: @white;
+    border: 1px solid @dg700;
+    border-radius: 4px;
+    &:hover,
+    &.active,
+    &:focus {
+      background-color: @dg200;
+      border-color: @dg200;
+      svg path {
+        fill: @white;
+      }
+    }
   }
 }
