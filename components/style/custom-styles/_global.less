@@ -367,7 +367,7 @@ p {
   }
 }
 
-//User List and  Create User
+//User List and Create User
 .filters {
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     border: none;
@@ -416,7 +416,7 @@ p {
 // Workspace CSS start
 
 .four-column-card {
-  max-width: 0 -8px;
+  margin: 0 -8px 16px;
   > div {
     width: 25%;
     padding: 0 8px;
@@ -574,5 +574,47 @@ p {
         margin-right: 8px;
       }
     }
+  }
+}
+
+// edit profile css
+
+.user-profile-image {
+  position: relative;
+  width: 80px;
+  margin-right: 24px;
+  .ant-avatar-lg {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+  .ant-avatar-string {
+    font-size: 30px;
+  }
+  .ant-btn.ant-btn-icon-only {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background: @b500;
+    border: 2px solid @white;
+    border-radius: 50%;
+    .anticon,
+    svg {
+      width: 12px;
+      height: 12px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.profile-content {
+  h3 {
+    margin: 0 0 4px 0;
+  }
+  p {
+    color: @dg500;
   }
 }
