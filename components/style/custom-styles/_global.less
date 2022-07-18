@@ -102,6 +102,10 @@ p {
   width: 480px;
 }
 
+.primary-color {
+  color: @primary-color;
+}
+
 .login-section {
   height: 100%;
   background-color: #f4f7fa;
@@ -278,6 +282,16 @@ p {
   text-align: center;
 }
 
+.ant-menu-item a:hover,
+.ant-menu-item-selected a,
+.ant-menu-item-selected a:hover {
+  color: @b400;
+}
+
+.ant-menu-submenu-arrows svg {
+  margin-top: 5px;
+}
+
 // internationalize CSS
 
 .generate-box {
@@ -426,8 +440,8 @@ p {
   margin: 0 -8px 16px;
   > div {
     width: 25%;
+    margin: 0 8px;
     margin-bottom: 16px;
-    padding: 0 8px;
     @media screen and (max-width: 1365px) {
       width: 33.333%;
     }
@@ -627,5 +641,17 @@ p {
   }
   p {
     color: @dg500;
+  }
+}
+
+.ant-tag {
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+  border-radius: 4px;
+  &.ant-tag-success {
+    color: @g400;
+    background: @g1000;
   }
 }
