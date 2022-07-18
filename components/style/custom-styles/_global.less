@@ -102,6 +102,10 @@ p {
   width: 480px;
 }
 
+.primary-color {
+  color: @primary-color;
+}
+
 .login-section {
   height: 100%;
   background-color: #f4f7fa;
@@ -137,6 +141,13 @@ p {
   background: @white;
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(6, 25, 56, 0.06);
+  .ant-btn {
+    svg {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: text-bottom;
+    }
+  }
 }
 
 .bottom-link {
@@ -271,6 +282,16 @@ p {
   text-align: center;
 }
 
+.ant-menu-item a:hover,
+.ant-menu-item-selected a,
+.ant-menu-item-selected a:hover {
+  color: @b400;
+}
+
+.ant-menu-submenu-arrows svg {
+  margin-top: 5px;
+}
+
 // internationalize CSS
 
 .generate-box {
@@ -367,7 +388,7 @@ p {
   }
 }
 
-//User List and  Create User
+//User List and Create User
 .filters {
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     border: none;
@@ -416,17 +437,21 @@ p {
 // Workspace CSS start
 
 .four-column-card {
-  max-width: 0 -8px;
+  margin: 0 -8px 16px;
   > div {
     width: 25%;
-    padding: 0 8px;
+    margin: 0 8px;
+    margin-bottom: 16px;
     @media screen and (max-width: 1365px) {
       width: 33.333%;
-      margin-bottom: 16px;
     }
     @media screen and (max-width: 1279px) {
       width: 50%;
     }
+  }
+  .ant-card-bordered {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
   }
   div.ant-typography {
     margin: 0;
@@ -574,5 +599,59 @@ p {
         margin-right: 8px;
       }
     }
+  }
+}
+
+// edit profile css
+
+.user-profile-image {
+  position: relative;
+  width: 80px;
+  margin-right: 24px;
+  .ant-avatar-lg {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+  .ant-avatar-string {
+    font-size: 30px;
+  }
+  .ant-btn.ant-btn-icon-only {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background: @b500;
+    border: 2px solid @white;
+    border-radius: 50%;
+    .anticon,
+    svg {
+      width: 12px;
+      height: 12px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.profile-content {
+  h3 {
+    margin: 0 0 4px 0;
+  }
+  p {
+    color: @dg500;
+  }
+}
+
+.ant-tag {
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+  border-radius: 4px;
+  &.ant-tag-success {
+    color: @g400;
+    background: @g1000;
   }
 }

@@ -5,6 +5,11 @@
   font-size: @font-size-base;
   border: 1px solid @dg700;
   border-radius: 4px;
+  &:hover,
+  &:focus {
+    border-color: @primary-color;
+    box-shadow: none;
+  }
 }
 
 .ant-input {
@@ -55,6 +60,10 @@
 
 .ant-select.ant-select-multiple:not(.ant-select-customize-input) .ant-select-selector {
   height: auto;
+}
+
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: @primary-color;
 }
 
 // checkbox CSS
@@ -324,7 +333,7 @@ div.ant-typography {
   line-height: 16px;
   word-break: break-all;
   background: #f4f7fa;
-  border: 2px dashed @dg700;
+  border: 1px dashed @dg700;
   border-radius: 4px;
   .ant-typography-copy {
     margin-left: 20px;
