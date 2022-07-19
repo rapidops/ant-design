@@ -12,6 +12,13 @@
   }
 }
 
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover,
+.ant-picker:hover,
+.ant-picker-focused {
+  border-color: @primary-color;
+  box-shadow: none;
+}
+
 .ant-input {
   &.ant-input-lg {
     padding: @large-input;
@@ -64,6 +71,10 @@
 
 .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
   border-color: @primary-color;
+}
+
+.ant-select-multiple .ant-select-selection-placeholder {
+  color: @dg500;
 }
 
 // checkbox CSS

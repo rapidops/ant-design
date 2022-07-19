@@ -297,6 +297,7 @@ p {
 .generate-box {
   padding: 42px 64px;
   border: 1px solid #e5e7eb;
+  border-radius: 8px;
 
   @media screen and (max-width: 1439px) {
     padding: 32px;
@@ -428,6 +429,18 @@ p {
     font-size: 14px;
     box-shadow: inset 0px -2px 0px #e5e7eb;
   }
+  .ant-form-item-required {
+    &:before {
+      display: inline-block;
+      margin-right: 2px;
+      color: @r300;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: '*';
+    }
+  }
 }
 
 .ant-form {
@@ -437,11 +450,10 @@ p {
 // Workspace CSS start
 
 .four-column-card {
-  margin: 0 -8px 16px;
+  margin: 0 -8px;
   > div {
-    width: 25%;
-    margin: 0 8px;
-    margin-bottom: 16px;
+    width: 24%;
+    margin: 0 8px 16px 8px;
     @media screen and (max-width: 1365px) {
       width: 33.333%;
     }
@@ -649,9 +661,24 @@ p {
   font-size: 14px;
   line-height: 18px;
   text-transform: capitalize;
+  border: none;
   border-radius: 4px;
   &.ant-tag-success {
     color: @g400;
     background: @g1000;
+  }
+  &.ant-tag-error {
+    color: @r400;
+    background: @r1000;
+  }
+  &.ant-tag-blue {
+    color: #2563eb;
+    background: #eff6ff;
+  }
+}
+
+body.ant-scrolling-effect {
+  .mainmenu {
+    z-index: 99;
   }
 }
