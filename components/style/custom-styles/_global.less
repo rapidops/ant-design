@@ -429,6 +429,18 @@ p {
     font-size: 14px;
     box-shadow: inset 0px -2px 0px #e5e7eb;
   }
+  .ant-form-item-required {
+    &:before {
+      display: inline-block;
+      margin-right: 2px;
+      color: @r300;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: '*';
+    }
+  }
 }
 
 .ant-form {
