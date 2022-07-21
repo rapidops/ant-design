@@ -475,11 +475,17 @@ p {
   > div {
     width: 24%;
     margin: 0 8px 16px 8px;
+    @media screen and (max-width: 1730px) {
+      width: 23.7%;
+    }
     @media screen and (max-width: 1365px) {
-      width: 33.333%;
+      width: 31.9%;
     }
     @media screen and (max-width: 1279px) {
-      width: 50%;
+      width: 48%;
+    }
+    @media screen and (max-width: 1023px) {
+      width: 47%;
     }
   }
   .ant-card-bordered {
@@ -522,6 +528,7 @@ p {
     line-height: 24px;
     .ant-avatar-string {
       font-size: 12px;
+      line-height: 21px;
     }
   }
   .ant-avatar-group .ant-avatar:not(:first-child) {
