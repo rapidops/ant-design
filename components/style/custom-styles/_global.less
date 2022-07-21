@@ -292,6 +292,27 @@ p {
   margin-top: 5px;
 }
 
+.ant-menu {
+  &.ant-menu-submenu-popup {
+    background: @white;
+    border: 1px solid @dg700;
+    border-radius: 4px;
+    box-shadow: 0px 14px 21px -1px rgba(6, 25, 56, 0.08);
+    > .ant-menu {
+      border-radius: 4px;
+    }
+  }
+}
+
+.ant-menu-light .ant-menu-item-active {
+  color: @dg200;
+}
+
+.ant-menu-item a,
+.ant-menu-title-content {
+  color: @dg500;
+}
+
 // internationalize CSS
 
 .generate-box {
@@ -454,11 +475,17 @@ p {
   > div {
     width: 24%;
     margin: 0 8px 16px 8px;
+    @media screen and (max-width: 1730px) {
+      width: 23.7%;
+    }
     @media screen and (max-width: 1365px) {
-      width: 33.333%;
+      width: 31.9%;
     }
     @media screen and (max-width: 1279px) {
-      width: 50%;
+      width: 48%;
+    }
+    @media screen and (max-width: 1023px) {
+      width: 47%;
     }
   }
   .ant-card-bordered {
@@ -501,6 +528,7 @@ p {
     line-height: 24px;
     .ant-avatar-string {
       font-size: 12px;
+      line-height: 21px;
     }
   }
   .ant-avatar-group .ant-avatar:not(:first-child) {
@@ -680,5 +708,11 @@ p {
 body.ant-scrolling-effect {
   .mainmenu {
     z-index: 99;
+  }
+}
+
+.ant-avatar {
+  &.ant-avatar-square {
+    line-height: 32px;
   }
 }
