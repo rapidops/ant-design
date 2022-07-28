@@ -25,6 +25,12 @@
   }
 }
 
+.ant-input-affix-wrapper {
+  &.ant-input-affix-wrapper-lg {
+    padding: @large-input;
+  }
+}
+
 .ant-form-item-label > label {
   height: auto;
   margin-bottom: 8px;
@@ -262,6 +268,9 @@
     &:hover {
       color: @primary-color;
       background: @b900;
+      .ant-menu-title-content {
+        color: @primary-color;
+      }
     }
 
     .ant-btn {
@@ -413,12 +422,12 @@ div.ant-typography {
   &.strong {
     > div {
       .strength-length {
-        background: @g500;
+        background: @g300;
       }
     }
 
     .strength-word {
-      color: @g500;
+      color: @g300;
     }
   }
 }
@@ -432,9 +441,14 @@ div.ant-typography {
 }
 
 .strength-word {
+  display: flex;
+  align-items: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
+  .anticon {
+    margin-left: 4px;
+  }
 }
 
 .custom-input {
