@@ -148,6 +148,9 @@ p {
       vertical-align: text-bottom;
     }
   }
+  h1 {
+    margin-bottom: 8px;
+  }
 }
 
 .bottom-link {
@@ -155,6 +158,7 @@ p {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  color: @dg300;
 
   .ant-space {
     width: 122px;
@@ -173,7 +177,7 @@ p {
       display: inline-block;
       width: 4px;
       height: 4px;
-      margin: 0 5px;
+      margin: 0 8px;
       vertical-align: middle;
       background: #d1d5db;
       border-radius: 50%;
@@ -198,6 +202,13 @@ p {
 
 .page-content {
   height: 100%;
+}
+
+.page-content-bottom {
+  .ant-space-align-center {
+    padding-bottom: 12px;
+    box-shadow: inset 0px -1px 0px #f5f3ff;
+  }
 }
 
 //sidebar menu css
@@ -294,7 +305,7 @@ p {
 
 .ant-menu {
   &.ant-menu-submenu-popup {
-    min-width: 180px;
+    min-width: 200px;
     max-width: 260px;
     background: @white;
     border: 1px solid @dg700;
@@ -303,6 +314,62 @@ p {
     > .ant-menu {
       border-radius: 4px;
     }
+    .ant-menu-vertical > .ant-menu-item {
+      div.ant-typography {
+        margin: 0;
+        padding: 0px;
+        background: #fff;
+        border: none;
+        .ant-typography-copy {
+          display: flex !important;
+          align-items: center;
+          padding: 5px !important;
+          color: #6b7280;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          background: #ffffff !important;
+          border: 1px solid #d1d5db !important;
+          border-radius: 4px;
+          opacity: 0;
+          svg {
+            margin-right: 5px;
+            fill: #6b7280;
+            path {
+              fill: #6b7280;
+            }
+          }
+        }
+      }
+      &:hover {
+        div.ant-typography {
+          background: #e0e7ff;
+          .ant-typography-copy {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.left-arrow-text {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    transform: rotate(90deg);
+  }
+}
+
+.mainmenu {
+  height: 100vh;
+  .ant-avatar-string {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 32px;
   }
 }
 
@@ -692,9 +759,11 @@ p {
     border-radius: 50%;
     .anticon,
     svg {
+      display: flex;
+      align-items: center;
       width: 12px;
       height: 12px;
-      margin: 0 auto;
+      margin: auto;
     }
   }
 }
