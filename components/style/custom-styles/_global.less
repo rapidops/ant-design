@@ -102,6 +102,10 @@ p {
   width: 480px;
 }
 
+.primary-color {
+  color: @primary-color;
+}
+
 .login-section {
   height: 100%;
   background-color: #f4f7fa;
@@ -137,6 +141,16 @@ p {
   background: @white;
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(6, 25, 56, 0.06);
+  .ant-btn {
+    svg {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: text-bottom;
+    }
+  }
+  h1 {
+    margin-bottom: 8px;
+  }
 }
 
 .bottom-link {
@@ -144,6 +158,7 @@ p {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  color: @dg300;
 
   .ant-space {
     width: 122px;
@@ -162,7 +177,7 @@ p {
       display: inline-block;
       width: 4px;
       height: 4px;
-      margin: 0 5px;
+      margin: 0 8px;
       vertical-align: middle;
       background: #d1d5db;
       border-radius: 50%;
@@ -187,6 +202,13 @@ p {
 
 .page-content {
   height: 100%;
+}
+
+.page-content-bottom {
+  .ant-space-align-center {
+    padding-bottom: 12px;
+    box-shadow: inset 0px -1px 0px #f5f3ff;
+  }
 }
 
 //sidebar menu css
@@ -271,11 +293,123 @@ p {
   text-align: center;
 }
 
+.ant-menu-item a:hover,
+.ant-menu-item-selected a,
+.ant-menu-item-selected a:hover {
+  color: @b400;
+}
+
+.ant-menu-submenu-arrows svg {
+  margin-top: 5px;
+}
+
+.ant-menu {
+  &.ant-menu-submenu-popup {
+    min-width: 200px;
+    max-width: 260px;
+    background: @white;
+    border: 1px solid @dg700;
+    border-radius: 4px;
+    box-shadow: 0px 14px 21px -1px rgba(6, 25, 56, 0.08);
+    > .ant-menu {
+      border-radius: 4px;
+    }
+    .ant-menu-vertical > .ant-menu-item {
+      div.ant-typography {
+        margin: 0;
+        padding: 0px;
+        background: #fff;
+        border: none;
+        .ant-typography-copy {
+          display: flex !important;
+          align-items: center;
+          padding: 5px !important;
+          color: #6b7280;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          background: #ffffff !important;
+          border: 1px solid #d1d5db !important;
+          border-radius: 4px;
+          opacity: 0;
+          svg {
+            margin-right: 5px;
+            fill: #6b7280;
+            path {
+              fill: #6b7280;
+            }
+          }
+        }
+      }
+      &:hover {
+        div.ant-typography {
+          background: #e0e7ff;
+          .ant-typography-copy {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.left-arrow-text {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    transform: rotate(90deg);
+  }
+}
+
+.mainmenu {
+  height: 100vh;
+  .ant-avatar-string {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 32px;
+  }
+}
+
+.mainmenu {
+  height: 100vh;
+  .ant-avatar-string {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 32px;
+  }
+}
+
+.ant-menu-light .ant-menu-item-active {
+  color: @dg200;
+}
+
+.ant-menu-item a,
+.ant-menu-title-content {
+  color: @dg500;
+}
+
+.iconmenu {
+  align-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  > div {
+    width: 100%;
+    + ul {
+      width: 100% !important;
+    }
+  }
+}
+
 // internationalize CSS
 
 .generate-box {
   padding: 42px 64px;
   border: 1px solid #e5e7eb;
+  border-radius: 8px;
 
   @media screen and (max-width: 1439px) {
     padding: 32px;
@@ -407,6 +541,18 @@ p {
     font-size: 14px;
     box-shadow: inset 0px -2px 0px #e5e7eb;
   }
+  .ant-form-item-required {
+    &:before {
+      display: inline-block;
+      margin-right: 2px;
+      color: @r300;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: '*';
+    }
+  }
 }
 
 .ant-form {
@@ -416,17 +562,26 @@ p {
 // Workspace CSS start
 
 .four-column-card {
-  max-width: 0 -8px;
+  margin: 0 -8px;
   > div {
-    width: 25%;
-    padding: 0 8px;
+    width: 24%;
+    margin: 0 8px 16px 8px;
+    @media screen and (max-width: 1730px) {
+      width: 23.7%;
+    }
     @media screen and (max-width: 1365px) {
-      width: 33.333%;
-      margin-bottom: 16px;
+      width: 31.9%;
     }
     @media screen and (max-width: 1279px) {
-      width: 50%;
+      width: 48%;
     }
+    @media screen and (max-width: 1023px) {
+      width: 47%;
+    }
+  }
+  .ant-card-bordered {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
   }
   div.ant-typography {
     margin: 0;
@@ -464,6 +619,7 @@ p {
     line-height: 24px;
     .ant-avatar-string {
       font-size: 12px;
+      line-height: 21px;
     }
   }
   .ant-avatar-group .ant-avatar:not(:first-child) {
@@ -575,4 +731,93 @@ p {
       }
     }
   }
+}
+
+// edit profile css
+
+.user-profile-image {
+  position: relative;
+  width: 80px;
+  margin-right: 24px;
+  .ant-avatar-lg {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+  .ant-avatar-string {
+    font-size: 30px;
+  }
+  .ant-btn.ant-btn-icon-only {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background: @b500;
+    border: 2px solid @white;
+    border-radius: 50%;
+    .anticon,
+    svg {
+      display: flex;
+      align-items: center;
+      width: 12px;
+      height: 12px;
+      margin: auto;
+    }
+  }
+}
+
+.profile-content {
+  h3 {
+    margin: 0 0 4px 0;
+  }
+  p {
+    color: @dg500;
+  }
+}
+
+.ant-tag {
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 4px;
+  &.ant-tag-success {
+    color: @g400;
+    background: @g1000;
+  }
+  &.ant-tag-error {
+    color: @r400;
+    background: @r1000;
+  }
+  &.ant-tag-blue {
+    color: #2563eb;
+    background: #eff6ff;
+  }
+}
+
+body.ant-scrolling-effect {
+  .mainmenu {
+    z-index: 99;
+  }
+}
+
+.ant-avatar {
+  &.ant-avatar-square {
+    line-height: 32px;
+  }
+}
+
+.text-red {
+  color: @r500;
+}
+
+.text-blue {
+  color: @b400;
+}
+
+.text-dark-gray {
+  color: @dg500;
 }

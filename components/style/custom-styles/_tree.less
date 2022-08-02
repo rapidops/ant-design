@@ -1,4 +1,9 @@
 .submenu {
+  height: 100vh;
+  + .ant-layout {
+    height: 100vh;
+    overflow-y: auto;
+  }
   .sidebar-submenu {
     width: auto;
     height: 100%;
@@ -8,6 +13,10 @@
     .ant-layout,
     .ant-layout-sider {
       background: none;
+    }
+
+    .ant-layout {
+      height: auto;
     }
 
     .ant-menu-inline > .ant-menu-item,
@@ -58,7 +67,8 @@
   }
   .ant-menu-item {
     &.ant-menu-item-selected {
-      .ant-menu-title-content {
+      .ant-menu-title-content,
+      .ant-menu-title-content a {
         color: @b400;
         font-weight: 600;
       }
