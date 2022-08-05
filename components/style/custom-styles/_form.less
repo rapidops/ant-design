@@ -205,8 +205,13 @@
     width: 20px;
     height: 20px;
     padding: 1px;
-    background-color: @dg700;
+    background-color: transparent;
     border-color: @dg700;
+    border-radius: 4px;
+    &:hover {
+      background-color: @dg700;
+      border-color: @dg700;
+    }
     &.onlyIcon {
       width: auto;
       height: auto;
@@ -214,6 +219,25 @@
       background: transparent;
       border: none;
       box-shadow: none;
+      svg {
+        fill: @dg200;
+        path {
+          fill: @dg200;
+        }
+      }
+    }
+    &.ant-btn-lg {
+      width: 32px;
+      height: 32px;
+      line-height: 35px;
+    }
+    &.ant-dropdown-trigger {
+      background-color: transparent;
+      border-color: transparent;
+      &:hover {
+        background-color: @dg700;
+        border-color: @dg700;
+      }
     }
   }
 
