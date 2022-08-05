@@ -143,3 +143,46 @@
     }
   }
 }
+
+.upload-section {
+  .generate-box-content {
+    width: calc(100% - 260px);
+  }
+  .generate-box-img {
+    width: 260px;
+    img {
+      width: 260px;
+    }
+  }
+  .ant-upload.ant-upload-drag {
+    background: transparent;
+    border: none;
+    .ant-upload {
+      padding: 0;
+    }
+  }
+  .ant-upload-hint {
+    margin: 0 0 0 24px;
+  }
+}
+
+.combine-buttons {
+  .ant-btn {
+    border-radius: 4px 0 0 4px;
+  }
+  .ant-btn + .ant-btn {
+    margin-left: 1px;
+    border-radius: 0px 4px 4px 0;
+    svg path {
+      fill: @white;
+    }
+    &:hover {
+      svg {
+        transform: rotate(-180px);
+      }
+      svg path {
+        fill: @black;
+      }
+    }
+  }
+}
