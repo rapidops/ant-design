@@ -326,3 +326,45 @@
     line-height: 35px;
   }
 }
+
+.content-fields {
+  // .ant-table-row-expand-icon {
+  //   position: absolute;
+  //   right: 0;
+  //   margin: 0;
+  //   top: 24px;
+  // }
+  .ant-table-wrapper.content-fields-child {
+    .ant-table {
+      margin: 0 0 0 28px !important;
+      .ant-table-tbody > tr > td {
+        border: none;
+        box-shadow: none;
+        &:first-child {
+          position: relative;
+          &:before {
+            position: absolute;
+            top: 7px;
+            left: -22px;
+            display: block;
+            width: 19px;
+            height: 19px;
+            background: url(../images/line-icon.svg);
+            background-size: contain;
+            content: '';
+          }
+        }
+      }
+    }
+    &:before {
+      position: absolute;
+      top: 20px;
+      left: 22px;
+      width: 2px;
+      height: calc(100% - 40px);
+      background: rgb(234, 234, 239);
+      border-radius: 4px;
+      content: '';
+    }
+  }
+}
