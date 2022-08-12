@@ -1,5 +1,6 @@
 .submenu {
   height: 100vh;
+  overflow-y: auto;
   + .ant-layout {
     height: 100vh;
     overflow-y: auto;
@@ -27,7 +28,8 @@
     .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title,
     .ant-menu-vertical > .ant-menu-item,
     .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title {
-      display: block;
+      // display: block;
+      display: flex !important;
       width: auto;
       height: auto;
       padding-right: 20px !important;
@@ -71,6 +73,34 @@
       .ant-menu-title-content a {
         color: @b400;
         font-weight: 600;
+      }
+      > svg {
+        path {
+          fill: @b400;
+        }
+      }
+    }
+  }
+
+  svg + .ant-menu-title-content {
+    margin-left: 6px;
+  }
+
+  .media-menu-button {
+    .ant-row {
+      position: absolute;
+      right: 0;
+      opacity: 0;
+    }
+  }
+
+  .ant-menu-submenu .ant-menu-submenu-title,
+  .ant-menu-submenu .ant-menu-submenu-title + .ant-menu .ant-menu-item {
+    &:hover {
+      .media-menu-button {
+        .ant-row {
+          opacity: 1;
+        }
       }
     }
   }
@@ -116,6 +146,17 @@
       svg {
         margin: 0;
       }
+    }
+  }
+  .selected-icon {
+    display: none;
+  }
+  .ant-menu-item-selected {
+    .selected-icon {
+      display: flex;
+    }
+    .unselected-icon {
+      display: none;
     }
   }
 }
