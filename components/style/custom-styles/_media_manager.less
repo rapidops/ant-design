@@ -295,3 +295,35 @@ div.ant-typography {
     color: #6b7280;
   }
 }
+
+.media-default-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #f3f4f6;
+}
+
+.media-upload-box {
+  .ant-upload.ant-upload-drag {
+    text-align: left;
+    &.generate-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      .generate-box {
+        padding: 0;
+        border: none;
+      }
+    }
+    .ant-upload {
+      padding: 0;
+      p {
+        margin-bottom: 32px;
+        color: #6b7280;
+      }
+    }
+    .combine-buttons + p {
+      margin-bottom: 0;
+    }
+  }
+}
