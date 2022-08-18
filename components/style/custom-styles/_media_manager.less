@@ -10,6 +10,7 @@
   }
 
   .ant-card-bordered {
+    height: 100%;
     border: 1px solid #e5e7eb;
     border-radius: 4px;
     .ant-card-cover {
@@ -325,5 +326,52 @@ div.ant-typography {
     .combine-buttons + p {
       margin-bottom: 0;
     }
+  }
+}
+
+.upload-bar {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-bar-inner {
+  position: relative;
+  width: 280px;
+  padding: 12px 12px 14px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-shadow: 0px 6px 10px -1px rgba(6, 25, 56, 0.07);
+
+  p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    svg {
+      margin-right: 16px;
+    }
+  }
+
+  .ant-progress-line {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    padding-top: 0;
+    font-size: 14px;
+  }
+
+  .ant-progress-outer {
+    display: flex;
+  }
+
+  .ant-progress-inner {
+    background: #6366f1;
+    border-radius: 0px 4px 4px 4px;
   }
 }
