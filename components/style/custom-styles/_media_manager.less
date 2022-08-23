@@ -42,14 +42,14 @@
     div.ant-typography.OnlyIcon .ant-typography-copy {
       svg {
         path {
-          fill: #ffffff;
+          fill: @white;
         }
       }
     }
     .ant-btn.ant-btn-icon-only {
       svg {
         path {
-          fill: #ffffff;
+          fill: @white;
         }
       }
     }
@@ -166,9 +166,14 @@
       padding: 7px 12px;
 
       svg {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 22px;
         margin-right: 8px;
+      }
+
+      &:hover {
+        background: #eef2ff;
+        border-radius: 4px;
       }
     }
   }
@@ -371,7 +376,29 @@ div.ant-typography {
   }
 
   .ant-progress-inner {
-    background: #6366f1;
+    background: @white;
     border-radius: 0px 4px 4px 4px;
+
+    .ant-progress-bg {
+      background: @b500;
+      border-radius: 0px 4px 4px 4px;
+    }
+  }
+}
+
+.media-buttons {
+  .ant-btn {
+    padding-right: 0;
+    padding-left: 0;
+    border: none;
+    box-shadow: none;
+    svg {
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: text-bottom;
+    }
+    &:hover {
+      background: transparent;
+    }
   }
 }
