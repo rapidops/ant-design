@@ -196,6 +196,28 @@
   .lengthinput {
     margin-top: 12px;
   }
+
+  .ant-checkbox-group {
+    > div,
+    > label {
+      display: inline-flex;
+      width: 50%;
+    }
+  }
+
+  .checkbox-with-input {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .ant-checkbox-wrapper {
+      width: 100%;
+    }
+
+    .ant-input-number {
+      width: 95%;
+    }
+  }
 }
 
 .ant-tabs {
@@ -337,11 +359,14 @@
   .ant-table-wrapper.content-fields-child {
     .ant-table {
       margin: 0 0 0 28px !important;
+
       .ant-table-tbody > tr > td {
         border: none;
         box-shadow: none;
+
         &:first-child {
           position: relative;
+
           &:before {
             position: absolute;
             top: 7px;
@@ -356,6 +381,7 @@
         }
       }
     }
+
     &:before {
       position: absolute;
       top: 20px;
