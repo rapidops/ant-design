@@ -203,7 +203,7 @@
       }
     }
 
-    &:disabled {
+    &[disabled] {
       opacity: 0.5;
       &:hover,
       &:focus,
@@ -281,6 +281,11 @@
       color: @b200;
     }
   }
+}
+
+a.ant-btn {
+  padding: 6px 12px !important;
+  line-height: 18px;
 }
 
 // dropdown CSS
