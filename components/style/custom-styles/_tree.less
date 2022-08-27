@@ -66,6 +66,14 @@
   }
   .ant-menu-title-content {
     color: @dg200;
+    .media-menu-button {
+      > span {
+        width: 120px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
   }
   .ant-menu-item {
     &.ant-menu-item-selected {
@@ -151,6 +159,9 @@
   .selected-icon {
     display: none;
   }
+  .unselected-icon {
+    display: flex;
+  }
   .ant-menu-item-selected {
     .selected-icon {
       display: flex;
@@ -161,6 +172,9 @@
   }
   .folders-icon {
     margin-right: 6px;
+    > div {
+      display: flex;
+    }
   }
 }
 
