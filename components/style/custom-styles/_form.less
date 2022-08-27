@@ -119,6 +119,7 @@
 .ant-checkbox-indeterminate {
   .ant-checkbox-inner {
     &:after {
+      margin: 0;
       background-color: @primary-color;
       border-radius: 2px;
     }
@@ -181,6 +182,10 @@
     color: @dg300;
     background-color: @dg700;
     border-color: @dg700;
+  }
+
+  &:focus {
+    color: @dg300;
   }
 
   &.ant-btn-primary {
@@ -554,4 +559,13 @@ div.ant-typography {
     padding-bottom: 10px;
     border-bottom: 1px solid #e5e7eb;
   }
+}
+
+.custom-input-label {
+  display: block;
+  margin-bottom: 8px;
+  color: @base-font-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
 }
