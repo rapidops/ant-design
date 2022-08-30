@@ -245,6 +245,9 @@ p {
     color: @dg200;
     font-weight: 700;
     font-size: 20px;
+    @media screen and (max-width: 1365px) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -275,6 +278,10 @@ p {
 .ant-page-header-heading-title {
   display: block;
   font-weight: 700;
+  @media screen and (max-width: 1365px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 .ant-layout-content {
@@ -282,9 +289,14 @@ p {
 }
 
 .ant-page-header-heading-sub-title {
+  width: 95%;
+  max-width: 600px;
+  overflow: hidden;
   color: @base-font-color;
   font-weight: 400;
   font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .ant-menu.ant-menu-inline-collapsed > .ant-menu-item,
@@ -770,6 +782,9 @@ body.ant-scrolling-effect {
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
+    @media screen and (max-width: 1365px) {
+      font-size: 18px;
+    }
     &:last-child {
       color: @dg200;
     }

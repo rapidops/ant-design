@@ -358,7 +358,7 @@
   // }
   .ant-table-wrapper.content-fields-child {
     .ant-table {
-      margin: 0 0 0 28px !important;
+      margin: 0 0 0 78px !important;
 
       .ant-table-tbody > tr > td {
         border: none;
@@ -369,8 +369,8 @@
 
           &:before {
             position: absolute;
-            top: 7px;
-            left: -22px;
+            top: 12px;
+            left: -10px;
             display: block;
             width: 19px;
             height: 19px;
@@ -379,15 +379,19 @@
             content: '';
           }
         }
+
+        &:last-child {
+          display: none;
+        }
       }
     }
 
     &:before {
       position: absolute;
-      top: 20px;
-      left: 22px;
+      top: 10px;
+      left: 84px;
       width: 2px;
-      height: calc(100% - 40px);
+      height: calc(100% - 30px);
       background: rgb(234, 234, 239);
       border-radius: 4px;
       content: '';

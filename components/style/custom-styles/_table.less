@@ -31,6 +31,9 @@
             display: block;
           }
         }
+        .ant-btn.ant-btn-icon-only.onlyIcon svg path {
+          fill: @dg600;
+        }
       }
 
       &.ant-table-row {
@@ -38,6 +41,12 @@
           td {
             background-color: #f4f7fa;
           }
+        }
+      }
+
+      &.ant-table-row-selected {
+        td {
+          background: transparent;
         }
       }
     }

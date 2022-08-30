@@ -1,12 +1,18 @@
 .media-grid-layout {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -16px;
+  margin: 0 -14px;
 
   > div {
     width: 25%;
     margin-bottom: 32px;
-    padding: 0 16px;
+    padding: 0 14px;
+    @media screen and (max-width: 1439px) {
+      width: 33.333%;
+    }
+    @media screen and (max-width: 1279px) {
+      width: 50%;
+    }
   }
 
   .ant-card-bordered {
@@ -104,8 +110,9 @@
       }
     }
     h4 {
-      width: 290px;
+      width: 95%;
       overflow: hidden;
+      font-weight: normal;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
@@ -143,6 +150,10 @@
     border-radius: 4px;
   }
 
+  .img + svg path {
+    fill: #9ca3af;
+  }
+
   video {
     width: 88px;
     height: 58px;
@@ -175,10 +186,6 @@
     width: 24px;
     height: 100%;
     margin: auto;
-
-    path {
-      fill: #9ca3af;
-    }
   }
 
   .media-default-icon {
@@ -291,12 +298,18 @@
 
 .folder-grid {
   flex-wrap: wrap;
-  margin-right: -16px;
-  margin-left: -16px;
+  margin-right: -14px;
+  margin-left: -14px;
   > div {
     width: 25%;
     margin-bottom: 16px;
-    padding: 0 16px;
+    padding: 0 14px;
+    @media screen and (max-width: 1439px) {
+      width: 33.333%;
+    }
+    @media screen and (max-width: 1279px) {
+      width: 50%;
+    }
     .folder-list {
       align-items: center;
       padding: 8px 16px;
@@ -339,6 +352,9 @@ div.ant-typography {
   padding: 16px;
   border: 1px solid #e5e7eb;
   border-radius: 4px;
+  @media screen and (max-width: 1365px) {
+    width: 380px;
+  }
   a.ant-btn {
     display: flex;
     align-items: center;
@@ -406,6 +422,7 @@ div.ant-typography {
   .ant-upload.ant-upload-drag {
     text-align: left;
     &.generate-box {
+      background: @white;
       border: 1px solid #e5e7eb;
       border-radius: 8px;
       .generate-box {
