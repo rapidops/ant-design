@@ -12,6 +12,21 @@
   }
 }
 
+input {
+  &.ant-input::placeholder {
+    color: @dg600;
+    opacity: 1;
+  }
+  &.ant-input:-ms-input-placeholder {
+    color: @dg600;
+    opacity: 1;
+  }
+  &.ant-input::-ms-input-placeholder {
+    color: @dg600;
+    opacity: 1;
+  }
+}
+
 .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover,
 .ant-picker:hover,
 .ant-picker-focused {
@@ -80,7 +95,7 @@
 }
 
 .ant-select .ant-select-selection-placeholder {
-  color: @dg500;
+  color: @dg600;
 }
 
 .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
@@ -238,7 +253,8 @@
         fill: @dg200;
       }
     }
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: @dg700;
       border-color: @dg700;
     }

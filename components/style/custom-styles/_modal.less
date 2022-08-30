@@ -24,10 +24,13 @@
   }
 
   .ant-modal-body {
-    max-height: 620px;
+    max-height: 680px;
     overflow-y: auto;
     font-size: 16px;
     line-height: 20px;
+    @media screen and (max-width: 1439px) {
+      max-height: 560px;
+    }
     .ant-breadcrumb {
       margin-bottom: 24px;
       li {
