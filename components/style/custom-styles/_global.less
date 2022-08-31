@@ -277,7 +277,11 @@ p {
 
 .ant-page-header-heading-title {
   display: block;
+  width: 95%;
+  overflow: hidden;
   font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   @media screen and (max-width: 1365px) {
     font-size: 18px;
     line-height: 28px;
@@ -539,6 +543,16 @@ p {
 
   .ant-space-item {
     margin-left: 35px;
+  }
+
+  .ant-space-item-main .ant-dropdown-trigger {
+    &.ant-dropdown-open {
+      .filterdropdownarrow {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
   }
 }
 
