@@ -103,6 +103,9 @@
       position: absolute;
       right: 0;
       opacity: 0;
+      @media screen and (max-width: 1199px) {
+        opacity: 1;
+      }
     }
   }
 
@@ -250,15 +253,6 @@
   svg {
     margin-top: 8px;
     vertical-align: top;
-  }
-}
-
-.ant-menu-submenu.ant-menu-submenu-inline {
-  &.ant-menu-submenu-open {
-    .ant-menu-submenu-arrows {
-      svg {
-        transform: rotate(180deg);
-      }
-    }
+    transform: rotate(-90deg);
   }
 }

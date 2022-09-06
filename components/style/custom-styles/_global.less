@@ -796,6 +796,12 @@ body.ant-scrolling-effect {
     }
     &:last-child {
       color: @dg200;
+      .ant-breadcrumb-link {
+        cursor: default;
+      }
+    }
+    .ant-breadcrumb-link {
+      cursor: pointer;
     }
   }
 }
@@ -808,4 +814,12 @@ body.ant-scrolling-effect {
 
 .ant-upload.ant-upload-drag {
   background: @white;
+}
+
+.load-more-button {
+  padding-bottom: 32px;
+  > span {
+    font-weight: 600;
+    font-size: 16px;
+  }
 }
