@@ -1,6 +1,7 @@
 .submenu {
   height: 100vh;
   overflow-y: auto;
+  background-color: #f4f7fa;
   + .ant-layout {
     height: 100vh;
     overflow-y: auto;
@@ -259,4 +260,17 @@
 
 .ant-menu-submenu.ant-menu-submenu-inline.ant-menu-submenu-open .ant-menu-submenu-arrows svg {
   transform: rotate(0deg);
+}
+
+.ant-menu-submenu.ant-menu-submenu-inline.ant-menu-submenu-open {
+  .ant-menu .ant-menu-submenu.ant-menu-submenu-inline {
+    .ant-menu-submenu-arrows svg {
+      transform: rotate(-90deg);
+    }
+    &.ant-menu-submenu-open {
+      .ant-menu-submenu-arrows svg {
+        transform: rotate(0deg);
+      }
+    }
+  }
 }
