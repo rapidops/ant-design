@@ -214,8 +214,9 @@ input {
     border-color: @primary-color;
 
     &:hover {
-      color: @dg300;
-      background-color: transparent;
+      color: @white;
+      background-color: @b200;
+      border-color: @b200;
     }
 
     &.ant-btn-dangerous {
@@ -225,6 +226,17 @@ input {
       &:hover {
         color: @dg300;
         background-color: transparent;
+      }
+    }
+
+    &.green-button {
+      color: @white;
+      background: @g400;
+      border-color: @g400;
+      &:hover {
+        color: @white;
+        background-color: @g200;
+        border-color: @g200;
       }
     }
 
