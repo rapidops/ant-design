@@ -269,8 +269,17 @@ p {
   background: @white;
 }
 
+.hamburgericon {
+  padding: 0 20px 0 0 !important;
+}
+
 .ant-page-header {
-  padding: 16px 0px 0px 10px;
+  padding: 16px 0px 0px 0px;
+}
+
+.ant-page-header-compact .ant-page-header-heading {
+  display: block;
+  flex-wrap: initial;
 }
 
 .ant-page-header-heading-left {
@@ -298,8 +307,9 @@ p {
 }
 
 .ant-page-header-heading-sub-title {
-  width: 95%;
-  max-width: 600px;
+  display: block;
+  width: 98%;
+  max-width: initial;
   overflow: hidden;
   color: @base-font-color;
   font-weight: 400;
@@ -351,16 +361,21 @@ p {
       div.ant-typography {
         margin: 0;
         padding: 0px;
+        white-space: break-spaces;
+        word-break: break-word;
         background: @white;
         border: none;
         .ant-typography-copy {
           display: flex !important;
           align-items: center;
+          width: 90px;
+          margin-left: 10px;
           padding: 5px !important;
           color: @dg500;
           font-weight: 400;
           font-size: 12px;
           line-height: 14px;
+          white-space: pre;
           background: @white !important;
           border: 1px solid #d1d5db !important;
           border-radius: 4px;
@@ -374,8 +389,11 @@ p {
           }
         }
       }
-      &:hover {
+      &:hover,
+      &.active {
+        background: #e0e7ff;
         div.ant-typography {
+          color: @primary-color;
           background: #e0e7ff;
           .ant-typography-copy {
             opacity: 1;
@@ -824,7 +842,7 @@ body.ant-scrolling-effect {
 }
 
 .load-more-button {
-  // padding-bottom: 32px;
+  padding-bottom: 15px;
   > span {
     font-weight: 600;
     font-size: 16px;
