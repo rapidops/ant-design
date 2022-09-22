@@ -53,31 +53,40 @@
   height: 100%;
 }
 
-.ant-upload.ant-upload-drag {
-  &.library-upload {
-    text-align: left;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-    .ant-upload {
-      padding: 12px;
-    }
-    .ant-upload-drag-icon {
-      margin-right: 16px;
-      line-height: 10px;
-    }
-    .ant-upload-text {
-      margin-bottom: 34px;
+.library-upload {
+  text-align: left;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  .ant-upload {
+    padding: 12px;
+  }
+  .ant-upload-drag-icon {
+    margin-right: 16px;
+    line-height: 10px;
+  }
+  .ant-upload-text {
+    margin-bottom: 34px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .ant-upload-hint {
+    > span {
       font-size: 12px;
       line-height: 14px;
     }
-    .ant-upload-hint {
-      > span {
-        font-size: 12px;
-        line-height: 14px;
-      }
-    }
   }
 }
+
+.multiple-media {
+  margin-bottom: 16px;
+  img {
+    width: 46px;
+    height: 46px;
+    margin-right: 8px;
+    border-radius: 4px;
+  }
+}
+
 #a_unique_id-outer-box {
   width: 100% !important;
   color: #333;
