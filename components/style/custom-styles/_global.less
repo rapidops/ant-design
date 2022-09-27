@@ -290,7 +290,8 @@ p {
 
 .ant-page-header-heading-title {
   display: block;
-  width: 98%;
+  width: auto;
+  max-width: 98%;
   overflow: hidden;
   font-weight: 700;
   white-space: nowrap;
@@ -308,7 +309,8 @@ p {
 
 .ant-page-header-heading-sub-title {
   display: block;
-  width: 98%;
+  width: auto;
+  max-width: 98%;
   max-width: initial;
   overflow: hidden;
   color: @base-font-color;
@@ -853,9 +855,14 @@ body.ant-scrolling-effect {
   }
 }
 
+.bigcommerce-input {
+  > div {
+    position: relative;
+  }
+}
 .link-label {
   position: absolute;
-  top: -31px;
+  top: 0px;
   right: 0;
 }
 

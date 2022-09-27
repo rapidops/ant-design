@@ -54,12 +54,10 @@
 }
 
 .library-upload {
+  padding: 12px;
   text-align: left;
   border: 1px solid #d1d5db;
   border-radius: 4px;
-  .ant-upload {
-    padding: 12px;
-  }
   .ant-upload-drag-icon {
     margin-right: 16px;
     line-height: 10px;
@@ -78,7 +76,9 @@
 }
 
 .multiple-media {
-  margin-bottom: 16px;
+  .ant-upload-drag-icon {
+    margin: 0 0 16px 0;
+  }
   img {
     width: 46px;
     height: 46px;
