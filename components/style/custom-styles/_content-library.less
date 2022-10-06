@@ -2,15 +2,19 @@
   height: 100%;
   margin: 0;
   border-top: 1px solid #e5e7eb;
+
   .content-library-left {
     width: calc(100% - 320px);
     height: 100%;
     padding: 0 32px 32px;
+
     .ant-tabs-content-holder {
       height: calc(100vh - 232px);
+      padding-right: 10px;
       overflow-y: auto;
     }
   }
+
   .content-library-right {
     width: 320px;
     height: calc(100vh - 65px);
@@ -18,29 +22,36 @@
     padding: 0;
     overflow-y: auto;
     border-left: 1px solid #e5e7eb;
+
     .ant-collapse {
       .ant-collapse-item {
         border-bottom: 1px solid #e5e7eb;
+
         + .ant-collapse-item {
           margin: 0;
         }
+
         .ant-collapse-header {
           padding: 16px;
         }
       }
+
       .ant-collapse-content {
         border: none;
+
         .ant-collapse-content-box {
           padding: 0 32px 16px;
         }
       }
     }
   }
+
   .ant-tabs.ant-tabs-top .ant-tabs-nav {
     width: 100%;
     margin: 0 0 32px 0;
     padding: 0;
   }
+
   .ant-tabs-top > .ant-tabs-nav:before {
     padding: 0;
     box-shadow: none;
@@ -58,15 +69,18 @@
   text-align: left;
   border: 1px solid #d1d5db;
   border-radius: 4px;
+
   .ant-upload-drag-icon {
     margin-right: 16px;
     line-height: 10px;
   }
+
   .ant-upload-text {
     margin-bottom: 34px;
     font-size: 12px;
     line-height: 14px;
   }
+
   .ant-upload-hint {
     > span {
       font-size: 12px;
@@ -79,6 +93,7 @@
   .ant-upload-drag-icon {
     margin: 0 0 16px 0;
   }
+
   img {
     width: 46px;
     height: 46px;
@@ -91,6 +106,7 @@
   width: 46px;
   margin-right: 8px;
   cursor: pointer;
+
   &:hover {
     .multiple-media-img-hover {
       opacity: 1;
@@ -110,6 +126,7 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   border-radius: 4px;
   opacity: 0;
+
   svg path {
     fill: #fff;
   }
@@ -120,23 +137,28 @@
   color: #333;
   border: 1px solid #d1d5db;
   border-radius: 8px;
+
   #a_unique_id-container {
     width: 100% !important;
     height: 100% !important;
     border-radius: 8px;
   }
+
   #a_unique_id-body {
     background-color: #fff !important;
   }
 }
+
 .ant-input-number {
   width: 100%;
   border: 1px solid #d1d5db;
   border-radius: 4px;
 }
+
 .ql-toolbar.ql-snow {
   border-radius: 4px 4px 0 0;
 }
+
 .ql-container.ql-snow {
   border-radius: 0 0 4px 4px;
 }
@@ -145,6 +167,7 @@
   .ant-layout-content {
     padding: 0;
   }
+
   .ant-tabs,
   .ant-tabs-content-holder,
   .ant-tabs-content {
@@ -166,32 +189,41 @@
 
 .content-library-collapse {
   margin-bottom: 16px;
+
   .ant-collapse-icon-position-left {
     padding: 16px 24px;
     background: #f4f7fa;
     border-radius: 8px;
+
     .ant-collapse-item {
       border: none;
     }
+
     .ant-collapse-header {
       padding: 0;
     }
+
     .ant-collapse-content {
       margin-top: 20px;
       border: none;
     }
+
     .ant-collapse-content {
       background: #f4f7fa;
+
       .ant-collapse-content-box {
         padding: 0;
+
         .ant-form-item {
           margin: 0;
+
           + .ant-form-item {
             margin-top: 24px;
           }
         }
       }
     }
+
     + .ant-collapse-icon-position-left {
       margin-top: 16px;
     }
@@ -201,4 +233,11 @@
 .content-library-collapse > .ant-collapse.ant-collapse-icon-position-left {
   padding: 0;
   background-color: transparent;
+}
+
+.content-library-main {
+  iframe#page_editor_iframe {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+  }
 }
