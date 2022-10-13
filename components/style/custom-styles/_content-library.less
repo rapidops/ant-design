@@ -17,7 +17,7 @@
 
   .content-library-right {
     width: 320px;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 85px);
     margin-top: 0;
     padding: 0;
     overflow-y: auto;
@@ -128,7 +128,7 @@
   opacity: 0;
 
   svg path {
-    fill: #fff;
+    fill: @white;
   }
 }
 
@@ -145,7 +145,7 @@
   }
 
   #a_unique_id-body {
-    background-color: #fff !important;
+    background-color: @white !important;
   }
 }
 
@@ -253,4 +253,25 @@
       border-radius: 4px;
     }
   }
+}
+
+.delete-row-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    color: @b400;
+    span,
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+.m-t-8 {
+  margin-top: 8px;
 }
