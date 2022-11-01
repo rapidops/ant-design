@@ -177,8 +177,12 @@
   .version-list-title {
     padding: 12px 8px;
     border-bottom: 1px solid #e5e7eb;
+    p {
+      width: calc(100% - 75px);
+    }
   }
   .current-tag {
+    width: 60px;
     span {
       display: block;
       padding: 4px 8px;
@@ -193,6 +197,11 @@
     padding: 16px 16px 16px 24px;
     background: #f4f7fa;
     border-bottom: 1px solid #e5e7eb;
+    .ant-row {
+      > div {
+        width: calc(100% - 40px);
+      }
+    }
     p {
       margin: 0 0 4px 0;
       font-weight: 600;
