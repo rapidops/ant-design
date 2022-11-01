@@ -4,7 +4,7 @@
   border-top: 1px solid #e5e7eb;
 
   .content-library-left {
-    width: calc(100% - 320px);
+    width: calc(100% - 368px);
     height: 100%;
     padding: 0 32px 32px;
 
@@ -16,8 +16,8 @@
   }
 
   .content-library-right {
-    width: 320px;
-    height: calc(100vh - 85px);
+    width: 368px;
+    height: calc(100vh - 65px);
     margin-top: 0;
     padding: 0;
     overflow-y: auto;
@@ -44,6 +44,53 @@
         }
       }
     }
+    .ant-tabs {
+      > .ant-tabs-nav {
+        width: 48px;
+        min-width: 48px;
+        background-color: #f3f4f6;
+      }
+
+      .ant-tabs-content-holder {
+        width: 320px;
+        margin: 0;
+        border: none;
+      }
+    }
+
+    .ant-tabs-nav-list {
+      padding: 0 10px;
+    }
+
+    .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+      width: 32px;
+      height: 32px;
+      margin-top: 12px;
+      padding: 6px;
+      background-color: transparent;
+      border: none;
+      border-radius: 50%;
+
+      .ant-tabs-tab-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.ant-tabs-tab-active {
+        background: #e0e7ff;
+        border-radius: 50%;
+
+        svg,
+        svg path {
+          fill: #4f46e5;
+        }
+      }
+    }
+
+    .ant-tabs-right > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
+      padding: 0;
+    }
   }
 
   .ant-tabs.ant-tabs-top .ant-tabs-nav {
@@ -54,7 +101,61 @@
 
   .ant-tabs-top > .ant-tabs-nav:before {
     padding: 0;
-    box-shadow: none;
+    // box-shadow: none;
+  }
+
+  .content-library-page-inner.menu-close {
+    .content-library-left {
+      width: calc(100% - 49px);
+    }
+
+    .content-library-right {
+      width: 49px;
+
+      .ant-tabs .ant-tabs-content-holder {
+        position: relative;
+        right: -368px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.content-library-right-content {
+  h3 {
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.content-library-right-content-title {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.content-library-right-list {
+  padding: 16px 24px 0;
+
+  h3 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: #6b7280;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    span {
+      display: block;
+      margin-top: 6px;
+      color: #1f2937;
+    }
+  }
+
+  + .content-library-right-list {
+    border-top: 1px solid #e5e7eb;
   }
 }
 
