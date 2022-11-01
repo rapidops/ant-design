@@ -113,3 +113,54 @@
   width: calc(100% - 344px);
   padding: 20px;
 }
+
+// pin tab css
+
+.product-list {
+  padding: 0;
+  .ant-select-item-option-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product-list-right {
+    width: calc(100% - 52px);
+    margin-left: 12px;
+    h5 {
+      color: #1f2937;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      white-space: break-spaces;
+    }
+    h6 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+    }
+  }
+  .ant-avatar.ant-avatar-lg.ant-avatar-square {
+    line-height: 40px;
+    background-color: #666;
+  }
+  + .product-list {
+    margin-top: 16px;
+  }
+  &.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: transparent;
+  }
+  &.product-list-three-col {
+    padding: 8px;
+    background: #e0e7ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 4px;
+    .product-list-right {
+      width: calc(100% - 108px);
+    }
+    .ant-input-number {
+      width: 56px;
+      margin-top: auto;
+    }
+  }
+}
