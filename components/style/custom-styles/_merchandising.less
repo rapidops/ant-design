@@ -40,6 +40,13 @@
     .anticon {
       margin: 0 0 8px 0;
     }
+
+    &.ant-tabs-tab-active {
+      svg,
+      svg path {
+        fill: #4f46e5;
+      }
+    }
   }
 
   .ant-slider {
@@ -101,11 +108,55 @@
   .sidebar-top-section {
     height: calc(100vh - 234px);
     overflow-y: auto;
+    .ant-slider {
+      margin: 10px;
+    }
   }
 
   .sidebar-bottom-section {
     padding: 12px 0;
     border-top: 1px solid #e5e7eb;
+  }
+
+  .ant-collapse > .ant-collapse-item {
+    margin-bottom: 8px;
+    border: none;
+    + .ant-collapse-item {
+      margin-top: 0px;
+    }
+
+    > .ant-collapse-header {
+      padding: 9px 14px;
+      font-weight: normal;
+      line-height: 18px;
+      background-color: #fff;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      .ant-collapse-extra {
+        opacity: 0;
+      }
+      &:hover {
+        color: #4f46e5;
+        .ant-collapse-extra {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ant-collapse-content {
+      border: 1px solid #d1d5db;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
+
+    &.ant-collapse-item-active {
+      > .ant-collapse-header {
+        border-radius: 4px 4px 0 0;
+        .ant-collapse-extra {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
@@ -161,6 +212,47 @@
     .ant-input-number {
       width: 56px;
       margin-top: auto;
+    }
+    &.whithout-bg {
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
+
+.product-condition-labels {
+  h5 {
+    margin-bottom: 8px;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  > div {
+    line-height: 18px;
+  }
+  > div + div {
+    margin: 8px 0 0 0;
+  }
+  + .product-condition-labels {
+    margin-top: 24px;
+  }
+}
+
+.pin-tab {
+  width: 54px;
+  margin-left: 2px;
+  > span {
+    display: flex;
+    align-items: center;
+    padding: 5px 9px;
+    font-size: 12px;
+    line-height: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 32px;
+    .anticon {
+      margin-left: 10px;
     }
   }
 }
