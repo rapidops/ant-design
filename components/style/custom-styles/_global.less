@@ -815,6 +815,26 @@ p {
   }
 }
 
+.round-tag {
+  display: flex;
+  align-items: center;
+  .ant-tag {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border-radius: 50%;
+    &.ant-tag-success {
+      background: @g400;
+    }
+    &.ant-tag-warning {
+      background: #f59e0b;
+    }
+    &.ant-tag-blue {
+      background: #2563eb;
+    }
+  }
+}
+
 body.ant-scrolling-effect {
   .mainmenu {
     z-index: 99;
