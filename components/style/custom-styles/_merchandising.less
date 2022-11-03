@@ -102,10 +102,12 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
       .ant-form-item {
         width: 48%;
         margin: 0;
       }
+
       .round-close-icon {
         top: -10px;
         right: 10px;
@@ -116,6 +118,7 @@
   .sidebar-top-section {
     height: calc(100vh - 234px);
     overflow-y: auto;
+
     .ant-slider {
       margin: 10px;
     }
@@ -129,6 +132,7 @@
   .ant-collapse > .ant-collapse-item {
     margin-bottom: 8px;
     border: none;
+
     + .ant-collapse-item {
       margin-top: 0px;
     }
@@ -140,11 +144,14 @@
       background-color: #fff;
       border: 1px solid #d1d5db;
       border-radius: 4px;
+
       .ant-collapse-extra {
         opacity: 0;
       }
+
       &:hover {
         color: #4f46e5;
+
         .ant-collapse-extra {
           opacity: 1;
         }
@@ -160,6 +167,7 @@
     &.ant-collapse-item-active {
       > .ant-collapse-header {
         border-radius: 4px 4px 0 0;
+
         .ant-collapse-extra {
           opacity: 1;
         }
@@ -177,13 +185,16 @@
 
 .product-list {
   padding: 0;
+
   .ant-select-item-option-content {
     display: flex;
     flex-wrap: wrap;
   }
+
   .product-list-right {
     width: calc(100% - 52px);
     margin-left: 12px;
+
     h5 {
       color: #1f2937;
       font-weight: 400;
@@ -191,6 +202,7 @@
       line-height: 18px;
       white-space: break-spaces;
     }
+
     h6 {
       margin: 0;
       font-weight: 400;
@@ -199,34 +211,42 @@
       text-transform: uppercase;
     }
   }
+
   .ant-avatar.ant-avatar-lg.ant-avatar-square {
     line-height: 40px;
     background-color: #666;
   }
+
   + .product-list {
     margin-top: 16px;
   }
+
   &.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
     background-color: transparent;
   }
+
   &.product-list-three-col {
     position: relative;
     padding: 8px;
     background: #e0e7ff;
     border: 1px solid #c7d2fe;
     border-radius: 4px;
+
     .product-list-right {
       width: calc(100% - 108px);
     }
+
     .ant-input-number {
       width: 56px;
       margin-top: auto;
     }
+
     &.whithout-bg {
       padding: 0;
       background-color: transparent;
       border: none;
     }
+
     .round-close-icon {
       top: -10px;
       right: 10px;
@@ -242,12 +262,15 @@
     font-size: 12px;
     line-height: 14px;
   }
+
   > div {
     line-height: 18px;
   }
+
   > div + div {
     margin: 8px 0 0 0;
   }
+
   + .product-condition-labels {
     margin-top: 24px;
   }
@@ -256,6 +279,7 @@
 .pin-tab {
   width: 54px;
   margin-left: 2px;
+
   > span {
     display: flex;
     align-items: center;
@@ -264,6 +288,7 @@
     line-height: 14px;
     border: 1px solid #e5e7eb;
     border-radius: 32px;
+
     .anticon {
       margin-left: 10px;
     }
@@ -274,4 +299,12 @@
   position: absolute;
   top: -23px;
   right: 0;
+}
+
+button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
+  background-color: transparent !important;
+
+  svg path {
+    fill: auto !important;
+  }
 }
