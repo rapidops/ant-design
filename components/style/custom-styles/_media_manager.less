@@ -322,6 +322,9 @@
       padding: 8px 16px;
       border: 1px solid #e5e7eb;
       border-radius: 4px;
+      &:hover {
+        border-color: @primary-color;
+      }
     }
   }
   svg {
@@ -451,6 +454,9 @@ div.ant-typography {
       p {
         margin-bottom: 32px;
         color: #6b7280;
+        &.ant-upload-hint {
+          margin: 0;
+        }
       }
     }
     .combine-buttons + p {
