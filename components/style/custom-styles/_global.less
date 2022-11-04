@@ -398,7 +398,10 @@ p {
           }
         }
       }
-      &:hover,
+      &:hover {
+        color: #4f46e5;
+        background-color: transparent;
+      }
       &.active {
         background: #e0e7ff;
         div.ant-typography {
@@ -423,6 +426,10 @@ p {
     height: 10px;
     margin-right: 5px;
     transform: rotate(90deg);
+  }
+  &:hover {
+    color: #4f46e5;
+    background-color: transparent;
   }
 }
 
@@ -877,6 +884,7 @@ body.ant-scrolling-effect {
       }
     }
     .ant-breadcrumb-link {
+      line-height: 32px;
       cursor: pointer;
     }
   }
@@ -988,4 +996,40 @@ body.ant-scrolling-effect {
 
 .ant-tooltip.Scheduled-tooltip {
   max-width: 290px;
+}
+
+.ant-pagination {
+  .ant-pagination-item {
+    color: #1f2937;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    &.ant-pagination-item-active {
+      border: 1px solid #4f46e5;
+      border-radius: 4px;
+
+      a {
+        color: #4f46e5;
+      }
+    }
+  }
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    .ant-pagination-item-link {
+      border: none;
+    }
+    &:hover {
+      color: #4f46e5;
+    }
+  }
+  .ant-pagination-item,
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    line-height: 26px;
+  }
 }
