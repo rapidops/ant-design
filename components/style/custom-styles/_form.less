@@ -296,7 +296,7 @@ input {
     }
     &.ant-dropdown-trigger {
       background-color: transparent;
-      border-color: transparent;
+      // border-color: transparent;
       box-shadow: none;
       &:hover {
         background-color: @dg700;
@@ -635,4 +635,18 @@ div.ant-typography {
 
 .ant-form-item-has-error + .input-label-text {
   margin-top: 24px;
+}
+
+.button-down-arrow {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-top: 3px;
+  }
+  &:hover,
+  &.ant-dropdown-open {
+    svg path {
+      fill: #fff !important;
+    }
+  }
 }
