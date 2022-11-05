@@ -838,9 +838,11 @@ p {
 }
 
 .round-tag {
-  display: flex;
+  display: table-header-group;
   align-items: center;
   .ant-tag {
+    position: relative;
+    top: -2px;
     width: 6px;
     height: 6px;
     padding: 0;
@@ -1029,6 +1031,9 @@ body.ant-scrolling-effect {
     line-height: 18px;
     border: 1px solid transparent;
     border-radius: 4px;
+    a {
+      padding: 5px;
+    }
     &.ant-pagination-item-active {
       border: 1px solid #4f46e5;
       border-radius: 4px;
@@ -1050,9 +1055,24 @@ body.ant-scrolling-effect {
   .ant-pagination-item,
   .ant-pagination-prev,
   .ant-pagination-next {
-    width: 28px;
-    min-width: 28px;
+    width: auto;
+    max-width: 40px;
     height: 28px;
-    line-height: 26px;
+    line-height: 16px;
   }
+  .ant-pagination-options {
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      height: auto;
+      line-height: normal;
+      border: none;
+    }
+    .ant-select-single .ant-select-selector .ant-select-selection-item {
+      line-height: 26px;
+    }
+  }
+}
+
+.display-block + .ant-form-item {
+  position: relative;
+  top: -1px;
 }

@@ -288,8 +288,16 @@
   .ant-checkbox-group {
     .ant-checkbox-wrapper {
       width: 100%;
+      margin-right: 0;
+      + .ant-checkbox-wrapper {
+        margin-top: 10px;
+      }
     }
   }
+}
+
+.ant-checkbox + span {
+  padding-left: 12px;
 }
 
 .content-library-collapse {
@@ -379,4 +387,17 @@
 
 .m-t-8 {
   margin-top: 8px;
+}
+
+.label-switch-inline {
+  display: flex;
+  align-items: center;
+  .ant-form-item-label {
+    margin-right: 16px;
+    padding: 0;
+  }
+  .ant-col-24 {
+    flex: 0 0 auto;
+    max-width: auto;
+  }
 }
