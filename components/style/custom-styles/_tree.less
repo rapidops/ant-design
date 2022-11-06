@@ -2,10 +2,11 @@
   height: 100vh;
   overflow-y: auto;
   background-color: #f4f7fa;
-  box-shadow: inset -16px 0px 24px -12px rgba(6, 25, 56, 0.08);
+  // box-shadow: inset -16px 0px 24px -12px rgba(6, 25, 56, 0.08);
   + .ant-layout {
     height: 100vh;
     overflow-y: auto;
+    box-shadow: -16px 0px 24px -12px rgba(6, 25, 56, 0.08);
   }
   .sidebar-submenu {
     width: auto;
@@ -191,6 +192,16 @@
   }
 }
 
+.sidemenu-close {
+  .mainmenu {
+    // box-shadow: inset -16px 0px 24px -12px rgba(17, 24, 39, 0.08);
+    background: transparent;
+    .ant-layout-sider-children {
+      background: transparent;
+    }
+  }
+}
+
 .ant-menu {
   color: @dg200;
   font-weight: 600;
@@ -288,4 +299,20 @@
 
 .ant-layout {
   position: relative;
+}
+
+li.ant-menu-item.ant-menu-item-only-child {
+  .ant-menu-title-content {
+    color: #6b7280;
+    line-height: 18px;
+  }
+}
+
+li.ant-menu-submenu.ant-menu-submenu-inline {
+  .ant-menu-submenu-title {
+    .ant-menu-title-content {
+      color: #1f2937;
+      line-height: 18px;
+    }
+  }
 }
