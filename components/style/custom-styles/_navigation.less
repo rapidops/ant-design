@@ -23,11 +23,14 @@
     .ant-btn-link {
       display: flex;
       align-items: center;
-      margin-left: 30px;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      margin-left: 10px;
 
       svg {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
 
         path {
           fill: #9ca3af;
@@ -67,6 +70,7 @@
         border-color: #e5e7eb;
 
         > .ant-collapse-header {
+          position: relative;
           padding: 14px 24px;
         }
 
@@ -146,7 +150,7 @@
       border: none;
 
       .ant-collapse-content-box {
-        padding: 16px 0;
+        padding: 16px 0 0 0;
       }
     }
 
@@ -173,4 +177,43 @@
     margin-top: 12px;
     margin-left: 26px;
   }
+}
+
+.nestable-item.is-dragging:before {
+  background: #eef2ff !important;
+  border: 1px dashed #4f46e5 !important;
+}
+
+.nav-text {
+  width: calc(100% - 190px);
+  .text-truncate {
+    max-width: calc(100% - 50px);
+  }
+}
+
+.nav-footer {
+  margin: 24px -24px 0;
+  padding: 12px 24px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.custom-delete-button {
+  .ant-btn-dangerous.ant-btn-text {
+    padding-right: 0;
+    padding-left: 0;
+    background-color: transparent !important;
+  }
+}
+
+a.plusarrow {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  display: inline-block;
+  padding: 0;
+  line-height: 14px;
+  vertical-align: top;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }

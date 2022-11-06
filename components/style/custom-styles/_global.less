@@ -426,6 +426,9 @@ p {
           }
         }
       }
+      &:last-child {
+        margin-bottom: 8px !important;
+      }
     }
   }
 }
@@ -1075,4 +1078,19 @@ body.ant-scrolling-effect {
 .display-block + .ant-form-item {
   position: relative;
   top: -1px;
+}
+
+.text-truncate {
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &.text-truncate-min {
+    max-width: calc(100% - 120px);
+  }
+}
+
+.align-content {
+  flex-wrap: wrap;
+  align-content: space-between;
 }
