@@ -24,6 +24,10 @@
     width: 100%;
   }
 
+  .ant-tabs-tab .ant-tabs-tab-btn br {
+    display: block;
+  }
+
   .ant-tabs-tab {
     width: 25%;
     padding: 0 0 10px 0;
@@ -116,7 +120,7 @@
   }
 
   .sidebar-top-section {
-    height: calc(100vh - 234px);
+    height: calc(100vh - 246px);
     overflow-y: auto;
 
     .ant-slider {
@@ -178,7 +182,19 @@
 
 .merchandising-rightbar {
   width: calc(100% - 344px);
+  height: calc(100vh - 98px);
   padding: 20px;
+  overflow-y: auto;
+  .rti--container {
+    width: 650px;
+    padding: 5px 12px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    .rti--input {
+      width: auto;
+    }
+  }
 }
 
 // pin tab css
@@ -299,6 +315,20 @@
   position: absolute;
   top: -23px;
   right: 0;
+  svg {
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    path {
+      &.cross {
+        fill: #9ca3af;
+      }
+      &.cross-line {
+        fill: #c7d2fe;
+      }
+    }
+  }
 }
 
 button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
@@ -325,6 +355,41 @@ button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
       cursor: not-allowed;
       opacity: 0.5;
       content: '';
+    }
+  }
+}
+
+.merchandising-grid {
+  margin: 0 -8px;
+  > div {
+    width: 20%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    @media screen and (max-width: 1600px) {
+      width: 25%;
+    }
+  }
+  .ant-card-bordered .ant-card-cover {
+    height: 230px;
+  }
+  .ant-card-body {
+    padding: 12px;
+    h4 {
+      margin: 0;
+      color: #1f2937;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .media-content-details {
+      margin-top: 12px;
+      > div {
+        font-size: 12px;
+        line-height: 14px;
+        + div {
+          margin: 4px 0 0 0;
+        }
+      }
     }
   }
 }
