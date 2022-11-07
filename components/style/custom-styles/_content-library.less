@@ -154,6 +154,12 @@
     }
   }
 
+  p {
+    &.round-tag {
+      margin: 0;
+    }
+  }
+
   + .content-library-right-list {
     border-top: 1px solid #e5e7eb;
   }
@@ -412,7 +418,39 @@
 }
 
 .content-library-main {
-  .ant-page-header-heading-title {
+  .ant-page-header-heading-title,
+  .headerleft .ant-page-header {
     width: 100%;
+  }
+  .headerinner .arrowleft-icon {
+    top: 5px;
+  }
+  .ant-btn.ant-btn-icon-only.ant-dropdown-trigger {
+    border-color: #d1d5db;
+  }
+}
+
+.development-details {
+  width: calc(100% - 120px);
+  + div {
+    width: 120px;
+    text-align: right;
+    .ant-tag {
+      margin: 0;
+    }
+  }
+  .ant-row {
+    margin-bottom: 10px;
+  }
+}
+
+p.development-details-text {
+  margin-left: 15px;
+  line-height: 22px;
+}
+
+.content-library-right-list.Environments-tab-list {
+  + .Environments-tab-list.content-library-right-list {
+    border: none;
   }
 }

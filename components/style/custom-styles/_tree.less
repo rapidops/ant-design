@@ -316,3 +316,28 @@ li.ant-menu-submenu.ant-menu-submenu-inline {
     }
   }
 }
+
+.submenu {
+  .ant-menu-sub.ant-menu-inline {
+    .ant-menu-item-group {
+      .ant-menu-item-group-title {
+        padding-left: 0;
+        font-size: 12px;
+      }
+      .ant-menu-item-group-list {
+        .ant-menu-item {
+          height: auto;
+          line-height: normal;
+        }
+        .ant-menu-title-content {
+          font-weight: normal;
+        }
+      }
+      + .ant-menu-item-group {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #d1d5db;
+      }
+    }
+  }
+}
