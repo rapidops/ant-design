@@ -1086,11 +1086,29 @@ body.ant-scrolling-effect {
   white-space: nowrap;
   text-overflow: ellipsis;
   &.text-truncate-min {
-    max-width: calc(100% - 120px);
+    max-width: calc(100% - 124px);
   }
 }
 
 .align-content {
   flex-wrap: wrap;
   align-content: space-between;
+}
+
+.select-user-dropdown {
+  align-items: center;
+  width: 300px;
+  .ant-form-item-label > label {
+    margin-bottom: 0;
+  }
+}
+
+.m-b-8 {
+  margin-bottom: 8px;
+}
+
+.arrowleft-icon {
+  position: relative;
+  top: 3px;
+  background-color: transparent !important;
 }
