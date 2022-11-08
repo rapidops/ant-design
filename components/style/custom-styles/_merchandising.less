@@ -198,6 +198,24 @@
     .rti--input {
       width: auto;
     }
+    .rti--tag {
+      height: 20px;
+      color: #1f2937;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 19px;
+      background: #f3f4f6;
+      border-radius: 4px;
+      button {
+        margin-left: 4px;
+        padding: 0;
+      }
+    }
+    &:focus,
+    &:focus-within {
+      border-color: #4f46e5 !important;
+      box-shadow: none !important;
+    }
   }
 }
 
@@ -379,11 +397,15 @@ button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
   .ant-card-body {
     padding: 12px;
     h4 {
+      max-width: 98%;
       margin: 0;
+      overflow: hidden;
       color: #1f2937;
       font-weight: 400;
       font-size: 14px;
       line-height: 18px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     .media-content-details {
       margin-top: 12px;
