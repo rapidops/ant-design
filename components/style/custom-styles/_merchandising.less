@@ -524,16 +524,19 @@ p.description-truncate {
 
 .react-tags-wrapper {
   width: 650px;
-  padding: 5px 12px;
+  padding: 0;
   font-size: 14px;
-  border: 1px solid #d1d5db;
+  border: none;
   border-radius: 4px;
   .ReactTags__selected {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+    padding: 5px 12px;
     overflow: hidden;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
     .tag-wrapper.ReactTags__tag {
       display: flex;
       margin-top: 0px;
@@ -547,15 +550,29 @@ p.description-truncate {
       padding-inline-end: 4px;
       padding-inline-start: 8px;
       .ReactTags__remove {
+        width: 14px;
         margin-left: 4px;
         padding: 0;
+        font-size: 18px;
         background-color: transparent;
         border: none;
+        cursor: pointer;
+      }
+      &.custom_tag {
+        display: flex;
+        color: #fff;
+        background-color: #4f46e5;
+        .ReactTags__remove {
+          color: #fff;
+        }
       }
     }
   }
   .ReactTags__tagInput {
+    display: flex;
+    flex-grow: 1;
     width: auto;
+    min-width: 100px;
     overflow: hidden;
   }
   .ReactTags__tagInputField {
@@ -593,8 +610,8 @@ p.description-truncate {
     padding-inline-start: 4px;
     .css-xb97g8 {
       &:hover {
-        color: inherit;
-        background-color: transparent;
+        color: inherit !important;
+        background-color: transparent !important;
       }
     }
   }
@@ -615,12 +632,5 @@ p.description-truncate {
     border: none;
     outline: none;
     box-shadow: none;
-  }
-}
-
-.custom_tag {
-  color: #4f46e5;
-  .ReactTags__remove {
-    color: #6b7280;
   }
 }
