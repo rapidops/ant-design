@@ -128,7 +128,11 @@
     overflow-y: auto;
 
     .ant-slider {
-      margin: 10px;
+      margin: 10px 18px;
+    }
+
+    &.collapse-sidebar-section {
+      height: calc(100vh - 190px);
     }
   }
 
@@ -149,6 +153,7 @@
       padding: 9px 14px;
       font-weight: normal;
       line-height: 18px;
+      word-break: break-all;
       background-color: #fff;
       border: 1px solid #d1d5db;
       border-radius: 4px;
@@ -292,6 +297,13 @@
   }
 }
 
+.ant-select-dropdown .rc-virtual-list-holder-inner {
+  .product-list + .product-list {
+    margin: 0;
+    padding-top: 16px;
+  }
+}
+
 .product-condition-labels {
   h5 {
     margin-bottom: 8px;
@@ -311,6 +323,10 @@
 
   + .product-condition-labels {
     margin-top: 24px;
+  }
+
+  &.media-content-details p {
+    word-break: break-all;
   }
 }
 
@@ -393,9 +409,12 @@ button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
   }
   .ant-card-bordered .ant-card-cover {
     height: 230px;
+    img {
+      object-fit: contain;
+    }
   }
   .ant-card-body {
-    padding: 12px;
+    padding: 16px 12px 12px 12px;
     h4 {
       max-width: 98%;
       margin: 0;
@@ -442,6 +461,7 @@ button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
 p.description-truncate {
   display: -webkit-box;
   width: 100%;
+  width: calc(100% - 108px) !important;
   margin-bottom: 10px;
   overflow: hidden;
   -webkit-line-clamp: 3;
@@ -468,6 +488,24 @@ p.description-truncate {
       margin-left: 8px;
     }
   }
+  &.product-slot {
+    right: 8px;
+    left: auto;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    svg {
+      width: 14px;
+      height: 14px;
+
+      path {
+        fill: #1f2937;
+      }
+    }
+  }
 }
 
 .merchandising-grid .media-content-details span {
@@ -481,5 +519,108 @@ p.description-truncate {
   border-radius: 8px;
   .no-data {
     padding: 0;
+  }
+}
+
+.react-tags-wrapper {
+  width: 650px;
+  padding: 5px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  .ReactTags__selected {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    .tag-wrapper.ReactTags__tag {
+      display: flex;
+      margin-top: 0px;
+      margin-bottom: 2px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 19px;
+      background: #f3f4f6;
+      border-radius: 4px;
+      margin-inline-end: 4px;
+      padding-inline-end: 4px;
+      padding-inline-start: 8px;
+      .ReactTags__remove {
+        margin-left: 4px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+  .ReactTags__tagInput {
+    width: auto;
+    overflow: hidden;
+  }
+  .ReactTags__tagInputField {
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    &:focus,
+    &:focus-visible {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+.css-b62m3t-container {
+  width: 650px;
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .css-1rhbuit-multiValue {
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 19px;
+    background: #f3f4f6;
+    border-radius: 4px;
+    margin-inline-end: 4px;
+    padding-inline-end: 4px;
+    padding-inline-start: 4px;
+    .css-xb97g8 {
+      &:hover {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+  }
+}
+.css-1s2u09g-control {
+  min-height: 34px;
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+.css-tlfecz-indicatorContainer {
+  padding: 6px 8px;
+}
+.css-1f43avz-a11yText-A11yText {
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.custom_tag {
+  color: #4f46e5;
+  .ReactTags__remove {
+    color: #6b7280;
   }
 }
