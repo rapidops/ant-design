@@ -19,6 +19,15 @@ body {
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1f2937;
+}
+
+h1,
 .h1 {
   font-weight: 600;
   font-size: @heading-1-size;
@@ -48,11 +57,18 @@ a.ant-typography,
   &:hover {
     color: @b100;
   }
+  &.secondary-link {
+    color: #374151;
+    &:hover {
+      color: #4f46e5;
+    }
+  }
 }
 
 p {
   small {
     font-size: @font-size-sm;
+    line-height: 14px;
   }
 }
 
@@ -153,6 +169,10 @@ p {
   @media screen and (max-width: 1279px) {
     padding-top: 70px;
   }
+  .ant-typography {
+    display: inline-block;
+    line-height: 18px;
+  }
 }
 
 .login-popup-inner {
@@ -172,6 +192,9 @@ p {
   }
   h1 {
     margin-bottom: 8px;
+  }
+  p {
+    line-height: 20px;
   }
 }
 
@@ -211,9 +234,14 @@ p {
   }
 }
 
+.email-notification-text {
+  margin-top: 40px;
+  color: #374151;
+}
+
 // divider CSS
 .ant-divider-plain.ant-divider-with-text {
-  margin: 16px 0 24px 0;
+  margin: 24px 0 24px 0;
   color: @base-font-color;
   font-weight: 400;
   font-size: 12px;
