@@ -1174,12 +1174,17 @@ body.ant-scrolling-effect {
 }
 
 .bigcommerce-store-section {
+  > div.ant-row {
+    + div {
+      margin-top: 48px;
+    }
+  }
   h3 {
     margin-bottom: 24px;
     font-weight: 600;
   }
   .media-content-details {
-    margin-bottom: 48px;
+    margin-bottom: 0;
     span {
       width: 160px;
       padding-right: 10px;
@@ -1187,5 +1192,37 @@ body.ant-scrolling-effect {
     p {
       width: calc(100% - 170px);
     }
+  }
+}
+
+.sync-status-section {
+  flex-wrap: wrap;
+  align-items: center;
+  .sync-title {
+    width: 88px;
+  }
+  .ant-progress-line {
+    width: 280px;
+    line-height: normal;
+    .ant-progress-inner {
+      background: #e0e7ff;
+    }
+    .ant-progress-success-bg,
+    .ant-progress-bg {
+      height: 3px !important;
+      background: #4f46e5;
+    }
+  }
+  .sync-count {
+    width: auto;
+    margin-left: 12px;
+  }
+  span {
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  + .sync-status-section {
+    margin-top: 12px;
   }
 }
