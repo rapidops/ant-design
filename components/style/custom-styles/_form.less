@@ -19,14 +19,20 @@
 input {
   &.ant-input::placeholder {
     color: @dg600;
+    font-size: 14px;
+    line-height: 18px;
     opacity: 1;
   }
   &.ant-input:-ms-input-placeholder {
     color: @dg600;
+    font-size: 14px;
+    line-height: 18px;
     opacity: 1;
   }
   &.ant-input::-ms-input-placeholder {
     color: @dg600;
+    font-size: 14px;
+    line-height: 18px;
     opacity: 1;
   }
 }
@@ -50,13 +56,22 @@ input {
   }
 }
 
-.ant-form-item-label > label {
-  height: auto;
-  margin-bottom: 8px;
-  color: @base-font-color;
-  font-weight: 500;
-  font-size: 14px;
+.ant-form-item-label {
   line-height: 18px;
+  > label {
+    height: auto;
+    margin-bottom: 8px;
+    color: @base-font-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.ant-form {
+  .ant-form-item-label {
+    line-height: 18px;
+  }
 }
 
 .ant-form-item-with-help {
@@ -475,7 +490,8 @@ div.ant-typography {
 // Password strength
 
 .strength {
-  margin-top: -24px;
+  margin-top: -32px;
+  margin-bottom: 16px;
   text-align: right;
   > div {
     justify-content: flex-end;
@@ -550,7 +566,7 @@ div.ant-typography {
 .strength-word {
   display: flex;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   .anticon {
@@ -670,4 +686,10 @@ div.ant-typography {
       left: calc(100% - 14px - 2px);
     }
   }
+}
+
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: #4f46e5;
+  box-shadow: none !important;
 }
