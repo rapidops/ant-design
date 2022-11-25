@@ -275,6 +275,9 @@ p {
   display: flex;
   padding: 15px 17px;
   text-align: center;
+  svg {
+    height: 34px;
+  }
 }
 
 .sidebar-submenu {
@@ -511,6 +514,11 @@ p {
     width: 100%;
     + ul {
       width: 100% !important;
+    }
+  }
+  > div {
+    + ul.ant-menu.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+      padding: 16px;
     }
   }
 }
@@ -1224,5 +1232,15 @@ body.ant-scrolling-effect {
   }
   + .sync-status-section {
     margin-top: 12px;
+  }
+}
+
+.site-map-position {
+  position: relative;
+  .site-map-update-button {
+    position: absolute;
+    right: 0;
+    left: auto;
+    z-index: 2;
   }
 }
