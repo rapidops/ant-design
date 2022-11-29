@@ -402,3 +402,81 @@
     }
   }
 }
+
+// sidebar menu css start
+
+.ant-menu-submenu-arrows.editicon-gray {
+  margin-top: -6px;
+  margin-right: -6px;
+
+  svg {
+    transform: rotate(0deg) !important;
+  }
+
+  svg,
+  path {
+    fill: #9ca3af;
+  }
+}
+
+.submenu {
+  ul {
+    .ant-menu-submenu {
+      .ant-menu-submenu {
+        .folders-icon {
+          margin-left: 6px;
+        }
+
+        &.ant-menu-submenu-open {
+          .folders-icon {
+            .selected-icon {
+              display: flex;
+
+              svg,
+              svg path {
+                fill: #6b7280 !important;
+              }
+            }
+
+            .unselected-icon {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &.ant-menu-submenu-open {
+        .arrow-folder-icon {
+          .folders-icon {
+            .selected-icon {
+              display: flex;
+
+              svg,
+              svg path {
+                fill: #6b7280 !important;
+              }
+            }
+
+            .unselected-icon {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.submenu .sidebar-submenu .ant-menu-inline .ant-menu-submenu {
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.arrow-folder-icon {
+  .folders-icon {
+    margin-left: 6px;
+  }
+}
+
+// sidebar menu css ends
