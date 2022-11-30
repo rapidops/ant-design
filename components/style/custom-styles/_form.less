@@ -693,3 +693,45 @@ div.ant-typography {
   border-color: #4f46e5;
   box-shadow: none !important;
 }
+
+// button spacing
+
+.ant-btn {
+  // margin-left: 12px;
+  &.m-r-16 {
+    margin-right: 0;
+    margin-left: 12px;
+  }
+}
+
+.content-library-main .headerinner .arrowleft-icon,
+button.ant-btn.ant-btn-link {
+  margin-right: 16px;
+  margin-left: 0;
+}
+
+button.ant-btn.ant-btn-link.hamburgericon {
+  margin-right: 0;
+}
+
+.combine-buttons {
+  margin-left: 12px;
+  &.m-r-16 {
+    margin-right: 12px;
+  }
+}
+
+.combine-buttons.editor-button {
+  margin-right: 0;
+  .ant-btn {
+    margin-right: 0;
+  }
+}
+
+.m-0-important {
+  margin: 0 !important;
+}
+
+.ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
+  margin-left: 12px;
+}
