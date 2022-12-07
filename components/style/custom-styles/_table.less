@@ -37,6 +37,16 @@
         .ant-btn.ant-btn-icon-only.onlyIcon svg path {
           fill: @dg600;
         }
+        .ant-tooltip-disabled-compatible-wrapper {
+          margin-left: 0;
+          + .ant-tooltip-disabled-compatible-wrapper {
+            margin-left: 12px;
+          }
+          .ant-btn.ant-btn-default.ant-btn-icon-only {
+            border: none;
+            opacity: 0.5;
+          }
+        }
       }
 
       &.ant-table-row {
@@ -144,4 +154,8 @@
   svg {
     display: flex;
   }
+}
+
+.ant-table-ping-right:not(.ant-table-has-fix-right) .ant-table-container::after {
+  box-shadow: none;
 }
