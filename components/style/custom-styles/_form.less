@@ -285,9 +285,12 @@ input {
         fill: @dg200;
       }
     }
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: @dg700;
+      border-color: @dg700;
+    }
+    &:focus {
+      background-color: transparent;
       border-color: @dg700;
     }
     &.onlyIcon {
@@ -355,7 +358,7 @@ a.ant-btn {
 
 .ant-dropdown-menu,
 .table-dropdown .ant-menu {
-  padding: 8px 0;
+  padding: 5px 0;
   background: @white;
   border: 1px solid @dg700;
   border-radius: 8px;
@@ -438,7 +441,7 @@ a.ant-btn {
 }
 
 .table-dropdown {
-  width: 170px;
+  width: 180px;
 
   .ant-btn {
     width: 100%;
@@ -594,7 +597,8 @@ div.ant-typography {
     margin-bottom: 0;
   }
   + .custom-label-input {
-    margin-top: 24px;
+    // margin-top: 24px;
+    margin-top: 32px;
   }
 }
 
@@ -717,14 +721,17 @@ button.ant-btn.ant-btn-link.hamburgericon {
 .combine-buttons {
   margin-left: 12px;
   &.m-r-16 {
-    margin-right: 12px;
+    margin-right: 0px;
+  }
+  + .ant-btn {
+    margin-left: 12px;
   }
 }
 
 .combine-buttons.editor-button {
   margin-right: 0;
   .ant-btn {
-    margin-right: 0;
+    margin-right: 0 !important;
   }
 }
 

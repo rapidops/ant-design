@@ -47,4 +47,23 @@
       right: -6px;
     }
   }
+  &.ant-tooltip-placement-bottom {
+    padding-top: 3px;
+    .ant-tooltip-arrow {
+      top: -19px;
+      margin-left: -2px;
+    }
+  }
+}
+
+.ant-tooltip-disabled-compatible-wrapper {
+  margin-left: 12px;
+  line-height: normal;
+  + .ant-tooltip-disabled-compatible-wrapper {
+    margin-left: 12px;
+  }
+}
+
+.ant-tooltip-disabled-compatible-wrapper + .ant-btn {
+  margin-left: 12px;
 }
