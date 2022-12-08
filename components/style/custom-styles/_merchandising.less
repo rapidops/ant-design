@@ -657,3 +657,43 @@ p.description-truncate {
     }
   }
 }
+
+.sort-by-facts {
+  position: relative;
+  &::before {
+    position: absolute;
+    left: -28px;
+    display: block;
+    height: 100%;
+    border-left: 1px solid #e5e7eb;
+    content: '';
+  }
+  .ant-table table {
+    border-spacing: 0 6px;
+  }
+  .table-section .ant-table-thead > tr > th {
+    display: none;
+  }
+  .table-section .ant-table-tbody > tr > td.drag-visible {
+    margin-bottom: 10px;
+    padding: 9px;
+    color: #1f2937;
+    font-size: 12px;
+    line-height: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    box-shadow: none;
+    &:first-child {
+      border-width: 1px 0 1px 1px;
+      border-radius: 4px 0 0 4px;
+    }
+    &:nth-child(2) {
+      border-width: 1px 0 1px 0;
+      border-radius: 0;
+    }
+    &:last-child {
+      border-width: 1px 1px 1px 0;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
