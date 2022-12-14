@@ -1304,3 +1304,50 @@ body.ant-scrolling-effect {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
 }
+
+.navigation-page {
+  &.publish-queue-page {
+    .navigation-submenu {
+      h2 {
+        padding-bottom: 10px;
+        border: none;
+      }
+      .ant-collapse > .ant-collapse-item {
+        border: none;
+        .ant-collapse-content {
+          border: none;
+          .ant-collapse-content-box {
+            padding: 4px 24px 18px 24px;
+          }
+        }
+        .count-number {
+          position: absolute;
+          right: 24px;
+        }
+        .ant-collapse-header {
+          line-height: normal;
+        }
+      }
+      .ant-checkbox-wrapper {
+        margin-left: 22px;
+      }
+      .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+        margin-top: 4px;
+        margin-left: 22px;
+      }
+    }
+    .navigation-page-content {
+      width: 100%;
+      box-shadow: -16px 0 24px -12px rgba(6, 25, 56, 0.08);
+    }
+    .publish-queue-menu + .publish-queue-content {
+      width: calc(100% - 248px);
+      box-shadow: none;
+    }
+    .filters .ant-space-item-main {
+      .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+        height: auto;
+      }
+    }
+  }
+}

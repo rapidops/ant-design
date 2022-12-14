@@ -742,3 +742,47 @@ button.ant-btn.ant-btn-link.hamburgericon {
 .ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
   margin-left: 12px;
 }
+
+input::placeholder {
+  color: #9ca3af !important;
+  line-height: 14px;
+}
+
+input.ant-input {
+  color: #1f2937 !important;
+}
+
+.submenu .sidebar-submenu {
+  position: relative;
+}
+
+.ant-select {
+  &.sidebar-top-select {
+    position: relative;
+    top: -14px;
+    width: 100%;
+    margin-bottom: 6px;
+    padding-bottom: 10px;
+    &::after {
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      left: -24px;
+      display: block;
+      width: 240px;
+      height: 1px;
+      background-color: #d1d5db;
+      content: '';
+    }
+    .ant-select-selector {
+      height: auto;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+    .ant-select-arrow {
+      top: 40%;
+      right: 0;
+    }
+  }
+}
