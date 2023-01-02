@@ -499,3 +499,52 @@ p.description-truncate {
 .publish-status-inner {
   padding: 16px 24px 0 24px;
 }
+
+.ant-select {
+  &.ant-select-open {
+    .ant-select-arrow {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.drag-items {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 9px 12px 9px 6px;
+  color: #1f2937;
+  line-height: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  svg {
+    margin-right: 16px;
+  }
+  .ant-tag {
+    margin-right: 0;
+    margin-left: auto;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.drag-items-child {
+  margin-left: 40px;
+}
+
+.dragicon-menu {
+  margin-right: 0px !important;
+  svg {
+    margin: 2px 0 0 0;
+  }
+}
+
+.version-number-title {
+  font-weight: normal;
+}
+
+.environments-status p.gray-text {
+  margin: 0 0 16px 0;
+}
