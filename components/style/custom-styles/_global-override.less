@@ -512,6 +512,7 @@ p.description-truncate {
 
 .drag-items {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: 0;
   padding: 9px 12px 9px 6px;
@@ -521,14 +522,25 @@ p.description-truncate {
   border: 1px solid #e5e7eb;
   border-radius: 4px;
   svg {
+    width: 24px;
     margin-right: 16px;
   }
   .ant-tag {
+    max-width: 80px;
     margin-right: 0;
     margin-left: auto;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
+  }
+  i {
+    display: block;
+    width: calc(100% - 120px);
+    min-width: 0;
+    overflow: hidden;
+    font-style: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
@@ -555,4 +567,14 @@ p.description-truncate {
 .ant-tag.ant-tag-default {
   color: #1f2937;
   background: #f3f4f6;
+}
+
+.ant-modal-body .ant-form .ant-from-item-m-0 {
+  margin: 0 0 24px 0;
+  .ant-form-item + .ant-form-item {
+    margin-top: 0;
+  }
+  &.ant-from-item-m-t-0 {
+    margin: 24px 0 0 0;
+  }
 }
