@@ -146,6 +146,10 @@ p {
   visibility: hidden;
 }
 
+.padding-0 {
+  padding: 0;
+}
+
 .primary-color {
   color: @primary-color;
 }
@@ -271,8 +275,8 @@ p {
 }
 
 .page-content-bottom {
-  .ant-space-align-center {
-    padding-bottom: 12px;
+  .ant-row.ant-space-align-center.ant-row-space-between {
+    padding: 12px 0;
     box-shadow: inset 0px -1px 0px #f5f3ff;
   }
 }
@@ -400,7 +404,8 @@ p {
 }
 
 .ant-menu-submenu-arrows svg {
-  margin-top: 6px;
+  // margin-top: 6px;
+  margin-top: 0;
 }
 
 .ant-menu {
@@ -489,8 +494,10 @@ p {
   font-size: 12px;
   line-height: 14px;
   svg {
-    width: 10px;
-    height: 10px;
+    width: auto;
+    height: auto;
+    // width: 10px;
+    // height: 10px;
     margin-right: 5px;
     transform: rotate(90deg);
   }
@@ -674,11 +681,16 @@ p {
 
   .ant-space-item-main .ant-dropdown-trigger {
     &.ant-dropdown-open {
+      background-color: #e0e7ff !important;
       .filterdropdownarrow {
         svg {
           transform: rotate(180deg);
         }
       }
+    }
+    &:hover {
+      background-color: #f3f4f6;
+      border-radius: 4px;
     }
   }
 }
@@ -700,7 +712,8 @@ p {
 .formitem-withtitle {
   h5 {
     margin-bottom: 12px;
-    padding: 0 0 10px 0;
+    // padding: 0 0 10px 0;
+    padding: 11px 0;
     color: @dg200;
     font-weight: 600;
     font-size: 14px;
@@ -1092,6 +1105,7 @@ body.ant-scrolling-effect {
 
 .ant-pagination {
   .ant-pagination-item {
+    margin-right: 2px !important;
     color: #1f2937;
     font-weight: 400;
     font-size: 14px;
@@ -1100,6 +1114,7 @@ body.ant-scrolling-effect {
     border-radius: 4px;
     a {
       padding: 5px;
+      color: #1f2937;
     }
     &.ant-pagination-item-active {
       border: 1px solid #4f46e5;
@@ -1109,14 +1124,28 @@ body.ant-scrolling-effect {
         color: #4f46e5;
       }
     }
+    &:hover {
+      background: #f3f4f6;
+      border-radius: 4px;
+      a {
+        color: #1f2937;
+      }
+    }
   }
   .ant-pagination-prev,
   .ant-pagination-next {
+    min-width: 28px;
     .ant-pagination-item-link {
       border: none;
     }
     &:hover {
       color: #4f46e5;
+    }
+    .anticon {
+      display: none;
+    }
+    &.ant-pagination-disabled {
+      opacity: 0.5;
     }
   }
   .ant-pagination-item,
@@ -1135,6 +1164,66 @@ body.ant-scrolling-effect {
     }
     .ant-select-single .ant-select-selector .ant-select-selection-item {
       line-height: 26px;
+    }
+  }
+}
+
+.ant-pagination-prev,
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next {
+  margin-right: 2px !important;
+}
+
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next {
+  width: auto;
+  min-width: 28px;
+  max-width: initial;
+  height: 28px;
+  color: #1f2937;
+  line-height: 26px;
+  .ant-pagination-item-ellipsis {
+    top: 8px !important;
+    color: #1f2937 !important;
+    font-size: 9px;
+  }
+  .anticon {
+    svg {
+      fill: #1f2937;
+    }
+  }
+}
+
+.ant-pagination-next {
+  .ant-pagination-item-link {
+    transform: rotate(180deg);
+  }
+}
+
+.ant-pagination-options {
+  margin-left: 3px;
+  .ant-select-single:not(.ant-select-customize-input)
+    .ant-select-selector
+    .ant-select-selection-search-input {
+    height: auto;
+  }
+  .ant-select-selection-item {
+    color: #1f2937;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .ant-pagination
+    .ant-pagination-options
+    .ant-select:not(.ant-select-customize-input)
+    .ant-select-selector {
+    align-items: center;
+  }
+  .ant-select-arrow {
+    width: 10px;
+    margin-top: -7px;
+    transform: rotate(-90deg);
+    .anticon {
+      display: none;
     }
   }
 }
@@ -1173,8 +1262,12 @@ body.ant-scrolling-effect {
 
 .arrowleft-icon {
   position: relative;
-  top: 3px;
+  top: 0.5px;
+  // top: 3px;
   background-color: transparent !important;
+  svg path {
+    fill: #1f2937;
+  }
 }
 
 .bigcommerce-store-grid {

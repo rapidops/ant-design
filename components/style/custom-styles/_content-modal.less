@@ -222,6 +222,18 @@
     .ant-input-number {
       width: 95%;
     }
+
+    .ant-form-item-with-help .ant-form-item-explain,
+    .ant-form-item-with-help .ant-form-item-extra {
+      font-size: 11px;
+      line-height: 22px;
+    }
+    .ant-form-item-explain {
+      bottom: -20px;
+    }
+    .ant-form-item-explain-error {
+      font-size: 11px !important;
+    }
   }
 }
 
@@ -273,7 +285,7 @@
   &.ant-tabs-top {
     .ant-tabs-nav {
       // margin-bottom: 24px;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
     }
   }
 }
@@ -419,6 +431,19 @@
   svg,
   path {
     fill: #9ca3af;
+  }
+}
+
+.ant-menu.ant-menu-sub {
+  > li.ant-menu-submenu {
+    .editicon-gray {
+      opacity: 0;
+    }
+    &:hover {
+      .editicon-gray {
+        opacity: 1;
+      }
+    }
   }
 }
 

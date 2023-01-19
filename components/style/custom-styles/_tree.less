@@ -226,7 +226,7 @@
 .ant-menu-inline.ant-menu-root .ant-menu-item,
 .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
   margin: 0;
-  padding: 8px 0 !important;
+  padding: 7px 0 !important;
 }
 
 .ant-menu-item .ant-menu-item-icon + span,
@@ -360,4 +360,38 @@ li.ant-menu-submenu.ant-menu-submenu-inline {
 }
 .submenu ul .ant-menu-submenu .ant-menu-submenu .ant-menu-submenu-arrows + .folders-icon {
   margin-left: 6px;
+}
+
+.ant-select-tree .ant-select-tree-treenode {
+  padding: 6px 12px;
+  .ant-select-tree-switcher {
+    display: none;
+  }
+  &:hover {
+    background-color: #eef2ff;
+  }
+}
+
+.ant-select-tree {
+  .ant-select-tree-node-content-wrapper {
+    font-size: 14px;
+    line-height: 20px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .ant-select-tree-checkbox {
+    margin: 2px 8px 0 0;
+  }
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item {
+  > .ant-menu-title-content > span {
+    color: #6b7280;
+  }
+  &.ant-menu-item-selected {
+    > .ant-menu-title-content > span {
+      color: #4f46e5;
+    }
+  }
 }

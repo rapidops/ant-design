@@ -42,4 +42,24 @@
       }
     }
   }
+  .ant-collapse-item {
+    .ant-collapse-header {
+      color: #1f2937;
+      > div {
+        margin-right: 8px;
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    &.ant-collapse-item-active {
+      .ant-collapse-header {
+        > div {
+          svg {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+  }
 }
