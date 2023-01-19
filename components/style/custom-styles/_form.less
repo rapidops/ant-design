@@ -89,6 +89,8 @@ input {
 }
 
 .ant-form-item-explain-error {
+  position: absolute;
+  bottom: 0px;
   height: auto !important;
   color: #ef4444;
   font-size: 12px !important;
@@ -164,6 +166,27 @@ input {
   }
 }
 
+.ant-checkbox-indeterminate .ant-checkbox-inner {
+  &::after {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 8px;
+    height: 0.5px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    content: '';
+  }
+}
+
 // checkbox tree CSS
 
 .ant-select-tree-checkbox-checked {
@@ -201,6 +224,27 @@ input {
 .ant-select-tree-checkbox:hover .ant-select-tree-checkbox-inner,
 .ant-select-tree-checkbox-input:focus + .ant-select-tree-checkbox-inner {
   border-color: @primary-color;
+}
+
+.ant-select-tree-checkbox-indeterminate .ant-select-tree-checkbox-inner {
+  &::after {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 8px;
+    height: 0.5px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    content: '';
+  }
 }
 
 // Button CSS
@@ -275,6 +319,12 @@ input {
     line-height: 20px;
   }
 
+  &.ant-btn-sm {
+    padding: 5px 8px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
   &.ant-btn-icon-only {
     width: 20px;
     height: 20px;
@@ -345,6 +395,10 @@ input {
       color: #dc2626;
     }
   }
+}
+
+button.ant-btn.ant-btn-text.text-red span {
+  color: #dc2626;
 }
 
 .table-section {
@@ -434,7 +488,8 @@ a.ant-btn {
 // select deopdown CSS
 
 .ant-select-dropdown {
-  padding: 12px 12px;
+  // padding: 12px 12px;
+  padding: 0;
   background: @white;
   border: 1px solid @dg700;
   border-radius: 4px;
@@ -696,6 +751,12 @@ div.ant-typography {
     .ant-switch-handle {
       left: calc(100% - 14px - 2px);
     }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  &:focus {
+    box-shadow: none;
   }
 }
 
@@ -792,4 +853,23 @@ input.ant-input {
       right: 0;
     }
   }
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: #eef2ff;
+  // .ant-select-item-option-content {
+  //   color: #4f46e5;
+  // }
+}
+
+.ant-select-item-option-selected {
+  background-color: #eef2ff;
+  .ant-select-item-option-content {
+    color: #4f46e5;
+  }
+}
+
+[ant-click-animating-without-extra-node='true']::after,
+.ant-click-animating-node {
+  box-shadow: none;
 }

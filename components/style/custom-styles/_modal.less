@@ -4,12 +4,14 @@
 }
 
 .ant-modal {
+  width: 480px !important;
   .ant-modal-content {
     border-radius: 8px;
   }
 
   .ant-modal-header {
-    padding: 20px 24px 0;
+    // padding: 20px 24px 0;
+    padding: 16px 16px 0 24px;
     // background: #f4f7fa;
     background: @white;
     border: none;
@@ -53,6 +55,17 @@
 
     .no-data {
       padding: 0;
+    }
+
+    .user-delete-modal {
+      p {
+        font-size: 14px;
+        line-height: 18px;
+        + p {
+          color: #374151;
+          font-weight: 500;
+        }
+      }
     }
   }
 
@@ -254,6 +267,32 @@
   }
   .ant-radio-wrapper + .ant-radio-wrapper {
     margin: 0 0 0 64px;
+  }
+}
+
+.nestable-drag-popup {
+  .ant-collapse > .ant-collapse-item {
+    border: none;
+    > .ant-collapse-header {
+      display: flex;
+      align-items: center;
+      padding: 7px 8px 7px 8px;
+      background-color: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      .drag-items {
+        width: calc(100% - 24px);
+        padding: 0;
+        font-weight: normal;
+        border: none;
+      }
+    }
+    .ant-collapse-content {
+      border: none;
+    }
+    .ant-collapse-content-box {
+      padding: 0;
+    }
   }
 }
 
