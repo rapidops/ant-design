@@ -5,7 +5,7 @@
 
   .navigation-page-menu {
     width: 248px;
-    background: #f4f7fa;
+    background: @background-color;
     box-shadow: inset -16px 0px 24px -12px rgba(6, 25, 56, 0.08);
   }
 
@@ -35,7 +35,7 @@
         height: 22px;
 
         path {
-          fill: #9ca3af;
+          fill: @dg600;
         }
       }
 
@@ -58,7 +58,7 @@
     h2 {
       margin: 0;
       padding: 24px;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid @border-color;
     }
 
     .text-center {
@@ -73,7 +73,7 @@
       overflow-y: auto;
 
       > .ant-collapse-item {
-        border-color: #e5e7eb;
+        border-color: @border-color;
 
         > .ant-collapse-header {
           position: relative;
@@ -86,7 +86,7 @@
           border-bottom: 1px solid transparent;
 
           &.ant-collapse-content-active {
-            border-color: #e5e7eb;
+            border-color: @border-color;
           }
 
           .ant-collapse-content-box {
@@ -111,7 +111,7 @@
       width: 160px;
       padding: 0 0 0 12px;
       overflow: hidden;
-      color: #6b7280;
+      color: @dg500;
       line-height: 18px;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -129,7 +129,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0;
-        color: #1f2937;
+        color: @dg200;
         font-weight: 400;
         font-size: 14px;
         line-height: 18px;
@@ -164,7 +164,7 @@
       li {
         .nestable-item-name {
           padding: 8px 24px;
-          border: 1px solid #e5e7eb;
+          border: 1px solid @border-color;
           border-radius: 4px;
         }
       }
@@ -195,7 +195,7 @@
 .nav-footer {
   margin: 24px -24px 0;
   padding: 12px 24px 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid @border-color;
 }
 
 .custom-delete-button {

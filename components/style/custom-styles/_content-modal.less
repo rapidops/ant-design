@@ -10,7 +10,7 @@
       margin-bottom: 16px;
       padding: 10px;
       background: @white;
-      border: 1px solid #e5e7eb;
+      border: 1px solid @border-color;
       border-radius: 8px;
       cursor: pointer;
       &:hover {
@@ -48,7 +48,7 @@
       margin-bottom: 16px;
       padding: 10px;
       background: @white;
-      border: 1px solid #e5e7eb;
+      border: 1px solid @border-color;
       border-radius: 8px;
 
       svg {
@@ -93,20 +93,20 @@
     width: 100%;
     height: 1px;
     margin-bottom: 16px;
-    background: #e5e7eb;
+    background: @border-color;
     border: 0;
   }
 }
 
-.ant-tabs-tab {
-  color: @dg500;
-  font-weight: 500;
-  font-size: 14px;
-}
+// .ant-tabs-tab {
+//   color: @dg500;
+//   font-weight: 500;
+//   font-size: 14px;
+// }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: @primary-color;
-}
+// .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+//   color: @primary-color;
+// }
 
 .radiogroup {
   display: flex;
@@ -162,7 +162,7 @@
   }
 
   span {
-    color: #1f2937;
+    color: @dg200;
     font-weight: 600;
     font-size: 14px;
   }
@@ -292,7 +292,7 @@
 
 .relationinputwrap {
   padding: 16px 16px 0 16px;
-  background: #f4f7fa;
+  background: @background-color;
   border-radius: 8px;
 
   .formitems {
@@ -320,7 +320,7 @@
     line-height: 34px;
     vertical-align: middle;
     background: @white;
-    border: 1px solid #e5e7eb;
+    border: 1px solid @border-color;
     border-radius: 4px;
 
     svg {
@@ -431,7 +431,7 @@
 
   svg,
   path {
-    fill: #9ca3af;
+    fill: @dg600;
   }
 }
 
@@ -463,7 +463,7 @@
 
               svg,
               svg path {
-                fill: #6b7280 !important;
+                fill: @dg500 !important;
               }
             }
 
@@ -482,7 +482,7 @@
 
               svg,
               svg path {
-                fill: #6b7280 !important;
+                fill: @dg500 !important;
               }
             }
 

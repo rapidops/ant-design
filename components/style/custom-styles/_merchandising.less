@@ -4,7 +4,7 @@
   }
 
   header {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid @border-color;
   }
 
   .headerinner .arrowleft-icon {
@@ -21,7 +21,7 @@
 .merchandising-sidebar {
   width: 344px;
   padding: 16px 16px 0 16px;
-  background: #f4f7fa;
+  background: @background-color;
 
   .ant-tabs > .ant-tabs-nav .ant-tabs-nav-list {
     flex-wrap: wrap;
@@ -52,7 +52,7 @@
     &.ant-tabs-tab-active {
       svg,
       svg path {
-        fill: #4f46e5;
+        fill: @primary-color;
       }
     }
   }
@@ -63,23 +63,23 @@
     }
 
     .ant-slider-track {
-      background-color: #3730a3;
+      background-color: @b200;
     }
 
     .ant-slider-handle {
-      border-color: #3730a3;
+      border-color: @b200;
     }
 
     .ant-slider-handle.ant-tooltip-open {
-      border-color: #3730a3;
+      border-color: @b200;
     }
   }
 
   .rule-condition {
     margin: 0;
     padding: 12px;
-    background: #e0e7ff;
-    border: 1px solid #c7d2fe;
+    background: @b900;
+    border: 1px solid @b800;
     border-radius: 4px;
 
     .ant-form-item-control-input-content {
@@ -138,7 +138,7 @@
 
   .sidebar-bottom-section {
     padding: 12px 0;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid @border-color;
   }
 
   .ant-collapse > .ant-collapse-item {
@@ -154,8 +154,8 @@
       font-weight: normal;
       line-height: 18px;
       word-break: break-all;
-      background-color: #fff;
-      border: 1px solid #d1d5db;
+      background-color: @white;
+      border: 1px solid @dg700;
       border-radius: 4px;
 
       .ant-collapse-extra {
@@ -163,7 +163,7 @@
       }
 
       &:hover {
-        color: #4f46e5;
+        color: @primary-color;
 
         .ant-collapse-extra {
           opacity: 1;
@@ -172,7 +172,7 @@
     }
 
     .ant-collapse-content {
-      border: 1px solid #d1d5db;
+      border: 1px solid @dg700;
       border-top: none;
       border-radius: 0 0 4px 4px;
     }
@@ -198,18 +198,18 @@
     width: 650px;
     padding: 5px 12px;
     font-size: 14px;
-    border: 1px solid #d1d5db;
+    border: 1px solid @dg700;
     border-radius: 4px;
     .rti--input {
       width: auto;
     }
     .rti--tag {
       height: 20px;
-      color: #1f2937;
+      color: @dg200;
       font-weight: 500;
       font-size: 12px;
       line-height: 19px;
-      background: #f3f4f6;
+      background: @secondary-background-color;
       border-radius: 4px;
       button {
         margin-left: 4px;
@@ -218,7 +218,7 @@
     }
     &:focus,
     &:focus-within {
-      border-color: #4f46e5 !important;
+      border-color: @primary-color !important;
       box-shadow: none !important;
     }
   }
@@ -239,7 +239,7 @@
     margin-left: 12px;
 
     h5 {
-      color: #1f2937;
+      color: @dg200;
       font-weight: 400;
       font-size: 14px;
       line-height: 18px;
@@ -271,8 +271,8 @@
   &.product-list-three-col {
     position: relative;
     padding: 8px;
-    background: #e0e7ff;
-    border: 1px solid #c7d2fe;
+    background: @b900;
+    border: 1px solid @b800;
     border-radius: 4px;
 
     .product-list-right {
@@ -307,7 +307,7 @@
 .product-condition-labels {
   h5 {
     margin-bottom: 8px;
-    color: #6b7280;
+    color: @dg500;
     font-weight: 600;
     font-size: 12px;
     line-height: 14px;
@@ -340,7 +340,7 @@
     padding: 5px 9px;
     font-size: 12px;
     line-height: 14px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid @border-color;
     border-radius: 32px;
 
     .anticon {
@@ -356,14 +356,14 @@
   svg {
     width: 22px;
     height: 22px;
-    background: #fff;
+    background: @white;
     border-radius: 50%;
     path {
       &.cross {
-        fill: #9ca3af;
+        fill: @dg600;
       }
       &.cross-line {
-        fill: #c7d2fe;
+        fill: @b800;
       }
     }
   }
@@ -389,7 +389,7 @@ button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
       z-index: 1;
       width: 100%;
       height: 100%;
-      background-color: #fff;
+      background-color: @white;
       cursor: not-allowed;
       opacity: 0.5;
       content: '';
@@ -419,7 +419,7 @@ button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
       max-width: 98%;
       margin: 0;
       overflow: hidden;
-      color: #1f2937;
+      color: @dg200;
       font-weight: 400;
       font-size: 14px;
       line-height: 18px;
@@ -445,17 +445,17 @@ button.ant-btn.ant-btn-link.ant-btn-icon-only.round-close-icon {
 .media-content-details {
   &.operation-text {
     span {
-      color: #1f2937;
+      color: @dg200;
       font-size: 14px;
       text-transform: capitalize;
     }
     p {
       font-size: 14px;
       &.text-red {
-        color: #dc2626;
+        color: @dg100;
       }
       &.text-green {
-        color: #059669;
+        color: @g400;
       }
     }
   }
@@ -481,8 +481,8 @@ p.description-truncate {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: @white;
+  border: 1px solid @border-color;
   border-radius: 32px;
   &.product-count-pin {
     svg {
@@ -505,7 +505,7 @@ p.description-truncate {
       height: 14px;
 
       path {
-        fill: #1f2937;
+        fill: @dg200;
       }
     }
   }
@@ -518,7 +518,7 @@ p.description-truncate {
 .border-empty-box {
   margin-top: 48px;
   padding: 32px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid @border-color;
   border-radius: 8px;
   .no-data {
     padding: 0;
@@ -538,7 +538,7 @@ p.description-truncate {
     width: 100%;
     padding: 5px 12px;
     overflow: hidden;
-    border: 1px solid #d1d5db;
+    border: 1px solid @dg700;
     border-radius: 4px;
     .tag-wrapper.ReactTags__tag {
       display: flex;
@@ -547,7 +547,7 @@ p.description-truncate {
       font-weight: 500;
       font-size: 12px;
       line-height: 19px;
-      background: #f3f4f6;
+      background: @secondary-background-color;
       border-radius: 4px;
       margin-inline-end: 4px;
       padding-inline-end: 4px;
@@ -563,10 +563,10 @@ p.description-truncate {
       }
       &.custom_tag {
         display: flex;
-        color: #fff;
-        background-color: #4f46e5;
+        color: @white;
+        background-color: @primary-color;
         .ReactTags__remove {
-          color: #fff;
+          color: @white;
         }
       }
     }
@@ -606,7 +606,7 @@ p.description-truncate {
     font-weight: 500;
     font-size: 12px;
     line-height: 19px;
-    background: #f3f4f6;
+    background: @secondary-background-color;
     border-radius: 4px;
     margin-inline-end: 4px;
     padding-inline-end: 4px;
@@ -640,8 +640,8 @@ p.description-truncate {
 
 .modal-slider-section {
   padding: 24px 0;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
+  border-top: 1px solid @border-color;
+  border-bottom: 1px solid @border-color;
   .ant-radio-wrapper {
     font-weight: 600;
     line-height: 18px;
@@ -665,7 +665,7 @@ p.description-truncate {
     left: -28px;
     display: block;
     height: 100%;
-    border-left: 1px solid #e5e7eb;
+    border-left: 1px solid @border-color;
     content: '';
   }
   .ant-table table {
@@ -677,10 +677,10 @@ p.description-truncate {
   .table-section .ant-table-tbody > tr > td.drag-visible {
     margin-bottom: 10px;
     padding: 9px;
-    color: #1f2937;
+    color: @dg200;
     font-size: 12px;
     line-height: 14px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid @border-color;
     border-radius: 4px;
     box-shadow: none;
     &:first-child {

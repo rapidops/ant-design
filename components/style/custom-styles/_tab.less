@@ -11,6 +11,7 @@
 
 .ant-tabs-tab {
   padding: 11px 0;
+  color: @dg500;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -27,6 +28,10 @@
   height: 1px;
   border: none;
   box-shadow: inset 0px -1px 0px #e5e7eb;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: @primary-color;
 }
 
 // global add role tab CSS
@@ -165,7 +170,7 @@
         padding-left: 8px;
         box-shadow: none;
         .custom-checkbox-label {
-          color: #1f2937;
+          color: @dg200;
           font-weight: normal;
           font-size: 16px;
           line-height: 20px;
@@ -191,7 +196,7 @@
 
 .add-role-tab .ant-collapse-header .tab-content-right label,
 .tab-content-right label {
-  color: #6b7280;
+  color: @dg500;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;

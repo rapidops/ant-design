@@ -17,7 +17,7 @@
 
   .ant-card-bordered {
     height: 100%;
-    border: 1px solid #e5e7eb;
+    border: 1px solid @border-color;
     border-radius: 4px;
     .ant-card-cover {
       position: relative;
@@ -116,7 +116,7 @@
       span {
         padding: 4px 8px;
         color: @dg500;
-        background: #f3f4f6;
+        background: @secondary-background-color;
         border-radius: 4px;
       }
     }
@@ -134,7 +134,7 @@
   display: inline-block;
   padding: 4px 8px;
   color: @dg500;
-  background: #f3f4f6;
+  background: @secondary-background-color;
   border-radius: 4px;
 }
 
@@ -142,7 +142,7 @@
   padding: 12px 0;
 
   + .modal-upload-image {
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid @border-color;
   }
 }
 
@@ -157,19 +157,19 @@
     width: 88px;
     height: 58px;
     object-fit: cover;
-    background: #f3f4f6;
+    background: @secondary-background-color;
     border-radius: 4px;
   }
 
   .img + svg path {
-    fill: #9ca3af;
+    fill: @dg600;
   }
 
   video {
     width: 88px;
     height: 58px;
     object-fit: cover;
-    background: #f3f4f6;
+    background: @secondary-background-color;
     border-radius: 4px;
   }
 
@@ -215,10 +215,10 @@
     height: 32px;
     padding: 5px;
     background: @white;
-    border: 1px solid #d1d5db;
+    border: 1px solid @dg700;
     border-radius: 4px;
     svg path {
-      fill: #d1d5db;
+      fill: @dg700;
     }
 
     &:hover,
@@ -253,7 +253,7 @@
       &:hover,
       &.active {
         color: @b400;
-        background: #eef2ff;
+        background: @b1000;
         border-radius: 4px;
         svg path {
           fill: @b400;
@@ -331,7 +331,7 @@
     .folder-list {
       align-items: center;
       padding: 8px 16px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid @border-color;
       border-radius: 4px;
       &:hover {
         border-color: @primary-color;
@@ -345,10 +345,10 @@
   }
   p {
     margin: 0 0 4px 0;
-    color: #1f2937;
+    color: @dg200;
     line-height: 18px;
     + span {
-      color: #9ca3af;
+      color: @dg600;
       font-weight: 400;
       font-size: 12px;
       line-height: 14px;
@@ -371,7 +371,7 @@ div.ant-typography {
 .media-details {
   width: 432px;
   padding: 16px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid @border-color;
   border-radius: 4px;
   @media screen and (max-width: 1365px) {
     width: 380px;
@@ -389,13 +389,13 @@ div.ant-typography {
 .media-image {
   position: relative;
   height: 266px;
-  background: #f3f4f6;
+  background: @secondary-background-color;
   border-radius: 4px;
   img {
     width: 100%;
     height: 266px;
     object-fit: cover;
-    background: #f3f4f6;
+    background: @secondary-background-color;
     border-radius: 4px;
   }
   audio {
@@ -423,11 +423,11 @@ div.ant-typography {
   p {
     width: calc(100% - 108px);
     margin: 0;
-    color: #1f2937;
+    color: @dg200;
   }
   span {
     width: 108px;
-    color: #6b7280;
+    color: @dg500;
   }
 }
 
@@ -436,7 +436,7 @@ div.ant-typography {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: #f3f4f6;
+  background: @secondary-background-color;
 }
 
 .media-upload-box {
@@ -444,7 +444,7 @@ div.ant-typography {
     text-align: left;
     &.generate-box {
       background: @white;
-      border: 1px solid #e5e7eb;
+      border: 1px solid @border-color;
       border-radius: 8px;
       .generate-box {
         padding: 0;
@@ -454,7 +454,7 @@ div.ant-typography {
     &.file-upload-box {
       padding: 24px;
       text-align: center;
-      border: 2px dashed #d1d5db;
+      border: 2px dashed @dg700;
       border-radius: 8px;
       p {
         margin: 0 !important;
@@ -464,7 +464,7 @@ div.ant-typography {
       padding: 0;
       p {
         margin-bottom: 32px;
-        color: #6b7280;
+        color: @dg500;
         &.ant-upload-hint {
           margin: 0;
         }
@@ -493,7 +493,7 @@ div.ant-typography {
   padding: 12px 12px 14px 12px;
   line-height: normal;
   background: @white;
-  border: 1px solid #d1d5db;
+  border: 1px solid @dg700;
   border-radius: 4px;
   box-shadow: 0px 6px 10px -1px rgba(6, 25, 56, 0.07);
 

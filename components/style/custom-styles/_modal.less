@@ -12,7 +12,7 @@
   .ant-modal-header {
     // padding: 20px 24px 0;
     padding: 16px 16px 0 24px;
-    // background: #f4f7fa;
+    // background: @background-color;
     background: @white;
     border: none;
     border-radius: 8px 8px 0 0;
@@ -62,7 +62,7 @@
         font-size: 14px;
         line-height: 18px;
         + p {
-          color: #374151;
+          color: @dg300;
           font-weight: 500;
         }
       }
@@ -144,7 +144,7 @@
   .version-list {
     width: 220px;
     padding: 16px;
-    background: #f4f7fa;
+    background: @background-color;
     p {
       margin: 0;
       font-weight: 600;
@@ -171,9 +171,9 @@
         &.active {
           background: @b400;
           p {
-            color: #ffffff;
+            color: @white;
             span {
-              color: #d1d5db;
+              color: @dg700;
             }
           }
         }
@@ -182,7 +182,7 @@
   }
   .version-box {
     width: 402px;
-    border-left: 1px solid #e5e7eb;
+    border-left: 1px solid @border-color;
     &.compare-version {
       .version-box-content {
         p span {
@@ -193,7 +193,7 @@
   }
   .version-list-title {
     padding: 12px 8px;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid @border-color;
     p {
       width: calc(100% - 75px);
     }
@@ -206,14 +206,14 @@
       font-weight: 500;
       font-size: 12px;
       line-height: 14px;
-      background: #d1d5db;
+      background: @dg700;
       border-radius: 4px;
     }
   }
   .version-box-title {
     padding: 16px 16px 16px 24px;
-    background: #f4f7fa;
-    border-bottom: 1px solid #e5e7eb;
+    background: @background-color;
+    border-bottom: 1px solid @border-color;
     .ant-row {
       > div {
         width: calc(100% - 40px);
@@ -277,8 +277,8 @@
       display: flex;
       align-items: center;
       padding: 7px 8px 7px 8px;
-      background-color: #fff;
-      border: 1px solid #e5e7eb;
+      background-color: @white;
+      border: 1px solid @border-color;
       border-radius: 4px;
       .drag-items {
         width: calc(100% - 24px);
