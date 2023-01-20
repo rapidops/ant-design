@@ -92,7 +92,7 @@ input {
   position: absolute;
   bottom: 0px;
   height: auto !important;
-  color: #ef4444;
+  color: @r500;
   font-size: 12px !important;
 }
 
@@ -182,7 +182,7 @@ input {
     height: 0.5px;
     margin: 0 auto;
     text-align: center;
-    background-color: #fff;
+    background-color: @white;
     content: '';
   }
 }
@@ -212,7 +212,7 @@ input {
 }
 
 .ant-select-tree-checkbox-inner {
-  border: 1px solid #d1d5db;
+  border: 1px solid @dg700;
   border-radius: 4px;
 
   &:after {
@@ -242,7 +242,7 @@ input {
     height: 0.5px;
     margin: 0 auto;
     text-align: center;
-    background-color: #fff;
+    background-color: @white;
     content: '';
   }
 }
@@ -392,18 +392,18 @@ input {
     }
 
     &.ant-btn-dangerous {
-      color: #dc2626;
+      color: @dg100;
     }
   }
 }
 
 button.ant-btn.ant-btn-text.text-red span {
-  color: #dc2626;
+  color: @dg100;
 }
 
 .table-section {
   .ant-btn.ant-btn-icon-only.ant-dropdown-trigger {
-    border-color: #d1d5db;
+    border-color: @dg700;
   }
 }
 
@@ -499,7 +499,7 @@ a.ant-btn {
 .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   color: @b400;
   font-weight: normal;
-  background: #eef2ff;
+  background: @b1000;
 }
 
 .table-dropdown {
@@ -518,7 +518,7 @@ a.ant-btn {
   font-weight: 500;
   font-size: 12px;
   line-height: 19px;
-  background: #f3f4f6;
+  background: @secondary-background-color;
   border-radius: 4px;
 }
 
@@ -544,7 +544,7 @@ div.ant-typography {
   font-size: 14px;
   line-height: 16px;
   word-break: break-all;
-  background: #f4f7fa;
+  background: @background-color;
   border: 1px dashed @dg700;
   border-radius: 4px;
   .ant-typography-copy {
@@ -624,7 +624,7 @@ div.ant-typography {
   width: 40px;
   height: 4px;
   margin: 8px 0 8px 8px;
-  background: #e5e7eb;
+  background: @border-color;
   border-radius: 37px;
 }
 
@@ -684,7 +684,7 @@ div.ant-typography {
   p {
     margin: 0 0 9px 0;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid @border-color;
   }
 }
 
@@ -703,7 +703,7 @@ div.ant-typography {
     p {
       margin-bottom: 9px;
       padding-bottom: 9px;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid @border-color;
     }
   }
 }
@@ -734,7 +734,7 @@ div.ant-typography {
   &:hover,
   &.ant-dropdown-open {
     svg path {
-      fill: #fff !important;
+      fill: @white !important;
     }
   }
 }
@@ -762,7 +762,7 @@ div.ant-typography {
 
 .ant-input-affix-wrapper:focus,
 .ant-input-affix-wrapper-focused {
-  border-color: #4f46e5;
+  border-color: @primary-color;
   box-shadow: none !important;
 }
 
@@ -812,12 +812,12 @@ button.ant-btn.ant-btn-link.hamburgericon {
 }
 
 input::placeholder {
-  color: #9ca3af !important;
+  color: @dg600 !important;
   line-height: 14px;
 }
 
 input.ant-input {
-  color: #1f2937 !important;
+  color: @dg200 !important;
 }
 
 .submenu .sidebar-submenu {
@@ -839,7 +839,7 @@ input.ant-input {
       display: block;
       width: 240px;
       height: 1px;
-      background-color: #d1d5db;
+      background-color: @dg700;
       content: '';
     }
     .ant-select-selector {
@@ -856,16 +856,16 @@ input.ant-input {
 }
 
 .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
-  background-color: #eef2ff;
+  background-color: @b1000;
   // .ant-select-item-option-content {
-  //   color: #4f46e5;
+  //   color: @primary-color;
   // }
 }
 
 .ant-select-item-option-selected {
-  background-color: #eef2ff;
+  background-color: @b1000;
   .ant-select-item-option-content {
-    color: #4f46e5;
+    color: @primary-color;
   }
 }
 

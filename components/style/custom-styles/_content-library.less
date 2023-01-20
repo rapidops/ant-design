@@ -1,7 +1,7 @@
 .content-library-page {
   height: 100%;
   margin: 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid @border-color;
 
   .content-library-left {
     width: calc(100% - 368px);
@@ -21,11 +21,11 @@
     margin-top: 0;
     padding: 0;
     // overflow-y: auto;
-    border-left: 1px solid #e5e7eb;
+    border-left: 1px solid @border-color;
 
     .ant-collapse {
       .ant-collapse-item {
-        border-bottom: 1px solid #e5e7eb;
+        border-bottom: 1px solid @border-color;
 
         + .ant-collapse-item {
           margin: 0;
@@ -33,7 +33,7 @@
 
         .ant-collapse-header {
           padding: 15px;
-          color: #6b7280;
+          color: @dg500;
           font-weight: 600;
           font-size: 14px;
           line-height: 18px;
@@ -41,7 +41,7 @@
 
         &.ant-collapse-item-active {
           .ant-collapse-header {
-            color: #1f2937;
+            color: @dg200;
           }
         }
       }
@@ -59,7 +59,7 @@
       > .ant-tabs-nav {
         width: 48px;
         min-width: 48px;
-        background-color: #f3f4f6;
+        background-color: @secondary-background-color;
       }
 
       .ant-tabs-content-holder {
@@ -89,12 +89,12 @@
       }
 
       &.ant-tabs-tab-active {
-        background: #e0e7ff;
+        background: @b900;
         border-radius: 50%;
 
         svg,
         svg path {
-          fill: #4f46e5;
+          fill: @primary-color;
         }
       }
     }
@@ -143,7 +143,7 @@
 
 .content-library-right-content-title {
   padding: 16px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid @border-color;
 }
 
 .content-library-right-list {
@@ -155,7 +155,7 @@
 
   p {
     margin-bottom: 16px;
-    color: #6b7280;
+    color: @dg500;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
@@ -164,7 +164,7 @@
       display: block;
       margin-top: 6px;
       margin-top: 6px;
-      color: #1f2937;
+      color: @dg200;
       font-size: 14px;
       line-height: 18px;
     }
@@ -177,7 +177,7 @@
   }
 
   + .content-library-right-list {
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid @border-color;
   }
 }
 
@@ -190,8 +190,8 @@
 .library-upload {
   padding: 12px;
   text-align: left;
-  background-color: #fff;
-  border: 1px solid #d1d5db;
+  background-color: @white;
+  border: 1px solid @dg700;
   border-radius: 4px;
 
   .ant-upload-drag-icon {
@@ -241,7 +241,7 @@
   margin-right: 8px;
   margin-bottom: 8px;
   overflow: hidden;
-  border: 1px solid #e5e7eb;
+  border: 1px solid @border-color;
   border-radius: 4px;
   cursor: pointer;
 
@@ -273,7 +273,7 @@
 #a_unique_id-outer-box {
   width: 100% !important;
   color: #333;
-  border: 1px solid #d1d5db;
+  border: 1px solid @dg700;
   border-radius: 8px;
 
   #a_unique_id-container {
@@ -289,7 +289,7 @@
 
 .ant-input-number {
   width: 100%;
-  border: 1px solid #d1d5db;
+  border: 1px solid @dg700;
   border-radius: 4px;
 }
 
@@ -342,7 +342,7 @@
 
   .ant-collapse-icon-position-left {
     padding: 14px 24px;
-    background: #f4f7fa;
+    background: @background-color;
     border-radius: 8px;
 
     .ant-collapse-item {
@@ -362,7 +362,7 @@
     }
 
     .ant-collapse-content {
-      background: #f4f7fa;
+      background: @background-color;
 
       .ant-collapse-content-box {
         padding: 0;
@@ -383,7 +383,7 @@
   }
 
   .ant-form-item-control-input-content .quill {
-    background-color: #fff;
+    background-color: @white;
 
     .ql-container.ql-snow {
       min-height: 100px;
@@ -399,7 +399,7 @@
 .content-library-main {
   iframe#page_editor_iframe {
     border: none;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid @border-color;
   }
 }
 
@@ -458,7 +458,7 @@
     order: 1;
     margin: 0 0 0 16px;
     > label {
-      color: #1f2937;
+      color: @dg200;
     }
   }
   .ant-form-item-control {
@@ -476,7 +476,7 @@
     top: 1px;
   }
   .ant-btn.ant-btn-icon-only.ant-dropdown-trigger {
-    border-color: #d1d5db;
+    border-color: @dg700;
   }
   .ant-page-header-heading-left {
     width: 100%;
@@ -526,19 +526,19 @@ p.development-details-text {
     }
     .ant-select.ant-select-in-form-item.ant-select-open {
       .ant-select-selector {
-        background-color: #f3f4f6;
+        background-color: @secondary-background-color;
       }
     }
     .ant-select.ant-select-in-form-item {
       &:hover {
         .ant-select-selector {
-          background-color: #f3f4f6;
+          background-color: @secondary-background-color;
           border-radius: 4px;
         }
       }
       &.ant-select-open {
         .ant-select-selector {
-          background: #e0e7ff;
+          background: @b900;
           border-radius: 4px;
         }
         .ant-select-arrow {
@@ -557,7 +557,7 @@ p.development-details-text {
   // }
 
   .ant-select-selection-placeholder {
-    color: #1f2937;
+    color: @dg200;
   }
 }
 
@@ -586,7 +586,7 @@ p.development-details-text {
     padding-top: 16px;
     // padding-bottom: 16px;
     padding-bottom: 0;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid @border-color;
   }
   p.gray-text {
     margin-bottom: 16px;
