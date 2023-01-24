@@ -1,0 +1,23 @@
+.nestable-item .nestable-list,
+.nestable-item-copy .nestable-list {
+  margin: 0 !important;
+}
+
+.nestable .nestable-list {
+  .nestable-item + .nestable-item {
+    margin-top: 10px;
+  }
+
+  &.nestable-group {
+    .ant-collapse-content-box {
+      .nestable-item {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.nestable-item.is-dragging:before {
+  background: @b1000 !important;
+  border: 1px dashed @primary-color !important;
+}
