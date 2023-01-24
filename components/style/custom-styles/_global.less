@@ -147,7 +147,7 @@ p {
 }
 
 .padding-0 {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .primary-color {
@@ -184,8 +184,10 @@ p {
   justify-content: center;
   width: 480px;
   height: auto;
+  // padding-top: 90px;
+  height: 100%;
   margin: auto;
-  padding-top: 90px;
+  padding: 0;
   @media screen and (max-width: 1279px) {
     padding-top: 70px;
   }
@@ -881,6 +883,9 @@ p {
       }
     }
   }
+  .ant-btn.ant-btn-icon-only.ant-btn-lg {
+    line-height: 31px;
+  }
 }
 
 .profile-content {
@@ -898,6 +903,9 @@ p {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+  }
+  .ant-btn.ant-btn-link.ant-btn-dangerous span {
+    color: #ff4d4f;
   }
 }
 
@@ -1451,6 +1459,10 @@ body.ant-scrolling-effect {
       .ant-checkbox-wrapper + .ant-checkbox-wrapper {
         margin-top: 4px;
         margin-left: 22px;
+      }
+      .ant-collapse {
+        height: calc(100vh - 53px);
+        padding-bottom: 20px;
       }
     }
     .navigation-page-content {

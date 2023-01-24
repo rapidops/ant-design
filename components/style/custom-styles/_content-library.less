@@ -642,3 +642,31 @@ p.development-details-text {
 .sort-condition + .sort-condition {
   margin-top: 24px;
 }
+
+.product-list-pin {
+  padding: 12px 12px 0 12px;
+}
+
+.headerinner {
+  &.content-library-header {
+    height: 85px;
+    padding: 24px 32px 16px 32px;
+  }
+}
+
+.content-library-page {
+  height: auto;
+  .content-library-left .ant-tabs-content-holder {
+    height: calc(100vh - 190px);
+  }
+}
+
+.content-library-main {
+  .ant-layout-content {
+    .headerinner.content-library-header {
+      + .ant-form {
+        height: auto;
+      }
+    }
+  }
+}
