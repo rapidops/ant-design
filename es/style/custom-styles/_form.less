@@ -1,0 +1,898 @@
+// input and label CSS
+.ant-input,
+.ant-input-affix-wrapper {
+  padding: @medium-input;
+  font-size: @font-size-base;
+  border: 1px solid @dg700;
+  border-radius: 4px;
+  &:hover,
+  &:focus {
+    border-color: @primary-color;
+    box-shadow: none;
+  }
+}
+
+.ant-form-item {
+  margin-bottom: 32px;
+}
+
+input {
+  &.ant-input::placeholder {
+    color: @dg600;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 1;
+  }
+  &.ant-input:-ms-input-placeholder {
+    color: @dg600;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 1;
+  }
+  &.ant-input::-ms-input-placeholder {
+    color: @dg600;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 1;
+  }
+}
+
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover,
+.ant-picker:hover,
+.ant-input-number:hover .ant-picker-focused {
+  border-color: @primary-color;
+  box-shadow: none;
+}
+
+.ant-input {
+  &.ant-input-lg {
+    padding: @large-input;
+  }
+}
+
+.ant-input-affix-wrapper {
+  &.ant-input-affix-wrapper-lg {
+    padding: @large-input;
+  }
+}
+
+.ant-form-item-label {
+  line-height: 18px;
+  > label {
+    height: auto;
+    margin-bottom: 8px;
+    color: @base-font-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.ant-form {
+  .ant-form-item-label {
+    line-height: 18px;
+  }
+}
+
+.ant-form-item-with-help {
+  .ant-form-item-explain,
+  .ant-form-item-extra {
+    height: auto !important;
+    min-height: auto;
+    // height: auto;
+    // min-height: 24px;
+    margin-top: 0;
+    padding-top: 4px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.ant-form-item-explain-error {
+  position: absolute;
+  bottom: 0px;
+  height: auto !important;
+  color: @r500;
+  font-size: 12px !important;
+}
+
+.ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  margin-right: 2px;
+  color: @r300;
+  font-weight: bold;
+}
+
+// select
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  height: 34px;
+  border: 1px solid @dg700;
+  border-radius: 4px;
+}
+
+.ant-select.ant-select-multiple:not(.ant-select-customize-input) .ant-select-selector {
+  height: auto;
+}
+
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: @primary-color;
+}
+
+.ant-select .ant-select-selection-placeholder {
+  color: @dg600;
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border-color: @primary-color;
+}
+
+// checkbox CSS
+.ant-checkbox-checked {
+  .ant-checkbox-inner {
+    background-color: @primary-color;
+    border-color: @primary-color;
+  }
+
+  &:after {
+    border-color: @primary-color;
+    border-radius: 4px;
+  }
+}
+
+.ant-checkbox-inner {
+  border: 1px solid @dg700;
+  border-radius: 4px;
+
+  &:after {
+    margin-top: -1px;
+  }
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: @primary-color;
+}
+
+.ant-checkbox-indeterminate {
+  .ant-checkbox-inner {
+    &:after {
+      margin: 0;
+      background-color: @primary-color;
+      border-radius: 2px;
+    }
+  }
+}
+
+.ant-checkbox-indeterminate .ant-checkbox-inner {
+  &::after {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 8px;
+    height: 0.5px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: @white;
+    content: '';
+  }
+}
+
+// checkbox tree CSS
+
+.ant-select-tree-checkbox-checked {
+  .ant-select-tree-checkbox-inner {
+    background-color: @primary-color;
+    border-color: @primary-color;
+  }
+
+  &:after {
+    border-color: @primary-color;
+    border-radius: 4px;
+  }
+}
+
+.ant-select-tree-checkbox-indeterminate {
+  .ant-select-tree-checkbox-inner {
+    &:after {
+      margin-top: 0;
+      background-color: @primary-color;
+      border-radius: 2px;
+    }
+  }
+}
+
+.ant-select-tree-checkbox-inner {
+  border: 1px solid @dg700;
+  border-radius: 4px;
+
+  &:after {
+    margin-top: -1px;
+  }
+}
+
+.ant-select-tree-checkbox-wrapper:hover .ant-select-tree-checkbox-inner,
+.ant-select-tree-checkbox:hover .ant-select-tree-checkbox-inner,
+.ant-select-tree-checkbox-input:focus + .ant-select-tree-checkbox-inner {
+  border-color: @primary-color;
+}
+
+.ant-select-tree-checkbox-indeterminate .ant-select-tree-checkbox-inner {
+  &::after {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 8px;
+    height: 0.5px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: @white;
+    content: '';
+  }
+}
+
+// Button CSS
+.ant-btn {
+  height: auto;
+  padding: 6px 12px;
+  color: @dg300;
+  font-weight: 500;
+  font-size: @font-size-base;
+  line-height: 18px;
+  background-color: @white;
+  border: 1px solid @dg700;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(6, 25, 56, 0.05);
+
+  &:hover {
+    color: @dg300;
+    background-color: @dg700;
+    border-color: @dg700;
+  }
+
+  &:focus {
+    color: @dg300;
+  }
+
+  &.ant-btn-primary {
+    color: @white;
+    background-color: @primary-color;
+    border-color: @primary-color;
+
+    &:hover {
+      color: @white;
+      background-color: @b200;
+      border-color: @b200;
+    }
+
+    &.ant-btn-dangerous {
+      color: @white;
+      background: @r500;
+      border-color: @r500;
+      &:hover {
+        color: @dg300;
+        background-color: transparent;
+      }
+    }
+
+    &.green-button {
+      color: @white;
+      background: @g400;
+      border-color: @g400;
+      &:hover {
+        color: @white;
+        background-color: @g200;
+        border-color: @g200;
+      }
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.ant-btn-lg {
+    height: auto;
+    padding: 9px 12px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &.ant-btn-sm {
+    padding: 5px 8px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &.ant-btn-icon-only {
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    background-color: transparent;
+    border-color: @dg700;
+    border-radius: 4px;
+    svg {
+      fill: @dg200;
+      path {
+        fill: @dg200;
+      }
+    }
+    &:hover {
+      background-color: @dg700;
+      border-color: @dg700;
+    }
+    &:focus {
+      background-color: transparent;
+      border-color: @dg700;
+    }
+    &.onlyIcon {
+      width: auto;
+      height: auto;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      svg {
+        fill: @dg200;
+        path {
+          fill: @dg200;
+        }
+      }
+    }
+    &.ant-btn-lg {
+      width: 32px;
+      height: 32px;
+      line-height: 35px;
+    }
+    &.ant-dropdown-trigger {
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      &:hover {
+        background-color: @dg700;
+        border-color: @dg700;
+      }
+    }
+  }
+
+  + .ant-btn {
+    margin-left: 12px;
+  }
+
+  &.ant-btn-link {
+    padding: 0;
+    color: @primary-color;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      color: @b200;
+    }
+
+    &.ant-btn-dangerous {
+      color: @r400;
+    }
+  }
+}
+
+button.ant-btn.ant-btn-text.text-red span {
+  color: @r400;
+}
+
+.table-section {
+  .ant-btn.ant-btn-icon-only.ant-dropdown-trigger {
+    border-color: @dg700;
+  }
+}
+
+a.ant-btn {
+  padding: 6px 12px !important;
+  line-height: 18px;
+  svg {
+    margin-right: 8px;
+  }
+}
+
+// dropdown CSS
+
+.ant-dropdown-menu,
+.table-dropdown .ant-menu {
+  padding: 5px 0;
+  background: @white;
+  border: 1px solid @dg700;
+  border-radius: 8px;
+  box-shadow: 0px 6px 10px -1px rgba(6, 25, 56, 0.07);
+}
+
+.ant-dropdown-menu {
+  max-height: 270px;
+  overflow-y: auto;
+}
+
+.ant-dropdown-menu-item {
+  padding: 7px 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  &:hover {
+    color: @primary-color;
+    background: @b900;
+  }
+}
+
+.ant-menu-vertical {
+  > .ant-menu-item {
+    height: auto;
+    margin: 0 !important;
+    padding: 7px 14px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    &:hover {
+      color: @primary-color;
+      background: @b900;
+      .ant-menu-title-content {
+        color: @primary-color;
+      }
+    }
+
+    .ant-btn {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.input-text {
+  label,
+  p {
+    display: block;
+    margin-bottom: 8px;
+    color: @base-font-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  span {
+    display: block;
+    padding: 8px 16px;
+    border: 1px solid @dg700;
+    border-radius: 4px;
+  }
+}
+
+// select deopdown CSS
+
+.ant-select-dropdown {
+  // padding: 12px 12px;
+  padding: 0;
+  background: @white;
+  border: 1px solid @dg700;
+  border-radius: 4px;
+  box-shadow: 0px 14px 21px -1px rgba(6, 25, 56, 0.08);
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  color: @b400;
+  font-weight: normal;
+  background: @b1000;
+}
+
+.table-dropdown {
+  width: 180px;
+
+  .ant-btn {
+    width: 100%;
+    text-align: left;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.ant-select-multiple .ant-select-selection-item {
+  height: 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  background: @secondary-background-color;
+  border-radius: 4px;
+}
+
+.ant-switch-checked {
+  background: @primary-color;
+}
+
+.input-label-text {
+  display: block;
+  margin-top: 8px;
+  color: @base-font-color;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+div.ant-typography {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  word-break: break-all;
+  background: @background-color;
+  border: 1px dashed @dg700;
+  border-radius: 4px;
+  .ant-typography-copy {
+    margin-left: 20px;
+  }
+}
+
+// Password strength
+
+.strength {
+  margin-top: -32px;
+  margin-bottom: 16px;
+  text-align: right;
+  > div {
+    justify-content: flex-end;
+  }
+
+  &.weak {
+    > div {
+      .strength-length {
+        &:first-child {
+          background: @r500;
+        }
+      }
+    }
+
+    .strength-word {
+      color: @r500;
+    }
+  }
+
+  &.fair {
+    > div {
+      .strength-length {
+        &:first-child,
+        &:nth-child(2) {
+          background: @y500;
+        }
+      }
+    }
+
+    .strength-word {
+      color: @y500;
+    }
+  }
+
+  &.good {
+    > div {
+      .strength-length {
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3) {
+          background: @g500;
+        }
+      }
+    }
+
+    .strength-word {
+      color: @g500;
+    }
+  }
+
+  &.strong {
+    > div {
+      .strength-length {
+        background: @g300;
+      }
+    }
+
+    .strength-word {
+      color: @g300;
+    }
+  }
+}
+
+.strength-length {
+  width: 40px;
+  height: 4px;
+  margin: 8px 0 8px 8px;
+  background: @border-color;
+  border-radius: 37px;
+}
+
+.strength-word {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  .anticon {
+    margin-left: 4px;
+  }
+}
+
+.custom-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    width: 300px;
+  }
+
+  .custom-text {
+    width: calc(100% - 300px);
+    text-align: right;
+  }
+}
+
+.custom-label-input {
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+  + .custom-label-input {
+    // margin-top: 24px;
+    margin-top: 32px;
+  }
+}
+
+.resend-code {
+  display: flex;
+  margin-top: -10px;
+  margin-bottom: 26px;
+}
+
+.two-col-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  > div {
+    width: 49%;
+  }
+}
+
+.empty-data {
+  p {
+    margin: 0 0 9px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @border-color;
+  }
+}
+
+.custom-input-label {
+  display: block;
+  margin-bottom: 8px;
+  color: @base-font-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.ant-select-item-empty {
+  padding: 0;
+  > div {
+    p {
+      margin-bottom: 9px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid @border-color;
+    }
+  }
+}
+
+.ant-form-item-explain-error {
+  position: absolute;
+  bottom: 0px;
+  height: 18px !important;
+}
+
+.ant-form-item-explain {
+  position: absolute;
+  bottom: -22px;
+  width: 100%;
+  height: 18px !important;
+}
+
+.ant-form-item-has-error + .input-label-text {
+  margin-top: 24px;
+}
+
+.button-down-arrow {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-top: 3px;
+  }
+  &:hover,
+  &.ant-dropdown-open {
+    svg path {
+      fill: @white !important;
+    }
+  }
+}
+
+.ant-switch {
+  min-width: 40px;
+  height: 18px;
+  line-height: 18px;
+  .ant-switch-handle {
+    width: 14px;
+    height: 14px;
+  }
+  &.ant-switch-checked {
+    .ant-switch-handle {
+      left: calc(100% - 14px - 2px);
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: @primary-color;
+  box-shadow: none !important;
+}
+
+// button spacing
+
+.ant-btn {
+  // margin-left: 12px;
+  &.m-r-16 {
+    margin-right: 0;
+    margin-left: 12px;
+  }
+}
+
+.content-library-main .headerinner .arrowleft-icon,
+button.ant-btn.ant-btn-link {
+  margin-right: 16px;
+  margin-left: 0;
+}
+
+button.ant-btn.ant-btn-link.hamburgericon {
+  margin-right: 0;
+}
+
+.combine-buttons {
+  margin-left: 12px;
+  &.m-r-16 {
+    margin-right: 0px;
+  }
+  + .ant-btn {
+    margin-left: 12px;
+  }
+}
+
+.combine-buttons.editor-button {
+  margin-right: 0;
+  .ant-btn {
+    margin-right: 0 !important;
+  }
+}
+
+.m-0-important {
+  margin: 0 !important;
+}
+
+.ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
+  margin-left: 12px;
+}
+
+input::placeholder {
+  color: @dg600 !important;
+  line-height: 14px;
+}
+
+input.ant-input {
+  color: @dg200 !important;
+}
+
+.submenu .sidebar-submenu {
+  position: relative;
+}
+
+.ant-select {
+  &.sidebar-top-select {
+    position: relative;
+    top: -14px;
+    width: 100%;
+    margin-bottom: 6px;
+    padding-bottom: 10px;
+    &::after {
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      left: -24px;
+      display: block;
+      width: 240px;
+      height: 1px;
+      background-color: @dg700;
+      content: '';
+    }
+    .ant-select-selector {
+      height: auto;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+    .ant-select-arrow {
+      top: 40%;
+      right: 0;
+    }
+  }
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: @b1000;
+  // .ant-select-item-option-content {
+  //   color: @primary-color;
+  // }
+}
+
+.ant-select-item-option-selected {
+  background-color: @b1000;
+  .ant-select-item-option-content {
+    color: @primary-color;
+  }
+}
+
+[ant-click-animating-without-extra-node='true']::after,
+.ant-click-animating-node {
+  box-shadow: none;
+}
+
+.ant-checkbox-checked {
+  &.ant-checkbox-disabled {
+    .ant-checkbox-inner {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.ant-radio {
+  &.ant-radio-disabled {
+    .ant-radio-inner {
+      background-color: #f5f5f5;
+      &:after {
+        background-color: #cccccc;
+      }
+    }
+  }
+}
+
+.ant-avatar-square {
+  border-radius: 4px;
+}

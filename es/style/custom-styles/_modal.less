@@ -1,0 +1,299 @@
+// modal CSS start
+.ant-modal-root .ant-modal-mask {
+  background-color: rgba(17, 24, 39, 0.5);
+}
+
+.ant-modal {
+  width: 480px !important;
+  .ant-modal-content {
+    border-radius: 8px;
+  }
+
+  .ant-modal-header {
+    // padding: 20px 24px 0;
+    padding: 16px 16px 0 24px;
+    // background: @background-color;
+    background: @white;
+    border: none;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .ant-modal-title {
+    width: 93%;
+    overflow: hidden;
+    color: @dg200;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .ant-modal-body {
+    // max-height: 680px;
+    max-height: 70vh;
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media screen and (max-width: 1439px) {
+      max-height: 560px;
+    }
+
+    .ant-breadcrumb {
+      margin-bottom: 24px;
+
+      li {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        .ant-breadcrumb-link {
+          line-height: normal;
+        }
+      }
+    }
+
+    .no-data {
+      padding: 0;
+    }
+
+    .user-delete-modal {
+      p {
+        font-size: 14px;
+        line-height: 18px;
+        + p {
+          color: @dg300;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .ant-modal-footer {
+    padding: 16px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  &.CustomModal {
+    width: 640px !important;
+
+    .ant-modal-header {
+      padding: 16px 16px 16px 24px;
+      background: @dg100;
+      box-shadow: inset 0px -1px 0px #e5e7eb;
+    }
+
+    .ant-modal-title {
+      color: @white;
+    }
+
+    .ant-modal-close .anticon-close svg {
+      fill: @white;
+    }
+
+    &.CustomModal-xlarge {
+      width: 1024px !important;
+    }
+
+    &.CustomModal-large {
+      width: 800px !important;
+    }
+
+    &.CustomModal-small {
+      width: 480px !important;
+    }
+
+    &.CustomModal-media {
+      top: 0;
+      bottom: 0;
+      width: 95% !important;
+      height: 100%;
+      margin: auto;
+      padding: 24px 0;
+
+      .ant-modal-content {
+        height: 100%;
+      }
+
+      .ant-modal-body {
+        max-height: calc(100% - 121px);
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .submenu {
+        height: calc(100vh - 121px);
+
+        + .ant-layout {
+          height: calc(100vh - 164px);
+        }
+      }
+
+      .hamburgericon {
+        display: none;
+      }
+    }
+  }
+}
+
+.version-modal {
+  .ant-modal-body {
+    max-height: 100%;
+    padding: 0;
+  }
+  .version-list {
+    width: 220px;
+    padding: 16px;
+    background: @background-color;
+    p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      span {
+        display: block;
+        margin-top: 4px;
+        color: @dg500;
+        font-weight: normal;
+      }
+    }
+    ul {
+      max-height: 400px;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      list-style: none;
+      li {
+        margin-top: 16px;
+        padding: 8px;
+        border-radius: 4px;
+        &:hover,
+        &.active {
+          background: @b400;
+          p {
+            color: @white;
+            span {
+              color: @dg700;
+            }
+          }
+        }
+      }
+    }
+  }
+  .version-box {
+    width: 402px;
+    border-left: 1px solid @border-color;
+    &.compare-version {
+      .version-box-content {
+        p span {
+          text-decoration-line: line-through;
+        }
+      }
+    }
+  }
+  .version-list-title {
+    padding: 12px 8px;
+    border-bottom: 1px solid @border-color;
+    p {
+      width: calc(100% - 75px);
+    }
+  }
+  .current-tag {
+    width: 60px;
+    span {
+      display: block;
+      padding: 4px 8px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      background: @dg700;
+      border-radius: 4px;
+    }
+  }
+  .version-box-title {
+    padding: 16px 16px 16px 24px;
+    background: @background-color;
+    border-bottom: 1px solid @border-color;
+    .ant-row {
+      > div {
+        width: calc(100% - 40px);
+      }
+    }
+    p {
+      margin: 0 0 4px 0;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      .ant-tag {
+        margin: 0 0 0 8px;
+      }
+      + span {
+        display: block;
+        margin-top: 4px;
+        color: @dg500;
+        font-weight: normal;
+        font-size: 12px;
+      }
+    }
+    .ant-select {
+      margin-top: 16px;
+    }
+  }
+  .version-box-content {
+    max-height: 350px;
+    padding: 24px;
+    overflow-y: auto;
+    p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      span {
+        display: block;
+        margin-top: 4px;
+        color: @dg500;
+        font-weight: normal;
+      }
+      + p {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.schedule-row {
+  .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin-left: 64px;
+  }
+  .ant-radio-wrapper + .ant-radio-wrapper {
+    margin: 0 0 0 64px;
+  }
+}
+
+.nestable-drag-popup {
+  .ant-collapse > .ant-collapse-item {
+    border: none;
+    > .ant-collapse-header {
+      display: flex;
+      align-items: center;
+      padding: 7px 8px 7px 8px;
+      background-color: @white;
+      border: 1px solid @border-color;
+      border-radius: 4px;
+      .drag-items {
+        width: calc(100% - 24px);
+        padding: 0;
+        font-weight: normal;
+        border: none;
+      }
+    }
+    .ant-collapse-content {
+      border: none;
+    }
+    .ant-collapse-content-box {
+      padding: 0;
+    }
+  }
+}
+
+// modal CSS end
