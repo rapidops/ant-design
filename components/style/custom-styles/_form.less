@@ -392,13 +392,13 @@ input {
     }
 
     &.ant-btn-dangerous {
-      color: @dg100;
+      color: @r400;
     }
   }
 }
 
 button.ant-btn.ant-btn-text.text-red span {
-  color: @dg100;
+  color: @r400;
 }
 
 .table-section {
@@ -872,4 +872,27 @@ input.ant-input {
 [ant-click-animating-without-extra-node='true']::after,
 .ant-click-animating-node {
   box-shadow: none;
+}
+
+.ant-checkbox-checked {
+  &.ant-checkbox-disabled {
+    .ant-checkbox-inner {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.ant-radio {
+  &.ant-radio-disabled {
+    .ant-radio-inner {
+      background-color: #f5f5f5;
+      &:after {
+        background-color: #cccccc;
+      }
+    }
+  }
+}
+
+.ant-avatar-square {
+  border-radius: 4px;
 }
