@@ -1,18 +1,23 @@
 import classNames from 'classnames';
-import RcTextArea, { TextAreaProps as RcTextAreaProps } from 'rc-textarea';
-import ResizableTextArea from 'rc-textarea/lib/ResizableTextArea';
+import type { TextAreaProps as RcTextAreaProps } from 'rc-textarea';
+import RcTextArea from 'rc-textarea';
+import type { ResizableTextAreaRef } from 'rc-textarea/lib/ResizableTextArea';
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import omit from 'rc-util/lib/omit';
 import * as React from 'react';
 import { ConfigContext } from '../config-provider';
-import SizeContext, { SizeType } from '../config-provider/SizeContext';
+import DisabledContext from '../config-provider/DisabledContext';
+import type { SizeType } from '../config-provider/SizeContext';
+import SizeContext from '../config-provider/SizeContext';
 import { FormItemInputContext } from '../form/context';
-import { getStatusClassNames, InputStatus, getMergedStatus } from '../_util/statusUtils';
+import type { InputStatus } from '../_util/statusUtils';
+import { getMergedStatus, getStatusClassNames } from '../_util/statusUtils';
 import ClearableLabeledInput from './ClearableLabeledInput';
-import { fixControlledValue, InputFocusOptions, resolveOnChange, triggerFocus } from './Input';
+import type { InputFocusOptions } from './Input';
+import { fixControlledValue, resolveOnChange, triggerFocus } from './Input';
 
 interface ShowCountProps {
-  formatter: (args: { count: number; maxLength?: number }) => string;
+  formatter: (args: { value: string; count: number; maxLength?: number }) => string;
 }
 
 function fixEmojiLength(value: string, maxLength: number) {
@@ -44,13 +49,14 @@ export interface TextAreaProps extends RcTextAreaProps {
   bordered?: boolean;
   showCount?: boolean | ShowCountProps;
   size?: SizeType;
+  disabled?: boolean;
   status?: InputStatus;
 }
 
 export interface TextAreaRef {
   focus: (options?: InputFocusOptions) => void;
   blur: () => void;
-  resizableTextArea?: ResizableTextArea;
+  resizableTextArea?: ResizableTextAreaRef;
 }
 
 const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
@@ -63,6 +69,7 @@ const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
       className,
       style,
       size: customizeSize,
+      disabled: customDisabled,
       onCompositionStart,
       onCompositionEnd,
       onChange,
@@ -73,6 +80,10 @@ const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
   ) => {
     const { getPrefixCls, direction } = React.useContext(ConfigContext);
     const size = React.useContext(SizeContext);
+
+    // ===================== Disabled =====================
+    const disabled = React.useContext(DisabledContext);
+    const mergedDisabled = customDisabled ?? disabled;
 
     const {
       status: contextStatus,
@@ -154,9 +165,8 @@ const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
 
     // ============================== Reset ===============================
     const handleReset = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-      handleSetValue('', () => {
-        innerRef.current?.focus();
-      });
+      handleSetValue('');
+      innerRef.current?.focus();
       resolveOnChange(innerRef.current?.resizableTextArea?.textArea!, e, onChange);
     };
 
@@ -173,6 +183,7 @@ const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
     const textArea = (
       <RcTextArea
         {...omit(props, ['allowClear'])}
+        disabled={mergedDisabled}
         className={classNames(
           {
             [`${prefixCls}-borderless`]: !bordered,
@@ -182,7 +193,7 @@ const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
           },
           getStatusClassNames(prefixCls, mergedStatus),
         )}
-        style={showCount ? undefined : style}
+        style={showCount ? { resize: style?.resize } : style}
         prefixCls={prefixCls}
         onCompositionStart={onInternalCompositionStart}
         onChange={handleChange}
@@ -201,6 +212,7 @@ const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
     // TextArea
     const textareaNode = (
       <ClearableLabeledInput
+        disabled={mergedDisabled}
         {...props}
         prefixCls={prefixCls}
         direction={direction}
@@ -221,7 +233,7 @@ const TextArea = React.forwardRef<TextAreaRef, TextAreaProps>(
 
       let dataCount = '';
       if (typeof showCount === 'object') {
-        dataCount = showCount.formatter({ count: valueLength, maxLength });
+        dataCount = showCount.formatter({ value: val, count: valueLength, maxLength });
       } else {
         dataCount = `${valueLength}${hasMaxLength ? ` / ${maxLength}` : ''}`;
       }

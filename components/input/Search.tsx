@@ -1,12 +1,14 @@
-import * as React from 'react';
+import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import classNames from 'classnames';
 import { composeRef } from 'rc-util/lib/ref';
-import SearchOutlined from '@ant-design/icons/SearchOutlined';
-import Input, { InputProps, InputRef } from './Input';
+import * as React from 'react';
 import Button from '../button';
-import SizeContext from '../config-provider/SizeContext';
 import { ConfigContext } from '../config-provider';
+import SizeContext from '../config-provider/SizeContext';
+import { useCompactItemContext } from '../space/Compact';
 import { cloneElement } from '../_util/reactNode';
+import type { InputProps, InputRef } from './Input';
+import Input from './Input';
 
 export interface SearchProps extends InputProps {
   inputPrefixCls?: string;
@@ -43,7 +45,11 @@ const Search = React.forwardRef<InputRef, SearchProps>((props, ref) => {
   const contextSize = React.useContext(SizeContext);
   const composedRef = React.useRef<boolean>(false);
 
-  const size = customizeSize || contextSize;
+  const prefixCls = getPrefixCls('input-search', customizePrefixCls);
+  const inputPrefixCls = getPrefixCls('input', customizeInputPrefixCls);
+  const { compactSize } = useCompactItemContext(prefixCls, direction);
+
+  const size = compactSize || customizeSize || contextSize;
 
   const inputRef = React.useRef<InputRef>(null);
 
@@ -69,14 +75,11 @@ const Search = React.forwardRef<InputRef, SearchProps>((props, ref) => {
   };
 
   const onPressEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (composedRef.current) {
+    if (composedRef.current || loading) {
       return;
     }
     onSearch(e);
   };
-
-  const prefixCls = getPrefixCls('input-search', customizePrefixCls);
-  const inputPrefixCls = getPrefixCls('input', customizeInputPrefixCls);
 
   const searchIcon = typeof enterButton === 'boolean' ? <SearchOutlined /> : null;
   const btnClassName = `${prefixCls}-button`;
@@ -164,7 +167,8 @@ const Search = React.forwardRef<InputRef, SearchProps>((props, ref) => {
     />
   );
 });
-
-Search.displayName = 'Search';
+if (process.env.NODE_ENV !== 'production') {
+  Search.displayName = 'Search';
+}
 
 export default Search;

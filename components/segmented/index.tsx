@@ -1,14 +1,15 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import RcSegmented from 'rc-segmented';
 import type {
+  SegmentedLabeledOption as RcSegmentedLabeledOption,
   SegmentedProps as RCSegmentedProps,
   SegmentedRawOption,
-  SegmentedLabeledOption as RcSegmentedLabeledOption,
 } from 'rc-segmented';
+import RcSegmented from 'rc-segmented';
+import * as React from 'react';
 
 import { ConfigContext } from '../config-provider';
-import SizeContext, { SizeType } from '../config-provider/SizeContext';
+import type { SizeType } from '../config-provider/SizeContext';
+import SizeContext from '../config-provider/SizeContext';
 
 export type { SegmentedValue } from 'rc-segmented';
 
@@ -45,7 +46,7 @@ const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>((props, ref) 
     prefixCls: customizePrefixCls,
     className,
     block,
-    options,
+    options = [],
     size: customSize = 'middle',
     ...restProps
   } = props;
@@ -58,7 +59,7 @@ const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>((props, ref) 
   const mergedSize = customSize || size;
 
   // syntactic sugar to support `icon` for Segmented Item
-  const extendedOptions = React.useMemo(
+  const extendedOptions = React.useMemo<RCSegmentedProps['options']>(
     () =>
       options.map(option => {
         if (isSegmentedLabeledOptionWithIcon(option)) {
@@ -94,9 +95,8 @@ const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>((props, ref) 
   );
 });
 
-Segmented.displayName = 'Segmented';
-Segmented.defaultProps = {
-  options: [],
-};
+if (process.env.NODE_ENV !== 'production') {
+  Segmented.displayName = 'Segmented';
+}
 
 export default Segmented;

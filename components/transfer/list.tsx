@@ -1,22 +1,23 @@
-import * as React from 'react';
-import omit from 'rc-util/lib/omit';
-import classNames from 'classnames';
 import DownOutlined from '@ant-design/icons/DownOutlined';
+import classNames from 'classnames';
+import omit from 'rc-util/lib/omit';
+import * as React from 'react';
 import Checkbox from '../checkbox';
-import Menu from '../menu';
 import Dropdown from '../dropdown';
-import {
-  TransferDirection,
+import type { MenuProps } from '../menu';
+import { isValidElement } from '../_util/reactNode';
+import type {
+  KeyWiseTransferItem,
   RenderResult,
   RenderResultObject,
   SelectAllLabel,
+  TransferDirection,
   TransferLocale,
-  KeyWiseTransferItem,
 } from './index';
+import type { PaginationType } from './interface';
+import type { TransferListBodyProps } from './ListBody';
+import DefaultListBody, { OmitProps } from './ListBody';
 import Search from './search';
-import DefaultListBody, { TransferListBodyProps, OmitProps } from './ListBody';
-import { PaginationType } from './interface';
-import { isValidElement } from '../_util/reactNode';
 
 const defaultRender = () => null;
 
@@ -80,12 +81,6 @@ interface TransferListState {
 export default class TransferList<
   RecordType extends KeyWiseTransferItem,
 > extends React.PureComponent<TransferListProps<RecordType>, TransferListState> {
-  static defaultProps = {
-    dataSource: [],
-    titleText: '',
-    showSearch: false,
-  };
-
   timer: number;
 
   triggerScrollTimer: number;
@@ -108,7 +103,7 @@ export default class TransferList<
     if (checkedKeys.length === 0) {
       return 'none';
     }
-    if (filteredItems.every(item => checkedKeys.indexOf(item.key) >= 0 || !!item.disabled)) {
+    if (filteredItems.every(item => checkedKeys.includes(item.key) || !!item.disabled)) {
       return 'all';
     }
     return 'part';
@@ -160,7 +155,7 @@ export default class TransferList<
     if (filterOption) {
       return filterOption(filterValue, item);
     }
-    return text.indexOf(filterValue) >= 0;
+    return text.includes(filterValue);
   };
 
   // =============================== Render ===============================
@@ -304,12 +299,12 @@ export default class TransferList<
     const { filterValue } = this.state;
     const {
       prefixCls,
-      dataSource,
-      titleText,
+      dataSource = [],
+      titleText = '',
       checkedKeys,
       disabled,
       footer,
-      showSearch,
+      showSearch = false,
       style,
       searchPlaceholder,
       notFoundContent,
@@ -363,9 +358,9 @@ export default class TransferList<
       !pagination &&
       this.getCheckBox({ filteredItems, onItemSelectAll, disabled, prefixCls });
 
-    let menu: React.ReactElement | null = null;
+    let items: MenuProps['items'];
     if (showRemove) {
-      const items = [
+      items = [
         /* Remove Current Page */
         pagination
           ? {
@@ -389,10 +384,8 @@ export default class TransferList<
           label: removeAll,
         },
       ].filter(item => item);
-
-      menu = <Menu items={items} />;
     } else {
-      const items = [
+      items = [
         {
           key: 'selectAll',
           onClick: () => {
@@ -442,12 +435,10 @@ export default class TransferList<
           label: selectInvert,
         },
       ];
-
-      menu = <Menu items={items} />;
     }
 
     const dropdown = (
-      <Dropdown className={`${prefixCls}-header-dropdown`} overlay={menu} disabled={disabled}>
+      <Dropdown className={`${prefixCls}-header-dropdown`} menu={{ items }} disabled={disabled}>
         <DownOutlined />
       </Dropdown>
     );

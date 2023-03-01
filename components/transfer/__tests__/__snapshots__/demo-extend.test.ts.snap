@@ -52,7 +52,6 @@ exports[`renders ./components/transfer/demo/advanced.md extend context correctly
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -178,7 +177,10 @@ exports[`renders ./components/transfer/demo/advanced.md extend context correctly
       <span
         class="ant-transfer-list-header-selected"
       >
-        0 item
+        0
+        <!-- -->
+        <!-- -->
+        item
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -299,7 +301,7 @@ exports[`renders ./components/transfer/demo/advanced.md extend context correctly
           <div
             class="ant-empty-description"
           >
-            No Data
+            No data
           </div>
         </div>
       </div>
@@ -426,7 +428,6 @@ exports[`renders ./components/transfer/demo/advanced.md extend context correctly
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -552,7 +553,10 @@ exports[`renders ./components/transfer/demo/advanced.md extend context correctly
       <span
         class="ant-transfer-list-header-selected"
       >
-        0 item
+        0
+        <!-- -->
+        <!-- -->
+        item
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -673,7 +677,7 @@ exports[`renders ./components/transfer/demo/advanced.md extend context correctly
           <div
             class="ant-empty-description"
           >
-            No Data
+            No data
           </div>
         </div>
       </div>
@@ -746,7 +750,6 @@ exports[`renders ./components/transfer/demo/basic.md extend context correctly 1`
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -872,7 +875,10 @@ exports[`renders ./components/transfer/demo/basic.md extend context correctly 1`
       <span
         class="ant-transfer-list-header-selected"
       >
-        11 items
+        11
+        <!-- -->
+        <!-- -->
+        items
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -1265,7 +1271,6 @@ exports[`renders ./components/transfer/demo/basic.md extend context correctly 1`
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -1391,7 +1396,10 @@ exports[`renders ./components/transfer/demo/basic.md extend context correctly 1`
       <span
         class="ant-transfer-list-header-selected"
       >
-        9 items
+        9
+        <!-- -->
+        <!-- -->
+        items
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -1688,7 +1696,6 @@ exports[`renders ./components/transfer/demo/custom-item.md extend context correc
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -1814,7 +1821,10 @@ exports[`renders ./components/transfer/demo/custom-item.md extend context correc
       <span
         class="ant-transfer-list-header-selected"
       >
-        0 item
+        0
+        <!-- -->
+        <!-- -->
+        item
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -1869,7 +1879,7 @@ exports[`renders ./components/transfer/demo/custom-item.md extend context correc
           <div
             class="ant-empty-description"
           >
-            No Data
+            No data
           </div>
         </div>
       </div>
@@ -1977,7 +1987,6 @@ exports[`renders ./components/transfer/demo/custom-item.md extend context correc
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -2103,7 +2112,10 @@ exports[`renders ./components/transfer/demo/custom-item.md extend context correc
       <span
         class="ant-transfer-list-header-selected"
       >
-        0 item
+        0
+        <!-- -->
+        <!-- -->
+        item
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -2158,7 +2170,7 @@ exports[`renders ./components/transfer/demo/custom-item.md extend context correc
           <div
             class="ant-empty-description"
           >
-            No Data
+            No data
           </div>
         </div>
       </div>
@@ -2218,7 +2230,6 @@ exports[`renders ./components/transfer/demo/custom-select-all-labels.md extend c
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -2635,7 +2646,6 @@ exports[`renders ./components/transfer/demo/custom-select-all-labels.md extend c
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -2891,7 +2901,6 @@ Array [
           >
             <ul
               class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-              data-dropdown-inject="true"
               data-menu-list="true"
               role="menu"
               tabindex="0"
@@ -3072,7 +3081,10 @@ Array [
         <span
           class="ant-transfer-list-header-selected"
         >
-          0 item
+          0
+          <!-- -->
+          <!-- -->
+          item
         </span>
         <span
           class="ant-transfer-list-header-title"
@@ -3127,7 +3139,7 @@ Array [
             <div
               class="ant-empty-description"
             >
-              No Data
+              No data
             </div>
           </div>
         </div>
@@ -3219,7 +3231,6 @@ Array [
           >
             <ul
               class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-              data-dropdown-inject="true"
               data-menu-list="true"
               role="menu"
               tabindex="0"
@@ -3400,7 +3411,10 @@ Array [
         <span
           class="ant-transfer-list-header-selected"
         >
-          0 item
+          0
+          <!-- -->
+          <!-- -->
+          item
         </span>
         <span
           class="ant-transfer-list-header-title"
@@ -3455,7 +3469,7 @@ Array [
             <div
               class="ant-empty-description"
             >
-              No Data
+              No data
             </div>
           </div>
         </div>
@@ -3534,7 +3548,6 @@ Array [
           >
             <ul
               class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-              data-dropdown-inject="true"
               data-menu-list="true"
               role="menu"
               tabindex="0"
@@ -3660,7 +3673,10 @@ Array [
         <span
           class="ant-transfer-list-header-selected"
         >
-          14 items
+          14
+          <!-- -->
+          <!-- -->
+          items
         </span>
         <span
           class="ant-transfer-list-header-title"
@@ -4095,7 +4111,6 @@ Array [
           >
             <ul
               class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-              data-dropdown-inject="true"
               data-menu-list="true"
               role="menu"
               tabindex="0"
@@ -4166,7 +4181,10 @@ Array [
         <span
           class="ant-transfer-list-header-selected"
         >
-          6 items
+          6
+          <!-- -->
+          <!-- -->
+          items
         </span>
         <span
           class="ant-transfer-list-header-title"
@@ -4475,7 +4493,6 @@ exports[`renders ./components/transfer/demo/search.md extend context correctly 1
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -4601,7 +4618,10 @@ exports[`renders ./components/transfer/demo/search.md extend context correctly 1
       <span
         class="ant-transfer-list-header-selected"
       >
-        0 item
+        0
+        <!-- -->
+        <!-- -->
+        item
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -4722,7 +4742,7 @@ exports[`renders ./components/transfer/demo/search.md extend context correctly 1
           <div
             class="ant-empty-description"
           >
-            No Data
+            No data
           </div>
         </div>
       </div>
@@ -4829,7 +4849,6 @@ exports[`renders ./components/transfer/demo/search.md extend context correctly 1
         >
           <ul
             class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-            data-dropdown-inject="true"
             data-menu-list="true"
             role="menu"
             tabindex="0"
@@ -4955,7 +4974,10 @@ exports[`renders ./components/transfer/demo/search.md extend context correctly 1
       <span
         class="ant-transfer-list-header-selected"
       >
-        0 item
+        0
+        <!-- -->
+        <!-- -->
+        item
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -5076,7 +5098,7 @@ exports[`renders ./components/transfer/demo/search.md extend context correctly 1
           <div
             class="ant-empty-description"
           >
-            No Data
+            No data
           </div>
         </div>
       </div>
@@ -5143,7 +5165,6 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
             >
               <ul
                 class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-                data-dropdown-inject="true"
                 data-menu-list="true"
                 role="menu"
                 tabindex="0"
@@ -5269,7 +5290,10 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
           <span
             class="ant-transfer-list-header-selected"
           >
-            0 item
+            0
+            <!-- -->
+            <!-- -->
+            item
           </span>
           <span
             class="ant-transfer-list-header-title"
@@ -5324,7 +5348,7 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
               <div
                 class="ant-empty-description"
               >
-                No Data
+                No data
               </div>
             </div>
           </div>
@@ -5431,7 +5455,6 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
             >
               <ul
                 class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-                data-dropdown-inject="true"
                 data-menu-list="true"
                 role="menu"
                 tabindex="0"
@@ -5557,7 +5580,10 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
           <span
             class="ant-transfer-list-header-selected"
           >
-            0 item
+            0
+            <!-- -->
+            <!-- -->
+            item
           </span>
           <span
             class="ant-transfer-list-header-title"
@@ -5612,7 +5638,7 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
               <div
                 class="ant-empty-description"
               >
-                No Data
+                No data
               </div>
             </div>
           </div>
@@ -5673,7 +5699,6 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
             >
               <ul
                 class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-                data-dropdown-inject="true"
                 data-menu-list="true"
                 role="menu"
                 tabindex="0"
@@ -5799,7 +5824,10 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
           <span
             class="ant-transfer-list-header-selected"
           >
-            0 item
+            0
+            <!-- -->
+            <!-- -->
+            item
           </span>
           <span
             class="ant-transfer-list-header-title"
@@ -5920,7 +5948,7 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
               <div
                 class="ant-empty-description"
               >
-                No Data
+                No data
               </div>
             </div>
           </div>
@@ -6027,7 +6055,6 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
             >
               <ul
                 class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-                data-dropdown-inject="true"
                 data-menu-list="true"
                 role="menu"
                 tabindex="0"
@@ -6153,7 +6180,10 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
           <span
             class="ant-transfer-list-header-selected"
           >
-            0 item
+            0
+            <!-- -->
+            <!-- -->
+            item
           </span>
           <span
             class="ant-transfer-list-header-title"
@@ -6274,7 +6304,7 @@ exports[`renders ./components/transfer/demo/status.md extend context correctly 1
               <div
                 class="ant-empty-description"
               >
-                No Data
+                No data
               </div>
             </div>
           </div>
@@ -6337,7 +6367,6 @@ Array [
           >
             <ul
               class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-              data-dropdown-inject="true"
               data-menu-list="true"
               role="menu"
               tabindex="0"
@@ -6463,7 +6492,10 @@ Array [
         <span
           class="ant-transfer-list-header-selected"
         >
-          14 items
+          14
+          <!-- -->
+          <!-- -->
+          items
         </span>
         <span
           class="ant-transfer-list-header-title"
@@ -6518,6 +6550,7 @@ Array [
                                     class="ant-checkbox"
                                   >
                                     <input
+                                      aria-label="Select all"
                                       class="ant-checkbox-input"
                                       type="checkbox"
                                     />
@@ -6987,8 +7020,7 @@ Array [
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination mini ant-table-pagination ant-table-pagination-right"
-                  unselectable="unselectable"
+                  class="ant-pagination ant-pagination-mini ant-table-pagination ant-table-pagination-right"
                 >
                   <li
                     aria-disabled="true"
@@ -7184,7 +7216,6 @@ Array [
           >
             <ul
               class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light"
-              data-dropdown-inject="true"
               data-menu-list="true"
               role="menu"
               tabindex="0"
@@ -7310,7 +7341,10 @@ Array [
         <span
           class="ant-transfer-list-header-selected"
         >
-          6 items
+          6
+          <!-- -->
+          <!-- -->
+          items
         </span>
         <span
           class="ant-transfer-list-header-title"
@@ -7365,6 +7399,7 @@ Array [
                                     class="ant-checkbox"
                                   >
                                     <input
+                                      aria-label="Select all"
                                       class="ant-checkbox-input"
                                       type="checkbox"
                                     />
@@ -7566,8 +7601,7 @@ Array [
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination mini ant-table-pagination ant-table-pagination-right"
-                  unselectable="unselectable"
+                  class="ant-pagination ant-pagination-mini ant-table-pagination ant-table-pagination-right"
                 >
                   <li
                     aria-disabled="true"
@@ -7700,7 +7734,10 @@ exports[`renders ./components/transfer/demo/tree-transfer.md extend context corr
       <span
         class="ant-transfer-list-header-selected"
       >
-        5 items
+        5
+        <!-- -->
+        <!-- -->
+        items
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -7727,7 +7764,7 @@ exports[`renders ./components/transfer/demo/tree-transfer.md extend context corr
           <div
             aria-hidden="true"
             class="ant-tree-treenode"
-            style="position:absolute;pointer-events:none;visibility:hidden;height:0;overflow:hidden"
+            style="position:absolute;pointer-events:none;visibility:hidden;height:0;overflow:hidden;border:0;padding:0"
           >
             <div
               class="ant-tree-indent"
@@ -7998,7 +8035,10 @@ exports[`renders ./components/transfer/demo/tree-transfer.md extend context corr
       <span
         class="ant-transfer-list-header-selected"
       >
-        0 item
+        0
+        <!-- -->
+        <!-- -->
+        item
       </span>
       <span
         class="ant-transfer-list-header-title"
@@ -8053,7 +8093,7 @@ exports[`renders ./components/transfer/demo/tree-transfer.md extend context corr
           <div
             class="ant-empty-description"
           >
-            No Data
+            No data
           </div>
         </div>
       </div>

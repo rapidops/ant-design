@@ -14,52 +14,55 @@ title:
 
 Modify global theme color by css variable which IE not support. Css variable depends on the design, it may adjust so please do not directly use it. You can go to other components page for more detail style. [Check this](/docs/react/customize-theme-variable) to view detail.
 
-```jsx
-import { SketchPicker } from 'react-color';
-import React, { useState } from 'react';
+```tsx
 import {
+  ClockCircleOutlined,
   DownOutlined,
   MailOutlined,
   SettingOutlined,
-  ClockCircleOutlined,
 } from '@ant-design/icons';
+import type { SpaceProps, TreeSelectProps } from 'antd';
 import {
-  ConfigProvider,
-  Tag,
-  Mentions,
-  Steps,
+  Alert,
   Button,
-  Radio,
-  Space,
+  Card,
+  Checkbox,
+  Col,
+  ConfigProvider,
+  DatePicker,
+  Divider,
+  Dropdown,
   Form,
   Input,
-  Row,
-  Col,
-  Typography,
-  Menu,
-  Dropdown,
-  Divider,
-  Pagination,
-  Select,
-  Checkbox,
-  DatePicker,
-  TimePicker,
   InputNumber,
+  Mentions,
+  Menu,
+  Pagination,
+  Progress,
+  Radio,
+  Row,
+  Select,
   Slider,
+  Space,
+  Spin,
+  Steps,
   Switch,
-  TreeSelect,
-  Card,
   Table,
   Tabs,
+  Tag,
   Timeline,
-  Tree,
-  Alert,
-  Progress,
-  Spin,
+  TimePicker,
   Transfer,
+  Tree,
+  TreeSelect,
+  Typography,
 } from 'antd';
+import React, { useState } from 'react';
+import { SketchPicker } from 'react-color';
 
-const SplitSpace = props => <Space split={<Divider type="vertical" />} size={4} {...props} />;
+const SplitSpace: React.FC<SpaceProps> = props => (
+  <Space split={<Divider type="vertical" />} size={4} {...props} />
+);
 
 const menuItems = [
   {
@@ -116,7 +119,7 @@ const treeData = [
   },
 ];
 
-const treeSelectProps = {
+const treeSelectProps: TreeSelectProps = {
   ...inputProps,
   treeCheckable: true,
   maxTagCount: 'responsive',
@@ -158,7 +161,7 @@ const MyTransfer = () => {
   );
 };
 
-const FormSizeDemo = () => {
+const App: React.FC = () => {
   const [color, setColor] = useState({
     primaryColor: '#1890ff',
     errorColor: '#ff4d4f',
@@ -167,7 +170,7 @@ const FormSizeDemo = () => {
     infoColor: '#1890ff',
   });
 
-  function onColorChange(nextColor) {
+  const onColorChange = (nextColor: Partial<typeof color>) => {
     const mergedNextColor = {
       ...color,
       ...nextColor,
@@ -176,7 +179,7 @@ const FormSizeDemo = () => {
     ConfigProvider.config({
       theme: mergedNextColor,
     });
-  }
+  };
 
   return (
     <Row gutter={16} wrap={false}>
@@ -309,19 +312,19 @@ const FormSizeDemo = () => {
 
             {/* Dropdown */}
             <Dropdown
-              overlay={
-                <Menu
-                  items={[
-                    {
-                      label: '1st menu item',
-                    },
-                    {
-                      label: 'a danger item',
-                      danger: true,
-                    },
-                  ]}
-                />
-              }
+              menu={{
+                items: [
+                  {
+                    key: '1',
+                    label: '1st menu item',
+                  },
+                  {
+                    key: '2',
+                    label: 'a danger item',
+                    danger: true,
+                  },
+                ],
+              }}
             >
               <a onClick={e => e.preventDefault()}>
                 <Space>
@@ -364,23 +367,50 @@ const FormSizeDemo = () => {
           <Pagination showQuickJumper defaultCurrent={2} total={500} />
 
           {/* Steps */}
-          <Steps current={1} percent={60}>
-            <Steps.Step title="Finished" description="This is a description." />
-            <Steps.Step
-              title="In Progress"
-              subTitle="Left 00:00:08"
-              description="This is a description."
-            />
-            <Steps.Step title="Waiting" description="This is a description." />
-          </Steps>
+          <Steps
+            current={1}
+            percent={60}
+            items={[
+              {
+                title: 'Finished',
+                description: 'This is a description.',
+              },
+              {
+                title: 'In Progress',
+                subTitle: 'Left 00:00:08',
+                description: 'This is a description.',
+              },
+              {
+                title: 'Waiting',
+                description: 'This is a description.',
+              },
+            ]}
+          />
 
           {/* Steps - dot */}
-          <Steps current={2} status="error" progressDot>
-            <Steps.Step title="Finished" description="You can hover on the dot." />
-            <Steps.Step title="In Progress" description="You can hover on the dot." />
-            <Steps.Step title="Error" description="You can hover on the dot." />
-            <Steps.Step title="Waiting" description="You can hover on the dot." />
-          </Steps>
+          <Steps
+            current={2}
+            status="error"
+            progressDot
+            items={[
+              {
+                title: 'Finished',
+                description: 'You can hover on the dot.',
+              },
+              {
+                title: 'In Progress',
+                description: 'You can hover on the dot.',
+              },
+              {
+                title: 'Error',
+                description: 'You can hover on the dot.',
+              },
+              {
+                title: 'Waiting',
+                description: 'You can hover on the dot.',
+              },
+            ]}
+          />
 
           {/* Form - Input */}
           <Form>
@@ -634,5 +664,6 @@ const FormSizeDemo = () => {
     </Row>
   );
 };
-export default () => <FormSizeDemo />;
+
+export default App;
 ```

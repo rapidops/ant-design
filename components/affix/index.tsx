@@ -1,16 +1,17 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import omit from 'rc-util/lib/omit';
 import ResizeObserver from 'rc-resize-observer';
-import { ConfigContext, ConfigConsumerProps } from '../config-provider';
+import omit from 'rc-util/lib/omit';
+import * as React from 'react';
+import type { ConfigConsumerProps } from '../config-provider';
+import { ConfigContext } from '../config-provider';
 import { throttleByAnimationFrameDecorator } from '../_util/throttleByAnimationFrame';
 
 import {
   addObserveTarget,
-  removeObserveTarget,
-  getTargetRect,
-  getFixedTop,
   getFixedBottom,
+  getFixedTop,
+  getTargetRect,
+  removeObserveTarget,
 } from './utils';
 
 function getDefaultTarget() {
@@ -76,7 +77,7 @@ class Affix extends React.Component<InternalAffixProps, AffixState> {
       return target;
     }
 
-    return getTargetContainer || getDefaultTarget;
+    return getTargetContainer ?? getDefaultTarget;
   }
 
   // Event handler
@@ -167,6 +168,15 @@ class Affix extends React.Component<InternalAffixProps, AffixState> {
     const placeholderReact = getTargetRect(this.placeholderNode);
     const fixedTop = getFixedTop(placeholderReact, targetRect, offsetTop);
     const fixedBottom = getFixedBottom(placeholderReact, targetRect, offsetBottom);
+
+    if (
+      placeholderReact.top === 0 &&
+      placeholderReact.left === 0 &&
+      placeholderReact.width === 0 &&
+      placeholderReact.height === 0
+    ) {
+      return;
+    }
 
     if (fixedTop !== undefined) {
       newState.affixStyle = {
@@ -295,6 +305,8 @@ class Affix extends React.Component<InternalAffixProps, AffixState> {
     );
   }
 }
+// just use in test
+export type InternalAffixClass = Affix;
 
 const AffixFC = React.forwardRef<Affix, AffixProps>((props, ref) => {
   const { prefixCls: customizePrefixCls } = props;

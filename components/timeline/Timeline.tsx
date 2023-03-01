@@ -1,10 +1,11 @@
-import * as React from 'react';
-import classNames from 'classnames';
 import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
+import classNames from 'classnames';
+import * as React from 'react';
 
-import TimelineItem, { TimelineItemProps } from './TimelineItem';
 import { ConfigContext } from '../config-provider';
 import { cloneElement } from '../_util/reactNode';
+import type { TimelineItemProps } from './TimelineItem';
+import TimelineItem from './TimelineItem';
 
 export interface TimelineProps {
   prefixCls?: string;
@@ -18,11 +19,11 @@ export interface TimelineProps {
   children?: React.ReactNode;
 }
 
-interface TimelineType extends React.FC<TimelineProps> {
+type CompoundedComponent = React.FC<TimelineProps> & {
   Item: React.FC<TimelineItemProps>;
-}
+};
 
-const Timeline: TimelineType = props => {
+const Timeline: CompoundedComponent = (props) => {
   const { getPrefixCls, direction } = React.useContext(ConfigContext);
   const {
     prefixCls: customizePrefixCls,
@@ -44,7 +45,7 @@ const Timeline: TimelineType = props => {
   ) : null;
 
   const timeLineItems = React.Children.toArray(children);
-  timeLineItems.push(pendingItem as any);
+  timeLineItems.push(pendingItem!);
   if (reverse) {
     timeLineItems.reverse();
   }

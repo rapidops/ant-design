@@ -19,8 +19,10 @@ This demo was created for debugging Menu styles inside Dropdown.
 [#19150](https://github.com/ant-design/ant-design/pull/19150)
 
 ```tsx
-import { Menu, Dropdown, MenuProps, Space } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined, DownOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, DownOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Dropdown, Space } from 'antd';
+import React from 'react';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -67,10 +69,14 @@ const items: MenuItem[] = [
   null as any,
 ];
 
-const menu = <Menu selectedKeys={['1']} openKeys={['sub1']} items={items} />;
-
-export default () => (
-  <Dropdown overlay={menu}>
+const App: React.FC = () => (
+  <Dropdown
+    menu={{
+      items,
+      selectedKeys: ['1'],
+      openKeys: ['sub1'],
+    }}
+  >
     <a onClick={e => e.preventDefault()}>
       <Space>
         Hover to check menu style
@@ -79,4 +85,6 @@ export default () => (
     </a>
   </Dropdown>
 );
+
+export default App;
 ```

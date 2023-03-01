@@ -147,7 +147,7 @@ const Demo = () => (
 - Tabs 重写（[4.3.0](https://github.com/ant-design/ant-design/pull/24552)）
   - Dom 结构变化，如有覆盖样式需要仔细检查。
   - 横向滚动交互变化，`onPrevClick` 和 `onNextClick` 不再工作。
-- less 变量变化，如 DatePicker/TimePicker/Calendar 相关变量已全部重构，又如 [@btn-padding-base](https://github.com/ant-design/ant-design/issues/28141) 等进行了重命名，具体变化请自行对比 [3.x 变量](https://github.com/ant-design/ant-design/blob/3.x-stable/components/style/themes/default.less) 和 [4.x 变量](https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less)。
+- less 变量变化，如 DatePicker/TimePicker/Calendar 相关变量已全部重构，又如 [@btn-padding-base](https://github.com/ant-design/ant-design/issues/28141) 等进行了重命名，具体变化请自行对比 [3.x 变量](https://github.com/ant-design/ant-design/blob/3.x-stable/components/style/themes/default.less) 和 [4.x 变量](https://github.com/ant-design/ant-design/blob/4.x-stable/components/style/themes/default.less)。
 
 ```diff
 <Table
@@ -192,6 +192,14 @@ antd4-codemod src
 ### 迁移工具修改详情
 
 `@ant-design/codemod-v4` 会帮你迁移到 antd v4, 废弃的组件则通过 `@ant-design/compatible` 保持运行, 一般来说你无需手动迁移。下方内容详细介绍了整体的迁移和变化，你也可以参照变动手动修改。
+
+#### 安装兼容包
+
+安装 `@ant-design/compatible` 通过指定 `v4-compatible-v3` tag 确认为 v4 兼容 v3 版本：
+
+```bash
+npm install --save @ant-design/compatible@v4-compatible-v3
+```
 
 #### 将已废弃的 `Form` 和 `Mention` 组件通过 `@ant-design/compatible` 包引入
 

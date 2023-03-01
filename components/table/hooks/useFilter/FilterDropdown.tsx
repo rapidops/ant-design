@@ -1,30 +1,35 @@
-import * as React from 'react';
+import FilterFilled from '@ant-design/icons/FilterFilled';
 import classNames from 'classnames';
 import isEqual from 'lodash/isEqual';
-import FilterFilled from '@ant-design/icons/FilterFilled';
+import type { FieldDataNode } from 'rc-tree';
+import * as React from 'react';
+import type { FilterState } from '.';
+import { flattenKeys } from '.';
 import Button from '../../../button';
-import Menu from '../../../menu';
-import type { MenuProps } from '../../../menu';
-import Tree from '../../../tree';
-import type { DataNode, EventDataNode } from '../../../tree';
-import Checkbox from '../../../checkbox';
 import type { CheckboxChangeEvent } from '../../../checkbox';
-import Radio from '../../../radio';
+import Checkbox from '../../../checkbox';
+import { ConfigContext } from '../../../config-provider/context';
 import Dropdown from '../../../dropdown';
 import Empty from '../../../empty';
-import {
-  ColumnType,
+import type { MenuProps } from '../../../menu';
+import Menu from '../../../menu';
+import { OverrideProvider } from '../../../menu/OverrideContext';
+import Radio from '../../../radio';
+import type { EventDataNode } from '../../../tree';
+import Tree from '../../../tree';
+import useSyncState from '../../../_util/hooks/useSyncState';
+import type {
   ColumnFilterItem,
+  ColumnType,
+  FilterSearchType,
+  GetPopupContainer,
   Key,
   TableLocale,
-  GetPopupContainer,
-  FilterSearchType,
 } from '../../interface';
-import FilterDropdownMenuWrapper from './FilterWrapper';
 import FilterSearch from './FilterSearch';
-import { FilterState, flattenKeys } from '.';
-import useSyncState from '../../../_util/hooks/useSyncState';
-import { ConfigContext } from '../../../config-provider/context';
+import FilterDropdownMenuWrapper from './FilterWrapper';
+
+type FilterTreeDataNode = FieldDataNode<{ title: React.ReactNode; key: React.Key }>;
 
 interface FilterRestProps {
   confirm?: Boolean;
@@ -55,7 +60,7 @@ function renderFilterItems({
   filteredKeys: Key[];
   filterMultiple: boolean;
   searchValue: string;
-  filterSearch: FilterSearchType;
+  filterSearch: FilterSearchType<ColumnFilterItem>;
 }): Required<MenuProps>['items'] {
   return filters.map((filter, index) => {
     const key = String(filter.value);
@@ -97,6 +102,8 @@ function renderFilterItems({
   });
 }
 
+export type TreeColumnFilterItem = ColumnFilterItem & FilterTreeDataNode;
+
 export interface FilterDropdownProps<RecordType> {
   tablePrefixCls: string;
   prefixCls: string;
@@ -105,7 +112,7 @@ export interface FilterDropdownProps<RecordType> {
   filterState?: FilterState<RecordType>;
   filterMultiple: boolean;
   filterMode?: 'menu' | 'tree';
-  filterSearch?: FilterSearchType;
+  filterSearch?: FilterSearchType<ColumnFilterItem | TreeColumnFilterItem>;
   columnKey: Key;
   children: React.ReactNode;
   triggerFilter: (filterState: FilterState<RecordType>) => void;
@@ -132,6 +139,8 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
   } = props;
 
   const {
+    filterDropdownOpen,
+    onFilterDropdownOpenChange,
     filterDropdownVisible,
     onFilterDropdownVisibleChange,
     filterResetToDefaultFilteredValue,
@@ -145,12 +154,16 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
   );
   const triggerVisible = (newVisible: boolean) => {
     setVisible(newVisible);
+    onFilterDropdownOpenChange?.(newVisible);
     onFilterDropdownVisibleChange?.(newVisible);
   };
 
-  const mergedVisible =
-    typeof filterDropdownVisible === 'boolean' ? filterDropdownVisible : visible;
-
+  let mergedVisible: boolean;
+  if (typeof filterDropdownOpen === 'boolean') {
+    mergedVisible = filterDropdownOpen;
+  } else {
+    mergedVisible = typeof filterDropdownVisible === 'boolean' ? filterDropdownVisible : visible;
+  }
   // ===================== Select Keys =====================
   const propFilteredKeys = filterState?.filteredKeys;
   const [getFilteredKeysSync, setFilteredKeysSync] = useSyncState(propFilteredKeys || []);
@@ -159,7 +172,10 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
     setFilteredKeysSync(selectedKeys);
   };
 
-  const onCheck = (keys: Key[], { node, checked }: { node: EventDataNode; checked: boolean }) => {
+  const onCheck = (
+    keys: Key[],
+    { node, checked }: { node: EventDataNode<FilterTreeDataNode>; checked: boolean },
+  ) => {
     if (!filterMultiple) {
       onSelectKeys({ selectedKeys: checked && node.key ? [node.key] : [] });
     } else {
@@ -176,21 +192,9 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
 
   // ====================== Open Keys ======================
   const [openKeys, setOpenKeys] = React.useState<string[]>([]);
-  const openRef = React.useRef<number>();
   const onOpenChange = (keys: string[]) => {
-    openRef.current = window.setTimeout(() => {
-      setOpenKeys(keys);
-    });
+    setOpenKeys(keys);
   };
-  const onMenuClick = () => {
-    window.clearTimeout(openRef.current);
-  };
-  React.useEffect(
-    () => () => {
-      window.clearTimeout(openRef.current);
-    },
-    [],
-  );
 
   // search in tree mode column filter
   const [searchValue, setSearchValue] = React.useState('');
@@ -285,7 +289,7 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
   const getTreeData = ({ filters }: { filters?: ColumnFilterItem[] }) =>
     (filters || []).map((filter, index) => {
       const key = String(filter.value);
-      const item: DataNode = {
+      const item: FilterTreeDataNode = {
         title: filter.text,
         key: filter.value !== undefined ? key : index,
       };
@@ -294,8 +298,15 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
       }
       return item;
     });
+  const getFilterData = (node: FilterTreeDataNode): TreeColumnFilterItem => ({
+    ...node,
+    text: node.title,
+    value: node.key,
+    children: node.children?.map(item => getFilterData(item)) || [],
+  });
 
   let dropdownContent: React.ReactNode;
+
   if (typeof column.filterDropdown === 'function') {
     dropdownContent = column.filterDropdown({
       prefixCls: `${dropdownPrefixCls}-custom`,
@@ -305,6 +316,9 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
       clearFilters: onReset,
       filters: column.filters,
       visible: mergedVisible,
+      close: () => {
+        triggerVisible(false);
+      },
     });
   } else if (column.filterDropdown) {
     dropdownContent = column.filterDropdown;
@@ -329,7 +343,7 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
       if (filterMode === 'tree') {
         return (
           <>
-            <FilterSearch
+            <FilterSearch<TreeColumnFilterItem>
               filterSearch={filterSearch}
               value={searchValue}
               onChange={onSearch}
@@ -350,7 +364,7 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
                   {locale.filterCheckall}
                 </Checkbox>
               ) : null}
-              <Tree
+              <Tree<FilterTreeDataNode>
                 checkable
                 selectable={false}
                 blockNode
@@ -366,7 +380,12 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
                 defaultExpandAll
                 filterTreeNode={
                   searchValue.trim()
-                    ? node => searchValueMatched(searchValue, node.title)
+                    ? node => {
+                        if (typeof filterSearch === 'function') {
+                          return filterSearch(searchValue, getFilterData(node));
+                        }
+                        return searchValueMatched(searchValue, node.title);
+                      }
                     : undefined
                 }
               />
@@ -384,10 +403,10 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
             locale={locale}
           />
           <Menu
+            selectable
             multiple={filterMultiple}
             prefixCls={`${dropdownPrefixCls}-menu`}
             className={dropdownMenuClass}
-            onClick={onMenuClick}
             onSelect={onSelectKeys}
             onDeselect={onSelectKeys}
             selectedKeys={selectedKeys}
@@ -407,16 +426,22 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
       );
     };
 
+    const getResetDisabled = () => {
+      if (filterResetToDefaultFilteredValue) {
+        return isEqual(
+          (defaultFilteredValue || []).map(key => String(key)),
+          selectedKeys,
+        );
+      }
+
+      return selectedKeys.length === 0;
+    };
+
     dropdownContent = (
       <>
         {getFilterComponent()}
         <div className={`${prefixCls}-dropdown-btns`}>
-          <Button
-            type="link"
-            size="small"
-            disabled={selectedKeys.length === 0}
-            onClick={() => onReset()}
-          >
+          <Button type="link" size="small" disabled={getResetDisabled()} onClick={() => onReset()}>
             {locale.filterReset}
           </Button>
           <Button type="primary" size="small" onClick={onConfirm}>
@@ -427,7 +452,12 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
     );
   }
 
-  const menu = (
+  // We should not block customize Menu with additional props
+  if (column.filterDropdown) {
+    dropdownContent = <OverrideProvider selectable={undefined}>{dropdownContent}</OverrideProvider>;
+  }
+
+  const menu = () => (
     <FilterDropdownMenuWrapper className={`${prefixCls}-dropdown`}>
       {dropdownContent}
     </FilterDropdownMenuWrapper>
@@ -448,10 +478,10 @@ function FilterDropdown<RecordType>(props: FilterDropdownProps<RecordType>) {
     <div className={`${prefixCls}-column`}>
       <span className={`${tablePrefixCls}-column-title`}>{children}</span>
       <Dropdown
-        overlay={menu}
+        dropdownRender={menu}
         trigger={['click']}
-        visible={mergedVisible}
-        onVisibleChange={onVisibleChange}
+        open={mergedVisible}
+        onOpenChange={onVisibleChange}
         getPopupContainer={getPopupContainer}
         placement={direction === 'rtl' ? 'bottomLeft' : 'bottomRight'}
       >

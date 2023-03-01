@@ -13,33 +13,34 @@ title:
 
 Configurate `disabled` and `readOnly`.
 
-```jsx
+```tsx
+import React from 'react';
 import { Mentions } from 'antd';
 
-const { Option } = Mentions;
+const options = ['afc163', 'zombiej', 'yesmeck'].map(value => ({
+  value,
+  key: value,
+  label: value,
+}));
 
-function getOptions() {
-  return ['afc163', 'zombiej', 'yesmeck'].map(value => (
-    <Option key={value} value={value}>
-      {value}
-    </Option>
-  ));
-}
-
-function App() {
-  return (
-    <>
-      <div style={{ marginBottom: 10 }}>
-        <Mentions style={{ width: '100%' }} placeholder="this is disabled Mentions" disabled>
-          {getOptions()}
-        </Mentions>
-      </div>
-      <Mentions style={{ width: '100%' }} placeholder="this is readOnly Mentions" readOnly>
-        {getOptions()}
-      </Mentions>
-    </>
-  );
-}
+const App: React.FC = () => (
+  <>
+    <div style={{ marginBottom: 10 }}>
+      <Mentions
+        style={{ width: '100%' }}
+        placeholder="this is disabled Mentions"
+        disabled
+        options={options}
+      />
+    </div>
+    <Mentions
+      style={{ width: '100%' }}
+      placeholder="this is readOnly Mentions"
+      readOnly
+      options={options}
+    />
+  </>
+);
 
 export default App;
 ```

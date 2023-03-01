@@ -1,5 +1,5 @@
-import * as React from 'react';
 import classNames from 'classnames';
+import * as React from 'react';
 import { ConfigContext } from '../config-provider';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import DefaultEmptyImg from './empty';
@@ -23,12 +23,12 @@ export interface EmptyProps {
   children?: React.ReactNode;
 }
 
-interface EmptyType extends React.FC<EmptyProps> {
+type CompoundedComponent = React.FC<EmptyProps> & {
   PRESENTED_IMAGE_DEFAULT: React.ReactNode;
   PRESENTED_IMAGE_SIMPLE: React.ReactNode;
-}
+};
 
-const Empty: EmptyType = ({
+const Empty: CompoundedComponent = ({
   className,
   prefixCls: customizePrefixCls,
   image = defaultEmptyImg,
@@ -41,9 +41,9 @@ const Empty: EmptyType = ({
 
   return (
     <LocaleReceiver componentName="Empty">
-      {(locale: TransferLocale) => {
+      {contextLocale => {
         const prefixCls = getPrefixCls('empty', customizePrefixCls);
-        const des = typeof description !== 'undefined' ? description : locale.description;
+        const des = typeof description !== 'undefined' ? description : contextLocale.description;
         const alt = typeof des === 'string' ? des : 'empty';
 
         let imageNode: React.ReactNode = null;
