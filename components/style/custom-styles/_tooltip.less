@@ -36,24 +36,30 @@
 }
 
 .ant-tooltip {
-  &.ant-tooltip-placement-right {
-    padding-left: 2px;
+  // &.ant-tooltip-placement-right {
+  //   padding-left: 2px;
+  //   // .ant-tooltip-arrow {
+  //   //   left: -20px;
+  //   // }
+  // }
+  &.ant-tooltip-placement-left,
+  &.ant-tooltip-placement-leftTop,
+  &.ant-tooltip-placement-leftBottom {
     .ant-tooltip-arrow {
-      left: -20px;
+      // right: 0;
+      .ant-tooltip-arrow-content {
+        left: 0;
+        // right: 3px;
+      }
     }
   }
-  &.ant-tooltip-placement-left {
-    .ant-tooltip-arrow {
-      right: -6px;
-    }
-  }
-  &.ant-tooltip-placement-bottom {
-    padding-top: 3px;
-    .ant-tooltip-arrow {
-      top: -19px;
-      margin-left: -2px;
-    }
-  }
+  // &.ant-tooltip-placement-bottom {
+  //   padding-top: 3px;
+  //   .ant-tooltip-arrow {
+  //     // top: -19px;
+  //     margin-left: -2px;
+  //   }
+  // }
 }
 
 .ant-tooltip-disabled-compatible-wrapper {
