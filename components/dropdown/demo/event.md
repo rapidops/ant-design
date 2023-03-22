@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 6
 title:
   zh-CN: 触发事件
   en-US: Click event
@@ -13,36 +13,33 @@ title:
 
 An event will be triggered when you click menu items, in which you can make different operations according to item's key.
 
-```jsx
-import { Menu, Dropdown, message, Space } from 'antd';
+```tsx
 import { DownOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Dropdown, message, Space } from 'antd';
+import React from 'react';
 
-const onClick = ({ key }) => {
+const onClick: MenuProps['onClick'] = ({ key }) => {
   message.info(`Click on item ${key}`);
 };
 
-const menu = (
-  <Menu
-    onClick={onClick}
-    items={[
-      {
-        label: '1st menu item',
-        key: '1',
-      },
-      {
-        label: '2nd menu item',
-        key: '2',
-      },
-      {
-        label: '3rd menu item',
-        key: '3',
-      },
-    ]}
-  />
-);
+const items: MenuProps['items'] = [
+  {
+    label: '1st menu item',
+    key: '1',
+  },
+  {
+    label: '2nd menu item',
+    key: '2',
+  },
+  {
+    label: '3rd menu item',
+    key: '3',
+  },
+];
 
-export default () => (
-  <Dropdown overlay={menu}>
+const App: React.FC = () => (
+  <Dropdown menu={{ items, onClick }}>
     <a onClick={e => e.preventDefault()}>
       <Space>
         Hover me, Click menu item
@@ -51,4 +48,6 @@ export default () => (
     </a>
   </Dropdown>
 );
+
+export default App;
 ```

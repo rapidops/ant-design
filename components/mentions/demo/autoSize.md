@@ -13,16 +13,30 @@ title:
 
 Height autoSize.
 
-```jsx
+```tsx
+import React from 'react';
 import { Mentions } from 'antd';
 
-const { Option } = Mentions;
-
-export default () => (
-  <Mentions autoSize style={{ width: '100%' }}>
-    <Option value="afc163">afc163</Option>
-    <Option value="zombieJ">zombieJ</Option>
-    <Option value="yesmeck">yesmeck</Option>
-  </Mentions>
+const App: React.FC = () => (
+  <Mentions
+    autoSize
+    style={{ width: '100%' }}
+    options={[
+      {
+        value: 'afc163',
+        label: 'afc163',
+      },
+      {
+        value: 'zombieJ',
+        label: 'zombieJ',
+      },
+      {
+        value: 'yesmeck',
+        label: 'yesmeck',
+      },
+    ]}
+  />
 );
+
+export default App;
 ```

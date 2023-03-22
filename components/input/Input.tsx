@@ -1,14 +1,21 @@
-import React, { forwardRef, useContext, useEffect, useRef } from 'react';
-import RcInput, { InputProps as RcInputProps, InputRef } from 'rc-input';
 import CloseCircleFilled from '@ant-design/icons/CloseCircleFilled';
 import classNames from 'classnames';
+import type { InputProps as RcInputProps, InputRef } from 'rc-input';
+import RcInput from 'rc-input';
+import type { BaseInputProps } from 'rc-input/lib/interface';
 import { composeRef } from 'rc-util/lib/ref';
-import SizeContext, { SizeType } from '../config-provider/SizeContext';
-import { getMergedStatus, getStatusClassNames, InputStatus } from '../_util/statusUtils';
+import React, { forwardRef, useContext, useEffect, useRef } from 'react';
 import { ConfigContext } from '../config-provider';
-import { FormItemInputContext, NoFormStatus } from '../form/context';
+import DisabledContext from '../config-provider/DisabledContext';
+import type { SizeType } from '../config-provider/SizeContext';
+import SizeContext from '../config-provider/SizeContext';
+import { FormItemInputContext, NoFormStyle } from '../form/context';
+import { NoCompactStyle, useCompactItemContext } from '../space/Compact';
+import type { InputStatus } from '../_util/statusUtils';
+import { getMergedStatus, getStatusClassNames } from '../_util/statusUtils';
+import warning from '../_util/warning';
+import useRemovePasswordTimeout from './hooks/useRemovePasswordTimeout';
 import { hasPrefixSuffix } from './utils';
-import devWarning from '../_util/devWarning';
 
 export interface InputFocusOptions extends FocusOptions {
   cursor?: 'start' | 'end' | 'all';
@@ -35,7 +42,7 @@ export function resolveOnChange<E extends HTMLInputElement | HTMLTextAreaElement
   if (!onChange) {
     return;
   }
-  let event = e;
+  let event = e as React.ChangeEvent<E>;
 
   if (e.type === 'click') {
     // Clone a new target for event.
@@ -59,7 +66,7 @@ export function resolveOnChange<E extends HTMLInputElement | HTMLTextAreaElement
     });
 
     currentTarget.value = '';
-    onChange(event as React.ChangeEvent<E>);
+    onChange(event);
     return;
   }
 
@@ -71,17 +78,19 @@ export function resolveOnChange<E extends HTMLInputElement | HTMLTextAreaElement
     });
 
     target.value = targetValue;
-    onChange(event as React.ChangeEvent<E>);
+    onChange(event);
     return;
   }
-  onChange(event as React.ChangeEvent<E>);
+  onChange(event);
 }
 
 export function triggerFocus(
   element?: HTMLInputElement | HTMLTextAreaElement,
   option?: InputFocusOptions,
 ) {
-  if (!element) return;
+  if (!element) {
+    return;
+  }
 
   element.focus(option);
 
@@ -94,13 +103,12 @@ export function triggerFocus(
       case 'start':
         element.setSelectionRange(0, 0);
         break;
-
       case 'end':
         element.setSelectionRange(len, len);
         break;
-
       default:
         element.setSelectionRange(0, len);
+        break;
     }
   }
 }
@@ -111,9 +119,10 @@ export interface InputProps
     'wrapperClassName' | 'groupClassName' | 'inputClassName' | 'affixWrapperClassName'
   > {
   size?: SizeType;
+  disabled?: boolean;
   status?: InputStatus;
   bordered?: boolean;
-  [key: `data-${string}`]: string;
+  [key: `data-${string}`]: string | undefined;
 }
 
 const Input = forwardRef<InputRef, InputProps>((props, ref) => {
@@ -122,12 +131,15 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     bordered = true,
     status: customStatus,
     size: customSize,
+    disabled: customDisabled,
     onBlur,
     onFocus,
     suffix,
     allowClear,
     addonAfter,
     addonBefore,
+    className,
+    onChange,
     ...rest
   } = props;
   const { getPrefixCls, direction, input } = React.useContext(ConfigContext);
@@ -135,9 +147,16 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
   const prefixCls = getPrefixCls('input', customizePrefixCls);
   const inputRef = useRef<InputRef>(null);
 
+  // ===================== Compact Item =====================
+  const { compactSize, compactItemClassnames } = useCompactItemContext(prefixCls, direction);
+
   // ===================== Size =====================
   const size = React.useContext(SizeContext);
-  const mergedSize = customSize || size;
+  const mergedSize = compactSize || customSize || size;
+
+  // ===================== Disabled =====================
+  const disabled = React.useContext(DisabledContext);
+  const mergedDisabled = customDisabled ?? disabled;
 
   // ===================== Status =====================
   const { status: contextStatus, hasFeedback, feedbackIcon } = useContext(FormItemInputContext);
@@ -148,7 +167,7 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
   const prevHasPrefixSuffix = useRef<boolean>(inputHasPrefixSuffix);
   useEffect(() => {
     if (inputHasPrefixSuffix && !prevHasPrefixSuffix.current) {
-      devWarning(
+      warning(
         document.activeElement === inputRef.current?.input,
         'Input',
         `When Input is focused, dynamic add or remove prefix / suffix will make it lose focus caused by dom structure change. Read more: https://ant.design/components/input/#FAQ`,
@@ -158,25 +177,7 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
   }, [inputHasPrefixSuffix]);
 
   // ===================== Remove Password value =====================
-  const removePasswordTimeoutRef = useRef<number[]>([]);
-  const removePasswordTimeout = () => {
-    removePasswordTimeoutRef.current.push(
-      window.setTimeout(() => {
-        if (
-          inputRef.current?.input &&
-          inputRef.current?.input.getAttribute('type') === 'password' &&
-          inputRef.current?.input.hasAttribute('value')
-        ) {
-          inputRef.current?.input.removeAttribute('value');
-        }
-      }),
-    );
-  };
-
-  useEffect(() => {
-    removePasswordTimeout();
-    return () => removePasswordTimeoutRef.current.forEach(item => window.clearTimeout(item));
-  }, []);
+  const removePasswordTimeout = useRemovePasswordTimeout(inputRef, true);
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     removePasswordTimeout();
@@ -188,6 +189,11 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     onFocus?.(e);
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    removePasswordTimeout();
+    onChange?.(e);
+  };
+
   const suffixNode = (hasFeedback || suffix) && (
     <>
       {suffix}
@@ -196,7 +202,7 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
   );
 
   // Allow clear
-  let mergedAllowClear;
+  let mergedAllowClear: BaseInputProps['allowClear'];
   if (typeof allowClear === 'object' && allowClear?.clearIcon) {
     mergedAllowClear = allowClear;
   } else if (allowClear) {
@@ -209,12 +215,31 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
       prefixCls={prefixCls}
       autoComplete={input?.autoComplete}
       {...rest}
+      disabled={mergedDisabled || undefined}
       onBlur={handleBlur}
       onFocus={handleFocus}
       suffix={suffixNode}
       allowClear={mergedAllowClear}
-      addonAfter={addonAfter && <NoFormStatus>{addonAfter}</NoFormStatus>}
-      addonBefore={addonBefore && <NoFormStatus>{addonBefore}</NoFormStatus>}
+      className={classNames(className, compactItemClassnames)}
+      onChange={handleChange}
+      addonAfter={
+        addonAfter && (
+          <NoCompactStyle>
+            <NoFormStyle override status>
+              {addonAfter}
+            </NoFormStyle>
+          </NoCompactStyle>
+        )
+      }
+      addonBefore={
+        addonBefore && (
+          <NoCompactStyle>
+            <NoFormStyle override status>
+              {addonBefore}
+            </NoFormStyle>
+          </NoCompactStyle>
+        )
+      }
       inputClassName={classNames(
         {
           [`${prefixCls}-sm`]: mergedSize === 'small',

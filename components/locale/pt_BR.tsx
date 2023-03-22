@@ -1,9 +1,9 @@
 /* eslint-disable no-template-curly-in-string */
 import Pagination from 'rc-pagination/lib/locale/pt_BR';
-import DatePicker from '../date-picker/locale/pt_BR';
-import TimePicker from '../time-picker/locale/pt_BR';
 import Calendar from '../calendar/locale/pt_BR';
-import { Locale } from '../locale-provider';
+import DatePicker from '../date-picker/locale/pt_BR';
+import type { Locale } from '../locale-provider';
+import TimePicker from '../time-picker/locale/pt_BR';
 
 const typeTemplate = '${label} não é um ${type} válido';
 
@@ -21,6 +21,7 @@ const localeValues: Locale = {
     filterConfirm: 'OK',
     filterReset: 'Resetar',
     filterEmptyText: 'Sem filtros',
+    filterCheckall: 'Selecionar todos os items',
     emptyText: 'Sem conteúdo',
     selectAll: 'Selecionar página atual',
     selectInvert: 'Inverter seleção',

@@ -13,29 +13,41 @@ title:
 
 Basic usage.
 
-```jsx
+```tsx
+import React from 'react';
 import { Mentions } from 'antd';
+import type { MentionsOptionProps } from 'antd/es/mentions';
 
-const { Option } = Mentions;
-
-function onChange(value) {
+const onChange = (value: string) => {
   console.log('Change:', value);
-}
+};
 
-function onSelect(option) {
+const onSelect = (option: MentionsOptionProps) => {
   console.log('select', option);
-}
+};
 
-export default () => (
+const App: React.FC = () => (
   <Mentions
     style={{ width: '100%' }}
     onChange={onChange}
     onSelect={onSelect}
     defaultValue="@afc163"
-  >
-    <Option value="afc163">afc163</Option>
-    <Option value="zombieJ">zombieJ</Option>
-    <Option value="yesmeck">yesmeck</Option>
-  </Mentions>
+    options={[
+      {
+        value: 'afc163',
+        label: 'afc163',
+      },
+      {
+        value: 'zombieJ',
+        label: 'zombieJ',
+      },
+      {
+        value: 'yesmeck',
+        label: 'yesmeck',
+      },
+    ]}
+  />
 );
+
+export default App;
 ```

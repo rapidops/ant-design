@@ -1,12 +1,19 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import RcMentions from 'rc-mentions';
-import { MentionsProps as RcMentionsProps } from 'rc-mentions/lib/Mentions';
+import type {
+  MentionsProps as RcMentionsProps,
+  MentionsRef as RcMentionsRef,
+  DataDrivenOptionProps as MentionsOptionProps,
+} from 'rc-mentions/lib/Mentions';
 import { composeRef } from 'rc-util/lib/ref';
-import Spin from '../spin';
+import * as React from 'react';
 import { ConfigContext } from '../config-provider';
+import defaultRenderEmpty from '../config-provider/defaultRenderEmpty';
 import { FormItemInputContext } from '../form/context';
-import { getMergedStatus, getStatusClassNames, InputStatus } from '../_util/statusUtils';
+import Spin from '../spin';
+import type { InputStatus } from '../_util/statusUtils';
+import { getMergedStatus, getStatusClassNames } from '../_util/statusUtils';
+import warning from '../_util/warning';
 
 export const { Option } = RcMentions;
 
@@ -15,6 +22,8 @@ function loadingFilterOption() {
 }
 
 export type MentionPlacement = 'top' | 'bottom';
+
+export type { DataDrivenOptionProps as MentionsOptionProps } from 'rc-mentions/lib/Mentions';
 
 export interface OptionProps {
   value: string;
@@ -25,7 +34,10 @@ export interface OptionProps {
 export interface MentionProps extends RcMentionsProps {
   loading?: boolean;
   status?: InputStatus;
+  options?: MentionsOptionProps[];
 }
+
+export interface MentionsRef extends RcMentionsRef {}
 
 export interface MentionState {
   focused: boolean;
@@ -41,13 +53,14 @@ interface MentionsEntity {
   value: string;
 }
 
-interface CompoundedComponent
-  extends React.ForwardRefExoticComponent<MentionProps & React.RefAttributes<HTMLElement>> {
+type CompoundedComponent = React.ForwardRefExoticComponent<
+  MentionProps & React.RefAttributes<MentionsRef>
+> & {
   Option: typeof Option;
   getMentions: (value: string, config?: MentionsConfig) => MentionsEntity[];
-}
+};
 
-const InternalMentions: React.ForwardRefRenderFunction<unknown, MentionProps> = (
+const InternalMentions: React.ForwardRefRenderFunction<MentionsRef, MentionProps> = (
   {
     prefixCls: customizePrefixCls,
     className,
@@ -56,14 +69,25 @@ const InternalMentions: React.ForwardRefRenderFunction<unknown, MentionProps> = 
     filterOption,
     children,
     notFoundContent,
+    options,
     status: customStatus,
     ...restProps
   },
   ref,
 ) => {
   const [focused, setFocused] = React.useState(false);
-  const innerRef = React.useRef<HTMLElement>();
+  const innerRef = React.useRef<MentionsRef>();
   const mergedRef = composeRef(ref, innerRef);
+
+  // =================== Warning =====================
+  if (process.env.NODE_ENV !== 'production') {
+    warning(
+      !children,
+      'Mentions',
+      '`Mentions.Option` is deprecated. Please use `options` instead.',
+    );
+  }
+
   const { getPrefixCls, renderEmpty, direction } = React.useContext(ConfigContext);
   const {
     status: contextStatus,
@@ -92,7 +116,7 @@ const InternalMentions: React.ForwardRefRenderFunction<unknown, MentionProps> = 
       return notFoundContent;
     }
 
-    return renderEmpty('Select');
+    return (renderEmpty || defaultRenderEmpty)('Select');
   };
 
   const getOptions = () => {
@@ -106,6 +130,16 @@ const InternalMentions: React.ForwardRefRenderFunction<unknown, MentionProps> = 
 
     return children;
   };
+
+  const mergedOptions = loading
+    ? [
+        {
+          value: 'ANTD_SEARCHING',
+          disabled: true,
+          label: <Spin size="small" />,
+        },
+      ]
+    : options;
 
   const getFilterOption = (): any => {
     if (loading) {
@@ -138,6 +172,7 @@ const InternalMentions: React.ForwardRefRenderFunction<unknown, MentionProps> = 
       onFocus={onFocus}
       onBlur={onBlur}
       ref={mergedRef as any}
+      options={mergedOptions}
     >
       {getOptions()}
     </RcMentions>
@@ -161,8 +196,12 @@ const InternalMentions: React.ForwardRefRenderFunction<unknown, MentionProps> = 
   return mentions;
 };
 
-const Mentions = React.forwardRef<unknown, MentionProps>(InternalMentions) as CompoundedComponent;
-Mentions.displayName = 'Mentions';
+const Mentions = React.forwardRef<MentionsRef, MentionProps>(
+  InternalMentions,
+) as CompoundedComponent;
+if (process.env.NODE_ENV !== 'production') {
+  Mentions.displayName = 'Mentions';
+}
 Mentions.Option = Option;
 
 Mentions.getMentions = (value: string = '', config: MentionsConfig = {}): MentionsEntity[] => {
@@ -174,7 +213,7 @@ Mentions.getMentions = (value: string = '', config: MentionsConfig = {}): Mentio
     .map((str = ''): MentionsEntity | null => {
       let hitPrefix: string | null = null;
 
-      prefixList.some(prefixStr => {
+      prefixList.some((prefixStr) => {
         const startStr = str.slice(0, prefixStr.length);
         if (startStr === prefixStr) {
           hitPrefix = prefixStr;

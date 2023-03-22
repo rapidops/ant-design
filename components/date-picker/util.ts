@@ -1,7 +1,7 @@
-import { PickerMode } from 'rc-picker/lib/interface';
-import { DirectionType } from '../config-provider';
-import { SelectCommonPlacement } from '../_util/motion';
-import { PickerLocale } from './generatePicker';
+import type { PickerMode } from 'rc-picker/lib/interface';
+import type { DirectionType } from '../config-provider';
+import type { SelectCommonPlacement } from '../_util/motion';
+import type { PickerLocale } from './generatePicker';
 
 export function getPlaceholder(
   picker: PickerMode | undefined,
@@ -95,17 +95,11 @@ export function transPlacement2DropdownAlign(
       };
     }
     default: {
-      return direction === 'rtl'
-        ? {
-            points: ['tr', 'br'],
-            offset: [0, 4],
-            overflow,
-          }
-        : {
-            points: ['tl', 'bl'],
-            offset: [0, 4],
-            overflow,
-          };
+      return {
+        points: direction === 'rtl' ? ['tr', 'br'] : ['tl', 'bl'],
+        offset: [0, 4],
+        overflow,
+      };
     }
   }
 }

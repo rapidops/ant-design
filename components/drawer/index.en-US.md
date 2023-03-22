@@ -21,7 +21,7 @@ A Drawer is a panel that is typically overlaid on top of a page and slides in fr
 | Props | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | autoFocus | Whether Drawer should get focused after open | boolean | true | 4.17.0 |
-| afterVisibleChange | Callback after the animation ends when switching drawers | function(visible) | - |  |
+| afterOpenChange | Callback after the animation ends when switching drawers | function(open) | - | 4.23.0 |
 | bodyStyle | Style of the drawer content part | CSSProperties | - |  |
 | className | The class name of the container of the Drawer dialog | string | - |  |
 | closable | Whether a close (x) button is visible on top left of the Drawer dialog or not | boolean | true |  |
@@ -33,7 +33,7 @@ A Drawer is a panel that is typically overlaid on top of a page and slides in fr
 | footer | The footer for Drawer | ReactNode | - |  |
 | footerStyle | Style of the drawer footer part | CSSProperties | - |  |
 | forceRender | Prerender Drawer component forcely | boolean | false |  |
-| getContainer | mounted node and display window for Drawer | HTMLElement \| () => HTMLElement \| Selectors \| false | body |  |
+| getContainer | mounted node and display window for Drawer. To match React 18 concurrent requirement, `getContainer` should always return same dom since `4.24.x` | HTMLElement \| () => HTMLElement \| Selectors \| false | body |  |
 | headerStyle | Style of the drawer header part | CSSProperties | - |  |
 | height | Placement is `top` or `bottom`, height of the Drawer dialog | string \| number | 378 |  |
 | keyboard | Whether support press esc to close | boolean | true |  |
@@ -45,7 +45,7 @@ A Drawer is a panel that is typically overlaid on top of a page and slides in fr
 | style | Style of wrapper element which **contains mask** compare to `drawerStyle` | CSSProperties | - |  |
 | size | presetted size of drawer, default `378px` and large `736px` | 'default' \| 'large' | 'default' | 4.17.0 |
 | title | The title for Drawer | ReactNode | - |  |
-| visible | Whether the Drawer dialog is visible or not | boolean | false |  |
+| open | Whether the Drawer dialog is visible or not. Use `visible` under 4.23.0 ([why?](/docs/react/faq#why-open)) | boolean | false | 4.23.0 |
 | width | Width of the Drawer dialog | string \| number | 378 |  |
 | zIndex | The `z-index` of the Drawer | number | 1000 |  |
 | onClose | Specify a callback that will be called when a user clicks mask, close button or Cancel button | function(e) | - |  |

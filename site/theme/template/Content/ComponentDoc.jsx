@@ -4,14 +4,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import { Row, Col, Affix, Tooltip } from 'antd';
 import { getChildren } from 'jsonml.js/lib/utils';
-import {
-  CodeFilled,
-  CodeOutlined,
-  BugFilled,
-  BugOutlined,
-  ExperimentOutlined,
-  ExperimentFilled,
-} from '@ant-design/icons';
+import { CodeFilled, CodeOutlined, BugFilled, BugOutlined } from '@ant-design/icons';
 import Demo from './Demo';
 import EditButton from './EditButton';
 import { ping, getMetaDescription } from '../utils';
@@ -25,7 +18,6 @@ class ComponentDoc extends React.Component {
     expandAll: false,
     visibleAll: process.env.NODE_ENV !== 'production',
     showRiddleButton: false,
-    react18Demo: true,
   };
 
   componentDidMount() {
@@ -49,12 +41,12 @@ class ComponentDoc extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     const { location, theme } = this.props;
     const { location: nextLocation, theme: nextTheme } = nextProps;
-    const { expandAll, visibleAll, showRiddleButton, react18Demo } = this.state;
+    const { expandAll, visibleAll, showRiddleButton, react17Demo } = this.state;
     const {
       expandAll: nextExpandAll,
       visibleAll: nextVisibleAll,
       showRiddleButton: nextShowRiddleButton,
-      react18Demo: nextReact18Demo,
+      react17Demo: nextReact17Demo,
     } = nextState;
 
     if (
@@ -64,7 +56,7 @@ class ComponentDoc extends React.Component {
       theme === nextTheme &&
       visibleAll === nextVisibleAll &&
       showRiddleButton === nextShowRiddleButton &&
-      react18Demo === nextReact18Demo
+      react17Demo === nextReact17Demo
     ) {
       return false;
     }
@@ -90,9 +82,9 @@ class ComponentDoc extends React.Component {
   };
 
   handleDemoVersionToggle = () => {
-    const { react18Demo } = this.state;
+    const { react17Demo } = this.state;
     this.setState({
-      react18Demo: !react18Demo,
+      react17Demo: !react17Demo,
     });
   };
 
@@ -108,7 +100,7 @@ class ComponentDoc extends React.Component {
     } = this.props;
     const { content, meta } = doc;
     const demoValues = Object.keys(demos).map(key => demos[key]);
-    const { expandAll, visibleAll, showRiddleButton, react18Demo } = this.state;
+    const { expandAll, visibleAll, showRiddleButton } = this.state;
     const isSingleCol = meta.cols === 1;
     const leftChildren = [];
     const rightChildren = [];
@@ -131,7 +123,6 @@ class ComponentDoc extends React.Component {
             location={location}
             theme={theme}
             setIframeTheme={setIframeTheme}
-            react18={react18Demo}
           />
         );
         if (index % 2 === 0 || isSingleCol) {
@@ -218,27 +209,6 @@ class ComponentDoc extends React.Component {
                   <BugFilled className={expandTriggerClass} onClick={this.handleVisibleToggle} />
                 ) : (
                   <BugOutlined className={expandTriggerClass} onClick={this.handleVisibleToggle} />
-                )}
-              </Tooltip>
-              <Tooltip
-                title={
-                  <FormattedMessage
-                    id={`app.component.examples.${
-                      react18Demo ? 'openDemoNotReact18' : 'openDemoWithReact18'
-                    }`}
-                  />
-                }
-              >
-                {react18Demo ? (
-                  <ExperimentFilled
-                    className={expandTriggerClass}
-                    onClick={this.handleDemoVersionToggle}
-                  />
-                ) : (
-                  <ExperimentOutlined
-                    className={expandTriggerClass}
-                    onClick={this.handleDemoVersionToggle}
-                  />
                 )}
               </Tooltip>
             </span>

@@ -14,54 +14,65 @@ Buggy!
 
 Buggy!
 
-```jsx
-import { Steps, Button } from 'antd';
+```tsx
+import type { StepsProps } from 'antd';
+import { Button, Steps, Space } from 'antd';
+import React, { useState } from 'react';
 
-const { Step } = Steps;
-
-function Demo() {
-  const [percent, setPercentage] = React.useState(0);
-  const [current, setCurrent] = React.useState(1);
-  const [status, setStatus] = React.useState('process');
+const App: React.FC = () => {
+  const [percent, setPercentage] = useState<number | undefined>(0);
+  const [current, setCurrent] = useState(1);
+  const [status, setStatus] = useState<StepsProps['status']>('process');
+  const description = 'This is a description.';
+  const items = [
+    {
+      title: 'Finished',
+      description,
+    },
+    {
+      title: 'In Progress',
+      subTitle: 'Left 00:00:08',
+      description,
+    },
+    {
+      title: 'Waiting',
+      description,
+    },
+  ];
   return (
     <>
-      <Button onClick={() => setPercentage(undefined)}>Percentage to undefined</Button>
-      <Button onClick={() => setPercentage((percent + 10) % 100)}>Percentage +</Button>
-      <Button
-        onClick={() => {
-          setCurrent((current + 1) % 3);
-          setPercentage(0);
-        }}
-      >
-        Current +
-      </Button>
-      <Button onClick={() => setStatus('wait')}>Status Wait</Button>
-      <Button onClick={() => setStatus('process')}>Status Process</Button>
-      <Button onClick={() => setStatus('finish')}>Status Finish</Button>
-      <Button onClick={() => setStatus('error')}>Status Error</Button>
-      <Steps current={current} percent={percent} status={status}>
-        <Step title="Finished" description="This is a description." />
-        <Step title="In Progress" subTitle="Left 00:00:08" description="This is a description." />
-        <Step title="Waiting" description="This is a description." />
-      </Steps>
-      <Steps current={current} percent={percent} status={status} size="small">
-        <Step title="Finished" description="This is a description." />
-        <Step title="In Progress" subTitle="Left 00:00:08" description="This is a description." />
-        <Step title="Waiting" description="This is a description." />
-      </Steps>
-      <Steps current={current} percent={percent} status={status} direction="vertical">
-        <Step title="Finished" description="This is a description." />
-        <Step title="In Progress" subTitle="Left 00:00:08" description="This is a description." />
-        <Step title="Waiting" description="This is a description." />
-      </Steps>
-      <Steps current={current} percent={percent} status={status} size="small" direction="vertical">
-        <Step title="Finished" description="This is a description." />
-        <Step title="In Progress" subTitle="Left 00:00:08" description="This is a description." />
-        <Step title="Waiting" description="This is a description." />
-      </Steps>
+      <Space.Compact block>
+        <Button onClick={() => setPercentage(undefined)}>Percentage to undefined</Button>
+        <Button onClick={() => setPercentage(prev => ((prev ?? 0) + 10) % 100)}>
+          Percentage +
+        </Button>
+        <Button onClick={() => setCurrent(prev => (prev + 1) % 3)}>Current +</Button>
+        <Button onClick={() => setStatus('wait')}>Status Wait</Button>
+        <Button onClick={() => setStatus('process')}>Status Process</Button>
+        <Button onClick={() => setStatus('finish')}>Status Finish</Button>
+        <Button onClick={() => setStatus('error')}>Status Error</Button>
+      </Space.Compact>
+      <br />
+      <Steps current={current} percent={percent} status={status} items={items} />
+      <Steps current={current} percent={percent} status={status} size="small" items={items} />
+      <Steps
+        current={current}
+        percent={percent}
+        status={status}
+        direction="vertical"
+        items={items}
+      />
+      <Steps
+        current={current}
+        percent={percent}
+        status={status}
+        size="small"
+        direction="vertical"
+        items={items}
+      />
     </>
   );
-}
+};
 
-export default Demo;
+export default App;
 ```

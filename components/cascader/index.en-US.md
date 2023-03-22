@@ -30,7 +30,7 @@ Cascade selection box.
 | defaultValue | Initial selected value | string\[] \| number\[] | \[] |  |
 | disabled | Whether disabled select | boolean | false |  |
 | displayRender | The render function of displaying selected options | (label, selectedOptions) => ReactNode | label => label.join(`/`) | `multiple`: 4.18.0 |
-| dropdownClassName | The additional className of popup overlay | string | - | 4.17.0 |
+| popupClassName | The additional className of popup overlay | string | - | 4.23.0 |
 | dropdownRender | Customize dropdown content | (menus: ReactNode) => ReactNode | - | 4.4.0 |
 | expandIcon | Customize the current item expand icon | ReactNode | - | 4.4.0 |
 | expandTrigger | expand current item when click or hover, one of `click` `hover` | string | `click` |  |
@@ -49,7 +49,6 @@ Cascade selection box.
 | status | Set validation status | 'error' \| 'warning' | - | 4.19.0 |
 | style | The additional style | CSSProperties | - |  |
 | suffixIcon | The custom suffix icon | ReactNode | - |  |
-| tagRender | Customize tag render when `multiple` | (props) => ReactNode | - | 4.17.0 |
 | value | The selected value | string\[] \| number\[] | - |  |
 | onChange | Callback when finishing cascader select | (value, selectedOptions) => void | - |  |
 | onDropdownVisibleChange | Callback when popup shown or hidden | (value) => void | - | 4.17.0 |

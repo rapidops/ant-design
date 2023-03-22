@@ -26,7 +26,7 @@ A basic widget for getting the user input is a text field. Keyboard and mouse ca
 | disabled | Whether the input is disabled | boolean | false |  |
 | id | The ID for input | string | - |  |
 | maxLength | The max length | number | - |  |
-| showCount | Whether show text count | boolean \| { formatter: ({ count: number, maxLength?: number }) => ReactNode } | false | 4.18.0 |
+| showCount | Whether show text count | boolean \| { formatter: (info: { value: string, count: number, maxLength?: number }) => ReactNode } | false | 4.18.0 info.value: 4.23.0 |
 | status | Set validation status | 'error' \| 'warning' | - | 4.19.0 |
 | prefix | The prefix icon for the Input | ReactNode | - |  |
 | size | The size of the input box. Note: in the context of a form, the `middle` size is used | `large` \| `middle` \| `small` | - |  |
@@ -49,7 +49,7 @@ The rest of the props of Input are exactly the same as the original [input](http
 | bordered | Whether has border style | boolean | true | 4.5.0 |
 | defaultValue | The initial input content | string | - |  |
 | maxLength | The max length | number | - | 4.7.0 |
-| showCount | Whether show text count | boolean \| { formatter: ({ count: number, maxLength?: number }) => string } | false | 4.7.0 (formatter: 4.10.0) |
+| showCount | Whether show text count | boolean \| { formatter: (info: { value: string, count: number, maxLength?: number }) => string } | false | 4.7.0 formatter: 4.10.0 info.value: 4.23.0 |
 | value | The input content value | string | - |  |
 | onPressEnter | The callback function that is triggered when Enter key is pressed | function(e) | - |  |
 | onResize | The callback function that is triggered when resize | function({ width, height }) | - |  |
@@ -85,7 +85,14 @@ Supports all props of `Input`.
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | iconRender | Custom toggle button | (visible) => ReactNode | (visible) => (visible ? &lt;EyeOutlined /> : &lt;EyeInvisibleOutlined />) | 4.3.0 |
-| visibilityToggle | Whether show toggle button | boolean | true |  |
+| visibilityToggle | Whether show toggle button or control password visible | boolean \| [VisibilityToggle](#VisibilityToggle) | true |  |
+
+#### VisibilityToggle
+
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| visible | Whether the password is show or hide | boolean | false | 4.24.0 |
+| onVisibleChange | Callback executed when visibility of the password is changed | boolean | - | 4.24.0 |
 
 #### Input Methods
 

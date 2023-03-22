@@ -59,7 +59,7 @@ This document will help you upgrade from antd `3.x` version to antd `4.x` versio
 - Removed `combobox` mode, please use `AutoComplete` instead.
 - Removed the `rowSelection.hideDefaultSelections` property of Table, please use `SELECTION_ALL` and `SELECTION_INVERT` in `rowSelection.selections` instead, [Custom Selection](/components/table/#components-table-demo-row-selection-custom).
 - Deprecated Button.Group, please use `Space` instead.
-- less variables were changed like DatePicker/TimePicker/Calendar related variables or [@btn-padding-base](https://github.com/ant-design/ant-design/issues/28141), please check [3.x variables](https://github.com/ant-design/ant-design/blob/3.x-stable/components/style/themes/default.less) and [4.x variables](https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less) for more details.
+- less variables were changed like DatePicker/TimePicker/Calendar related variables or [@btn-padding-base](https://github.com/ant-design/ant-design/issues/28141), please check [3.x variables](https://github.com/ant-design/ant-design/blob/3.x-stable/components/style/themes/default.less) and [4.x variables](https://github.com/ant-design/ant-design/blob/4.x-stable/components/style/themes/default.less) for more details.
 
 #### Icon upgrade
 
@@ -191,6 +191,14 @@ For parts that cannot be modified automatically, codemod will prompt on the comm
 ### Migration tool modification details
 
 `@ant-design/codemod-v4` will help you migrate to antd v4. Obsolete components will be kept running through @ant-design/compatible. Generally, you don't need to migrate manually. The following sections detail the overall migration and changes.
+
+#### Install compatible package
+
+Install `@ant-design/compatible` with `v4-compatible-v3` tag:
+
+```bash
+npm install --save @ant-design/compatible@v4-compatible-v3
+```
 
 #### Import the obsolete Form and Mention components via @ant-design/compatible package
 

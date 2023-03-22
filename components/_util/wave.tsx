@@ -1,8 +1,9 @@
-import * as React from 'react';
 import { updateCSS } from 'rc-util/lib/Dom/dynamicCSS';
-import { supportRef, composeRef } from 'rc-util/lib/ref';
+import { composeRef, supportRef } from 'rc-util/lib/ref';
+import * as React from 'react';
+import type { ConfigConsumerProps, CSPConfig } from '../config-provider';
+import { ConfigConsumer, ConfigContext } from '../config-provider';
 import raf from './raf';
-import { ConfigConsumer, ConfigConsumerProps, CSPConfig, ConfigContext } from '../config-provider';
 import { cloneElement } from './reactNode';
 
 let styleForPseudo: HTMLStyleElement | null;
@@ -13,6 +14,16 @@ function isHidden(element: HTMLElement) {
     return false;
   }
   return !element || element.offsetParent === null || element.hidden;
+}
+
+function getValidateContainer(nodeRoot: Node): Element {
+  if (nodeRoot instanceof Document) {
+    return nodeRoot.body;
+  }
+
+  return Array.from(nodeRoot.childNodes).find(
+    ele => ele?.nodeType === Node.ELEMENT_NODE,
+  ) as Element;
 }
 
 function isNotGrey(color: string) {
@@ -30,7 +41,7 @@ export interface WaveProps {
   children?: React.ReactNode;
 }
 
-export default class Wave extends React.Component<WaveProps> {
+class Wave extends React.Component<WaveProps> {
   static contextType = ConfigContext;
 
   private instance?: {
@@ -54,6 +65,7 @@ export default class Wave extends React.Component<WaveProps> {
   context: ConfigConsumerProps;
 
   componentDidMount() {
+    this.destroyed = false;
     const node = this.containerRef.current as HTMLDivElement;
     if (!node || node.nodeType !== 1) {
       return;
@@ -75,7 +87,7 @@ export default class Wave extends React.Component<WaveProps> {
   onClick = (node: HTMLElement, waveColor: string) => {
     const { insertExtraNode, disabled } = this.props;
 
-    if (disabled || !node || isHidden(node) || node.className.indexOf('-leave') >= 0) {
+    if (disabled || !node || isHidden(node) || node.className.includes('-leave')) {
       return;
     }
 
@@ -88,8 +100,10 @@ export default class Wave extends React.Component<WaveProps> {
     // Not white or transparent or grey
     if (
       waveColor &&
+      waveColor !== '#fff' &&
       waveColor !== '#ffffff' &&
       waveColor !== 'rgb(255, 255, 255)' &&
+      waveColor !== 'rgba(255, 255, 255, 1)' &&
       isNotGrey(waveColor) &&
       !/rgba\((?:\d*, ){3}0\)/.test(waveColor) && // any transparent rgba color
       waveColor !== 'transparent'
@@ -97,8 +111,7 @@ export default class Wave extends React.Component<WaveProps> {
       extraNode.style.borderColor = waveColor;
 
       const nodeRoot = node.getRootNode?.() || node.ownerDocument;
-      const nodeBody: Element =
-        nodeRoot instanceof Document ? nodeRoot.body : (nodeRoot.firstChild as Element) ?? nodeRoot;
+      const nodeBody = getValidateContainer(nodeRoot) ?? nodeRoot;
 
       styleForPseudo = updateCSS(
         `
@@ -147,12 +160,12 @@ export default class Wave extends React.Component<WaveProps> {
       : `${getPrefixCls('')}-click-animating-without-extra-node`;
   }
 
-  bindAnimationEvent = (node: HTMLElement) => {
+  bindAnimationEvent = (node?: HTMLElement) => {
     if (
       !node ||
       !node.getAttribute ||
       node.getAttribute('disabled') ||
-      node.className.indexOf('disabled') >= 0
+      node.className.includes('disabled')
     ) {
       return;
     }
@@ -224,3 +237,5 @@ export default class Wave extends React.Component<WaveProps> {
     return <ConfigConsumer>{this.renderWave}</ConfigConsumer>;
   }
 }
+
+export default Wave;

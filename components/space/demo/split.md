@@ -1,5 +1,5 @@
 ---
-order: 99
+order: 7
 title:
   zh-CN: 分隔符
   en-US: Split
@@ -13,10 +13,11 @@ title:
 
 Crowded components split.
 
-```jsx
-import { Space, Typography, Divider } from 'antd';
+```tsx
+import { Divider, Space, Typography } from 'antd';
+import React from 'react';
 
-const App = () => (
+const App: React.FC = () => (
   <Space split={<Divider type="vertical" />}>
     <Typography.Link>Link</Typography.Link>
     <Typography.Link>Link</Typography.Link>
