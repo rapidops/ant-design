@@ -1,0 +1,65 @@
+// collapse CSS in table
+
+.ant-collapse {
+  background: transparent;
+  border: none;
+
+  .ant-collapse-item {
+    border-color: @dg700;
+
+    &.ant-collapse-item-active {
+      border-color: transparent;
+    }
+
+    + .ant-collapse-item {
+      margin-top: 24px;
+    }
+  }
+}
+
+.ant-collapse-header {
+  font-weight: 600;
+}
+
+.role-list {
+  .ant-collapse-content > .ant-collapse-content-box {
+    margin-top: 8px;
+    padding: 0;
+  }
+  .ant-collapse {
+    + .ant-collapse {
+      margin-top: 24px;
+    }
+    > .ant-collapse-item {
+      border-color: @dg700;
+      border-radius: 0px;
+      > .ant-collapse-header {
+        padding: 12px 0;
+        line-height: 16px;
+      }
+      &.ant-collapse-item-active {
+        border-color: transparent;
+      }
+    }
+  }
+  .ant-collapse-item {
+    .ant-collapse-header {
+      color: @dg200;
+      > div {
+        margin-right: 8px;
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    &.ant-collapse-item-active {
+      .ant-collapse-header {
+        > div {
+          svg {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+  }
+}

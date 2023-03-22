@@ -1,0 +1,220 @@
+.navigation-page {
+  .ant-layout-content {
+    padding: 0;
+  }
+
+  .navigation-page-menu {
+    width: 248px;
+    background: @background-color;
+    box-shadow: inset -16px 0px 24px -12px rgba(6, 25, 56, 0.08);
+  }
+
+  .navigation-page-content {
+    width: calc(100% - 248px);
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .navigation-page-main {
+    height: 100%;
+  }
+
+  .navigation-page-content-inner {
+    padding: 32px;
+
+    .ant-btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      margin: 0 0 0 10px;
+
+      svg {
+        width: 22px;
+        height: 22px;
+
+        path {
+          fill: @dg600;
+        }
+      }
+
+      .anticon-close {
+        display: none;
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    .nestable-item .nestable-list,
+    .nestable-item-copy .nestable-list {
+      margin-top: 10px !important;
+    }
+  }
+
+  .navigation-submenu {
+    h2 {
+      margin: 0;
+      padding: 24px;
+      border-bottom: 1px solid @border-color;
+    }
+
+    .text-center {
+      .ant-btn {
+        width: 80%;
+      }
+    }
+
+    .ant-collapse {
+      height: calc(100vh - 130px);
+      padding-bottom: 32px;
+      overflow-y: auto;
+
+      > .ant-collapse-item {
+        border-color: @border-color;
+
+        > .ant-collapse-header {
+          position: relative;
+          padding: 14px 24px;
+        }
+
+        .ant-collapse-content {
+          background-color: transparent;
+          border-top: none;
+          border-bottom: 1px solid transparent;
+
+          &.ant-collapse-content-active {
+            border-color: @border-color;
+          }
+
+          .ant-collapse-content-box {
+            padding: 12px 24px 24px 24px;
+          }
+        }
+
+        + .ant-collapse-item {
+          margin-top: 0;
+        }
+      }
+
+      .ant-form-item {
+        margin: 0;
+        + .ant-form-item {
+          margin: 4px 0 0 0;
+        }
+      }
+    }
+
+    .ant-checkbox + span {
+      width: 160px;
+      padding: 0 0 0 12px;
+      overflow: hidden;
+      color: @dg500;
+      line-height: 18px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .nestable {
+    width: 640px;
+
+    .ant-collapse > .ant-collapse-item {
+      border: none;
+
+      > .ant-collapse-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        color: @dg200;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+
+        .ant-form-item-control-input {
+          min-height: auto;
+        }
+      }
+    }
+
+    .ant-collapse-item.ant-collapse-item-active {
+      .ant-btn-link {
+        > span {
+          display: none;
+        }
+
+        .anticon-close {
+          display: flex;
+        }
+      }
+    }
+
+    .ant-collapse-content {
+      border: none;
+
+      .ant-collapse-content-box {
+        padding: 16px 0 0 0;
+      }
+    }
+
+    ol {
+      li {
+        .nestable-item-name {
+          padding: 8px 24px;
+          border: 1px solid @border-color;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+.navigation-page .navigation-submenu .ant-collapse .ant-form-item {
+  &.sidebar-search {
+    margin-bottom: 24px;
+  }
+}
+
+.navigation-submenu {
+  button.ant-btn.ant-btn-link.OnlyIcon {
+    margin-top: 12px;
+    margin-left: 26px;
+  }
+}
+
+.nav-text {
+  width: calc(100% - 190px);
+  .text-truncate {
+    max-width: calc(100% - 50px);
+  }
+}
+
+.nav-footer {
+  margin: 24px -24px 0;
+  padding: 12px 24px 0;
+  border-top: 1px solid @border-color;
+}
+
+.custom-delete-button {
+  .ant-btn-dangerous.ant-btn-text {
+    padding-right: 0;
+    padding-left: 0;
+    background-color: transparent !important;
+  }
+}
+
+a.plusarrow {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  display: inline-block;
+  padding: 0;
+  line-height: 14px;
+  vertical-align: top;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
