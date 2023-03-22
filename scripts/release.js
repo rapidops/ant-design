@@ -15,7 +15,7 @@ const stdio = 'inherit';
 const execOptions = { cwd, stdio };
 
 const publishOptions = {
-  tag: 'v1.0.104', // you can also provide version: '1.0.0' instead of tag
+  tag: 'v1.0.105', // you can also provide version: '1.0.0' instead of tag
   push: {
     // set to false to not push
     remote: 'origin', // set to URL or remote name
@@ -89,7 +89,7 @@ if (args.dry_run) {
       .then(() => {
         console.log(`Done, Pushed ${publishOptions.tag} tag to remote origin`);
       })
-      .catch(e => console.error(e));
+      .catch((e) => console.error(e));
   }
 
   if (args.steps.indexOf('publish') > -1) {
@@ -104,7 +104,7 @@ if (args.dry_run) {
     // update docs, git commit, git push
     execSync('npm run sync-docs', execOptions);
   }
-})().catch(e => console.error(e));
+})().catch((e) => console.error(e));
 
 function parseArguments() {
   const parser = new argparse.ArgumentParser({
@@ -133,8 +133,8 @@ function parseArguments() {
   const args = parser.parse_args();
 
   // validate --steps argument
-  const steps = args.steps.split(',').map(step => step.trim());
-  const diff = steps.filter(x => allSteps.indexOf(x) === -1);
+  const steps = args.steps.split(',').map((step) => step.trim());
+  const diff = steps.filter((x) => allSteps.indexOf(x) === -1);
   if (diff.length > 0) {
     console.error(`Invalid --step value(s): ${diff.join(', ')}`);
     process.exit(1);
