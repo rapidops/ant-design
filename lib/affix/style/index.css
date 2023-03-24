@@ -1,0 +1,22 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+/* system colors*/
+/*red tone*/
+/*Yellow tone*/
+/*Green tone*/
+/*Blue tone*/
+/*Light gray color tone*/
+/*dark gray color tone*/
+/*Dark blue color tone*/
+/*Gray tone*/
+/*Purple tone*/
+/*Orange tone*/
+/*Cyan tone*/
+/*Pink color tone*/
+.ant-affix {
+  position: fixed;
+  z-index: 10;
+}
