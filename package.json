@@ -31,9 +31,9 @@
     "url": "https://opencollective.com/ant-design"
   },
   "files": [
-    "dist",
-    "lib",
-    "es"
+    "dist/*",
+    "lib/*",
+    "es/*"
   ],
   "sideEffects": [
     "dist/*",
