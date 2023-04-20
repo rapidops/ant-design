@@ -70,7 +70,7 @@
 }
 
 .ant-page-header-heading-title {
-  color: @dg200;
+  color: @text-color;
   line-height: 24px;
 }
 
@@ -85,10 +85,12 @@
 
 .ant-breadcrumb {
   margin: 0;
-}
-
-.ant-breadcrumb li .ant-breadcrumb-link {
+  font-weight: 600;
   line-height: 24px;
+  @media screen and (max-width: 1365px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .search-section .ant-input-prefix {
@@ -98,7 +100,7 @@
 .table-section .ant-table-tbody > tr > td {
   position: relative;
   padding: 13px 16px;
-  color: @dg200;
+  color: @text-color;
   line-height: 18px;
 
   .ant-btn.ant-btn-icon-only.ant-dropdown-trigger {
@@ -118,19 +120,21 @@
   margin-left: auto;
 }
 
-.ant-dropdown-menu,
-.table-dropdown .ant-menu {
-  padding: 2px 0;
-}
+// .ant-dropdown-menu,
+// .table-dropdown .ant-menu {
+//   padding: 2px 0;
+// }
 
-.ant-dropdown {
-  width: 220px;
-}
+// TODO : experro : use dropdown width with particular dropdown parent or class
 
-li.ant-menu-item.ant-menu-item-only-child .ant-menu-title-content .ant-btn,
-.ant-dropdown-menu-title-content {
-  color: @dg200;
-}
+// .ant-dropdown {
+//   width: 220px;
+// }
+
+// li.ant-menu-item.ant-menu-item-only-child .ant-menu-title-content .ant-btn,
+// .ant-dropdown-menu-title-content {
+//   color: @text-color;
+// }
 
 .ant-btn.ant-btn-primary {
   > svg {
@@ -175,13 +179,13 @@ li.ant-menu-item.ant-menu-item-only-child .ant-menu-title-content .ant-btn,
       padding: 5px;
 
       &:hover {
-        background: @border-color !important;
+        background: @border-color-split !important;
         border-radius: 4px;
         box-shadow: 0px 1px 2px rgba(6, 25, 56, 0.05);
 
         svg,
         path {
-          fill: @dg200;
+          fill: @text-color;
         }
       }
     }
@@ -194,13 +198,13 @@ li.ant-menu-item.ant-menu-item-only-child .ant-menu-title-content .ant-btn,
 
     &:hover,
     &:focus {
-      background: @border-color !important;
+      background: @border-color-split !important;
       border-radius: 4px;
       box-shadow: 0px 1px 2px rgba(6, 25, 56, 0.05);
 
       svg,
       path {
-        fill: @dg200;
+        fill: @text-color;
       }
     }
   }
@@ -256,14 +260,14 @@ li.ant-menu-item.ant-menu-item-only-child .ant-menu-title-content .ant-btn,
 
   p {
     margin-top: 8px;
-    color: @dg500;
+    color: @text-color-gray-light;
     line-height: 18px;
   }
 
   .ant-avatar-group {
     + p {
       margin: 0;
-      color: @dg500;
+      color: @text-color-gray-light;
     }
   }
 }
@@ -275,40 +279,40 @@ li.ant-menu-item.ant-menu-item-only-child .ant-menu-title-content .ant-btn,
 .ant-modal-body .ant-form-item div.ant-typography {
   margin-bottom: 0;
   padding: 7px 12px;
-  color: @dg400;
+  color: @text-color-gray;
 }
 
-.ant-modal .ant-modal-footer {
-  padding-top: 15px;
-}
+// .ant-modal .ant-modal-footer {
+//   padding-top: 15px;
+// }
 
 .ant-menu-title-content .ant-tooltip-disabled-compatible-wrapper {
   display: block !important;
   margin-left: 0;
 }
 
-button.ant-btn {
-  &.ant-btn-default {
-    svg {
-      display: inline-block;
-      margin-right: 6px;
-      vertical-align: -3px;
-    }
+// button.ant-btn {
+//   &.ant-btn-default {
+//     svg {
+//       display: inline-block;
+//       margin-right: 6px;
+//       vertical-align: -3px;
+//     }
 
-    svg,
-    path {
-      fill: @dg300;
-    }
-  }
+//     svg,
+//     path {
+//       fill: @text-color-secondary;
+//     }
+//   }
 
-  &.ant-btn-icon-only.ant-btn-lg {
-    svg {
-      display: initial;
-      margin: 0;
-      vertical-align: 0;
-    }
-  }
-}
+//   &.ant-btn-icon-only.ant-btn-lg {
+//     svg {
+//       display: initial;
+//       margin: 0;
+//       vertical-align: 0;
+//     }
+//   }
+// }
 
 .combine-buttons .ant-btn + .ant-btn {
   svg {
@@ -321,7 +325,7 @@ button.ant-btn {
 .merchandising-sidebar .sidebar-top-section .gray-text {
   svg,
   path {
-    fill: @dg500;
+    fill: @text-color-gray-light;
   }
 
   svg {
@@ -371,16 +375,16 @@ p.description-truncate {
   margin-top: 0;
 }
 
-.ant-modal-close {
-  top: 16px;
-  right: 16px;
+// .ant-modal-close {
+//   top: 16px;
+//   right: 16px;
 
-  .ant-modal-close-x {
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-  }
-}
+//   .ant-modal-close-x {
+//     width: 24px;
+//     height: 24px;
+//     line-height: 24px;
+//   }
+// }
 
 .ant-modal.CustomModal .ant-modal-close {
   &:hover {
@@ -388,7 +392,7 @@ p.description-truncate {
     border-radius: 4px;
 
     .anticon-close svg {
-      fill: @dg100;
+      fill: @heading-color;
     }
   }
 }
@@ -399,7 +403,7 @@ p.description-truncate {
 
   + p {
     margin: 12px 0 24px 0;
-    color: @dg500;
+    color: @text-color-gray-light;
     font-size: 14px;
     line-height: 18px;
   }
@@ -417,9 +421,9 @@ p.description-truncate {
   }
 }
 
-.ant-modal .ant-modal-close .anticon-close svg {
-  fill: @dg500;
-}
+// .ant-modal .ant-modal-close .anticon-close svg {
+//   fill: @text-color-gray-light;
+// }
 
 .media-grid-layout .ant-card-bordered .ant-card-cover {
   picture {
@@ -469,11 +473,11 @@ p.description-truncate {
 .cm-theme {
   padding: 12px 12px;
   font-size: 14px;
-  border: 1px solid @dg700;
+  border: 1px solid @border-color-base;
   border-radius: 4px;
 
   .ͼ15 {
-    color: @dg200 !important;
+    color: @text-color !important;
   }
 }
 
@@ -500,15 +504,15 @@ p.description-truncate {
   padding: 16px 24px 0 24px;
 }
 
-.ant-select {
-  &.ant-select-open {
-    .ant-select-arrow {
-      svg {
-        transform: rotate(0deg);
-      }
-    }
-  }
-}
+// .ant-select {
+//   &.ant-select-open {
+//     .ant-select-arrow {
+//       svg {
+//         transform: rotate(0deg);
+//       }
+//     }
+//   }
+// }
 
 .drag-items {
   display: flex;
@@ -517,10 +521,10 @@ p.description-truncate {
   margin: 0;
   // padding: 9px 12px 9px 6px;
   padding: 7px 8px 7px 8px;
-  color: @dg200;
+  color: @text-color;
   line-height: 18px;
   background-color: @white;
-  border: 1px solid @border-color;
+  border: 1px solid @border-color-split;
   border-radius: 4px;
   svg {
     width: 24px;
@@ -567,8 +571,8 @@ p.description-truncate {
 }
 
 .ant-tag.ant-tag-default {
-  color: @dg200;
-  background: @secondary-background-color;
+  color: @text-color;
+  background: @background-color-base;
 }
 
 .ant-modal-body .ant-form .ant-from-item-m-0 {

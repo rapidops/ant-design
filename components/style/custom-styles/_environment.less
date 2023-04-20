@@ -38,7 +38,7 @@
   label {
     display: block;
     margin-bottom: 4px;
-    color: @dg200;
+    color: @text-color;
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
@@ -72,7 +72,7 @@
   &.with-border {
     padding: 16px;
     background: @white;
-    border: 1px solid @border-color;
+    border: 1px solid @border-color-split;
     border-radius: 8px;
   }
 }
@@ -81,7 +81,7 @@
   position: relative;
   margin-bottom: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid @border-color;
+  border-bottom: 1px solid @border-color-split;
 
   > div {
     display: flex;
@@ -95,7 +95,7 @@
   p {
     width: calc(100% - 61px);
     margin: 0;
-    color: @dg200;
+    color: @text-color;
     font-size: 12px;
     line-height: 14px;
     word-break: break-word;
@@ -103,7 +103,7 @@
 
   span {
     width: 61px;
-    color: @dg500;
+    color: @text-color-gray-light;
     font-size: 12px;
     line-height: 14px;
   }

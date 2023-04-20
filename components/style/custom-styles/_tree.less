@@ -1,7 +1,7 @@
 .submenu {
   height: 100vh;
   overflow-y: auto;
-  background-color: @background-color;
+  background-color: @background-color-light;
   // box-shadow: inset -16px 0px 24px -12px rgba(6, 25, 56, 0.08);
   + .ant-layout {
     height: 100vh;
@@ -11,7 +11,7 @@
   .sidebar-submenu {
     width: auto;
     height: 100%;
-    background: @background-color;
+    background: @background-color-light;
     // box-shadow: inset -16px 0px 24px -12px rgba(6, 25, 56, 0.08);
 
     .ant-layout,
@@ -67,14 +67,14 @@
 
     svg {
       rect {
-        fill: @b400 !important;
+        fill: @primary-color !important;
       }
     }
   }
   .ant-menu-title-content {
     width: 120px;
     overflow: hidden;
-    color: @dg200;
+    color: @text-color;
     white-space: nowrap;
     text-overflow: ellipsis;
     .media-menu-button {
@@ -90,12 +90,12 @@
     &.ant-menu-item-selected {
       .ant-menu-title-content,
       .ant-menu-title-content a {
-        color: @b400;
+        color: @primary-color;
         font-weight: 600;
       }
       > svg {
         path {
-          fill: @b400;
+          fill: @primary-color;
         }
       }
     }
@@ -203,7 +203,7 @@
 }
 
 .ant-menu {
-  color: @dg200;
+  color: @text-color;
   font-weight: 600;
   font-size: 14px;
   background: none;
@@ -306,7 +306,7 @@
 
 li.ant-menu-item.ant-menu-item-only-child {
   .ant-menu-title-content {
-    color: @dg200;
+    color: @text-color;
     line-height: 18px;
     .ant-btn {
       font-weight: 400;
@@ -317,7 +317,7 @@ li.ant-menu-item.ant-menu-item-only-child {
 li.ant-menu-submenu.ant-menu-submenu-inline {
   .ant-menu-submenu-title {
     .ant-menu-title-content {
-      color: @dg200;
+      color: @text-color;
       line-height: 18px;
     }
   }
@@ -342,7 +342,7 @@ li.ant-menu-submenu.ant-menu-submenu-inline {
       + .ant-menu-item-group {
         margin-top: 10px;
         padding-top: 10px;
-        border-top: 1px solid @dg700;
+        border-top: 1px solid @border-color-base;
       }
     }
   }
@@ -371,7 +371,7 @@ li.ant-menu-submenu.ant-menu-submenu-inline {
     display: none;
   }
   &:hover {
-    background-color: @b1000;
+    background-color: @blue-1;
   }
 }
 
@@ -390,7 +390,7 @@ li.ant-menu-submenu.ant-menu-submenu-inline {
 
 .ant-menu-inline.ant-menu-root .ant-menu-item {
   > .ant-menu-title-content > span {
-    color: @dg500;
+    color: @text-color-gray-light;
   }
   &.ant-menu-item-selected {
     > .ant-menu-title-content > span {
