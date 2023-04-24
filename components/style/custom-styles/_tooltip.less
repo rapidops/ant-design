@@ -1,18 +1,18 @@
 .ant-tooltip {
   .ant-tooltip-arrow-content {
-    left: 3px;
+    left: -2px;
     background-color: @text-color;
     border-radius: 0;
     --antd-arrow-background-color: @text-color;
   }
   .ant-tooltip-inner {
-    padding: 7px 12px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    background: @text-color;
+    // padding: 7px 12px;
+    // font-weight: 400;
+    // font-size: 14px;
+    // line-height: 18px;
+    // background: @text-color;
     border-radius: 8px;
-    box-shadow: none;
+    // box-shadow: none;
   }
   &.custom-tooltip {
     .ant-tooltip-arrow-content {
@@ -20,14 +20,14 @@
       --antd-arrow-background-color: @text-color;
     }
 
-    .ant-tooltip-inner {
-      padding: 16px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
-      background: @text-color;
-      border-radius: 8px;
-    }
+    // .ant-tooltip-inner {
+    //   padding: 16px;
+    //   font-weight: 400;
+    //   font-size: 16px;
+    //   line-height: 24px;
+    //   background: @text-color;
+    //   border-radius: 8px;
+    // }
 
     &.custom-large {
       max-width: 460px;
@@ -72,4 +72,24 @@
 
 .ant-tooltip-disabled-compatible-wrapper + .ant-btn {
   margin-left: 12px;
+}
+.ant-slider-tooltip{
+  .ant-tooltip-arrow-content{
+    left: 0px;
+    &::before{
+      background: @primary-color;
+    }
+  }
+  .ant-tooltip-inner{
+    background-color: @primary-color;
+    color: @white;
+    font-weight: 500;
+    min-height: inherit;
+    border-radius: 8px;
+    width: 34px;
+    text-align: center;
+  }
+  &.ant-tooltip-placement-top, &.ant-tooltip-placement-topLeft, &.ant-tooltip-placement-topRight{
+    padding-bottom: 10px;
+  }
 }

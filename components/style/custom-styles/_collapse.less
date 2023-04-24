@@ -5,20 +5,40 @@
   border: none;
 
   .ant-collapse-item {
-    border-color: @border-color-base;
+    //border-color: @border-color-base;
 
     &.ant-collapse-item-active {
       border-color: transparent;
     }
 
     + .ant-collapse-item {
-      margin-top: 24px;
+      margin-top: 32px;
     }
   }
+  .ant-collapse-header {
+    .ant-collapse-expand-icon{
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .ant-collapse-arrow{
+        margin-right: 0px;
+        display: block;
+        font-size: inherit;
+        svg{
+          fill: @black-5;
+        }
+      }
+    }
+  }
+  
 }
 
 .ant-collapse-header {
   font-weight: 600;
+
 }
 
 .role-list {

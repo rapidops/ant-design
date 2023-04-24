@@ -706,16 +706,16 @@
 // TimePicker
 // ---
 @picker-bg: @component-background;
-@picker-basic-cell-hover-color: @item-hover-bg;
+@picker-basic-cell-hover-color: @background-color-light;
 @picker-basic-cell-active-with-range-color: @item-active-bg;
-@picker-basic-cell-hover-with-range-color: darken(@picker-basic-cell-active-with-range-color, 2%);
+@picker-basic-cell-hover-with-range-color: @picker-basic-cell-active-with-range-color;
 @picker-basic-cell-disabled-bg: rgba(0, 0, 0, 0.04);
 @picker-border-color: @border-color-split;
-@picker-date-hover-range-border-color: lighten(@primary-color, 20%);
+@picker-date-hover-range-border-color: @primary-color-hover;
 @picker-date-hover-range-color: @picker-basic-cell-hover-with-range-color;
-@picker-time-panel-column-width: 56px;
-@picker-time-panel-column-height: 224px;
-@picker-time-panel-cell-height: 28px;
+@picker-time-panel-column-width: 40px;
+@picker-time-panel-column-height: 180px;
+@picker-time-panel-cell-height: 24px;
 @picker-panel-cell-height: 24px;
 @picker-panel-cell-width: 36px;
 @picker-text-height: 40px;
@@ -903,16 +903,16 @@
 @slider-margin: 10px 6px 10px;
 @slider-rail-background-color: @border-color-split;
 @slider-rail-background-color-hover: @border-color-base;
-@slider-track-background-color: @blue-6;
+@slider-track-background-color: @primary-color;
 @slider-track-background-color-hover: darken(@blue-6, 5%);
 @slider-handle-border-width: 2px;
-@slider-handle-background-color: @blue-6;
-@slider-handle-color: @blue-6;
+@slider-handle-background-color: @primary-color;
+@slider-handle-color: @primary-color;
 @slider-handle-color-hover: @blue-6;
 @slider-handle-color-focus: @white;
 @slider-handle-color-focus-shadow: fade(@primary-color, 12%);
 @slider-handle-color-tooltip-open: @primary-color;
-@slider-handle-size: 14px;
+@slider-handle-size: 12px;
 @slider-handle-margin-top: -5px;
 @slider-handle-shadow: 0;
 @slider-dot-border-color: @border-color-split;
@@ -932,7 +932,7 @@
 
 // Collapse
 // ---
-@collapse-header-padding: @padding-md @padding-md;
+@collapse-header-padding: @padding-xs 0;
 @collapse-header-padding-extra: 40px;
 @collapse-header-bg: @background-color-base;
 @collapse-content-padding: @padding-md;
