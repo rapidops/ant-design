@@ -64,7 +64,7 @@
 // >>> info (blue)
 @info-color: @geekblue-base;
 @info-color-hover: @geekblue-8;
-@info-color-focus: @blue-base;
+@info-color-focus: @geekblue-6;
 @info-color-active: @geekblue-9;
 @info-color-deprecated-bg: @geekblue-1;
 @info-color-deprecated-border: @geekblue-4;
@@ -143,7 +143,6 @@
 @padding-lg: 24px; // containers
 @padding-md: 16px; // small containers and buttons
 @padding-sm: 12px; // Form controls and items
-@padding-s: 10px;
 @padding-xs: 8px; // small items
 @padding-xss: 4px; // more small
 
@@ -911,13 +910,13 @@
 @slider-handle-color: @primary-color;
 @slider-handle-color-hover: @blue-6;
 @slider-handle-color-focus: @white;
-@slider-handle-color-focus-shadow: fade(@primary-color, 12%);
+@slider-handle-color-focus-shadow: fade(#061938, 6%);
 @slider-handle-color-tooltip-open: @primary-color;
 @slider-handle-size: 12px;
 @slider-handle-margin-top: -5px;
-@slider-handle-shadow: 0;
+@slider-handle-shadow: none;
 @slider-dot-border-color: @border-color-split;
-@slider-dot-border-color-active: tint(@primary-color, 50%);
+@slider-dot-border-color-active: @primary-color;
 @slider-disabled-color: @disabled-color;
 @slider-disabled-background-color: @component-background;
 

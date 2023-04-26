@@ -1895,3 +1895,37 @@ body.ant-scrolling-effect {
 .ant-progress-bg{
   height: 4px !important;
 }
+
+// Slider Component
+.ant-slider-dot{
+  top: -1px;
+  width: 6px;
+  height: 6px;
+
+  background-color: @border-color-split;
+  
+}
+.ant-slider-handle{
+  &:before{
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border:4px solid @white;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &:focus{
+    border-color: @blue-base;
+    &:before{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+}
