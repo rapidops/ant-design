@@ -1690,13 +1690,42 @@ input::placeholder {
 //   }
 // }
 
-.ant-avatar-square {
-  border-radius: 4px;
-}
+// .ant-avatar-square {
+//   border-radius: 4px;
+// }
 
 // file upload box css
 
 .ant-upload {
-  &.ant-upload-select-picture-card {
+  &.ant-upload-drag {
+    background-color: @component-background;
+    border-radius: 8px;
+
+    p {
+      &.ant-upload-drag-icon {
+        .anticon {
+          color: @text-color;
+          font-size: 32px;
+
+          svg {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+
+      &.ant-upload-text {
+        margin: 0 0 16px;
+        padding: 0 16px;
+        color: @text-color;
+        font-weight: 500;
+        line-height: 20px;
+      }
+
+      &.ant-upload-hint {
+        padding: 0 16px;
+        color: @text-color-gray-light;
+      }
+    }
   }
 }

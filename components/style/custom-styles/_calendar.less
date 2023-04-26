@@ -1,27 +1,38 @@
 //  date picker CSS
+
 // .ant-picker {
 //   width: 100%;
 //   padding: 5px 12px;
 //   border: 1px solid @border-color-base;
 //   border-radius: 4px;
 // }
-.ant-picker{
-  &.ant-picker-focused{
+
+.ant-picker {
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  &.ant-picker-focused {
     border-color: @input-focus-border-color;
     box-shadow: 0 0 0 2px @primary-color-outline;
   }
-  &.ant-picker-disabled{
-    background-color: @background-color-light;
-  }
-  .ant-picker-input{
-     > input{
+  // &.ant-picker-disabled{
+  //   background-color: @background-color-light;
+  // }
+  .ant-picker-input {
+    > input {
       line-height: 18px;
-     }
+    }
   }
 }
-.ant-picker-input{
-  > input{
-    &[disabled]{
+
+.ant-picker-dropdown {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.ant-picker-input {
+  > input {
+    &[disabled] {
       color: @text-color;
     }
   }
@@ -29,16 +40,30 @@
 
 .ant-picker-header {
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   padding: 0;
   border: none;
 }
 
 .ant-picker-panel-container {
-  border: 1px solid @border-color-base;
+  border: 1px solid @border-color-split;
   //border-radius: 4px;
   //box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.1), 0px 4px 20px -2px rgba(50, 50, 71, 0.08);
   box-shadow: 0px 14px 21px -1px rgba(6, 25, 56, 0.08);
+}
+
+.ant-picker-decade-panel,
+.ant-picker-year-panel,
+.ant-picker-quarter-panel,
+.ant-picker-month-panel,
+.ant-picker-week-panel,
+.ant-picker-date-panel {
+  width: 248px;
+  padding: 16px;
+
+  .ant-picker-body {
+    padding: 0;
+  }
 }
 
 .ant-picker-date-panel {
@@ -55,47 +80,63 @@
   }
 
   .ant-picker-content {
-    // width: 100%;
+    width: 100%;
+    table-layout: auto;
     th {
       color: @text-color-tertiary;
       //font-weight: 400;
-      font-size: 12px;
-      line-height: 14px;
+      // font-size: 12px;
+      // line-height: 14px;
     }
 
     td {
       //color: @text-color-tertiary;
       //font-weight: 400;
-      font-size: 12px;
-      line-height: 14px;
-      padding: 4px 0;
+      // font-size: 12px;
+      // line-height: 14px;
+      // padding: 4px 0;
       // &.ant-picker-cell-in-view {
       //   color: @text-color;
       // }
     }
   }
 }
-.ant-picker-cell{
+
+.ant-picker-cell {
   color: @text-color-tertiary;
 }
+
 .ant-picker-cell-in-view {
   color: @text-color;
 }
+
 .ant-picker-cell-in-view {
   &.ant-picker-cell-selected {
     .ant-picker-cell-inner {
       color: @primary-color;
+      font-weight: 600;
       background-color: @white;
       border: 1px solid @blue-6;
       box-shadow: 0px 0px 4px rgba(99, 102, 241, 0.6);
-      font-weight: 600;
     }
   }
 
-  &.ant-picker-cell-today {
-    .ant-picker-cell-inner {
-      &:before {
-        border-color: @white;
+  // &.ant-picker-cell-today {
+  //   .ant-picker-cell-inner {
+  //     &:before {
+  //       border-color: @white;
+  //     }
+  //   }
+  // }
+}
+
+.ant-picker-week-panel-row-selected {
+  .ant-picker-cell-in-view {
+    &.ant-picker-cell-selected {
+      .ant-picker-cell-inner {
+        color: @white;
+        font-weight: 400;
+        border: none;
       }
     }
   }
@@ -107,6 +148,11 @@
 
 .ant-picker-header-view {
   line-height: normal;
+
+  button {
+    font-weight: 600;
+    font-size: 12px;
+  }
 }
 
 .ant-picker-header {
@@ -124,55 +170,107 @@
     padding: 4px;
     line-height: 24px;
     border: 1px solid @border-color-base;
-    border-radius: 4px;
+    border-radius: @border-radius-base;
   }
 }
 
-.anticon-calendar {
-  svg {
-    fill: @text-color-tertiary;
+.ant-picker-prev-icon,
+.ant-picker-super-prev-icon {
+  transform: rotate(-45deg) translate(1px, 1px);
+}
+
+.ant-picker-next-icon,
+.ant-picker-super-next-icon {
+  transform: rotate(135deg) translate(1px, 1px);
+}
+
+.ant-picker-suffix {
+  color: @text-color-tertiary;
+  .anticon-calendar {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
-.ant-picker-time-panel {
-  .ant-picker-header {
-    padding: 16px 8px;
-  }
-}
-.ant-picker-status-error{
-  &.ant-picker{
+.ant-picker-status-error {
+  &.ant-picker {
     border-color: @alert-error-border-color;
   }
 }
-.ant-picker-status-error{
+
+.ant-picker-status-error {
   &.ant-picker:not([disabled]):hover {
-     border-color: @alert-error-border-color;
+    border-color: @alert-error-border-color;
   }
 }
 
 .ant-picker-large {
   padding: 10px 12px;
 }
-.ant-picker-content{
-  padding-left: 16px;
+
+.ant-picker-content {
   padding-right: 16px;
+  padding-left: 16px;
 }
-.ant-picker-time-panel{
-  .ant-picker-time-panel-column{
-    border-left: none;
-  }  
-}
-.ant-picker-time-panel-column{
-  
-  .ant-picker-time-panel-cell-inner{
-    font-size: 12px;
-    font-weight: 400;
+
+.ant-picker-time-panel {
+  .ant-picker-header {
+    height: 56px;
+    margin-bottom: 0;
+    padding: 16px;
   }
-  li.ant-picker-time-panel-cell-selected{
-    .ant-picker-time-panel-cell-inner{
-      background-color: transparent;
-      font-weight: 600;
-      color: @primary-color;
+
+  .ant-picker-content {
+    max-height: @picker-time-panel-column-height;
+    overflow: hidden;
+  }
+
+  .ant-picker-time-panel-column {
+    border-left: none;
+  }
+}
+
+.ant-picker-time-panel-column {
+  .slimScrollBar();
+  > li {
+    padding: 3px;
+    &.ant-picker-time-panel-cell {
+      .ant-picker-time-panel-cell-inner {
+        width: 24px;
+        min-width: 24px;
+        padding: 0;
+        text-align: center;
+        border-radius: @border-radius-base;
+
+        &:hover {
+          background-color: @picker-basic-cell-hover-color;
+        }
+      }
+
+      &.ant-picker-time-panel-cell-selected {
+        .ant-picker-time-panel-cell-inner {
+          color: @primary-color;
+          font-weight: 600;
+          background-color: @white;
+          border: 1px solid @blue-6;
+          box-shadow: 0px 0px 4px rgba(99, 102, 241, 0.6);
+        }
+      }
     }
   }
+
+  // .ant-picker-time-panel-cell-inner {
+  //   font-size: 12px;
+  //   font-weight: 400;
+  // }
+
+  // li.ant-picker-time-panel-cell-selected {
+  //   .ant-picker-time-panel-cell-inner {
+  //     background-color: transparent;
+  //     font-weight: 600;
+  //     color: @primary-color;
+  //   }
+  // }
 }

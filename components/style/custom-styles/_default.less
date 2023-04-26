@@ -611,13 +611,13 @@
 // ---
 @menu-inline-toplevel-item-height: 34px;
 @menu-item-height: 28px;
-@menu-item-group-height: 30px;
+@menu-item-group-height: 28px;
 @menu-collapsed-width: 64px;
-@menu-bg: none;
+@menu-bg: @background-color-light;
 @menu-popup-bg: @component-background;
 @menu-item-color: @text-color-gray-light;
 @menu-inline-submenu-bg: transparent;
-@menu-highlight-color: @text-color-gray;
+@menu-highlight-color: @primary-color;
 @menu-highlight-danger-color: @error-color;
 @menu-item-active-bg: transparent;
 @menu-item-active-danger-bg: @red-1;
@@ -627,9 +627,9 @@
 @menu-item-font-size: @font-size-base;
 @menu-item-boundary-margin: 0;
 @menu-item-padding-horizontal: 20px;
-@menu-item-padding: 5px 20px @menu-item-padding-horizontal 0;
-@menu-horizontal-line-height: 46px;
-@menu-icon-margin-right: 6px;
+@menu-item-padding: 5px @menu-item-padding-horizontal 5px 0;
+@menu-horizontal-line-height: 28px;
+@menu-icon-margin-right: 4px;
 @menu-icon-size: @font-size-lg;
 @menu-icon-size-lg: @font-size-lg + 4;
 @menu-item-group-title-font-size: @menu-item-font-size;
@@ -713,11 +713,11 @@
 @picker-border-color: @border-color-split;
 @picker-date-hover-range-border-color: @primary-color-hover;
 @picker-date-hover-range-color: @picker-basic-cell-hover-with-range-color;
-@picker-time-panel-column-width: 40px;
-@picker-time-panel-column-height: 180px;
+@picker-time-panel-column-width: 34px;
+@picker-time-panel-column-height: 210px;
 @picker-time-panel-cell-height: 24px;
 @picker-panel-cell-height: 24px;
-@picker-panel-cell-width: 36px;
+@picker-panel-cell-width: 32px;
 @picker-text-height: 40px;
 @picker-panel-without-time-cell-height: 66px;
 
@@ -741,7 +741,7 @@
 // ---
 @badge-height: 20px;
 @badge-height-sm: 16px;
-@badge-dot-size: 6px;
+@badge-dot-size: 4px;
 @badge-font-size: @font-size-base;
 @badge-font-size-sm: @font-size-sm;
 @badge-font-weight: 600;
@@ -762,12 +762,12 @@
 @card-head-background: transparent;
 @card-head-font-size: @font-size-lg;
 @card-head-font-size-sm: @font-size-base;
-@card-head-padding: 12px;
+@card-head-padding: 16px;
 @card-head-padding-sm: @card-head-padding;
-@card-head-height: 45px;
-@card-head-height-sm: 42px;
-@card-inner-head-padding: 12px;
-@card-padding-base: 12px;
+@card-head-height: 36px;
+@card-head-height-sm: 32px;
+@card-inner-head-padding: 16px;
+@card-padding-base: 16px;
 @card-padding-base-sm: @card-padding-base;
 @card-actions-background: @component-background;
 @card-actions-li-margin: 12px 0;
@@ -775,9 +775,9 @@
 @card-background: @component-background;
 @card-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
   0 5px 12px 4px rgba(0, 0, 0, 0.09);
-@card-radius: @border-radius-base;
+@card-radius: 8px;
 @card-head-tabs-margin-bottom: -17px;
-@card-head-extra-color: @text-color;
+@card-head-extra-color: @text-color-gray-light;
 
 // Comment
 // ---
@@ -838,7 +838,7 @@
 @avatar-font-size-base: 14px;
 @avatar-font-size-lg: 20px;
 @avatar-font-size-sm: 12px;
-@avatar-bg: @blue-6;
+@avatar-bg: @primary-color;
 @avatar-color: @white;
 @avatar-border-radius: @border-radius-base;
 @avatar-group-overlapping: -8px;
@@ -865,25 +865,25 @@
 // ---
 @pagination-item-bg: @component-background;
 @pagination-item-size: 28px;
-@pagination-item-size-sm: 28px;
+@pagination-item-size-sm: 24px;
 @pagination-font-family: @font-family;
 @pagination-font-weight-active: 500;
 @pagination-item-bg-active: @component-background;
 @pagination-item-link-bg: @component-background;
-@pagination-item-disabled-color-active: @disabled-color;
-@pagination-item-disabled-bg-active: @disabled-active-bg;
+@pagination-item-disabled-color-active: @border-color-base;
+@pagination-item-disabled-bg-active: @disabled-bg;
 @pagination-item-input-bg: @component-background;
 @pagination-mini-options-size-changer-top: 0px;
 
 // PageHeader
 // ---
-@page-header-padding: @padding-lg;
+@page-header-padding: 32px;
 @page-header-padding-vertical: @padding-lg;
 @page-header-padding-breadcrumb: @padding-sm;
 @page-header-content-padding-vertical: @padding-sm;
 @page-header-back-color: @text-color;
 @page-header-ghost-bg: inherit;
-@page-header-heading-title: @heading-4-size;
+@page-header-heading-title: @heading-6-size;
 @page-header-heading-sub-title: 13px;
 @page-header-tabs-tab-font-size: 16px;
 
@@ -1031,7 +1031,7 @@
 @timeline-color: @background-color-base;
 @timeline-dot-border-width: 2px;
 @timeline-dot-color: @primary-color;
-@timeline-dot-bg: @primary-color;
+@timeline-dot-bg: @component-background;
 @timeline-item-padding-bottom: 24px;
 
 // Typography
