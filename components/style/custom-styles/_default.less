@@ -64,7 +64,7 @@
 // >>> info (blue)
 @info-color: @geekblue-base;
 @info-color-hover: @geekblue-8;
-@info-color-focus: @geekblue-6;
+@info-color-focus: @blue-base;
 @info-color-active: @geekblue-9;
 @info-color-deprecated-bg: @geekblue-1;
 @info-color-deprecated-border: @geekblue-4;
@@ -143,6 +143,7 @@
 @padding-lg: 24px; // containers
 @padding-md: 16px; // small containers and buttons
 @padding-sm: 12px; // Form controls and items
+@padding-s: 10px;
 @padding-xs: 8px; // small items
 @padding-xss: 4px; // more small
 
@@ -945,8 +946,8 @@
 @skeleton-to-color: shade(@skeleton-color, 5%);
 @skeleton-paragraph-margin-top: 28px;
 @skeleton-paragraph-li-margin-top: @margin-md;
-@skeleton-paragraph-li-height: 16px;
-@skeleton-title-height: 16px;
+@skeleton-paragraph-li-height: 12px;
+@skeleton-title-height: 12px;
 @skeleton-title-paragraph-margin-top: @margin-lg;
 
 // Transfer
@@ -962,7 +963,7 @@
 
 // Message (toast)
 // ---
-@message-notice-content-padding: 10px 16px;
+@message-notice-content-padding: 11px 16px;
 @message-notice-content-bg: @component-background;
 // Motion
 // ---
@@ -972,7 +973,7 @@
 // ---
 @alert-success-border-color: @success-color-focus;
 @alert-success-bg-color: @green-1;
-@alert-success-icon-color: @success-color-focus;
+@alert-success-icon-color: @green-6;
 @alert-info-border-color: @info-color-focus;
 @alert-info-bg-color: @geekblue-1;
 @alert-info-icon-color: @info-color-focus;
@@ -987,7 +988,7 @@
 @alert-close-color: @text-color;
 @alert-close-hover-color: @text-color-dark;
 @alert-no-icon-padding-vertical: @padding-xs;
-@alert-with-description-no-icon-padding-vertical: @padding-md - 2px;
+@alert-with-description-no-icon-padding-vertical: @padding-md 24px;
 @alert-with-description-padding-vertical: @padding-md - 2px;
 @alert-with-description-padding: @padding-md - 2px;
 @alert-icon-top: 8px + @font-size-base * (@line-height-base / 2) - (@font-size-base / 2);
