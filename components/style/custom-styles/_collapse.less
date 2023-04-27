@@ -1,45 +1,55 @@
 // collapse CSS in table
 
 .ant-collapse {
-  background: transparent;
+  // background: transparent;
   border: none;
 
-  .ant-collapse-item {
+  > .ant-collapse-item {
     //border-color: @border-color-base;
+    // + .ant-collapse-item {
+    //   margin-top: 32px;
+    // }
+
+    .ant-collapse-header {
+      padding-right: 16px;
+      font-weight: 600;
+      line-height: 18px;
+
+      .ant-collapse-expand-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        max-width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        padding-top: 2px;
+
+        .ant-collapse-arrow {
+          display: block;
+          margin-right: 0px;
+          color: @text-color-gray-light;
+          font-size: inherit;
+
+          svg {
+            // fill: @black-5;
+            width: 9px;
+            height: 9px;
+          }
+        }
+      }
+    }
 
     &.ant-collapse-item-active {
       border-color: transparent;
     }
-
-    + .ant-collapse-item {
-      margin-top: 32px;
-    }
   }
-  .ant-collapse-header {
-    .ant-collapse-expand-icon{
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .ant-collapse-arrow{
-        margin-right: 0px;
-        display: block;
-        font-size: inherit;
-        svg{
-          fill: @black-5;
-        }
-      }
-    }
-  }
-  
 }
 
-.ant-collapse-header {
-  font-weight: 600;
+// .ant-collapse-header {
+//   font-weight: 600;
 
-}
+// }
 
 .role-list {
   .ant-collapse-content > .ant-collapse-content-box {

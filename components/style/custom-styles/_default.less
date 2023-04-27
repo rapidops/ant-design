@@ -113,7 +113,7 @@
 @text-color-inverse: @white;
 @icon-color: inherit;
 @icon-color-hover: fade(@black, 75%);
-@heading-color: @black-10;
+@heading-color: @text-color;
 @text-color-dark: @black-10;
 @text-color-secondary-dark: lighten(@text-color-dark, 5%);
 @text-selection-bg: @primary-color;
@@ -575,7 +575,7 @@
 @modal-header-padding-vertical: @padding-md;
 @modal-header-padding-horizontal: @padding-lg;
 @modal-body-padding: @padding-lg;
-@modal-header-bg: @heading-color;
+@modal-header-bg: @black-10;
 @modal-header-padding: @modal-header-padding-vertical (@modal-header-padding-horizontal * 2)
   @modal-header-padding-vertical @modal-header-padding-horizontal;
 @modal-header-border-width: @border-width-base;
@@ -593,7 +593,7 @@
 @modal-footer-padding-vertical: @padding-md;
 @modal-footer-padding-horizontal: @padding-lg;
 @modal-footer-border-width: @border-width-base;
-@modal-mask-bg: fade(@heading-color, 50%);
+@modal-mask-bg: fade(@black-10, 50%);
 @modal-confirm-body-padding: @padding-lg; // TODO: confirm modal
 @modal-confirm-title-font-size: 20px;
 
@@ -934,10 +934,10 @@
 // ---
 @collapse-header-padding: @padding-xs 0;
 @collapse-header-padding-extra: 40px;
-@collapse-header-bg: @background-color-base;
-@collapse-content-padding: @padding-md;
+@collapse-header-bg: transparent;
+@collapse-content-padding: @padding-lg;
 @collapse-content-bg: @component-background;
-@collapse-header-arrow-left: 16px;
+@collapse-header-arrow-left: 9px;
 
 // Skeleton
 // ---
@@ -960,7 +960,7 @@
 @transfer-item-padding-vertical: 6px;
 @transfer-list-search-icon-top: 12px;
 
-// Message (toast)
+// Message (toast notification)
 // ---
 @message-notice-content-padding: 11px 16px;
 @message-notice-content-bg: @component-background;
@@ -970,16 +970,16 @@
 
 // Alert
 // ---
-@alert-success-border-color: @success-color-focus;
+@alert-success-border-color: @green-5;
 @alert-success-bg-color: @green-1;
 @alert-success-icon-color: @green-6;
-@alert-info-border-color: @info-color-focus;
+@alert-info-border-color: @blue-5;
 @alert-info-bg-color: @geekblue-1;
-@alert-info-icon-color: @info-color-focus;
-@alert-warning-border-color: @warning-color;
+@alert-info-icon-color: @primary-color;
+@alert-warning-border-color: @orange-5;
 @alert-warning-bg-color: @orange-1;
 @alert-warning-icon-color: @warning-color;
-@alert-error-border-color: @red-6;
+@alert-error-border-color: @red-4;
 @alert-error-bg-color: @red-1;
 @alert-error-icon-color: @red-6;
 @alert-message-color: @text-color;
@@ -991,7 +991,7 @@
 @alert-with-description-padding-vertical: @padding-md - 2px;
 @alert-with-description-padding: @padding-md - 2px;
 @alert-icon-top: 8px + @font-size-base * (@line-height-base / 2) - (@font-size-base / 2);
-@alert-with-description-icon-size: 20px;
+@alert-with-description-icon-size: 16px;
 
 // List
 // ---
