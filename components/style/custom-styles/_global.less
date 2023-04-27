@@ -1892,21 +1892,19 @@ body.ant-scrolling-effect {
 
 
 // Progress Component
-.ant-progress-bg{
+.ant-progress-bg {
   height: 4px !important;
 }
 
 // Slider Component
-.ant-slider-dot{
-  top: -1px;
+.ant-slider-dot {
   width: 6px;
   height: 6px;
-
   background-color: @border-color-split;
-  
 }
-.ant-slider-handle{
-  &:before{
+
+.ant-slider-handle {
+  &:before {
     position: absolute;
     top: -4px;
     right: -4px;
@@ -1920,12 +1918,55 @@ body.ant-scrolling-effect {
     opacity: 0;
     visibility: hidden;
   }
-  &:focus{
+
+  &:focus {
     border-color: @blue-base;
-    &:before{
+    &:before {
       opacity: 1;
       visibility: visible;
     }
+
+  } 
+}
+
+
+// ant-slider-tooltip
+.ant-slider-tooltip {
+  .ant-tooltip-arrow-content {
+    left: 0px;
+    &::before {
+      background: @primary-color;
+    }
   }
-  
+
+  .ant-tooltip-inner {
+    background-color: @primary-color;
+    color: @white;
+    font-weight: 500;
+    min-height: inherit;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: none;
+  }
+
+  &.ant-tooltip-placement-top, 
+  &.ant-tooltip-placement-topLeft,
+  &.ant-tooltip-placement-topRight {
+    padding-bottom: 10px;
+  }
+
+}
+
+.ant-slider-rail {
+  height: 2px; 
+}
+
+.ant-slider-track {
+  height: 2px;
+}
+.ant-slider-disabled  {
+  .ant-slider-handle,
+  .ant-slider-dot {
+    background-color: @black-4;
+  }
 }

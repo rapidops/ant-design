@@ -11,7 +11,7 @@
     // font-size: 14px;
     // line-height: 18px;
     // background: @text-color;
-    border-radius: 8px;
+    //border-radius: 6px;
     // box-shadow: none;
   }
   &.custom-tooltip {
@@ -72,24 +72,4 @@
 
 .ant-tooltip-disabled-compatible-wrapper + .ant-btn {
   margin-left: 12px;
-}
-.ant-slider-tooltip{
-  .ant-tooltip-arrow-content{
-    left: 0px;
-    &::before{
-      background: @primary-color;
-    }
-  }
-  .ant-tooltip-inner{
-    background-color: @primary-color;
-    color: @white;
-    font-weight: 500;
-    min-height: inherit;
-    border-radius: 8px;
-    width: 34px;
-    text-align: center;
-  }
-  &.ant-tooltip-placement-top, &.ant-tooltip-placement-topLeft, &.ant-tooltip-placement-topRight{
-    padding-bottom: 10px;
-  }
 }
