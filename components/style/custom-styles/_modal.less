@@ -74,16 +74,16 @@
       padding: 0;
     }
 
-    .user-delete-modal {
-      p {
-        font-size: 14px;
-        line-height: 18px;
-        + p {
-          color: @text-color-secondary;
-          font-weight: 500;
-        }
-      }
-    }
+    // .user-delete-modal {
+    //   p {
+    //     font-size: 14px;
+    //     line-height: 18px;
+    //     + p {
+    //       color: @text-color-secondary;
+    //       font-weight: 500;
+    //     }
+    //   }
+    // }
   }
 
   .ant-modal-footer {
@@ -123,6 +123,26 @@
           }
         }
       }
+    }
+  }
+
+  &.confirm-modal {
+    .ant-modal-header {
+      background-color: @white;
+      border-bottom-color: @white;
+    }
+    .ant-modal-title {
+      color: @black-base;
+    }
+    .ant-modal-close {
+      color: @black-6;
+      &:hover {
+        background-color: @black-base;
+        color: @white;
+      }
+    }
+    .ant-modal-body {
+      padding-top: 0px;
     }
   }
 
