@@ -14,9 +14,9 @@ body {
 // @heading-4-size: ceil(@font-size-base);
 // @heading-5-size: ceil(@font-size-base * 1.14);
 
-#root {
-  height: 100%;
-}
+// #root {
+//   height: 100%;
+// }
 
 h1,
 h2,
@@ -459,9 +459,15 @@ p {
 .ant-menu {
   .ant-menu-submenu {
     &.ant-menu-submenu-open {
+      padding-bottom: 8px;
+
       > .ant-menu-submenu-title {
         color: @text-color;
         font-weight: 600;
+      }
+
+      .ant-menu-submenu-open {
+        padding-bottom: 0;
       }
     }
   }
@@ -473,6 +479,15 @@ p {
         font-weight: 600;
       }
     }
+  }
+}
+
+.ant-menu-vertical,
+.ant-menu-vertical-left,
+.ant-menu-vertical-right,
+.ant-menu-inline {
+  .ant-menu-submenu {
+    padding-bottom: 0;
   }
 }
 
