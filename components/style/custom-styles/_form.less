@@ -513,10 +513,40 @@ input {
 .ant-btn {
   line-height: 18px;
 
+  .anticon {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.ant-btn-lg {
+    .anticon {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
   &.ant-btn-icon-only {
-    line-height: 25px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
     &.ant-btn-sm {
-      line-height: 14px;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &.ant-btn-lg {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
