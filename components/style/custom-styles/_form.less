@@ -530,6 +530,11 @@ input {
 .ant-btn {
   line-height: 18px;
 
+  + .ant-btn,
+  + .ant-btn.ant-btn-link {
+    margin-left: 16px;
+  }
+
   .anticon {
     svg {
       width: 16px;
@@ -806,9 +811,42 @@ input {
     }
   }
 
-  + .ant-btn,
-  + .ant-btn.ant-btn-link {
-    margin-left: 16px;
+  &.ant-btn-default,
+  &.ant-btn-text,
+  &.ant-btn-dashed {
+    .anticon {
+      svg {
+        path {
+          fill: @text-color-gray;
+        }
+      }
+    }
+  }
+
+  &.ant-btn-primary,
+  &.ant-btn-dangerous,
+  &.ant-btn-success {
+    .anticon {
+      svg {
+        path {
+          fill: @white;
+        }
+      }
+    }
+  }
+
+  &.ant-btn-dangerous {
+    &.ant-btn-default,
+    &.ant-btn-text,
+    &.ant-btn-dashed {
+      .anticon {
+        svg {
+          path {
+            fill: @error-color;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -1214,12 +1252,20 @@ input {
 
 .ant-upload {
   &.ant-upload-drag {
+    padding: 24px;
     background-color: @component-background;
     border-radius: 8px;
 
+    .ant-upload {
+      padding: 0;
+    }
+
     p {
       &.ant-upload-drag-icon {
+        margin-bottom: 16px;
         .anticon {
+          width: 32px;
+          height: 32px;
           color: @text-color;
           font-size: 32px;
 
