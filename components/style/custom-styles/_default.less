@@ -14,73 +14,74 @@
 
 // -------- Colors -----------
 
-@secondary-color: #1f2937; // if you change secondary color than also change in color.less for @dg200
-
-@base-font-color: #6b7280; // if you change base-font color than also change in color.less for @dg500
-
-@large-input: 8px 12px;
-@medium-input: 5px 12px;
-
-@border-color: #e5e7eb;
-@background-color: #f4f7fa;
-@secondary-background-color: #f3f4f6;
-
-// >>> Primary
-@primary-color: @blue-7;
-@primary-color-hover: color(~`colorPalette('@{primary-color}', 5) `);
-@primary-color-active: color(~`colorPalette('@{primary-color}', 7) `);
-@primary-color-outline: fade(@primary-color, @outline-fade);
-
-@processing-color: @blue-7;
-
-// >>> Info
-@info-color: @primary-color;
-@info-color-deprecated-bg: color(~`colorPalette('@{info-color}', 1) `);
-@info-color-deprecated-border: color(~`colorPalette('@{info-color}', 3) `);
-
-// >>> Success
-@success-color: @green-7;
-@success-color-hover: color(~`colorPalette('@{success-color}', 5) `);
-@success-color-active: color(~`colorPalette('@{success-color}', 7) `);
-@success-color-outline: fade(@success-color, @outline-fade);
-@success-color-deprecated-bg: color(~`colorPalette('@{success-color}', 1) `);
-@success-color-deprecated-border: color(~`colorPalette('@{success-color}', 3) `);
-
-// >>> Warning
-@warning-color: @orange-6;
-@warning-color-hover: color(~`colorPalette('@{warning-color}', 5) `);
-@warning-color-active: color(~`colorPalette('@{warning-color}', 7) `);
-@warning-color-outline: fade(@warning-color, @outline-fade);
-@warning-color-deprecated-bg: color(~`colorPalette('@{warning-color}', 1) `);
-@warning-color-deprecated-border: color(~`colorPalette('@{warning-color}', 3) `);
-
-// >>> Error
-@error-color: @red-7;
-@error-color-hover: color(~`colorPalette('@{error-color}', 5) `);
-@error-color-active: color(~`colorPalette('@{error-color}', 7) `);
-@error-color-outline: fade(@error-color, @outline-fade);
-@error-color-deprecated-bg: color(~`colorPalette('@{error-color}', 1) `);
-@error-color-deprecated-border: color(~`colorPalette('@{error-color}', 3) `);
-
-@highlight-color: @red-7;
-@normal-color: #d9d9d9;
 @white: #fff;
 @black: #000;
 
+// >>> Primary
+@primary-color: @blue-base;
+@primary-color-hover: @blue-8;
+@primary-color-focus: @blue-8;
+@primary-color-active: @blue-9;
+@primary-color-outline: @blue-3;
+
+@processing-color: @blue-base;
+
+// >>> Success
+@success-color: @green-base;
+@success-color-hover: @green-8;
+@success-color-focus: @green-base;
+@success-color-active: @green-9;
+@success-color-outline: @green-3;
+@success-color-deprecated-bg: @green-2;
+@success-color-deprecated-border: @green-5;
+
+// >>> Warning
+@warning-color: @orange-base;
+@warning-color-hover: @orange-7;
+@warning-color-focus: @orange-5;
+@warning-color-active: @orange-8;
+@warning-color-outline: @orange-3;
+@warning-color-deprecated-bg: @orange-1;
+@warning-color-deprecated-border: @orange-3;
+
+// >>> Error
+@error-color: @red-base;
+@error-color-hover: @red-8;
+@error-color-focus: @red-base;
+@error-color-active: @red-9;
+@error-color-outline: @red-3;
+@error-color-deprecated-bg: @red-1;
+@error-color-deprecated-border: @red-4;
+
+// >>> info (blue)
+@info-color: @geekblue-base;
+@info-color-hover: @geekblue-8;
+@info-color-focus: @geekblue-6;
+@info-color-active: @geekblue-9;
+@info-color-deprecated-bg: @geekblue-1;
+@info-color-deprecated-border: @geekblue-4;
+
+// >>> secondary (gray)
+@default-color: @white;
+@default-color-hover: @background-color-base;
+@default-color-focus: @white;
+@default-color-active: @background-color-base;
+
+@highlight-color: @red-6;
+@normal-color: #d9d9d9;
+
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
-@primary-1: color(~`colorPalette('@{primary-color}', 1) `); // replace tint(@primary-color, 90%)
-@primary-2: color(~`colorPalette('@{primary-color}', 2) `); // replace tint(@primary-color, 80%)
-@primary-3: color(~`colorPalette('@{primary-color}', 3) `); // unused
-@primary-4: color(~`colorPalette('@{primary-color}', 4) `); // unused
-@primary-5: color(
-  ~`colorPalette('@{primary-color}', 5) `
-); // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
+@primary-1: @blue-1; // replace tint(@primary-color, 90%)
+@primary-2: @blue-2; // replace tint(@primary-color, 80%)
+@primary-3: @blue-3; // unused
+@primary-4: @blue-4; // unused
+@primary-5: @blue-5; // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
 @primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
-@primary-7: color(~`colorPalette('@{primary-color}', 7) `); // replace shade(@primary-color, 5%)
-@primary-8: color(~`colorPalette('@{primary-color}', 8) `); // unused
-@primary-9: color(~`colorPalette('@{primary-color}', 9) `); // unused
-@primary-10: color(~`colorPalette('@{primary-color}', 10) `); // unused
+@primary-7: @blue-8; // replace shade(@primary-color, 5%)
+@primary-8: @blue-9; // unused
+@primary-9: @blue-10; // unused
+@primary-10: darken(@blue-10, 5%); // unused
 
 // Base Scaffolding Variables
 // ---
@@ -96,28 +97,32 @@
   'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
   'Noto Color Emoji';
 @code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-@text-color: fade(@black, 85%);
-@text-color-secondary: fade(@black, 45%);
+@text-color: @black-base;
+@text-color-secondary: @black-8;
+@text-color-tertiary: @black-5;
+@text-color-gray: @black-7;
+@text-color-gray-light: @black-6;
 @text-color-inverse: @white;
 @icon-color: inherit;
 @icon-color-hover: fade(@black, 75%);
-@heading-color: fade(@black, 85%);
-@text-color-dark: fade(@white, 85%);
-@text-color-secondary-dark: fade(@white, 65%);
+@heading-color: @text-color;
+@text-color-dark: @black-10;
+@text-color-secondary-dark: lighten(@text-color-dark, 5%);
 @text-selection-bg: @primary-color;
 @font-variant-base: tabular-nums;
 @font-feature-settings-base: 'tnum';
 @font-size-base: 14px;
 @font-size-lg: @font-size-base + 2px;
 @font-size-sm: 12px;
-@heading-1-size: ceil(@font-size-base * 2.71);
-@heading-2-size: ceil(@font-size-base * 2.14);
-@heading-3-size: ceil(@font-size-base * 1.71);
-@heading-4-size: ceil(@font-size-base * 1.42);
-@heading-5-size: ceil(@font-size-base * 1.14);
+@heading-1-size: ceil(@font-size-base * 3.41);
+@heading-2-size: ceil(@font-size-base * 2.81);
+@heading-3-size: ceil(@font-size-base * 2.41);
+@heading-4-size: ceil(@font-size-base * 2);
+@heading-5-size: ceil(@font-size-base * 1.71);
+@heading-6-size: ceil(@font-size-base * 1.41);
 // https://github.com/ant-design/ant-design/issues/20210
-@line-height-base: 1.5715;
-@border-radius-base: 2px;
+@line-height-base: 1.2857;
+@border-radius-base: 4px;
 @border-radius-sm: @border-radius-base;
 
 // control border
@@ -145,22 +150,22 @@
 @margin-xss: 4px; // more small
 
 // height rules
-@height-base: 32px;
+@height-base: 34px;
 @height-lg: 40px;
-@height-sm: 24px;
+@height-sm: 26px;
 
 // The background colors for active and hover states for things like
 // list items or table cells.
-@item-active-bg: @primary-1;
-@item-hover-bg: #f5f5f5;
+@item-active-bg: @blue-0;
+@item-hover-bg: @blue-0;
 
 // ICONFONT
 @iconfont-css-prefix: anticon;
 
 // LINK
 @link-color: @primary-color;
-@link-hover-color: color(~`colorPalette('@{link-color}', 5) `);
-@link-active-color: color(~`colorPalette('@{link-color}', 7) `);
+@link-hover-color: @primary-color-hover;
+@link-active-color: @primary-color-active;
 @link-decoration: none;
 @link-hover-decoration: none;
 @link-focus-decoration: none;
@@ -181,10 +186,11 @@
 @ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
 @ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 @ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+@transition-default: all 300ms ease-in-out 0s;
 
 // Border color
-@border-color-base: hsv(0, 0, 85%); // base border outline a component
-@border-color-split: hsv(0, 0, 94%); // split border inside a component
+@border-color-base: @black-4; // base border outline a component
+@border-color-split: @black-3; // split border inside a component
 @border-color-inverse: @white;
 @border-width-base: 1px; // width of the border for a component
 @border-style-base: solid; // style of a components border
@@ -195,17 +201,17 @@
 @outline-color: @primary-color; // No use anymore
 @outline-fade: 20%;
 
-@background-color-light: hsv(0, 0, 98%); // background of header and selected item
-@background-color-base: hsv(0, 0, 96%); // Default grey background color
+@background-color-light: @black-1; // background of header and selected item
+@background-color-base: @black-2; // Default grey background color
 
 // Disabled states
 @disabled-color: fade(#000, 25%);
-@disabled-bg: @background-color-base;
+@disabled-bg: @background-color-light;
 @disabled-active-bg: tint(@black, 90%);
 @disabled-color-dark: fade(#fff, 35%);
 
 // Shadow
-@shadow-color: rgba(0, 0, 0, 0.15);
+@shadow-color: rgba(0, 0, 0, 0.15); // experro:TODO
 @shadow-color-inverse: @component-background;
 @box-shadow-base: @shadow-2;
 @shadow-1-up: 0 -6px 16px -8px rgba(0, 0, 0, 0.08), 0 -9px 28px 0 rgba(0, 0, 0, 0.05),
@@ -220,7 +226,7 @@
   0 9px 28px 8px rgba(0, 0, 0, 0.05);
 
 // Buttons
-@btn-font-weight: 400;
+@btn-font-weight: 500;
 @btn-border-radius-base: @border-radius-base;
 @btn-border-radius-sm: @border-radius-base;
 @btn-border-width: @border-width-base;
@@ -249,12 +255,12 @@
 @btn-default-ghost-border: @component-background;
 
 @btn-font-size-lg: @font-size-lg;
-@btn-font-size-sm: @font-size-base;
-@btn-padding-horizontal-base: @padding-md - 1px;
-@btn-padding-horizontal-lg: @btn-padding-horizontal-base;
-@btn-padding-horizontal-sm: @padding-xs - 1px;
+@btn-font-size-sm: @font-size-sm;
+@btn-padding-horizontal-base: @padding-sm;
+@btn-padding-horizontal-lg: @padding-md;
+@btn-padding-horizontal-sm: @padding-xs;
 
-@btn-height-base: @height-base;
+@btn-height-base: @height-base - 2;
 @btn-height-lg: @height-lg;
 @btn-height-sm: @height-sm;
 
@@ -274,12 +280,12 @@
 @btn-group-border: @primary-5;
 
 @btn-link-hover-bg: transparent;
-@btn-text-hover-bg: rgba(0, 0, 0, 0.018);
+@btn-text-hover-bg: @background-color-base;
 
 // Checkbox
 @checkbox-size: 16px;
 @checkbox-color: @primary-color;
-@checkbox-check-color: #fff;
+@checkbox-check-color: @white;
 @checkbox-check-bg: @checkbox-check-color;
 @checkbox-border-width: @border-width-base;
 @checkbox-border-radius: @border-radius-base;
@@ -298,15 +304,15 @@
 @descriptions-extra-color: @text-color;
 
 // Divider
-@divider-text-padding: 1em;
+@divider-text-padding: 0.5em;
 @divider-orientation-margin: 5%;
-@divider-color: rgba(0, 0, 0, 6%);
+@divider-color: @border-color-split;
 @divider-vertical-gutter: 8px;
 
 // Dropdown
-@dropdown-selected-color: @primary-color;
+@dropdown-selected-color: @text-color;
 @dropdown-menu-submenu-disabled-bg: @component-background;
-@dropdown-selected-bg: @item-active-bg;
+@dropdown-selected-bg: @select-item-active-bg;
 
 // Empty
 @empty-font-size: @font-size-base;
@@ -315,18 +321,18 @@
 @radio-size: 16px;
 @radio-top: 0.2em;
 @radio-border-width: 1px;
-@radio-dot-size: @radio-size - 8px;
-@radio-dot-color: @primary-color;
-@radio-dot-disabled-color: fade(@black, 20%);
-@radio-solid-checked-color: @component-background;
+@radio-dot-size: @radio-size - 12px;
+@radio-dot-color: @component-background;
+@radio-dot-disabled-color: @disabled-bg;
+@radio-solid-checked-color: @primary-color;
 
 // Radio buttons
 @radio-button-bg: @btn-default-bg;
 @radio-button-checked-bg: @btn-default-bg;
 @radio-button-color: @btn-default-color;
-@radio-button-hover-color: @primary-5;
-@radio-button-active-color: @primary-7;
-@radio-button-padding-horizontal: @padding-md - 1px;
+@radio-button-hover-color: @primary-color-hover;
+@radio-button-active-color: @primary-color-active;
+@radio-button-padding-horizontal: @padding-sm;
 @radio-disabled-button-checked-bg: @disabled-active-bg;
 @radio-disabled-button-checked-color: @disabled-color;
 @radio-wrapper-margin-right: 8px;
@@ -369,10 +375,10 @@
 @grid-columns: 24;
 
 // Layout
-@layout-body-background: #f0f2f5;
-@layout-header-background: #001529;
-@layout-header-height: 64px;
-@layout-header-padding: 0 50px;
+@layout-body-background: @white;
+@layout-header-background: @white;
+@layout-header-height: auto;
+@layout-header-padding: 0 32px;
 @layout-header-color: @text-color;
 @layout-footer-padding: 24px 50px;
 @layout-footer-background: @layout-body-background;
@@ -411,21 +417,21 @@
 @animation-duration-fast: 0.1s; // Tooltip
 
 //CollapsePanel
-@collapse-panel-border-radius: @border-radius-base;
+@collapse-panel-border-radius: 0;
 
 //Dropdown
 @dropdown-menu-bg: @component-background;
-@dropdown-vertical-padding: 5px;
-@dropdown-edge-child-vertical-padding: 4px;
+@dropdown-vertical-padding: 7px;
+@dropdown-edge-child-vertical-padding: 0;
 @dropdown-font-size: @font-size-base;
-@dropdown-line-height: 22px;
+@dropdown-line-height: 18px;
 
 // Form
 // ---
 @label-required-color: @highlight-color;
-@label-color: @heading-color;
+@label-color: @text-color-gray-light;
 @form-warning-input-bg: @input-bg;
-@form-item-margin-bottom: 24px;
+@form-item-margin-bottom: 32px;
 @form-item-trailing-colon: true;
 @form-vertical-label-padding: 0 0 8px;
 @form-vertical-label-margin: 0;
@@ -440,38 +446,29 @@
 @input-height-base: @height-base;
 @input-height-lg: @height-lg;
 @input-height-sm: @height-sm;
-@input-padding-horizontal: @control-padding-horizontal - 1px;
+@input-padding-horizontal: @control-padding-horizontal;
 @input-padding-horizontal-base: @input-padding-horizontal;
-@input-padding-horizontal-sm: @control-padding-horizontal-sm - 1px;
+@input-padding-horizontal-sm: @input-padding-horizontal;
 @input-padding-horizontal-lg: @input-padding-horizontal;
-@input-padding-vertical-base: max(
-  (round(((@input-height-base - @font-size-base * @line-height-base) / 2) * 10) / 10) -
-    @border-width-base,
-  3px
-);
-@input-padding-vertical-sm: max(
-  (round(((@input-height-sm - @font-size-base * @line-height-base) / 2) * 10) / 10) -
-    @border-width-base,
-  0
-);
-@input-padding-vertical-lg: (
-    ceil(((@input-height-lg - @font-size-lg * @line-height-base) / 2) * 10) / 10
-  ) - @border-width-base;
-@input-placeholder-color: hsv(0, 0, 75%);
+@input-padding-vertical-base: 7px;
+@input-padding-vertical-sm: 5px;
+@input-padding-vertical-lg: 10px;
+@input-placeholder-color: @text-color-tertiary;
 @input-color: @text-color;
-@input-icon-color: @input-color;
+@input-icon-color: @input-placeholder-color;
 @input-border-color: @border-color-base;
 @input-bg: @component-background;
 @input-number-hover-border-color: @input-hover-border-color;
 @input-number-handler-active-bg: #f4f4f4;
-@input-number-handler-hover-bg: @primary-5;
+@input-number-handler-hover-bg: @blue-5;
 @input-number-handler-bg: @component-background;
 @input-number-handler-border-color: @border-color-base;
 @input-addon-bg: @background-color-light;
-@input-hover-border-color: @primary-5;
+@input-hover-border-color: @blue-5;
+@input-focus-border-color: @blue-6;
 @input-disabled-bg: @disabled-bg;
 @input-outline-offset: 0 0;
-@input-icon-hover-color: fade(@black, 85%);
+@input-icon-hover-color: @text-color;
 @input-disabled-color: @disabled-color;
 
 // Mentions
@@ -480,23 +477,23 @@
 @mentions-dropdown-menu-item-hover-bg: @mentions-dropdown-bg;
 
 // Select
-// ---
+// --- experro:TODO select height
 @select-border-color: @border-color-base;
-@select-item-selected-color: @text-color;
-@select-item-selected-font-weight: 600;
+@select-item-selected-color: @primary-color;
+@select-item-selected-font-weight: 400;
 @select-dropdown-bg: @component-background;
-@select-item-selected-bg: @primary-1;
-@select-item-active-bg: @item-hover-bg;
+@select-item-selected-bg: @blue-1;
+@select-item-active-bg: @blue-1;
 @select-dropdown-vertical-padding: @dropdown-vertical-padding;
 @select-dropdown-font-size: @dropdown-font-size;
 @select-dropdown-line-height: @dropdown-line-height;
 @select-dropdown-height: 32px;
 @select-background: @component-background;
 @select-clear-background: @select-background;
-@select-selection-item-bg: @background-color-base;
-@select-selection-item-border-color: @border-color-split;
+@select-selection-item-bg: @background-color-light;
+@select-selection-item-border-color: @background-color-light;
 @select-single-item-height-lg: 40px;
-@select-multiple-item-height: @input-height-base - @input-padding-vertical-base * 2; // Normal 24px
+@select-multiple-item-height: 22px; // Normal 24px
 @select-multiple-item-height-lg: 32px;
 @select-multiple-item-spacing-half: ceil((@input-padding-vertical-base / 2));
 @select-multiple-disabled-background: @input-disabled-bg;
@@ -530,16 +527,16 @@
 // Tooltip max width
 @tooltip-max-width: 250px;
 // Tooltip text color
-@tooltip-color: #fff;
+@tooltip-color: @white;
 // Tooltip background color
-@tooltip-bg: rgba(0, 0, 0, 0.75);
+@tooltip-bg: @text-color;
 // Tooltip arrow width
 @tooltip-arrow-width: 8px * sqrt(2);
 // Tooltip distance with trigger
 @tooltip-distance: @tooltip-arrow-width - 1px + 4px;
 // Tooltip arrow color
 @tooltip-arrow-color: @tooltip-bg;
-@tooltip-border-radius: @border-radius-base;
+@tooltip-border-radius: 6;
 
 // Popover
 // ---
@@ -558,7 +555,7 @@
 // Popover outer arrow color
 @popover-arrow-outer-color: @popover-bg;
 // Popover distance with trigger
-@popover-distance: @popover-arrow-width + 4px;
+@popover-distance: @popover-arrow-width + 1px;
 @popover-padding-horizontal: @padding-md;
 
 // Modal
@@ -566,62 +563,63 @@
 @modal-header-padding-vertical: @padding-md;
 @modal-header-padding-horizontal: @padding-lg;
 @modal-body-padding: @padding-lg;
-@modal-header-bg: @component-background;
-@modal-header-padding: @modal-header-padding-vertical @modal-header-padding-horizontal;
+@modal-header-bg: @black-10;
+@modal-header-padding: @modal-header-padding-vertical (@modal-header-padding-horizontal * 2)
+  @modal-header-padding-vertical @modal-header-padding-horizontal;
 @modal-header-border-width: @border-width-base;
 @modal-header-border-style: @border-style-base;
-@modal-header-title-line-height: 22px;
-@modal-header-title-font-size: @font-size-lg;
+@modal-header-title-line-height: @line-height-base;
+@modal-header-title-font-size: 20px;
 @modal-header-border-color-split: @border-color-split;
-@modal-header-close-size: 56px;
+@modal-header-close-size: 24px;
 @modal-content-bg: @component-background;
-@modal-heading-color: @heading-color;
-@modal-close-color: @text-color-secondary;
-@modal-footer-bg: transparent;
+@modal-heading-color: @white;
+@modal-close-color: @border-color-split;
+@modal-footer-bg: @white;
 @modal-footer-border-color-split: @border-color-split;
 @modal-footer-border-style: @border-style-base;
-@modal-footer-padding-vertical: 10px;
-@modal-footer-padding-horizontal: 16px;
+@modal-footer-padding-vertical: @padding-md;
+@modal-footer-padding-horizontal: @padding-lg;
 @modal-footer-border-width: @border-width-base;
-@modal-mask-bg: fade(@black, 45%);
-@modal-confirm-body-padding: 32px 32px 24px;
-@modal-confirm-title-font-size: @font-size-lg;
+@modal-mask-bg: fade(@black-10, 50%);
+@modal-confirm-body-padding: @padding-lg; // TODO: confirm modal
+@modal-confirm-title-font-size: 20px;
 
 // Progress
 // --
 @progress-default-color: @processing-color;
-@progress-remaining-color: @background-color-base;
+@progress-remaining-color: @blue-2;
 @progress-info-text-color: @progress-text-color;
 @progress-radius: 100px;
-@progress-steps-item-bg: #f3f3f3;
-@progress-text-font-size: 1em;
+@progress-steps-item-bg: @blue-2;
+@progress-text-font-size: @font-size-lg;
 @progress-text-color: @text-color; // This is for circle text color, should be renamed better
 @progress-circle-text-font-size: 1em;
 // Menu
 // ---
-@menu-inline-toplevel-item-height: 40px;
-@menu-item-height: 40px;
-@menu-item-group-height: @line-height-base;
-@menu-collapsed-width: 80px;
-@menu-bg: @component-background;
+@menu-inline-toplevel-item-height: 28px;
+@menu-item-height: 28px;
+@menu-item-group-height: 28px;
+@menu-collapsed-width: 64px;
+@menu-bg: @background-color-light;
 @menu-popup-bg: @component-background;
-@menu-item-color: @text-color;
-@menu-inline-submenu-bg: @background-color-light;
+@menu-item-color: @text-color-gray-light;
+@menu-inline-submenu-bg: transparent;
 @menu-highlight-color: @primary-color;
 @menu-highlight-danger-color: @error-color;
-@menu-item-active-bg: @primary-1;
+@menu-item-active-bg: transparent;
 @menu-item-active-danger-bg: @red-1;
-@menu-item-active-border-width: 3px;
-@menu-item-group-title-color: @text-color-secondary;
-@menu-item-vertical-margin: 4px;
+@menu-item-active-border-width: 0;
+@menu-item-group-title-color: @text-color-gray-light;
+@menu-item-vertical-margin: 0;
 @menu-item-font-size: @font-size-base;
-@menu-item-boundary-margin: 8px;
+@menu-item-boundary-margin: 0;
 @menu-item-padding-horizontal: 20px;
-@menu-item-padding: 0 @menu-item-padding-horizontal;
-@menu-horizontal-line-height: 46px;
-@menu-icon-margin-right: 10px;
-@menu-icon-size: @menu-item-font-size;
-@menu-icon-size-lg: @font-size-lg;
+@menu-item-padding: 5px @menu-item-padding-horizontal 5px 0;
+@menu-horizontal-line-height: 28px;
+@menu-icon-margin-right: 4px;
+@menu-icon-size: @font-size-lg;
+@menu-icon-size-lg: @font-size-lg + 4;
 @menu-item-group-title-font-size: @menu-item-font-size;
 
 // dark theme
@@ -645,26 +643,26 @@
 // Table
 // --
 @table-bg: @component-background;
-@table-header-bg: @background-color-light;
-@table-header-color: @heading-color;
-@table-header-sort-bg: @background-color-base;
-@table-body-sort-bg: #fafafa;
-@table-row-hover-bg: @background-color-light;
-@table-selected-row-color: inherit;
-@table-selected-row-bg: @primary-1;
+@table-header-bg: @component-background;
+@table-header-color: @text-color-gray-light;
+@table-header-sort-bg: @component-background;
+@table-body-sort-bg: @component-background;
+@table-row-hover-bg: @item-hover-bg;
+@table-selected-row-color: @text-color;
+@table-selected-row-bg: @item-active-bg;
 @table-body-selected-sort-bg: @table-selected-row-bg;
-@table-selected-row-hover-bg: darken(@table-selected-row-bg, 2%);
-@table-expanded-row-bg: #fbfbfb;
-@table-padding-vertical: 16px;
+@table-selected-row-hover-bg: @table-selected-row-bg;
+@table-expanded-row-bg: @background-color-light;
+@table-padding-vertical: 13px;
 @table-padding-horizontal: 16px;
 @table-padding-vertical-md: (@table-padding-vertical * 3 / 4);
 @table-padding-horizontal-md: (@table-padding-horizontal / 2);
 @table-padding-vertical-sm: (@table-padding-vertical / 2);
 @table-padding-horizontal-sm: (@table-padding-horizontal / 2);
-@table-border-color: @border-color-split;
+@table-border-color: @background-color-base;
 @table-border-radius-base: @border-radius-base;
-@table-footer-bg: @background-color-light;
-@table-footer-color: @heading-color;
+@table-footer-bg: @component-background;
+@table-footer-color: @text-color-gray-light;
 @table-header-bg-sm: @table-header-bg;
 @table-font-size: @font-size-base;
 @table-font-size-md: @table-font-size;
@@ -672,8 +670,8 @@
 @table-header-cell-split-color: rgba(0, 0, 0, 0.06);
 // Sorter
 // Legacy: `table-header-sort-active-bg` is used for hover not real active
-@table-header-sort-active-bg: rgba(0, 0, 0, 0.04);
-@table-fixed-header-sort-active-bg: hsv(0, 0, 96%);
+@table-header-sort-active-bg: @component-background;
+@table-fixed-header-sort-active-bg: @component-background;
 
 // Filter
 @table-header-filter-active-bg: rgba(0, 0, 0, 0.04);
@@ -688,26 +686,26 @@
 // Tag
 // --
 @tag-border-radius: @border-radius-base;
-@tag-default-bg: @background-color-light;
+@tag-default-bg: @background-color-base;
 @tag-default-color: @text-color;
 @tag-font-size: @font-size-sm;
-@tag-line-height: 20px;
+@tag-line-height: 18px;
 
 // TimePicker
 // ---
 @picker-bg: @component-background;
-@picker-basic-cell-hover-color: @item-hover-bg;
-@picker-basic-cell-active-with-range-color: @primary-1;
-@picker-basic-cell-hover-with-range-color: lighten(@primary-color, 35%);
+@picker-basic-cell-hover-color: @background-color-light;
+@picker-basic-cell-active-with-range-color: @item-active-bg;
+@picker-basic-cell-hover-with-range-color: @picker-basic-cell-active-with-range-color;
 @picker-basic-cell-disabled-bg: rgba(0, 0, 0, 0.04);
 @picker-border-color: @border-color-split;
-@picker-date-hover-range-border-color: lighten(@primary-color, 20%);
+@picker-date-hover-range-border-color: @primary-color-hover;
 @picker-date-hover-range-color: @picker-basic-cell-hover-with-range-color;
-@picker-time-panel-column-width: 56px;
-@picker-time-panel-column-height: 224px;
-@picker-time-panel-cell-height: 28px;
+@picker-time-panel-column-width: 34px;
+@picker-time-panel-column-height: 210px;
+@picker-time-panel-cell-height: 24px;
 @picker-panel-cell-height: 24px;
-@picker-panel-cell-width: 36px;
+@picker-panel-cell-width: 32px;
 @picker-text-height: 40px;
 @picker-panel-without-time-cell-height: 66px;
 
@@ -725,24 +723,24 @@
 // ---
 @carousel-dot-width: 16px;
 @carousel-dot-height: 3px;
-@carousel-dot-active-width: 24px;
+@carousel-dot-active-width: 26px;
 
 // Badge
 // ---
 @badge-height: 20px;
-@badge-height-sm: 14px;
-@badge-dot-size: 6px;
-@badge-font-size: @font-size-sm;
+@badge-height-sm: 16px;
+@badge-dot-size: 4px;
+@badge-font-size: @font-size-base;
 @badge-font-size-sm: @font-size-sm;
-@badge-font-weight: normal;
+@badge-font-weight: 600;
 @badge-status-size: 6px;
 @badge-text-color: @component-background;
 @badge-color: @highlight-color;
 
 // Rate
 // ---
-@rate-star-color: @yellow-6;
-@rate-star-bg: @border-color-split;
+@rate-star-color: @orange-base;
+@rate-star-bg: @border-color-base;
 @rate-star-size: 20px;
 @rate-star-hover-scale: scale(1.1);
 
@@ -750,24 +748,24 @@
 // ---
 @card-head-color: @heading-color;
 @card-head-background: transparent;
-@card-head-font-size: @font-size-lg;
+@card-head-font-size: @font-size-base;
 @card-head-font-size-sm: @font-size-base;
 @card-head-padding: 16px;
-@card-head-padding-sm: (@card-head-padding / 2);
-@card-head-height: 48px;
-@card-head-height-sm: 36px;
-@card-inner-head-padding: 12px;
-@card-padding-base: 24px;
-@card-padding-base-sm: (@card-padding-base / 2);
+@card-head-padding-sm: @card-head-padding;
+@card-head-height: 36px;
+@card-head-height-sm: 32px;
+@card-inner-head-padding: 16px;
+@card-padding-base: 16px;
+@card-padding-base-sm: @card-padding-base;
 @card-actions-background: @component-background;
 @card-actions-li-margin: 12px 0;
 @card-skeleton-bg: #cfd8dc;
 @card-background: @component-background;
 @card-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
   0 5px 12px 4px rgba(0, 0, 0, 0.09);
-@card-radius: @border-radius-base;
+@card-radius: 8px;
 @card-head-tabs-margin-bottom: -17px;
-@card-head-extra-color: @text-color;
+@card-head-extra-color: @text-color-gray-light;
 
 // Comment
 // ---
@@ -791,9 +789,9 @@
 @tabs-card-active-color: @primary-color;
 @tabs-card-horizontal-padding: (
     (@tabs-card-height - floor(@font-size-base * @line-height-base)) / 2
-  ) - @border-width-base @padding-md;
-@tabs-card-horizontal-padding-sm: 6px @padding-md;
-@tabs-card-horizontal-padding-lg: 7px @padding-md 6px;
+  ) - @border-width-base @padding-sm;
+@tabs-card-horizontal-padding-sm: 6px @padding-sm;
+@tabs-card-horizontal-padding-lg: 14px @padding-md 13px;
 @tabs-title-font-size: @font-size-base;
 @tabs-title-font-size-lg: @font-size-lg;
 @tabs-title-font-size-sm: @font-size-base;
@@ -802,15 +800,15 @@
 @tabs-horizontal-gutter: 32px;
 @tabs-horizontal-margin: 0 0 0 @tabs-horizontal-gutter;
 @tabs-horizontal-margin-rtl: 0 0 0 32px;
-@tabs-horizontal-padding: @padding-sm 0;
+@tabs-horizontal-padding: (@padding-sm - 1) 0;
 @tabs-horizontal-padding-lg: @padding-md 0;
 @tabs-horizontal-padding-sm: @padding-xs 0;
 @tabs-vertical-padding: @padding-xs @padding-lg;
 @tabs-vertical-margin: @margin-md 0 0 0;
 @tabs-scrolling-size: 32px;
 @tabs-highlight-color: @primary-color;
-@tabs-hover-color: @primary-5;
-@tabs-active-color: @primary-7;
+@tabs-hover-color: @blue-6;
+@tabs-active-color: @primary-color;
 @tabs-card-gutter: 2px;
 @tabs-card-tab-active-border-top: 2px solid transparent;
 
@@ -823,29 +821,29 @@
 // Avatar
 // ---
 @avatar-size-base: 32px;
-@avatar-size-lg: 40px;
+@avatar-size-lg: 48px;
 @avatar-size-sm: 24px;
-@avatar-font-size-base: 18px;
-@avatar-font-size-lg: 24px;
-@avatar-font-size-sm: 14px;
-@avatar-bg: #ccc;
-@avatar-color: #fff;
+@avatar-font-size-base: 14px;
+@avatar-font-size-lg: 20px;
+@avatar-font-size-sm: 12px;
+@avatar-bg: @blue-2;
+@avatar-color: @blue-6;
 @avatar-border-radius: @border-radius-base;
 @avatar-group-overlapping: -8px;
 @avatar-group-space: 3px;
-@avatar-group-border-color: #fff;
+@avatar-group-border-color: @white;
 
 // Switch
 // ---
-@switch-height: 22px;
-@switch-sm-height: 16px;
-@switch-min-width: 44px;
-@switch-sm-min-width: 28px;
+@switch-height: 18px;
+@switch-sm-height: 14px;
+@switch-min-width: 40px;
+@switch-sm-min-width: 26px;
 @switch-disabled-opacity: 0.4;
 @switch-color: @primary-color;
 @switch-bg: @component-background;
 @switch-shadow-color: fade(#00230b, 20%);
-@switch-padding: 2px;
+@switch-padding: 3px;
 @switch-inner-margin-min: ceil(@switch-height * 0.3);
 @switch-inner-margin-max: ceil(@switch-height * 1.1);
 @switch-sm-inner-margin-min: ceil(@switch-sm-height * 0.3);
@@ -854,89 +852,89 @@
 // Pagination
 // ---
 @pagination-item-bg: @component-background;
-@pagination-item-size: @height-base;
+@pagination-item-size: 28px;
 @pagination-item-size-sm: 24px;
 @pagination-font-family: @font-family;
 @pagination-font-weight-active: 500;
 @pagination-item-bg-active: @component-background;
 @pagination-item-link-bg: @component-background;
-@pagination-item-disabled-color-active: @disabled-color;
-@pagination-item-disabled-bg-active: @disabled-active-bg;
+@pagination-item-disabled-color-active: @border-color-base;
+@pagination-item-disabled-bg-active: @disabled-bg;
 @pagination-item-input-bg: @component-background;
 @pagination-mini-options-size-changer-top: 0px;
 
 // PageHeader
 // ---
-@page-header-padding: @padding-lg;
-@page-header-padding-vertical: @padding-md;
+@page-header-padding: 32px;
+@page-header-padding-vertical: @padding-lg;
 @page-header-padding-breadcrumb: @padding-sm;
 @page-header-content-padding-vertical: @padding-sm;
-@page-header-back-color: #000;
+@page-header-back-color: @text-color;
 @page-header-ghost-bg: inherit;
-@page-header-heading-title: @heading-4-size;
-@page-header-heading-sub-title: 14px;
+@page-header-heading-title: @heading-6-size;
+@page-header-heading-sub-title: 13px;
 @page-header-tabs-tab-font-size: 16px;
 
 // Breadcrumb
 // ---
-@breadcrumb-base-color: @text-color-secondary;
+@breadcrumb-base-color: @text-color;
 @breadcrumb-last-item-color: @text-color;
-@breadcrumb-font-size: @font-size-base;
-@breadcrumb-icon-font-size: @font-size-base;
-@breadcrumb-link-color: @text-color-secondary;
-@breadcrumb-link-color-hover: @text-color;
-@breadcrumb-separator-color: @text-color-secondary;
+@breadcrumb-font-size: @heading-6-size;
+@breadcrumb-icon-font-size: @heading-6-size - 2;
+@breadcrumb-link-color: @link-color;
+@breadcrumb-link-color-hover: @link-hover-color;
+@breadcrumb-separator-color: @text-color-gray;
 @breadcrumb-separator-margin: 0 @padding-xs;
 
 // Slider
 // ---
 @slider-margin: 10px 6px 10px;
-@slider-rail-background-color: @background-color-base;
-@slider-rail-background-color-hover: #e1e1e1;
-@slider-track-background-color: @primary-3;
-@slider-track-background-color-hover: @primary-4;
+@slider-rail-background-color: @border-color-split;
+@slider-rail-background-color-hover: @border-color-base;
+@slider-track-background-color: @primary-color;
+@slider-track-background-color-hover: darken(@blue-6, 5%);
 @slider-handle-border-width: 2px;
-@slider-handle-background-color: @component-background;
-@slider-handle-color: @primary-3;
-@slider-handle-color-hover: @primary-4;
-@slider-handle-color-focus: tint(@primary-color, 20%);
-@slider-handle-color-focus-shadow: fade(@primary-color, 12%);
+@slider-handle-background-color: @primary-color;
+@slider-handle-color: @primary-color;
+@slider-handle-color-hover: @blue-6;
+@slider-handle-color-focus: @white;
+@slider-handle-color-focus-shadow: fade(#061938, 6%);
 @slider-handle-color-tooltip-open: @primary-color;
-@slider-handle-size: 14px;
+@slider-handle-size: 12px;
 @slider-handle-margin-top: -5px;
-@slider-handle-shadow: 0;
+@slider-handle-shadow: none;
 @slider-dot-border-color: @border-color-split;
-@slider-dot-border-color-active: tint(@primary-color, 50%);
-@slider-disabled-color: @disabled-color;
+@slider-dot-border-color-active: @primary-color;
+@slider-disabled-color: @black-4;
 @slider-disabled-background-color: @component-background;
 
 // Tree
 // ---
 @tree-bg: @component-background;
-@tree-title-height: 24px;
-@tree-child-padding: 18px;
-@tree-directory-selected-color: #fff;
+@tree-title-height: 28px;
+@tree-child-padding: 7px;
+@tree-directory-selected-color: @white;
 @tree-directory-selected-bg: @primary-color;
 @tree-node-hover-bg: @item-hover-bg;
-@tree-node-selected-bg: @primary-2;
+@tree-node-selected-bg: @item-active-bg;
 
 // Collapse
 // ---
-@collapse-header-padding: @padding-sm @padding-md;
+@collapse-header-padding: @padding-xs 0;
 @collapse-header-padding-extra: 40px;
-@collapse-header-bg: @background-color-light;
-@collapse-content-padding: @padding-md;
+@collapse-header-bg: transparent;
+@collapse-content-padding: @padding-lg;
 @collapse-content-bg: @component-background;
-@collapse-header-arrow-left: 16px;
+@collapse-header-arrow-left: 9px;
 
 // Skeleton
 // ---
-@skeleton-color: rgba(190, 190, 190, 0.2);
+@skeleton-color: @background-color-base;
 @skeleton-to-color: shade(@skeleton-color, 5%);
 @skeleton-paragraph-margin-top: 28px;
 @skeleton-paragraph-li-margin-top: @margin-md;
-@skeleton-paragraph-li-height: 16px;
-@skeleton-title-height: 16px;
+@skeleton-paragraph-li-height: 12px;
+@skeleton-title-height: 12px;
 @skeleton-title-paragraph-margin-top: @margin-lg;
 
 // Transfer
@@ -950,9 +948,9 @@
 @transfer-item-padding-vertical: 6px;
 @transfer-list-search-icon-top: 12px;
 
-// Message
+// Message (toast notification)
 // ---
-@message-notice-content-padding: 10px 16px;
+@message-notice-content-padding: 11px 16px;
 @message-notice-content-bg: @component-background;
 // Motion
 // ---
@@ -960,29 +958,28 @@
 
 // Alert
 // ---
-@alert-success-border-color: ~`colorPalette('@{success-color}', 3) `;
-@alert-success-bg-color: ~`colorPalette('@{success-color}', 1) `;
-@alert-success-icon-color: @success-color;
-@alert-info-border-color: ~`colorPalette('@{info-color}', 3) `;
-@alert-info-bg-color: ~`colorPalette('@{info-color}', 1) `;
-@alert-info-icon-color: @info-color;
-@alert-warning-border-color: ~`colorPalette('@{warning-color}', 3) `;
-@alert-warning-bg-color: ~`colorPalette('@{warning-color}', 1) `;
+@alert-success-border-color: @green-5;
+@alert-success-bg-color: @green-1;
+@alert-success-icon-color: @green-6;
+@alert-info-border-color: @blue-5;
+@alert-info-bg-color: @geekblue-1;
+@alert-info-icon-color: @primary-color;
+@alert-warning-border-color: @orange-5;
+@alert-warning-bg-color: @orange-1;
 @alert-warning-icon-color: @warning-color;
-@alert-error-border-color: ~`colorPalette('@{error-color}', 3) `;
-@alert-error-bg-color: ~`colorPalette('@{error-color}', 1) `;
-@alert-error-icon-color: @error-color;
-@alert-message-color: @heading-color;
-@alert-text-color: @text-color;
-@alert-close-color: @text-color-secondary;
-@alert-close-hover-color: @icon-color-hover;
+@alert-error-border-color: @red-4;
+@alert-error-bg-color: @red-1;
+@alert-error-icon-color: @red-6;
+@alert-message-color: @text-color;
+@alert-text-color: @text-color-gray;
+@alert-close-color: @text-color;
+@alert-close-hover-color: @text-color-dark;
 @alert-no-icon-padding-vertical: @padding-xs;
-@alert-with-description-no-icon-padding-vertical: @padding-md - 1px;
-@alert-with-description-padding-vertical: @padding-md - 1px;
-@alert-with-description-padding: @alert-with-description-padding-vertical 15px
-  @alert-with-description-no-icon-padding-vertical @alert-with-description-icon-size;
+@alert-with-description-no-icon-padding-vertical: @padding-md 24px;
+@alert-with-description-padding-vertical: @padding-md - 2px;
+@alert-with-description-padding: @padding-md - 2px;
 @alert-icon-top: 8px + @font-size-base * (@line-height-base / 2) - (@font-size-base / 2);
-@alert-with-description-icon-size: 24px;
+@alert-with-description-icon-size: 16px;
 
 // List
 // ---
@@ -1005,7 +1002,7 @@
 @statistic-unit-font-size: 24px;
 @statistic-font-family: @font-family;
 
-// Drawer
+// Drawer (flyout)
 // ---
 @drawer-header-padding: @padding-md @padding-lg;
 @drawer-body-padding: @padding-lg;
@@ -1018,18 +1015,18 @@
 
 // Timeline
 // ---
-@timeline-width: 2px;
-@timeline-color: @border-color-split;
+@timeline-width: 1px;
+@timeline-color: @background-color-base;
 @timeline-dot-border-width: 2px;
 @timeline-dot-color: @primary-color;
 @timeline-dot-bg: @component-background;
-@timeline-item-padding-bottom: 20px;
+@timeline-item-padding-bottom: 24px;
 
 // Typography
 // ---
 @typography-title-font-weight: 600;
 @typography-title-margin-top: 1.2em;
-@typography-title-margin-bottom: 0.5em;
+@typography-title-margin-bottom: 16px;
 
 // Upload
 // ---
@@ -1037,13 +1034,13 @@
 
 // Steps
 // ---
-@process-tail-color: @border-color-split;
-@steps-nav-arrow-color: fade(@black, 25%);
+@process-tail-color: @background-color-base;
+@steps-nav-arrow-color: @border-color-base;
 @steps-background: @component-background;
 @steps-icon-size: 32px;
 @steps-icon-custom-size: @steps-icon-size;
 @steps-icon-custom-top: 0px;
-@steps-icon-custom-font-size: 24px;
+@steps-icon-custom-font-size: 18px;
 @steps-icon-top: -0.5px;
 @steps-icon-font-size: @font-size-lg;
 @steps-icon-margin: 0 8px 0 0;
@@ -1062,8 +1059,8 @@
 // Notification
 // ---
 @notification-bg: @component-background;
-@notification-padding-vertical: 16px;
-@notification-padding-horizontal: 24px;
+@notification-padding-vertical: 12px;
+@notification-padding-horizontal: 12px;
 
 //  Result
 // ---
@@ -1085,8 +1082,8 @@
 
 // Segmented
 // ---
-@segmented-bg: fade(@black, 4%);
-@segmented-hover-bg: fade(@black, 6%);
+@segmented-bg: @background-color-light;
+@segmented-hover-bg: @background-color-base;
 @segmented-selected-bg: @white;
-@segmented-label-color: fade(@black, 65%);
-@segmented-label-hover-color: #262626;
+@segmented-label-color: @text-color-secondary;
+@segmented-label-hover-color: @text-color;
