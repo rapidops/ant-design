@@ -1,0 +1,31 @@
+// common tab css start
+
+.ant-tabs {
+  color: @text-color-gray-light;
+  line-height: 18px;
+}
+
+.ant-tabs-tab {
+  .ant-tabs-tab-btn {
+    .anticon {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &.ant-tabs-tab-active {
+    .ant-tabs-tab-btn {
+      text-shadow: none;
+    }
+  }
+
+  &.ant-tabs-tab-disabled {
+    color: @border-color-base;
+  }
+}

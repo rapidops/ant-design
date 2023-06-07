@@ -1,0 +1,54 @@
+// //Table style start
+
+.ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not(
+    [colspan]
+  )::before {
+  display: none;
+}
+
+.ant-table-thead {
+  > tr {
+    > th {
+      font-weight: 600;
+      line-height: 18px;
+      border-width: 2px;
+    }
+  }
+}
+
+.ant-table-tbody {
+  > tr {
+    > td {
+      padding-bottom: @table-padding-vertical - 1;
+      line-height: 18px;
+    }
+  }
+}
+
+.ant-table-column-sorter,
+.ant-table-filter-trigger {
+  height: 18px;
+}
+
+.ant-table-column-sorter-inner {
+  justify-content: center;
+  height: 18px;
+}
+
+.ant-table-filter-trigger {
+  margin-top: 0;
+}
+
+.ant-table-selection-column {
+  .ant-checkbox-wrapper,
+  .ant-radio-wrapper {
+    display: flex;
+    height: 18px;
+
+    .ant-checkbox {
+      transform: translateY(-2px);
+    }
+  }
+}
