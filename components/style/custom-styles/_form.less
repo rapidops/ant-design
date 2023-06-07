@@ -90,6 +90,10 @@ input {
   }
 }
 
+.ant-input-group-addon {
+  color: @text-color-gray-light;
+}
+
 .ant-input-group-lg {
   .ant-input,
   > .ant-input-group-addon {
@@ -171,6 +175,7 @@ input {
 
 .ant-form-item-explain,
 .ant-form-item-extra {
+  min-height: auto;
   padding-top: 8px;
   color: @text-color-tertiary;
   font-size: 12px;
@@ -214,10 +219,8 @@ input {
 
   &.ant-select-open {
     .ant-select-arrow {
-      .anticon {
-        svg {
-          transform: rotate(180deg);
-        }
+      svg {
+        transform: rotate(180deg);
       }
     }
   }
@@ -528,6 +531,9 @@ input {
 // Button CSS
 
 .ant-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 18px;
 
   + .ant-btn,
@@ -535,29 +541,75 @@ input {
     margin-left: 16px;
   }
 
-  .anticon {
-    svg {
-      width: 16px;
-      height: 16px;
+  > .anticon {
+    + span {
+      margin-left: 6px;
     }
   }
 
+  .anticon {
+    width: 16px;
+    height: 16px;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
   &.ant-btn-lg {
-    .anticon {
-      svg {
-        width: 18px;
-        height: 18px;
+    > .anticon {
+      + span {
+        margin-left: 8px;
       }
+    }
+
+    .anticon {
+      width: 18px;
+      height: 18px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:not(.ant-btn-icon-only) {
+      line-height: 20px;
+    }
+  }
+
+  &.ant-btn-sm {
+    > .anticon {
+      + span {
+        margin-left: 4px;
+      }
+    }
+
+    &:not(.ant-btn-icon-only) {
+      line-height: 14px;
     }
   }
 
   &.ant-btn-icon-only {
+    line-height: 1;
+
+    .anticon {
+      width: 20px;
+      height: 20px;
+    }
+
     svg {
       width: 20px;
       height: 20px;
     }
 
     &.ant-btn-sm {
+      .anticon {
+        width: 16px;
+        height: 16px;
+      }
+
       svg {
         width: 16px;
         height: 16px;
@@ -565,6 +617,11 @@ input {
     }
 
     &.ant-btn-lg {
+      .anticon {
+        width: 24px;
+        height: 24px;
+      }
+
       svg {
         width: 24px;
         height: 24px;
