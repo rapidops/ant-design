@@ -1,0 +1,81 @@
+.ant-message {
+  .ant-message-notice {
+    .ant-message-notice-content {
+      // color: @text-color;
+      // font-weight: 400;
+      // font-size: 14px;
+      // border: 1px solid @border-color-base;
+      // border-radius: 8px;
+      // box-shadow: 0px 6px 10px -1px rgba(6, 25, 56, 0.07);
+      .my-message-custom-content {
+        .anticon {
+          margin-right: 18px;
+        }
+        &.my-message-success {
+          .anticon {
+            svg {
+              path {
+                fill: @green-6;
+              }
+            }
+          }
+        }
+        &.my-message-error {
+          .anticon {
+            svg {
+              path {
+                fill: @warning-color;
+              }
+            }
+          }
+        }
+        &.my-message-warning {
+          .anticon {
+            svg {
+              path {
+                fill: @red-6;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-message {
+  .anticon {
+    margin-right: 16px;
+  }
+}
+
+.ant-message-notice-content {
+  border: 1px solid @border-color-base;
+  border-radius: 8px;
+  box-shadow: 0px 6px 10px -1px rgba(6, 25, 56, 0.07);
+}
+
+.ant-message-info,
+.ant-message-loading {
+  .anticon {
+    color: @geekblue-6;
+  }
+}
+
+.ant-message-success {
+  .anticon {
+    color: @green-6;
+  }
+}
+
+.ant-message-error {
+  .anticon {
+    color: @red-6;
+  }
+}
+
+.ant-message-warning {
+  .anticon {
+    color: @orange-base;
+  }
+}
