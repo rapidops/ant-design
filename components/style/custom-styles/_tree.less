@@ -1,12 +1,15 @@
 .ant-tree-select-dropdown {
-  padding: 0;
+  padding: 0 9px;
 }
 
 .ant-select-tree {
   border-radius: 4px;
 
   .ant-select-tree-treenode {
-    padding: 7px 15px;
+    padding: 7px 6px;
+    &.ant-select-tree-treenode-leaf-last {
+      border-bottom: 1px solid @border-color-split;
+    }
     .ant-select-tree-switcher {
       display: none;
     }
