@@ -364,21 +364,20 @@ input {
   }
 }
 
-
 .ant-checkbox-checked {
   .ant-checkbox-inner {
     &::after {
-      width: 12px;
-      height: 12px;
-      background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.2874 2.68669C10.4604 2.8453 10.4721 3.11414 10.3135 3.28717L4.81349 9.28717C4.73516 9.37262 4.62532 9.42237 4.50943 9.42488C4.39354 9.4274 4.28164 9.38247 4.19967 9.30051L1.69967 6.80051C1.5337 6.63453 1.5337 6.36544 1.69967 6.19946C1.86565 6.03349 2.13474 6.03349 2.30072 6.19946L4.48685 8.38559L9.6869 2.7128C9.84551 2.53978 10.1144 2.52809 10.2874 2.68669Z' fill='white' stroke='white' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-      border: none;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
       margin: 0;
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.2874 2.68669C10.4604 2.8453 10.4721 3.11414 10.3135 3.28717L4.81349 9.28717C4.73516 9.37262 4.62532 9.42237 4.50943 9.42488C4.39354 9.4274 4.28164 9.38247 4.19967 9.30051L1.69967 6.80051C1.5337 6.63453 1.5337 6.36544 1.69967 6.19946C1.86565 6.03349 2.13474 6.03349 2.30072 6.19946L4.48685 8.38559L9.6869 2.7128C9.84551 2.53978 10.1144 2.52809 10.2874 2.68669Z' fill='white' stroke='white' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      border: none;
+      transform: translate(-50%, -50%);
     }
   }
-} 
+}
 .ant-checkbox {
   &.ant-checkbox-checked {
     &.ant-checkbox-disabled {
@@ -388,7 +387,7 @@ input {
         }
       }
     }
-   }
+  }
 }
 // radio and radio buttons css
 
@@ -1049,13 +1048,13 @@ input {
     }
 
     .ant-select-selection-item-remove {
-      width: 16px;
-      height: 16px;
-      color: @text-color;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 16px;
+      height: 16px;
       margin-top: 2px;
+      color: @text-color;
     }
   }
 
@@ -1067,178 +1066,18 @@ input {
   }
 }
 
-.input-label-text {
-  display: block;
-  margin-top: 8px;
-  color: @text-color-tertiary;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-}
-
-// Password strength
-
-.strength {
-  margin-top: -32px;
-  margin-bottom: 16px;
-  text-align: right;
-
-  > div {
-    justify-content: flex-end;
-  }
-
-  &.weak {
-    > div {
-      .strength-length {
-        &:first-child {
-          background: @red-base;
-        }
-      }
-    }
-
-    .strength-word {
-      color: @red-base;
-    }
-  }
-
-  &.fair {
-    > div {
-      .strength-length {
-        &:first-child,
-        &:nth-child(2) {
-          background: @warning-color;
-        }
-      }
-    }
-
-    .strength-word {
-      color: @warning-color;
-    }
-  }
-
-  &.good {
-    > div {
-      .strength-length {
-        &:first-child,
-        &:nth-child(2),
-        &:nth-child(3) {
-          background: @green-6;
-        }
-      }
-    }
-
-    .strength-word {
-      color: @green-6;
-    }
-  }
-
-  &.strong {
-    > div {
-      .strength-length {
-        background: @green-8;
-      }
-    }
-
-    .strength-word {
-      color: @green-8;
-    }
-  }
-}
-
-.strength-length {
-  width: 40px;
-  height: 4px;
-  margin: 8px 0 8px 8px;
-  background: @border-color-split;
-  border-radius: 37px;
-}
-
-.strength-word {
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-
-  .anticon {
-    margin-left: 2px;
-    width: 16px;
-    height: 16px;
-    margin-top: 1px;
-  }
-}
-
-.custom-input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  input {
-    width: 300px;
-  }
-
-  .custom-text {
-    width: calc(100% - 300px);
-    text-align: right;
-  }
-}
-
-.custom-label-input {
-  .ant-form-item {
-    margin-bottom: 0;
-  }
-
-  + .custom-label-input {
-    margin-top: 32px;
-  }
-}
-
-.resend-code {
-  display: flex;
-  margin-top: -10px;
-  margin-bottom: 26px;
-}
-
-.two-col-input {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  > div {
-    width: 49%;
-  }
-}
-
-.empty-data {
-  p {
-    margin: 0 0 9px 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid @border-color-split;
-  }
-}
-
-.custom-input-label {
-  display: block;
-  margin-bottom: 8px;
-  color: @label-color;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-}
-
 .ant-select-item-empty {
   padding: 0 9px;
 
   > div {
     p {
       margin-bottom: 9px;
-      padding:7px 4px;
+      padding: 7px 4px;
       border-bottom: 1px solid @border-color-split;
 
       + .ant-btn {
-        margin-bottom: 8px;
         height: auto;
+        margin-bottom: 8px;
         line-height: 16px;
       }
     }
