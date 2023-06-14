@@ -1,0 +1,138 @@
+// modal CSS start
+
+.ant-modal {
+  width: 480px !important;
+
+  .ant-modal-content {
+    border-radius: 8px;
+  }
+
+  .ant-modal-close {
+    top: 16px;
+    right: 16px;
+    border-radius: 4px;
+    transition: @transition-default;
+
+    .ant-modal-close-x {
+      padding: 1px;
+    }
+
+    &:hover {
+      transition: @transition-default;
+    }
+
+    &:hover,
+    &:focus {
+      color: @text-color-dark;
+      background-color: @white;
+    }
+  }
+
+  .ant-modal-header {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .ant-modal-title {
+    overflow: hidden;
+    font-weight: 600;
+    line-height: 24px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .ant-modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 18px;
+
+    @media screen and (max-width: 1439px) {
+      max-height: 560px;
+    }
+
+    .ant-breadcrumb {
+      margin-bottom: 24px;
+
+      li {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        .ant-breadcrumb-link {
+          line-height: normal;
+        }
+      }
+    }
+
+    .no-data {
+      padding: 0;
+    }
+  }
+
+  .ant-modal-footer {
+    border-radius: 0 0 8px 8px;
+  }
+
+  &.ant-modal-confirm {
+    .ant-modal-body {
+      padding: 0;
+
+      .ant-modal-confirm-body-wrapper {
+        .ant-modal-confirm-body {
+          padding: 16px 24px;
+
+          .ant-modal-confirm-title {
+            padding: 0 24px 16px 0;
+            color: @text-color;
+            font-weight: 600;
+            line-height: 24px;
+          }
+
+          .ant-modal-confirm-content {
+            color: @text-color-gray-light;
+          }
+        }
+
+        .ant-modal-confirm-btns {
+          margin: 0;
+          padding: 16px 24px;
+          border-top: 1px solid @border-color-split;
+
+          .ant-btn {
+            + .ant-btn {
+              margin-left: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.confirm-modal {
+    .ant-modal-header {
+      background-color: @white;
+      border-bottom-color: @white;
+    }
+    .ant-modal-title {
+      color: @black-base;
+    }
+    .ant-modal-close {
+      color: @black-6;
+      &:hover {
+        color: @white;
+        background-color: @black-base;
+      }
+    }
+    .ant-modal-body {
+      padding-top: 0px;
+      color: @text-color-gray-light;
+      margin-top: 6px;
+      > p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// modal CSS end
