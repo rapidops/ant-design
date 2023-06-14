@@ -196,13 +196,18 @@
 
 .ant-picker-status-error {
   &.ant-picker {
-    border-color: @alert-error-border-color;
+    border-color: @highlight-color;
+
+    &.ant-picker-focused,
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+    }
   }
 }
 
 .ant-picker-status-error {
   &.ant-picker:not([disabled]):hover {
-    border-color: @alert-error-border-color;
+    border-color: @highlight-color;
   }
 }
 
