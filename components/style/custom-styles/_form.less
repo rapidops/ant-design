@@ -1060,7 +1060,7 @@ input {
       justify-content: center;
       width: 16px;
       height: 16px;
-      margin-top: 2px;
+      margin-top: 1px;
       color: @text-color;
     }
   }
@@ -1086,6 +1086,19 @@ input {
         height: auto;
         margin-bottom: 8px;
         line-height: 16px;
+      }
+    }
+    .ant-btn {
+      .anticon {
+        width: 20px;
+        height: 20px;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        path {
+          fill: @primary-color;
+        }
       }
     }
   }
