@@ -1,0 +1,16 @@
+.slimScrollBar() {
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: @background-color-base;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: @text-color-tertiary;
+    background-clip: content-box;
+  }
+}
