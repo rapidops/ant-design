@@ -1,0 +1,23 @@
+.ant-tooltip {
+  .ant-tooltip-arrow-content {
+    background-color: @text-color;
+    box-shadow: none !important;
+    --antd-arrow-background-color: @text-color;
+  }
+}
+
+.ant-tooltip {
+  &.ant-tooltip-placement-left,
+  &.ant-tooltip-placement-leftTop,
+  &.ant-tooltip-placement-leftBottom {
+    .ant-tooltip-arrow {
+      .ant-tooltip-arrow-content {
+        left: 0;
+      }
+    }
+  }
+}
+
+.ant-tooltip-inner {
+  padding: 7px 8px;
+}
