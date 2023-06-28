@@ -1,12 +1,5 @@
 //  date picker CSS
 
-// .ant-picker {
-//   width: 100%;
-//   padding: 5px 12px;
-//   border: 1px solid @border-color-base;
-//   border-radius: 4px;
-// }
-
 .ant-picker {
   padding-top: 7px;
   padding-bottom: 7px;
@@ -15,9 +8,6 @@
     border-color: @input-focus-border-color;
     box-shadow: 0 0 0 2px @primary-color-outline;
   }
-  // &.ant-picker-disabled{
-  //   background-color: @background-color-light;
-  // }
   .ant-picker-input {
     > input {
       line-height: 18px;
@@ -47,8 +37,6 @@
 
 .ant-picker-panel-container {
   border: 1px solid @border-color-split;
-  //border-radius: 4px;
-  //box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.1), 0px 4px 20px -2px rgba(50, 50, 71, 0.08);
   box-shadow: 0px 14px 21px -1px rgba(6, 25, 56, 0.08);
 }
 
@@ -84,20 +72,6 @@
     table-layout: auto;
     th {
       color: @text-color-tertiary;
-      //font-weight: 400;
-      // font-size: 12px;
-      // line-height: 14px;
-    }
-
-    td {
-      //color: @text-color-tertiary;
-      //font-weight: 400;
-      // font-size: 12px;
-      // line-height: 14px;
-      // padding: 4px 0;
-      // &.ant-picker-cell-in-view {
-      //   color: @text-color;
-      // }
     }
   }
 }
@@ -119,15 +93,25 @@
       border: 1px solid @blue-6;
       box-shadow: 0px 0px 4px rgba(99, 102, 241, 0.6);
     }
+
+    &.ant-picker-cell-today {
+      .ant-picker-cell-inner {
+        &:before {
+          border-color: transparent;
+        }
+      }
+    }
   }
 
-  // &.ant-picker-cell-today {
-  //   .ant-picker-cell-inner {
-  //     &:before {
-  //       border-color: @white;
-  //     }
-  //   }
-  // }
+  &.ant-picker-cell-in-range {
+    &.ant-picker-cell-today {
+      .ant-picker-cell-inner {
+        &:before {
+          border-color: @border-color-split;
+        }
+      }
+    }
+  }
 }
 
 .ant-picker-week-panel-row-selected {
@@ -141,10 +125,6 @@
     }
   }
 }
-
-// .ant-picker-footer {
-//   display: none;
-// }
 
 .ant-picker-header-view {
   line-height: normal;
@@ -265,17 +245,4 @@
       }
     }
   }
-
-  // .ant-picker-time-panel-cell-inner {
-  //   font-size: 12px;
-  //   font-weight: 400;
-  // }
-
-  // li.ant-picker-time-panel-cell-selected {
-  //   .ant-picker-time-panel-cell-inner {
-  //     background-color: transparent;
-  //     font-weight: 600;
-  //     color: @primary-color;
-  //   }
-  // }
 }
