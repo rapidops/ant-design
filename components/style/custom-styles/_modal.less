@@ -10,11 +10,12 @@
   .ant-modal-close {
     top: 16px;
     right: 16px;
+    color: @black-3;
     border-radius: 4px;
     transition: @transition-default;
 
-    .ant-modal-close-x {
-      padding: 1px;
+    svg path {
+      fill: @black-3;
     }
 
     &:hover {
@@ -25,6 +26,10 @@
     &:focus {
       color: @text-color-dark;
       background-color: @white;
+
+      svg path {
+        fill: @text-color-dark;
+      }
     }
   }
 
@@ -116,16 +121,25 @@
       color: @black-base;
     }
     .ant-modal-close {
-      color: @black-6;
+      color: @text-color-gray-light;
+
+      svg path {
+        fill: @text-color-gray-light;
+      }
+
       &:hover {
         color: @white;
         background-color: @black-base;
+
+        svg path {
+          fill: @white;
+        }
       }
     }
     .ant-modal-body {
+      margin-top: 6px;
       padding-top: 0px;
       color: @text-color-gray-light;
-      margin-top: 6px;
       > p {
         &:last-child {
           margin-bottom: 0;
