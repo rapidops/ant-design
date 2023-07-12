@@ -1,0 +1,1088 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+@import './_colors.less';
+
+@theme: default;
+
+// The prefix to use on all css classes from ant.
+@ant-prefix: ant;
+
+// An override for the html selector for theme prefixes
+@html-selector: html;
+
+// [CSS-VARIABLE-REPLACE-BEGIN: html-variables]
+// [CSS-VARIABLE-REPLACE-END: html-variables]
+
+// -------- Colors -----------
+
+@white: #fff;
+@black: #000;
+
+// >>> Primary
+@primary-color: @blue-base;
+@primary-color-hover: @blue-8;
+@primary-color-focus: @blue-8;
+@primary-color-active: @blue-9;
+@primary-color-outline: @blue-3;
+
+@processing-color: @blue-base;
+
+// >>> Success
+@success-color: @green-base;
+@success-color-hover: @green-8;
+@success-color-focus: @green-base;
+@success-color-active: @green-9;
+@success-color-outline: @green-3;
+@success-color-deprecated-bg: @green-2;
+@success-color-deprecated-border: @green-5;
+
+// >>> Warning
+@warning-color: @orange-base;
+@warning-color-hover: @orange-7;
+@warning-color-focus: @orange-5;
+@warning-color-active: @orange-8;
+@warning-color-outline: @orange-3;
+@warning-color-deprecated-bg: @orange-1;
+@warning-color-deprecated-border: @orange-3;
+
+// >>> Error
+@error-color: @red-base;
+@error-color-hover: @red-8;
+@error-color-focus: @red-base;
+@error-color-active: @red-9;
+@error-color-outline: @red-3;
+@error-color-deprecated-bg: @red-1;
+@error-color-deprecated-border: @red-4;
+
+// >>> info (blue)
+@info-color: @geekblue-base;
+@info-color-hover: @geekblue-8;
+@info-color-focus: @geekblue-6;
+@info-color-active: @geekblue-9;
+@info-color-deprecated-bg: @geekblue-1;
+@info-color-deprecated-border: @geekblue-4;
+
+// >>> secondary (gray)
+@default-color: @white;
+@default-color-hover: @background-color-base;
+@default-color-focus: @white;
+@default-color-active: @background-color-base;
+
+@highlight-color: @red-6;
+@normal-color: #d9d9d9;
+
+// Color used by default to control hover and active backgrounds and for
+// alert info backgrounds.
+@primary-1: @blue-1; // replace tint(@primary-color, 90%)
+@primary-2: @blue-2; // replace tint(@primary-color, 80%)
+@primary-3: @blue-3; // unused
+@primary-4: @blue-4; // unused
+@primary-5: @blue-5; // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
+@primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
+@primary-7: @blue-8; // replace shade(@primary-color, 5%)
+@primary-8: @blue-9; // unused
+@primary-9: @blue-10; // unused
+@primary-10: darken(@blue-10, 5%); // unused
+
+// Base Scaffolding Variables
+// ---
+
+// Background color for `<body>`
+@body-background: #fff;
+// Base background color for most components
+@component-background: #fff;
+// Popover background color
+@popover-background: @component-background;
+@popover-customize-border-color: @border-color-split;
+@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+  'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+  'Noto Color Emoji';
+@code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+@text-color: @black-base;
+@text-color-secondary: @black-8;
+@text-color-tertiary: @black-5;
+@text-color-gray: @black-7;
+@text-color-gray-light: @black-6;
+@text-color-inverse: @white;
+@icon-color: inherit;
+@icon-color-hover: fade(@black, 75%);
+@heading-color: @text-color;
+@text-color-dark: @black-10;
+@text-color-secondary-dark: lighten(@text-color-dark, 5%);
+@text-selection-bg: @primary-color;
+@font-variant-base: tabular-nums;
+@font-feature-settings-base: 'tnum';
+@font-size-base: 14px;
+@font-size-lg: @font-size-base + 2px;
+@font-size-sm: 12px;
+@heading-1-size: ceil(@font-size-base * 3.41);
+@heading-2-size: ceil(@font-size-base * 2.81);
+@heading-3-size: ceil(@font-size-base * 2.41);
+@heading-4-size: ceil(@font-size-base * 2);
+@heading-5-size: ceil(@font-size-base * 1.71);
+@heading-6-size: ceil(@font-size-base * 1.41);
+// https://github.com/ant-design/ant-design/issues/20210
+@line-height-base: 1.2857;
+@border-radius-base: 4px;
+@border-radius-sm: @border-radius-base;
+
+// control border
+@control-border-radius: @border-radius-base;
+
+// arrow border
+@arrow-border-radius: 2px;
+
+// vertical paddings
+@padding-lg: 24px; // containers
+@padding-md: 16px; // small containers and buttons
+@padding-sm: 12px; // Form controls and items
+@padding-xs: 8px; // small items
+@padding-xss: 4px; // more small
+
+// vertical padding for all form controls
+@control-padding-horizontal: @padding-sm;
+@control-padding-horizontal-sm: @padding-xs;
+
+// vertical margins
+@margin-lg: 24px; // containers
+@margin-md: 16px; // small containers and buttons
+@margin-sm: 12px; // Form controls and items
+@margin-xs: 8px; // small items
+@margin-xss: 4px; // more small
+
+// height rules
+@height-base: 34px;
+@height-lg: 40px;
+@height-sm: 26px;
+
+// The background colors for active and hover states for things like
+// list items or table cells.
+@item-active-bg: @blue-0;
+@item-hover-bg: @blue-0;
+
+// ICONFONT
+@iconfont-css-prefix: anticon;
+
+// LINK
+@link-color: @primary-color;
+@link-hover-color: @primary-color-hover;
+@link-active-color: @primary-color-active;
+@link-decoration: none;
+@link-hover-decoration: none;
+@link-focus-decoration: none;
+@link-focus-outline: 0;
+
+// Animation
+@ease-base-out: cubic-bezier(0.7, 0.3, 0.1, 1);
+@ease-base-in: cubic-bezier(0.9, 0, 0.3, 0.7);
+@ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+@ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+@ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+@ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+@ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+@ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46);
+@ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+@ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+@ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+@ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+@transition-default: all 300ms ease-in-out 0s;
+
+// Border color
+@border-color-base: @black-4; // base border outline a component
+@border-color-split: @black-3; // split border inside a component
+@border-color-inverse: @white;
+@border-width-base: 1px; // width of the border for a component
+@border-style-base: solid; // style of a components border
+
+// Outline
+@outline-blur-size: 0;
+@outline-width: 2px;
+@outline-color: @primary-color; // No use anymore
+@outline-fade: 20%;
+
+@background-color-light: @black-1; // background of header and selected item
+@background-color-base: @black-2; // Default grey background color
+
+// Disabled states
+@disabled-color: fade(#000, 25%);
+@disabled-bg: @background-color-light;
+@disabled-active-bg: tint(@black, 90%);
+@disabled-color-dark: fade(#fff, 35%);
+
+// Shadow
+@shadow-color: rgba(0, 0, 0, 0.15); // experro:TODO
+@shadow-color-inverse: @component-background;
+@box-shadow-base: @shadow-2;
+@shadow-1-up: 0 -6px 16px -8px rgba(0, 0, 0, 0.08), 0 -9px 28px 0 rgba(0, 0, 0, 0.05),
+  0 -12px 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-1-down: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05),
+  0 12px 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-1-left: -6px 0 16px -8px rgba(0, 0, 0, 0.08), -9px 0 28px 0 rgba(0, 0, 0, 0.05),
+  -12px 0 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-1-right: 6px 0 16px -8px rgba(0, 0, 0, 0.08), 9px 0 28px 0 rgba(0, 0, 0, 0.05),
+  12px 0 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-2: 0px 14px 21px -1px rgba(6, 25, 56, 0.08);
+
+// Buttons
+@btn-font-weight: 500;
+@btn-border-radius-base: @border-radius-base;
+@btn-border-radius-sm: @border-radius-base;
+@btn-border-width: @border-width-base;
+@btn-border-style: @border-style-base;
+@btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+@btn-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+@btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+
+@btn-primary-color: #fff;
+@btn-primary-bg: @primary-color;
+
+@btn-default-color: @text-color;
+@btn-default-bg: @component-background;
+@btn-default-border: @border-color-base;
+
+@btn-danger-color: #fff;
+@btn-danger-bg: @error-color;
+@btn-danger-border: @error-color;
+
+@btn-disable-color: @disabled-color;
+@btn-disable-bg: @disabled-bg;
+@btn-disable-border: @border-color-base;
+
+@btn-default-ghost-color: @component-background;
+@btn-default-ghost-bg: transparent;
+@btn-default-ghost-border: @component-background;
+
+@btn-font-size-lg: @font-size-lg;
+@btn-font-size-sm: @font-size-sm;
+@btn-padding-horizontal-base: @padding-sm;
+@btn-padding-horizontal-lg: @padding-md;
+@btn-padding-horizontal-sm: @padding-xs;
+
+@btn-height-base: @height-base - 2;
+@btn-height-lg: @height-lg;
+@btn-height-sm: @height-sm;
+
+@btn-line-height: @line-height-base;
+
+@btn-circle-size: @btn-height-base;
+@btn-circle-size-lg: @btn-height-lg;
+@btn-circle-size-sm: @btn-height-sm;
+
+@btn-square-size: @btn-height-base;
+@btn-square-size-lg: @btn-height-lg;
+@btn-square-size-sm: @btn-height-sm;
+@btn-square-only-icon-size: @font-size-base + 2px;
+@btn-square-only-icon-size-sm: @font-size-base;
+@btn-square-only-icon-size-lg: @btn-font-size-lg + 2px;
+
+@btn-group-border: @primary-5;
+
+@btn-link-hover-bg: transparent;
+@btn-text-hover-bg: @background-color-base;
+
+// Checkbox
+@checkbox-size: 16px;
+@checkbox-color: @primary-color;
+@checkbox-check-color: @white;
+@checkbox-check-bg: @checkbox-check-color;
+@checkbox-border-width: @border-width-base;
+@checkbox-border-radius: @border-radius-base;
+@checkbox-group-item-margin-right: 8px;
+
+// Descriptions
+@descriptions-bg: #fafafa;
+@descriptions-title-margin-bottom: 20px;
+@descriptions-default-padding: @padding-md @padding-lg;
+@descriptions-middle-padding: @padding-sm @padding-lg;
+@descriptions-small-padding: @padding-xs @padding-md;
+@descriptions-item-padding-bottom: @padding-md;
+@descriptions-item-trailing-colon: true;
+@descriptions-item-label-colon-margin-right: 8px;
+@descriptions-item-label-colon-margin-left: 2px;
+@descriptions-extra-color: @text-color;
+
+// Divider
+@divider-text-padding: 0.5em;
+@divider-orientation-margin: 5%;
+@divider-color: @border-color-split;
+@divider-vertical-gutter: 8px;
+
+// Dropdown
+@dropdown-selected-color: @text-color;
+@dropdown-menu-submenu-disabled-bg: @component-background;
+@dropdown-selected-bg: @select-item-active-bg;
+
+// Empty
+@empty-font-size: @font-size-base;
+
+// Radio
+@radio-size: 16px;
+@radio-top: 0.2em;
+@radio-border-width: 1px;
+@radio-dot-size: @radio-size - 12px;
+@radio-dot-color: @component-background;
+@radio-dot-disabled-color: @disabled-bg;
+@radio-solid-checked-color: @primary-color;
+
+// Radio buttons
+@radio-button-bg: @btn-default-bg;
+@radio-button-checked-bg: @btn-default-bg;
+@radio-button-color: @btn-default-color;
+@radio-button-hover-color: @primary-color-hover;
+@radio-button-active-color: @primary-color-active;
+@radio-button-padding-horizontal: @padding-sm;
+@radio-disabled-button-checked-bg: @disabled-active-bg;
+@radio-disabled-button-checked-color: @disabled-color;
+@radio-wrapper-margin-right: 8px;
+
+// Media queries breakpoints
+// @screen-xs and @screen-xs-min is not used in Grid
+// smallest break point is @screen-md
+@screen-xs: 480px;
+@screen-xs-min: @screen-xs;
+// 👆 Extra small screen / phone
+
+// 👇 Small screen / tablet
+@screen-sm: 576px;
+@screen-sm-min: @screen-sm;
+
+// Medium screen / desktop
+@screen-md: 768px;
+@screen-md-min: @screen-md;
+
+// Large screen / wide desktop
+@screen-lg: 992px;
+@screen-lg-min: @screen-lg;
+
+// Extra large screen / full hd
+@screen-xl: 1200px;
+@screen-xl-min: @screen-xl;
+
+// Extra extra large screen / large desktop
+@screen-xxl: 1600px;
+@screen-xxl-min: @screen-xxl;
+
+// provide a maximum
+@screen-xs-max: (@screen-sm-min - 1px);
+@screen-sm-max: (@screen-md-min - 1px);
+@screen-md-max: (@screen-lg-min - 1px);
+@screen-lg-max: (@screen-xl-min - 1px);
+@screen-xl-max: (@screen-xxl-min - 1px);
+
+// Grid system
+@grid-columns: 24;
+
+// Layout
+@layout-body-background: @white;
+@layout-header-background: @white;
+@layout-header-height: auto;
+@layout-header-padding: 0 32px;
+@layout-header-color: @text-color;
+@layout-footer-padding: 24px 50px;
+@layout-footer-background: @layout-body-background;
+@layout-sider-background: @layout-header-background;
+@layout-trigger-height: 48px;
+@layout-trigger-background: #002140;
+@layout-trigger-color: #fff;
+@layout-zero-trigger-width: 36px;
+@layout-zero-trigger-height: 42px;
+// Layout light theme
+@layout-sider-background-light: #fff;
+@layout-trigger-background-light: #fff;
+@layout-trigger-color-light: @text-color;
+
+// z-index list, order by `z-index`
+@zindex-badge: auto;
+@zindex-table-fixed: 2;
+@zindex-affix: 10;
+@zindex-back-top: 10;
+@zindex-picker-panel: 10;
+@zindex-popup-close: 10;
+@zindex-modal: 1000;
+@zindex-modal-mask: 1000;
+@zindex-message: 1010;
+@zindex-notification: 1010;
+@zindex-popover: 1030;
+@zindex-dropdown: 1050;
+@zindex-picker: 1050;
+@zindex-popoconfirm: 1060;
+@zindex-tooltip: 1070;
+@zindex-image: 1080;
+
+// Animation
+@animation-duration-slow: 0.3s; // Modal
+@animation-duration-base: 0.2s;
+@animation-duration-fast: 0.1s; // Tooltip
+
+//CollapsePanel
+@collapse-panel-border-radius: 0;
+
+//Dropdown
+@dropdown-menu-bg: @component-background;
+@dropdown-vertical-padding: 7px;
+@dropdown-edge-child-vertical-padding: 0;
+@dropdown-font-size: @font-size-base;
+@dropdown-line-height: 18px;
+
+// Form
+// ---
+@label-required-color: @highlight-color;
+@label-color: @text-color-gray-light;
+@form-warning-input-bg: @input-bg;
+@form-item-margin-bottom: 32px;
+@form-item-trailing-colon: true;
+@form-vertical-label-padding: 0 0 8px;
+@form-vertical-label-margin: 0;
+@form-item-label-font-size: @font-size-base;
+@form-item-label-height: @input-height-base;
+@form-item-label-colon-margin-right: 8px;
+@form-item-label-colon-margin-left: 2px;
+@form-error-input-bg: @input-bg;
+
+// Input
+// ---
+@input-height-base: @height-base;
+@input-height-lg: @height-lg;
+@input-height-sm: @height-sm;
+@input-padding-horizontal: @control-padding-horizontal;
+@input-padding-horizontal-base: @input-padding-horizontal;
+@input-padding-horizontal-sm: @input-padding-horizontal;
+@input-padding-horizontal-lg: @input-padding-horizontal;
+@input-padding-vertical-base: 7px;
+@input-padding-vertical-sm: 5px;
+@input-padding-vertical-lg: 10px;
+@input-placeholder-color: @text-color-tertiary;
+@input-color: @text-color;
+@input-icon-color: @input-placeholder-color;
+@input-border-color: @border-color-base;
+@input-bg: @component-background;
+@input-number-hover-border-color: @input-hover-border-color;
+@input-number-handler-active-bg: #f4f4f4;
+@input-number-handler-hover-bg: @blue-5;
+@input-number-handler-bg: @component-background;
+@input-number-handler-border-color: @border-color-base;
+@input-addon-bg: @background-color-light;
+@input-hover-border-color: @blue-5;
+@input-focus-border-color: @blue-6;
+@input-disabled-bg: @disabled-bg;
+@input-outline-offset: 0 0;
+@input-icon-hover-color: @text-color;
+@input-disabled-color: @disabled-color;
+
+// Mentions
+// ---
+@mentions-dropdown-bg: @component-background;
+@mentions-dropdown-menu-item-hover-bg: @mentions-dropdown-bg;
+
+// Select
+// --- experro:TODO select height
+@select-border-color: @border-color-base;
+@select-item-selected-color: @primary-color;
+@select-item-selected-font-weight: 400;
+@select-dropdown-bg: @component-background;
+@select-item-selected-bg: @blue-1;
+@select-item-active-bg: @blue-1;
+@select-dropdown-vertical-padding: @dropdown-vertical-padding;
+@select-dropdown-font-size: @dropdown-font-size;
+@select-dropdown-line-height: @dropdown-line-height;
+@select-dropdown-height: 32px;
+@select-background: @component-background;
+@select-clear-background: @select-background;
+@select-selection-item-bg: @background-color-light;
+@select-selection-item-border-color: @background-color-light;
+@select-single-item-height-lg: 40px;
+@select-multiple-item-height: 22px; // Normal 24px
+@select-multiple-item-height-lg: 32px;
+@select-multiple-item-spacing-half: ceil((@input-padding-vertical-base / 2));
+@select-multiple-disabled-background: @input-disabled-bg;
+@select-multiple-item-disabled-color: #bfbfbf;
+@select-multiple-item-disabled-border-color: @select-border-color;
+
+// Cascader
+// ---
+@cascader-bg: @component-background;
+@cascader-item-selected-bg: @primary-1;
+@cascader-menu-bg: @component-background;
+@cascader-menu-border-color-split: @border-color-split;
+
+// Cascader
+// ----
+@cascader-dropdown-vertical-padding: @dropdown-vertical-padding;
+@cascader-dropdown-edge-child-vertical-padding: @dropdown-edge-child-vertical-padding;
+@cascader-dropdown-font-size: @dropdown-font-size;
+@cascader-dropdown-line-height: @dropdown-line-height;
+
+// Anchor
+// ---
+@anchor-bg: transparent;
+@anchor-border-color: @border-color-split;
+@anchor-link-top: 7px;
+@anchor-link-left: 16px;
+@anchor-link-padding: @anchor-link-top 0 @anchor-link-top @anchor-link-left;
+
+// Tooltip
+// ---
+// Tooltip max width
+@tooltip-max-width: 250px;
+// Tooltip text color
+@tooltip-color: @white;
+// Tooltip background color
+@tooltip-bg: @text-color;
+// Tooltip arrow width
+@tooltip-arrow-width: 8px * sqrt(2);
+// Tooltip distance with trigger
+@tooltip-distance: @tooltip-arrow-width - 1px + 4px;
+// Tooltip arrow color
+@tooltip-arrow-color: @tooltip-bg;
+@tooltip-border-radius: 6;
+
+// Popover
+// ---
+// Popover body background color
+@popover-bg: @component-background;
+// Popover text color
+@popover-color: @text-color;
+// Popover maximum width
+@popover-min-width: 177px;
+@popover-min-height: 32px;
+// Popover arrow width
+@popover-arrow-width: @tooltip-arrow-width;
+// Popover arrow color
+@popover-arrow-color: @popover-bg;
+// Popover outer arrow width
+// Popover outer arrow color
+@popover-arrow-outer-color: @popover-bg;
+// Popover distance with trigger
+@popover-distance: @popover-arrow-width + 1px;
+@popover-padding-horizontal: @padding-md;
+
+// Modal
+// --
+@modal-header-padding-vertical: @padding-md;
+@modal-header-padding-horizontal: @padding-lg;
+@modal-body-padding: @padding-lg;
+@modal-header-bg: @black-10;
+@modal-header-padding: @modal-header-padding-vertical (@modal-header-padding-horizontal * 2)
+  @modal-header-padding-vertical @modal-header-padding-horizontal;
+@modal-header-border-width: @border-width-base;
+@modal-header-border-style: @border-style-base;
+@modal-header-title-line-height: @line-height-base;
+@modal-header-title-font-size: 20px;
+@modal-header-border-color-split: @border-color-split;
+@modal-header-close-size: 24px;
+@modal-content-bg: @component-background;
+@modal-heading-color: @white;
+@modal-close-color: @border-color-split;
+@modal-footer-bg: @white;
+@modal-footer-border-color-split: @border-color-split;
+@modal-footer-border-style: @border-style-base;
+@modal-footer-padding-vertical: @padding-md;
+@modal-footer-padding-horizontal: @padding-lg;
+@modal-footer-border-width: @border-width-base;
+@modal-mask-bg: fade(@black-10, 50%);
+@modal-confirm-body-padding: @padding-lg; // TODO: confirm modal
+@modal-confirm-title-font-size: 20px;
+
+// Progress
+// --
+@progress-default-color: @processing-color;
+@progress-remaining-color: @blue-2;
+@progress-info-text-color: @progress-text-color;
+@progress-radius: 100px;
+@progress-steps-item-bg: @blue-2;
+@progress-text-font-size: @font-size-lg;
+@progress-text-color: @text-color; // This is for circle text color, should be renamed better
+@progress-circle-text-font-size: 1em;
+// Menu
+// ---
+@menu-inline-toplevel-item-height: 34px;
+@menu-item-height: 28px;
+@menu-item-group-height: 28px;
+@menu-collapsed-width: 64px;
+@menu-bg: @background-color-light;
+@menu-popup-bg: @component-background;
+@menu-item-color: @text-color-gray-light;
+@menu-inline-submenu-bg: transparent;
+@menu-highlight-color: @primary-color;
+@menu-highlight-danger-color: @error-color;
+@menu-item-active-bg: transparent;
+@menu-item-active-danger-bg: @red-1;
+@menu-item-active-border-width: 0;
+@menu-item-group-title-color: @text-color-gray-light;
+@menu-item-vertical-margin: 0;
+@menu-item-font-size: @font-size-base;
+@menu-item-boundary-margin: 0;
+@menu-item-padding-horizontal: 20px;
+@menu-item-padding: 5px @menu-item-padding-horizontal 5px 0;
+@menu-horizontal-line-height: 28px;
+@menu-icon-margin-right: 4px;
+@menu-icon-size: @font-size-lg;
+@menu-icon-size-lg: @font-size-lg + 4;
+@menu-item-group-title-font-size: @menu-item-font-size;
+
+// dark theme
+@menu-dark-color: @text-color-secondary-dark;
+@menu-dark-danger-color: @error-color;
+@menu-dark-bg: @layout-header-background;
+@menu-dark-arrow-color: #fff;
+@menu-dark-inline-submenu-bg: #000c17;
+@menu-dark-highlight-color: #fff;
+@menu-dark-item-active-bg: @primary-color;
+@menu-dark-item-active-danger-bg: @error-color;
+@menu-dark-selected-item-icon-color: @white;
+@menu-dark-selected-item-text-color: @white;
+@menu-dark-item-hover-bg: transparent;
+// Spin
+// ---
+@spin-dot-size-sm: 14px;
+@spin-dot-size: 20px;
+@spin-dot-size-lg: 32px;
+
+// Table
+// --
+@table-bg: @component-background;
+@table-header-bg: @component-background;
+@table-header-color: @text-color-gray-light;
+@table-header-sort-bg: @component-background;
+@table-body-sort-bg: @component-background;
+@table-row-hover-bg: @item-hover-bg;
+@table-selected-row-color: @text-color;
+@table-selected-row-bg: @item-active-bg;
+@table-body-selected-sort-bg: @table-selected-row-bg;
+@table-selected-row-hover-bg: @table-selected-row-bg;
+@table-expanded-row-bg: @background-color-light;
+@table-padding-vertical: 13px;
+@table-padding-horizontal: 16px;
+@table-padding-vertical-md: (@table-padding-vertical * 3 / 4);
+@table-padding-horizontal-md: (@table-padding-horizontal / 2);
+@table-padding-vertical-sm: (@table-padding-vertical / 2);
+@table-padding-horizontal-sm: (@table-padding-horizontal / 2);
+@table-border-color: @background-color-base;
+@table-border-radius-base: @border-radius-base;
+@table-footer-bg: @component-background;
+@table-footer-color: @text-color-gray-light;
+@table-header-bg-sm: @table-header-bg;
+@table-font-size: @font-size-base;
+@table-font-size-md: @table-font-size;
+@table-font-size-sm: @table-font-size;
+@table-header-cell-split-color: rgba(0, 0, 0, 0.06);
+// Sorter
+// Legacy: `table-header-sort-active-bg` is used for hover not real active
+@table-header-sort-active-bg: @component-background;
+@table-fixed-header-sort-active-bg: @component-background;
+
+// Filter
+@table-header-filter-active-bg: rgba(0, 0, 0, 0.04);
+@table-filter-btns-bg: inherit;
+@table-filter-dropdown-bg: @component-background;
+@table-expand-icon-bg: @component-background;
+@table-selection-column-width: 32px;
+// Sticky
+@table-sticky-scroll-bar-bg: fade(#000, 35%);
+@table-sticky-scroll-bar-radius: 4px;
+
+// Tag
+// --
+@tag-border-radius: @border-radius-base;
+@tag-default-bg: @background-color-base;
+@tag-default-color: @text-color;
+@tag-font-size: @font-size-sm;
+@tag-line-height: 18px;
+
+// TimePicker
+// ---
+@picker-bg: @component-background;
+@picker-basic-cell-hover-color: @background-color-light;
+@picker-basic-cell-active-with-range-color: @item-active-bg;
+@picker-basic-cell-hover-with-range-color: @picker-basic-cell-active-with-range-color;
+@picker-basic-cell-disabled-bg: rgba(0, 0, 0, 0.04);
+@picker-border-color: @border-color-split;
+@picker-date-hover-range-border-color: @primary-color-hover;
+@picker-date-hover-range-color: @picker-basic-cell-hover-with-range-color;
+@picker-time-panel-column-width: 34px;
+@picker-time-panel-column-height: 210px;
+@picker-time-panel-cell-height: 24px;
+@picker-panel-cell-height: 24px;
+@picker-panel-cell-width: 32px;
+@picker-text-height: 40px;
+@picker-panel-without-time-cell-height: 66px;
+
+// Calendar
+// ---
+@calendar-bg: @component-background;
+@calendar-input-bg: @input-bg;
+@calendar-border-color: @border-color-inverse;
+@calendar-item-active-bg: @item-active-bg;
+@calendar-column-active-bg: fade(@calendar-item-active-bg, 20%);
+@calendar-full-bg: @calendar-bg;
+@calendar-full-panel-bg: @calendar-full-bg;
+
+// Carousel
+// ---
+@carousel-dot-width: 16px;
+@carousel-dot-height: 3px;
+@carousel-dot-active-width: 26px;
+
+// Badge
+// ---
+@badge-height: 20px;
+@badge-height-sm: 16px;
+@badge-dot-size: 4px;
+@badge-font-size: @font-size-base;
+@badge-font-size-sm: @font-size-sm;
+@badge-font-weight: 600;
+@badge-status-size: 6px;
+@badge-text-color: @component-background;
+@badge-color: @highlight-color;
+
+// Rate
+// ---
+@rate-star-color: @orange-base;
+@rate-star-bg: @border-color-base;
+@rate-star-size: 20px;
+@rate-star-hover-scale: scale(1.1);
+
+// Card
+// ---
+@card-head-color: @heading-color;
+@card-head-background: transparent;
+@card-head-font-size: @font-size-base;
+@card-head-font-size-sm: @font-size-base;
+@card-head-padding: 16px;
+@card-head-padding-sm: @card-head-padding;
+@card-head-height: 36px;
+@card-head-height-sm: 32px;
+@card-inner-head-padding: 16px;
+@card-padding-base: 16px;
+@card-padding-base-sm: @card-padding-base;
+@card-actions-background: @component-background;
+@card-actions-li-margin: 12px 0;
+@card-skeleton-bg: #cfd8dc;
+@card-background: @component-background;
+@card-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
+  0 5px 12px 4px rgba(0, 0, 0, 0.09);
+@card-radius: 8px;
+@card-head-tabs-margin-bottom: -17px;
+@card-head-extra-color: @text-color-gray-light;
+
+// Comment
+// ---
+@comment-bg: inherit;
+@comment-padding-base: @padding-md 0;
+@comment-nest-indent: 44px;
+@comment-font-size-base: @font-size-base;
+@comment-font-size-sm: @font-size-sm;
+@comment-author-name-color: @text-color-secondary;
+@comment-author-time-color: #ccc;
+@comment-action-color: @text-color-secondary;
+@comment-action-hover-color: #595959;
+@comment-actions-margin-bottom: inherit;
+@comment-actions-margin-top: @margin-sm;
+@comment-content-detail-p-margin-bottom: inherit;
+
+// Tabs
+// ---
+@tabs-card-head-background: @background-color-light;
+@tabs-card-height: 40px;
+@tabs-card-active-color: @primary-color;
+@tabs-card-horizontal-padding: (
+    (@tabs-card-height - floor(@font-size-base * @line-height-base)) / 2
+  ) - @border-width-base @padding-sm;
+@tabs-card-horizontal-padding-sm: 6px @padding-sm;
+@tabs-card-horizontal-padding-lg: 14px @padding-md 13px;
+@tabs-title-font-size: @font-size-base;
+@tabs-title-font-size-lg: @font-size-lg;
+@tabs-title-font-size-sm: @font-size-base;
+@tabs-ink-bar-color: @primary-color;
+@tabs-bar-margin: 0 0 @margin-md 0;
+@tabs-horizontal-gutter: 32px;
+@tabs-horizontal-margin: 0 0 0 @tabs-horizontal-gutter;
+@tabs-horizontal-margin-rtl: 0 0 0 32px;
+@tabs-horizontal-padding: (@padding-sm - 1) 0;
+@tabs-horizontal-padding-lg: @padding-md 0;
+@tabs-horizontal-padding-sm: @padding-xs 0;
+@tabs-vertical-padding: @padding-xs @padding-lg;
+@tabs-vertical-margin: @margin-md 0 0 0;
+@tabs-scrolling-size: 32px;
+@tabs-highlight-color: @primary-color;
+@tabs-hover-color: @blue-6;
+@tabs-active-color: @primary-color;
+@tabs-card-gutter: 2px;
+@tabs-card-tab-active-border-top: 2px solid transparent;
+
+// BackTop
+// ---
+@back-top-color: #fff;
+@back-top-bg: @text-color-secondary;
+@back-top-hover-bg: @text-color;
+
+// Avatar
+// ---
+@avatar-size-base: 32px;
+@avatar-size-lg: 48px;
+@avatar-size-sm: 24px;
+@avatar-font-size-base: 14px;
+@avatar-font-size-lg: 20px;
+@avatar-font-size-sm: 12px;
+@avatar-bg: @blue-2;
+@avatar-color: @blue-6;
+@avatar-border-radius: @border-radius-base;
+@avatar-group-overlapping: -5px;
+@avatar-group-space: 3px;
+@avatar-group-border-color: @white;
+
+// Switch
+// ---
+@switch-height: 18px;
+@switch-sm-height: 14px;
+@switch-min-width: 40px;
+@switch-sm-min-width: 26px;
+@switch-disabled-opacity: 0.4;
+@switch-color: @primary-color;
+@switch-bg: @component-background;
+@switch-shadow-color: fade(#00230b, 20%);
+@switch-padding: 3px;
+@switch-inner-margin-min: ceil(@switch-height * 0.3);
+@switch-inner-margin-max: ceil(@switch-height * 1.1);
+@switch-sm-inner-margin-min: ceil(@switch-sm-height * 0.3);
+@switch-sm-inner-margin-max: ceil(@switch-sm-height * 1.1);
+
+// Pagination
+// ---
+@pagination-item-bg: @component-background;
+@pagination-item-size: 28px;
+@pagination-item-size-sm: 24px;
+@pagination-font-family: @font-family;
+@pagination-font-weight-active: 500;
+@pagination-item-bg-active: @component-background;
+@pagination-item-link-bg: @component-background;
+@pagination-item-disabled-color-active: @border-color-base;
+@pagination-item-disabled-bg-active: @disabled-bg;
+@pagination-item-input-bg: @component-background;
+@pagination-mini-options-size-changer-top: 0px;
+
+// PageHeader
+// ---
+@page-header-padding: 32px;
+@page-header-padding-vertical: @padding-lg;
+@page-header-padding-breadcrumb: @padding-sm;
+@page-header-content-padding-vertical: @padding-sm;
+@page-header-back-color: @text-color;
+@page-header-ghost-bg: inherit;
+@page-header-heading-title: @heading-6-size;
+@page-header-heading-sub-title: 13px;
+@page-header-tabs-tab-font-size: 16px;
+
+// Breadcrumb
+// ---
+@breadcrumb-base-color: @text-color;
+@breadcrumb-last-item-color: @text-color;
+@breadcrumb-font-size: @heading-6-size;
+@breadcrumb-icon-font-size: @heading-6-size - 2;
+@breadcrumb-link-color: @link-color;
+@breadcrumb-link-color-hover: @link-hover-color;
+@breadcrumb-separator-color: @text-color-gray;
+@breadcrumb-separator-margin: 0 @padding-xs;
+
+// Slider
+// ---
+@slider-margin: 10px 6px 10px;
+@slider-rail-background-color: @border-color-split;
+@slider-rail-background-color-hover: @border-color-base;
+@slider-track-background-color: @primary-color;
+@slider-track-background-color-hover: darken(@blue-6, 5%);
+@slider-handle-border-width: 2px;
+@slider-handle-background-color: @primary-color;
+@slider-handle-color: @primary-color;
+@slider-handle-color-hover: @blue-6;
+@slider-handle-color-focus: @white;
+@slider-handle-color-focus-shadow: fade(#061938, 6%);
+@slider-handle-color-tooltip-open: @primary-color;
+@slider-handle-size: 12px;
+@slider-handle-margin-top: -5px;
+@slider-handle-shadow: none;
+@slider-dot-border-color: @border-color-split;
+@slider-dot-border-color-active: @primary-color;
+@slider-disabled-color: @black-4;
+@slider-disabled-background-color: @component-background;
+
+// Tree
+// ---
+@tree-bg: @component-background;
+@tree-title-height: 28px;
+@tree-child-padding: 7px;
+@tree-directory-selected-color: @white;
+@tree-directory-selected-bg: @primary-color;
+@tree-node-hover-bg: @item-hover-bg;
+@tree-node-selected-bg: @item-active-bg;
+
+// Collapse
+// ---
+@collapse-header-padding: @padding-xs 0;
+@collapse-header-padding-extra: 40px;
+@collapse-header-bg: transparent;
+@collapse-content-padding: @padding-lg;
+@collapse-content-bg: @component-background;
+@collapse-header-arrow-left: 9px;
+
+// Skeleton
+// ---
+@skeleton-color: @background-color-base;
+@skeleton-to-color: shade(@skeleton-color, 5%);
+@skeleton-paragraph-margin-top: 28px;
+@skeleton-paragraph-li-margin-top: @margin-md;
+@skeleton-paragraph-li-height: 12px;
+@skeleton-title-height: 12px;
+@skeleton-title-paragraph-margin-top: @margin-lg;
+
+// Transfer
+// ---
+@transfer-header-height: 40px;
+@transfer-item-height: @height-base;
+@transfer-disabled-bg: @disabled-bg;
+@transfer-list-height: 200px;
+@transfer-item-hover-bg: @item-hover-bg;
+@transfer-item-selected-hover-bg: darken(@item-active-bg, 2%);
+@transfer-item-padding-vertical: 6px;
+@transfer-list-search-icon-top: 12px;
+
+// Message (toast notification)
+// ---
+@message-notice-content-padding: 11px 16px;
+@message-notice-content-bg: @component-background;
+// Motion
+// ---
+@wave-animation-width: 6px;
+
+// Alert
+// ---
+@alert-success-border-color: @green-5;
+@alert-success-bg-color: @green-1;
+@alert-success-icon-color: @green-6;
+@alert-info-border-color: @blue-5;
+@alert-info-bg-color: @geekblue-1;
+@alert-info-icon-color: @primary-color;
+@alert-warning-border-color: @orange-5;
+@alert-warning-bg-color: @orange-1;
+@alert-warning-icon-color: @warning-color;
+@alert-error-border-color: @red-4;
+@alert-error-bg-color: @red-1;
+@alert-error-icon-color: @red-6;
+@alert-message-color: @text-color;
+@alert-text-color: @text-color-gray;
+@alert-close-color: @text-color;
+@alert-close-hover-color: @text-color-dark;
+@alert-no-icon-padding-vertical: @padding-xs;
+@alert-with-description-no-icon-padding-vertical: @padding-md 24px;
+@alert-with-description-padding-vertical: @padding-md - 2px;
+@alert-with-description-padding: @padding-md - 2px;
+@alert-icon-top: 8px + @font-size-base * (@line-height-base / 2) - (@font-size-base / 2);
+@alert-with-description-icon-size: 16px;
+
+// List
+// ---
+@list-header-background: transparent;
+@list-footer-background: transparent;
+@list-empty-text-padding: @padding-md;
+@list-item-padding: @padding-sm 0;
+@list-item-padding-sm: @padding-xs @padding-md;
+@list-item-padding-lg: 16px 24px;
+@list-item-meta-margin-bottom: @padding-md;
+@list-item-meta-avatar-margin-right: @padding-md;
+@list-item-meta-title-margin-bottom: @padding-sm;
+@list-customize-card-bg: @component-background;
+@list-item-meta-description-font-size: @font-size-base;
+
+// Statistic
+// ---
+@statistic-title-font-size: @font-size-base;
+@statistic-content-font-size: 24px;
+@statistic-unit-font-size: 24px;
+@statistic-font-family: @font-family;
+
+// Drawer (flyout)
+// ---
+@drawer-header-padding: @padding-md @padding-lg;
+@drawer-body-padding: @padding-lg;
+@drawer-bg: @component-background;
+@drawer-footer-padding-vertical: @modal-footer-padding-vertical;
+@drawer-footer-padding-horizontal: @modal-footer-padding-horizontal;
+@drawer-header-close-size: 56px;
+@drawer-title-font-size: @font-size-lg;
+@drawer-title-line-height: 22px;
+
+// Timeline
+// ---
+@timeline-width: 1px;
+@timeline-color: @background-color-base;
+@timeline-dot-border-width: 2px;
+@timeline-dot-color: @primary-color;
+@timeline-dot-bg: @component-background;
+@timeline-item-padding-bottom: 24px;
+
+// Typography
+// ---
+@typography-title-font-weight: 600;
+@typography-title-margin-top: 1.2em;
+@typography-title-margin-bottom: 16px;
+
+// Upload
+// ---
+@upload-actions-color: @text-color-secondary;
+
+// Steps
+// ---
+@process-tail-color: @background-color-base;
+@steps-nav-arrow-color: @border-color-base;
+@steps-background: @component-background;
+@steps-icon-size: 32px;
+@steps-icon-custom-size: @steps-icon-size;
+@steps-icon-custom-top: 0px;
+@steps-icon-custom-font-size: 18px;
+@steps-icon-top: -0.5px;
+@steps-icon-font-size: @font-size-lg;
+@steps-icon-margin: 0 8px 0 0;
+@steps-title-line-height: @height-base;
+@steps-small-icon-size: 24px;
+@steps-small-icon-margin: 0 8px 0 0;
+@steps-dot-size: 8px;
+@steps-dot-top: 2px;
+@steps-current-dot-size: 10px;
+@steps-description-max-width: 140px;
+@steps-nav-content-max-width: auto;
+@steps-vertical-icon-width: 16px;
+@steps-vertical-tail-width: 16px;
+@steps-vertical-tail-width-sm: 12px;
+
+// Notification
+// ---
+@notification-bg: @component-background;
+@notification-padding-vertical: 12px;
+@notification-padding-horizontal: 12px;
+
+//  Result
+// ---
+@result-title-font-size: 24px;
+@result-subtitle-font-size: @font-size-base;
+@result-icon-font-size: 72px;
+@result-extra-margin: 24px 0 0 0;
+
+// Image
+// ---
+@image-size-base: 48px;
+@image-font-size-base: 24px;
+@image-bg: #f5f5f5;
+@image-color: #fff;
+@image-mask-font-size: 16px;
+@image-preview-operation-size: 18px;
+@image-preview-operation-color: @text-color-dark;
+@image-preview-operation-disabled-color: fade(@image-preview-operation-color, 25%);
+
+// Segmented
+// ---
+@segmented-bg: @background-color-light;
+@segmented-hover-bg: @background-color-base;
+@segmented-selected-bg: @white;
+@segmented-label-color: @text-color-secondary;
+@segmented-label-hover-color: @text-color;
