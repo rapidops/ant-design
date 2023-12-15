@@ -15,7 +15,7 @@ const stdio = 'inherit';
 const execOptions = { cwd, stdio };
 
 const publishOptions = {
-  tag: 'v1.0.122', // you can also provide version: '1.0.0' instead of tag
+  tag: 'v1.1.0', // you can also provide version: '1.0.0' instead of tag
   push: {
     // set to false to not push
     remote: 'origin', // set to URL or remote name
@@ -161,7 +161,7 @@ async function ensureMasterBranch() {
   const currentBranch = await repo.getCurrentBranch();
   const currentBranchName = currentBranch.shorthand();
 
-  if (currentBranchName !== 'master') {
+  if (currentBranchName !== '4-24-11-ant-version') {
     console.error(
       `Unable to release: currently on branch "${currentBranchName}", expected "release-demo"`,
     );
