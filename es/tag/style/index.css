@@ -1,0 +1,248 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+.ant-tag {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #201f37;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.2857;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  display: inline-block;
+  height: auto;
+  margin-right: 8px;
+  padding: 0 7px;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+  background: #ededf0;
+  border: 1px solid #d1d1db;
+  border-radius: 4px;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.ant-tag,
+.ant-tag a,
+.ant-tag a:hover {
+  color: #201f37;
+}
+.ant-tag > a:first-child:last-child {
+  display: inline-block;
+  margin: 0 -8px;
+  padding: 0 8px;
+}
+.ant-tag-close-icon {
+  margin-left: 3px;
+  color: #383751;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.ant-tag-close-icon:hover {
+  color: #201f37;
+}
+.ant-tag-has-color {
+  border-color: transparent;
+}
+.ant-tag-has-color,
+.ant-tag-has-color a,
+.ant-tag-has-color a:hover,
+.ant-tag-has-color .anticon-close,
+.ant-tag-has-color .anticon-close:hover {
+  color: #fff;
+}
+.ant-tag-checkable {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+.ant-tag-checkable:not(.ant-tag-checkable-checked):hover {
+  color: #4f46e5;
+}
+.ant-tag-checkable:active,
+.ant-tag-checkable-checked {
+  color: #fff;
+}
+.ant-tag-checkable-checked {
+  background-color: #4f46e5;
+}
+.ant-tag-checkable:active {
+  background-color: #4338ca;
+}
+.ant-tag-hidden {
+  display: none;
+}
+.ant-tag-pink {
+  color: #db2777;
+  background: #fdf2f8;
+  border-color: #facee7;
+}
+.ant-tag-pink-inverse {
+  color: #fff;
+  background: #eb4898;
+  border-color: #eb4898;
+}
+.ant-tag-magenta {
+  color: #c41d7f;
+  background: #fff0f6;
+  border-color: #ffadd2;
+}
+.ant-tag-magenta-inverse {
+  color: #fff;
+  background: #eb2f96;
+  border-color: #eb2f96;
+}
+.ant-tag-red {
+  color: #dc2626;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.ant-tag-red-inverse {
+  color: #fff;
+  background: #ef4444;
+  border-color: #ef4444;
+}
+.ant-tag-volcano {
+  color: #d4380d;
+  background: #fff2e8;
+  border-color: #ffbb96;
+}
+.ant-tag-volcano-inverse {
+  color: #fff;
+  background: #fa541c;
+  border-color: #fa541c;
+}
+.ant-tag-orange {
+  color: #d97706;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+.ant-tag-orange-inverse {
+  color: #fff;
+  background: #f59e0b;
+  border-color: #f59e0b;
+}
+.ant-tag-yellow {
+  color: #d4b106;
+  background: #feffe6;
+  border-color: #fffb8f;
+}
+.ant-tag-yellow-inverse {
+  color: #fff;
+  background: #fadb14;
+  border-color: #fadb14;
+}
+.ant-tag-gold {
+  color: #d48806;
+  background: #fffbe6;
+  border-color: #ffe58f;
+}
+.ant-tag-gold-inverse {
+  color: #fff;
+  background: #faad14;
+  border-color: #faad14;
+}
+.ant-tag-cyan {
+  color: #53d8fb;
+  background: #f0fcff;
+  border-color: #c8f3fe;
+}
+.ant-tag-cyan-inverse {
+  color: #fff;
+  background: #73dffc;
+  border-color: #73dffc;
+}
+.ant-tag-lime {
+  color: #7cb305;
+  background: #fcffe6;
+  border-color: #eaff8f;
+}
+.ant-tag-lime-inverse {
+  color: #fff;
+  background: #a0d911;
+  border-color: #a0d911;
+}
+.ant-tag-green {
+  color: #059669;
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+.ant-tag-green-inverse {
+  color: #fff;
+  background: #00b679;
+  border-color: #00b679;
+}
+.ant-tag-blue {
+  color: #4f46e5;
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+.ant-tag-blue-inverse {
+  color: #fff;
+  background: #6366f1;
+  border-color: #6366f1;
+}
+.ant-tag-geekblue {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+.ant-tag-geekblue-inverse {
+  color: #fff;
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+.ant-tag-purple {
+  color: #7c3aed;
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+.ant-tag-purple-inverse {
+  color: #fff;
+  background: #8b5cf6;
+  border-color: #8b5cf6;
+}
+.ant-tag-success {
+  color: #059669;
+  background: #d1fae5;
+  border-color: #34d399;
+}
+.ant-tag-processing {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+.ant-tag-error {
+  color: #dc2626;
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+.ant-tag-warning {
+  color: #f59e0b;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+.ant-tag > .anticon + span,
+.ant-tag > span + .anticon {
+  margin-left: 7px;
+}
+.ant-tag.ant-tag-rtl {
+  margin-right: 0;
+  margin-left: 8px;
+  direction: rtl;
+  text-align: right;
+}
+.ant-tag-rtl .ant-tag-close-icon {
+  margin-right: 3px;
+  margin-left: 0;
+}
+.ant-tag-rtl.ant-tag > .anticon + span,
+.ant-tag-rtl.ant-tag > span + .anticon {
+  margin-right: 7px;
+  margin-left: 0;
+}
