@@ -20,7 +20,7 @@ function isThenable(thing?: PromiseLike<any>): boolean {
   return !!(thing && !!thing.then);
 }
 
-const ActionButton: React.FC<ActionButtonProps> = props => {
+const ActionButton: React.FC<ActionButtonProps> = (props) => {
   const clickedRef = React.useRef<boolean>(false);
   const ref = React.useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState<ButtonProps['loading']>(false);
@@ -30,7 +30,7 @@ const ActionButton: React.FC<ActionButtonProps> = props => {
   };
 
   React.useEffect(() => {
-    let timeoutId: NodeJS.Timer | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
     if (props.autoFocus) {
       timeoutId = setTimeout(() => {
         ref.current?.focus();

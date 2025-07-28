@@ -154,16 +154,15 @@ async function ensureMasterBranch() {
     return;
   }
 
-  // delay importing nodegit because it can introduce environmental pains in a CI environment
+  // delay importing simple-git because it's only needed for branch checking
   // eslint-disable-next-line global-require
-  const git = require('nodegit');
-  const repo = await git.Repository.open(cwd);
-  const currentBranch = await repo.getCurrentBranch();
-  const currentBranchName = currentBranch.shorthand();
+  const simpleGit = require('simple-git');
+  const git = simpleGit(cwd);
+  const currentBranchName = await git.revparse(['--abbrev-ref', 'HEAD']);
 
   if (currentBranchName !== 'master') {
     console.error(
-      `Unable to release: currently on branch "${currentBranchName}", expected "release-demo"`,
+      `Unable to release: currently on branch "${currentBranchName}", expected "master"`,
     );
     process.exit(1);
   }
